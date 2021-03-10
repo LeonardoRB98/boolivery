@@ -19,7 +19,7 @@ class RestaurantController extends Controller
         'address' => 'required',
         'phone' => 'required',
         'description' => 'required',
-        'p_iva' => 'required',
+        'p_iva' => 'required|digits:11',
         'photo' => 'image',
         'photo_jumbo' => 'image'
 
@@ -31,7 +31,9 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        return view('admin.restaurants.index');
+        $restaurants = Restaurant::all();
+
+        return view('admin.restaurants.index', compact('restaurants'));
     }
 
     /**
@@ -54,7 +56,8 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-
+        
+        
         $request->validate($this->restaurantValidation);
 
 
@@ -63,6 +66,12 @@ class RestaurantController extends Controller
         $newRestaurant = new Restaurant();
         $data['user_id'] = Auth::id();
         $data["slug"] = Str::slug($data["name"]);
+        
+        $data['sponsored'] = false;
+
+        if($data['sponsored'] == 'true') {
+            $data['sponsored'] = true;
+        }; 
         
         if(!empty($data['photo'])) {
             $data['photo'] = Storage::disk('public')->put('img', $data['photo']);
@@ -78,7 +87,7 @@ class RestaurantController extends Controller
 
         return redirect()
                ->route('admin.restaurants.index')
-               ->with('message' , 'Il ristorante' . $newRestaurant->name . 'è stato creato con successo');
+               ->with('message' , 'Il ristorante ' . $newRestaurant->name . 'è stato creato con successo');
         
     }
 

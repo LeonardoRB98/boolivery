@@ -6,11 +6,14 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+
 
 window.select2 = require('select2');
 
-$(document).ready(function() {
+import Vue from 'vue';
+
+
+jQuery(function () {
     $('.js-select_categories').select2();
 });
 

@@ -65,16 +65,11 @@
 
         <div class="form-group">
             <label for="categories">Categorie</label>
-            <select class="js-select_categories" name="categories[]" multiple="multiple">
+            <select class="js-select_categories form-control" name="categories[]" multiple="multiple">
                 @foreach ($categories as $category)
                     <option value="{{$category->id}}">{{ $category->category }}</option>
                 @endforeach
               </select>
-            {{-- <select id="categories" class="js-select_categories form-control" name="categories[]" multiple="multiple">
-                @foreach ($categories as $category)
-                    <option value="{{$category->id}}">{{ $category->category }}</option>
-                @endforeach
-            </select>   --}}
         </div>
     
         <fieldset class="form-group">
@@ -82,14 +77,14 @@
               <legend class="col-form-label col-sm-2 pt-0">Sponsorizzazione</legend>
               <div class="col-sm-10">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                  <label class="form-check-label" for="gridRadios1">
+                  <input class="form-check-input" type="radio" name="sponsored" id="sponsored" value="true" checked>
+                  <label class="form-check-label" for="sponsored">
                     Si
                   </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                    <label class="form-check-label" for="gridRadios1">
+                    <input class="form-check-input" type="radio" name="sponsored" id="sponsored" value="false" checked>
+                    <label class="form-check-label" for="sponsored">
                       No
                     </label>
                   </div>
