@@ -25,6 +25,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('p_iva', 11);
             $table->boolean('sponsored');
             $table->string('photo', 250);
+            $table->string('photo_jumbo', 250);
             $table->timestamps();
 
             $table->foreign('user_id')

@@ -16,6 +16,7 @@ class Restaurant extends Model
         'p_iva',
         'sponsored',
         'photo',
+        'photo_jumbo',
         'user_id' // foreign key user
     ];
 
