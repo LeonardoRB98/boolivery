@@ -16,7 +16,7 @@ class Restaurant extends Model
         'p_iva',
         'sponsored',
         'photo',
-        'user_id'
+        'user_id' // foreign key user
     ];
 
     public function categories() {

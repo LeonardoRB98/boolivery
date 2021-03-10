@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->boolean('status');
             $table->dateTime('date');
 
+            // DB relationship restaurant table
             $table->foreign('restaurant_id')
             ->references('id')
             ->on('restaurants');

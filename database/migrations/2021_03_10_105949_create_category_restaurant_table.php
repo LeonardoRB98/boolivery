@@ -16,12 +16,13 @@ class CreateCategoryRestaurantTable extends Migration
         Schema::create('category_restaurant', function (Blueprint $table) {
             $table->id();
            
-            
+            // foreign key references restaurats
             $table->unsignedBigInteger('restaurant_id');
             $table->foreign('restaurant_id')
             ->references('id')
             ->on('restaurants');
             
+             // foreign key references restaurats
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')
             ->references('id')

@@ -9,7 +9,7 @@ class Category extends Model
     protected $fillable = [
         'category'
     ];
-    // DB relationships
+    // DB relationships references restaurants
     public function restaurants() {
         return $this->belongsToMany('App\Restaurant', 'category_restaurant');
     }
