@@ -1,0 +1,16 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Category extends Model
+{   
+    protected $fillable = [
+        'category'
+    ];
+    // DB relationships
+    public function restaurants() {
+        return $this->belongsToMany('App\Restaurant', 'category_restaurant');
+    }
+}
