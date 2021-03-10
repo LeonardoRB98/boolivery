@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// IMPORTO NAMESPACE
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ROTTE PUBBLICHE
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', 'HomeController@index')->name('home');
 
+// ROTTA INDEX HOME
+// ROTTA DETTAGLIO RISTORANTE
+// ROTTA CATEGORIA
+// ROTTA CHECKOUT
+
+
+// ROTTE SOTTO AUTENTICAZIONE
 Auth::routes();
 Route::prefix('admin') // inizio nome rotta url
     		->namespace('Admin') // cartella dove ci sono i controller
@@ -26,4 +37,4 @@ Route::prefix('admin') // inizio nome rotta url
         		Route::resource('restaurants', 'RestaurantController');
             });
 
-Route::get('/home', 'HomeController@index')->name('home');
+
