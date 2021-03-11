@@ -101,9 +101,9 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Restaurant $restaurant)
     {
-        //
+        return view('admin.restaurants.show', compact('restaurant'));
     }
 
     /**
@@ -126,9 +126,46 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Restaurant $restaurant)
     {
-        //
+        $request->validate($this->restaurantValidation);
+        $data = $request->all();
+        $data["slug"] = Str::slug($data["name"]);
+        $data['sponsored'] = false;
+        if($data['sponsored'] == 'true') {
+            $data['sponsored'] = true;
+        }; 
+        
+       
+
+        if(!empty($data["photo"])) {
+            // verifico se è presente un'immagine precedente, se si devo cancellarla
+            $data['photo'] = Storage::disk('public')->put('img', $data['photo']);
+            if(!empty($restaurant->photo)) {
+                Storage::disk('public')->delete($restaurant->photo);
+
+            }
+        }
+            if(!empty($data["photo_jumbo"])) {
+                // verifico se è presente un'immagine precedente, se si devo cancellarla
+                $data['photo_jumbo'] = Storage::disk('public')->put('img', $data['photo_jumbo']);
+                if(!empty($restaurant->photo_jumbo)) {
+                    Storage::disk('public')->delete($restaurant->photo_jumbo);
+                }
+            }
+
+        if(empty($data['categories'])) {
+            $restaurant->categories()->detach();
+        } else {
+            $restaurant->categories()->sync($data["categories"]);
+        }
+
+        $restaurant->update($data);
+
+        return redirect()->route('admin.restaurants.index')->with('message', 'il ristorante ' . $restaurant->name . ' è stato modificato correttamente.' );
+
+
+
     }
 
     /**

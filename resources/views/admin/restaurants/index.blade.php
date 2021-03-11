@@ -39,19 +39,19 @@
                     <td>{{ $restaurant->phone }}</td>
                     <td>{{ $restaurant->description }}</td>
                     <td>
-                        <img class="image-fluid" src="{{ asset('storage/' . $restaurant->photo) }}" alt="">
+                        <img class="image-fluid" style="width: 200px" src="{{ asset('storage/' . $restaurant->photo) }}" alt="">
                     </td>
                     <td>
                         <img class="image-fluid" style="width: 200px" src="{{ asset('storage/' . $restaurant->photo_jumbo) }}" alt="">
                     </td>
                     <td>
-                        <a href="{{route('admin.restaurants.edit', $restaurant)}}">Mostra</a>
+                        <a href="{{route('admin.restaurants.edit', $restaurant)}}">Modifca</a>
                     </td>
                     <td>
-                        <a href="#">Modifica</a>
+                        <a href="{{route('admin.restaurants.show', $restaurant)}}">Mostra</a>
                     </td>
                     <td>
-                        <a href="#">Cancella</a>
+                        {{-- <a href="{{route('admin.restaurants.delete', $restaurant)}}">Cancella</a> --}}
                     </td>
                 </tr>    
                 @endforeach
