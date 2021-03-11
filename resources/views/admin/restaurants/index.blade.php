@@ -10,7 +10,6 @@
         <div class="clearfix mb-4">
             <a href="{{ route('admin.restaurants.create') }}" class="btn btn-primary float-right">Crea Ristorante</a>
         </div>
-    </div>
 
     <h1>Tutti i Ristoranti</h1>
        
@@ -46,7 +45,7 @@
                         <img class="image-fluid" style="width: 200px" src="{{ asset('storage/' . $restaurant->photo_jumbo) }}" alt="">
                     </td>
                     <td>
-                        <a href="#">Mostra</a>
+                        <a href="{{route('admin.restaurants.edit', $restaurant)}}">Mostra</a>
                     </td>
                     <td>
                         <a href="#">Modifica</a>
@@ -58,4 +57,6 @@
                 @endforeach
             </tbody>   
         </table>
+    </div>
+
 @endsection

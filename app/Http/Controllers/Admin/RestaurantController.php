@@ -83,6 +83,10 @@ class RestaurantController extends Controller
         $newRestaurant->fill($data);
 
         $newRestaurant->save();
+
+        if(!empty($data['categories'])) {
+            $newRestaurant->categories()->attach($data["categories"]);
+        }
         
 
         return redirect()
@@ -108,9 +112,11 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(Restaurant $restaurant)
+    {   
+        $categories = Category::all();
+        return view('admin.restaurants.edit', compact('restaurant', 'categories'));
+        
     }
 
     /**
