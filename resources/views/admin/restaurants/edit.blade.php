@@ -64,6 +64,8 @@
             <input class='form-control' accept="image/*" type="file" id="photo_jumbo" name="photo_jumbo" value="{{ old('photo_jumbo')}}" >
             <img class="image-fluid" style="width: 200px" src="{{ asset('storage/' . $restaurant->photo_jumbo) }}" alt="">
         </div>
+
+        
         <div class="form-group">
             <label for="categories">Categorie</label>
             <select class="js-select_categories form-control" name="categories[]" multiple="multiple">
@@ -71,7 +73,7 @@
                 @foreach ($categories as $category)
                     <option value="{{$category->id}}"
                         @if ($restaurant->categories->contains($category->id))
-                        checked 
+                        selected 
                         @endif>
                         {{ $category->category }}
                     </option>
