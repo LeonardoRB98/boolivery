@@ -34,6 +34,8 @@ Route::prefix('admin') // inizio nome rotta url
     		->name('admin.') // inizio nome delle rotte
     		->group(function(){
         		Route::resource('restaurants', 'RestaurantController');
+                Route::resource('plates', 'PlateController');
+
             });
 
 

@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Plate extends Model
 {
     protected $fillable = [
-        'id_restaurant',
+        'restaurant_id',
         'name',
         'photo',
         'description',
         'price',
     ];
-    
+
     // DB relationships
     public function plates() {
         return $this->belongsToMany('App\Plate', 'order_plate');
