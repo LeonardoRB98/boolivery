@@ -33,13 +33,17 @@
                 @foreach ($restaurants as $restaurant)
                 <tr>
                     <td> {{ $restaurant->id }}</td>
-                    <td> {{ $restaurant->name }} </td>
+                    <td> <a href="{{route('admin.restaurants.show', $restaurant)}}">{{ $restaurant->name }}</a> </td>
                     <td>{{ $restaurant->email }}</td>
                     <td>{{ $restaurant->address }}</td>
                     <td>{{ $restaurant->phone }}</td>
                     <td>{{ $restaurant->description }}</td>
                     <td>
-                        <img class="image-fluid" style="width: 200px" src="{{ asset('storage/' . $restaurant->photo) }}" alt="">
+                        @if (!empty($restaurant->photo))
+                           <img class="img-fluid" src="{{ asset('storage/' . $restaurant->photo) }}" alt="{{ $restaurant->name }}">
+                        @else
+                           <img class="img-fluid" src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
+                       @endif
                     </td>
                     <td>
                         <img class="image-fluid" style="width: 200px" src="{{ asset('storage/' . $restaurant->photo_jumbo) }}" alt="">
@@ -48,10 +52,11 @@
                         <a href="{{route('admin.restaurants.edit', $restaurant)}}">Modifca</a>
                     </td>
                     <td>
-                        <a href="{{route('admin.restaurants.show', $restaurant)}}">Mostra</a>
-                    </td>
-                    <td>
-                        {{-- <a href="{{route('admin.restaurants.delete', $restaurant)}}">Cancella</a> --}}
+                        <form action="{{route('admin.restaurants.destroy', $restaurant)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Elimina">
+                        </form>
                     </td>
                 </tr>    
                 @endforeach

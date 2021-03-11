@@ -76,6 +76,7 @@ class RestaurantController extends Controller
         if(!empty($data['photo'])) {
             $data['photo'] = Storage::disk('public')->put('img', $data['photo']);
         }
+
         if(!empty($data['photo_jumbo'])) {
             $data['photo_jumbo'] = Storage::disk('public')->put('img', $data['photo_jumbo']);
         }
@@ -174,8 +175,9 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Restaurant $restaurant)
     {
-        //
+        $restaurant->delete();
+        return redirect()->route('admin.restaurants.index')->with('message', 'il ristorante ' . $restaurant->name . ' è stato eliminato correttamente.' );
     }
 }

@@ -19,8 +19,8 @@
         @endif    
     </div>
 
-    <form action="{{ route('admin.restaurants.store') }}" method='POST' enctype="multipart/form-data">
-        @method('POST')
+    <form action="{{ route('admin.restaurants.update', $restaurant) }}" method='POST' enctype="multipart/form-data">
+        @method('PUT')
         @csrf
     
         <div class="form-group">
@@ -103,7 +103,7 @@
       </fieldset>
         
     
-        <input type="submit" value="Crea">
+        <input type="submit" value="Modifica">
      </form>
 
 </div>

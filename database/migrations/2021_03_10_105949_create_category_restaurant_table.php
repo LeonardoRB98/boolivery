@@ -20,7 +20,8 @@ class CreateCategoryRestaurantTable extends Migration
             $table->unsignedBigInteger('restaurant_id');
             $table->foreign('restaurant_id')
             ->references('id')
-            ->on('restaurants');
+            ->on('restaurants')
+            ->onDelete('cascade');
             
              // foreign key references restaurats
             $table->unsignedBigInteger('category_id');
