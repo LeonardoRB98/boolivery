@@ -24,14 +24,16 @@ class CreateRestaurantsTable extends Migration
             $table->string('email', 50);
             $table->string('p_iva', 11);
             $table->boolean('sponsored');
-            $table->string('photo', 250);
-            $table->string('photo_jumbo', 250);
+            $table->string('photo', 250)->nullable();
+            $table->string('photo_jumbo', 250)->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')
             ->references('id')
             ->on('users');
         });
+
+
     }
 
     /**

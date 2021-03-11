@@ -5,14 +5,14 @@
         @if (session('message'))
         <div class="alert alert-success">
         {{ session('message') }}
-        </div>     
+        </div>
         @endif
         <div class="clearfix mb-4">
             <a href="{{ route('admin.restaurants.create') }}" class="btn btn-primary float-right">Crea Ristorante</a>
         </div>
 
     <h1>Tutti i Ristoranti</h1>
-       
+
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -38,16 +38,25 @@
                     <td>{{ $restaurant->address }}</td>
                     <td>{{ $restaurant->phone }}</td>
                     <td>{{ $restaurant->description }}</td>
-                    <td>
-                        @if (!empty($restaurant->photo))
-                           <img class="img-fluid" src="{{ asset('storage/' . $restaurant->photo) }}" alt="{{ $restaurant->name }}">
+
+                        @if (!is_null($restaurant->photo))
+                            <td>
+                                <img style="width: 200px" class="img-fluid" src="{{ asset('storage/'. $restaurant->photo) }}" alt="{{ $restaurant->name }}">
+                            </td>
                         @else
-                           <img class="img-fluid" src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
-                       @endif
-                    </td>
-                    <td>
-                        <img class="image-fluid" style="width: 200px" src="{{ asset('storage/' . $restaurant->photo_jumbo) }}" alt="">
-                    </td>
+                            <td>
+                                <img style="width: 200px" class="img-fluid" src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
+                            </td>
+                        @endif
+                        @if (!is_null($restaurant->photo_jumbo))
+                            <td>
+                                <img style="width: 200px" class="img-fluid" src="{{ asset('storage/'. $restaurant->photo_jumbo) }}" alt="{{ $restaurant->name }}">
+                            </td>
+                        @else
+                            <td>
+                                <img style="width: 200px" class="img-fluid" src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
+                            </td>
+                        @endif
                     <td>
                         <a href="{{route('admin.restaurants.edit', $restaurant)}}">Modifca</a>
                     </td>
@@ -58,9 +67,9 @@
                             <input type="submit" value="Elimina">
                         </form>
                     </td>
-                </tr>    
+                </tr>
                 @endforeach
-            </tbody>   
+            </tbody>
         </table>
     </div>
 

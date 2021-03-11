@@ -17,13 +17,12 @@ class CreatePlatesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('restaurant_id');
             $table->string('name', 30);
-            $table->text('desctiption');
-            $table->string('photo', 250);
+            $table->text('description');
+            $table->string('photo', 250)->nullable();
             $table->float('price', 6, 2);
-            // $table->string('type', 30);
             $table->timestamps();
 
-            
+
             $table->foreign('restaurant_id')
             ->references('id')
             ->on('restaurants')

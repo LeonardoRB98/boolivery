@@ -17,7 +17,7 @@ class RestaurantController extends Controller
         'name' => 'required',
         'email' => 'required',
         'address' => 'required',
-        'phone' => 'required',
+        'phone' => 'required|numeric|min:6|max:15',
         'description' => 'required',
         'p_iva' => 'required|digits:11',
         'photo' => 'image',
@@ -56,26 +56,30 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        
-        
+
+
         $request->validate($this->restaurantValidation);
 
 
         $data = $request->all();
 
         $newRestaurant = new Restaurant();
+
         $data['user_id'] = Auth::id();
         $data["slug"] = Str::slug($data["name"]);
-        
+
         $data['sponsored'] = false;
 
         if($data['sponsored'] == 'true') {
             $data['sponsored'] = true;
-        }; 
-        
+        };
+
+
+        // GESTIONE FOTO
         if(!empty($data['photo'])) {
             $data['photo'] = Storage::disk('public')->put('img', $data['photo']);
         }
+
 
         if(!empty($data['photo_jumbo'])) {
             $data['photo_jumbo'] = Storage::disk('public')->put('img', $data['photo_jumbo']);
@@ -88,12 +92,12 @@ class RestaurantController extends Controller
         if(!empty($data['categories'])) {
             $newRestaurant->categories()->attach($data["categories"]);
         }
-        
+
 
         return redirect()
                ->route('admin.restaurants.index')
                ->with('message' , 'Il ristorante ' . $newRestaurant->name . 'è stato creato con successo');
-        
+
     }
 
     /**
@@ -114,10 +118,10 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Restaurant $restaurant)
-    {   
+    {
         $categories = Category::all();
         return view('admin.restaurants.edit', compact('restaurant', 'categories'));
-        
+
     }
 
     /**
@@ -135,9 +139,9 @@ class RestaurantController extends Controller
         $data['sponsored'] = false;
         if($data['sponsored'] == 'true') {
             $data['sponsored'] = true;
-        }; 
-        
-       
+        };
+
+
 
         if(!empty($data["photo"])) {
             // verifico se è presente un'immagine precedente, se si devo cancellarla
