@@ -16,6 +16,9 @@ import Vue from 'vue';
 jQuery(function () {
     $('.js-select_categories').select2();
 });
+// jQuery(function () {
+//     $('.js-select_categories').select2();
+// });
 
 /**
  * The following block of code may be used to automatically register your

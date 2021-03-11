@@ -23,7 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // ROTTA INDEX HOME
 // ROTTA DETTAGLIO RISTORANTE
-// ROTTA CATEGORIA
 // ROTTA CHECKOUT
 
 
