@@ -1,5 +1,5 @@
 @extends('layouts.admin.main')
-@dd($restaurant)
+
 @section('content')
     <div class="container">
         @if (session('message'))
@@ -8,7 +8,7 @@
         </div>
         @endif
         <div class="clearfix mb-4">
-            <a href="{{ route('admin.plates.create', $restaurant) }}" class="btn btn-primary float-right">Crea Piatto</a>
+            <a href="{{ route('admin.plates.createPlate', $restaurant->id) }}" class="btn btn-primary float-right">Crea Piatto</a>
         </div>
 
     <h1>Tutti i tuoi piatti</h1>
