@@ -24,7 +24,7 @@
             <li>{{$category->category}}</li>
         @endforeach
     </ul>
-    <a href="{{route("admin.plates.showPlates", $restaurant)}}">I TUOI PIATTI</a>
+    <a href="{{route("admin.plates.showPlates", $restaurant->id)}}">I TUOI PIATTI</a>
 
  </div>
 

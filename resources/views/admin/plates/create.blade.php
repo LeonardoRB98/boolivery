@@ -1,5 +1,4 @@
 @extends('layouts.admin.main')
-@dd($restaurant)
 @section('content')
 
 

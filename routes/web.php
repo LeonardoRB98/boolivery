@@ -34,7 +34,8 @@ Route::prefix('admin') // inizio nome rotta url
     		->name('admin.') // inizio nome delle rotte
     		->group(function(){
         		Route::resource('restaurants', 'RestaurantController');
-                Route::post('plates/{restaurant_id}','PlateController@showPlates')->name('plates.showPlates');
+                Route::get('plates/{restaurant_id}','PlateController@showPlates')->name('plates.showPlates');
+                Route::get('plates/{restaurant_id}', 'PlateController@createPlate')->name('plates.createPlate');
                 Route::resource('plates', 'PlateController');
 
             });

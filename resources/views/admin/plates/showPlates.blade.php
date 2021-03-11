@@ -1,4 +1,5 @@
 @extends('layouts.admin.main')
+@dd($restaurant)
 @section('content')
     <div class="container">
         @if (session('message'))

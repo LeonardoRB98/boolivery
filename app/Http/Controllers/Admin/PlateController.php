@@ -27,7 +27,7 @@ class PlateController extends Controller
 
         $plates = Plate::where('restaurant_id', $restaurant->id)->get();
 
-        return view("admin.plates.index", compact("plates", "restaurant"));
+        // return view("admin.plates.showPlates", compact("plates", 'restaurant'));
     }
     // public function index(Restaurant $restaurant)
     // {
@@ -40,7 +40,14 @@ class PlateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Restaurant $restaurant)
+    // public function create(Restaurant $restaurant)
+    // {
+
+    //     // $id = User::where('email', $email)->first()->id;
+
+    //     return view("admin.plates.create", compact("restaurant"));
+    // }
+    public function createPlate(Restaurant $restaurant)
     {
 
         // $id = User::where('email', $email)->first()->id;
