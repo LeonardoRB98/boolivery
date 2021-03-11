@@ -23,13 +23,17 @@ class PlateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Restaurant $restaurant)
-    {
+    public function showPlates(Restaurant $restaurant) {
 
         $plates = Plate::where('restaurant_id', $restaurant->id)->get();
 
-       return view("admin.plates.index", compact("plates", "restaurant"));
+        return view("admin.plates.index", compact("plates", "restaurant"));
     }
+    // public function index(Restaurant $restaurant)
+    // {
+    //     $plates = Plate::where('restaurant_id', $restaurant->id)->get();
+    //    return view("admin.plates.index", compact("plates", "restaurant"));
+    // }
 
     /**
      * Show the form for creating a new resource.

@@ -1,5 +1,4 @@
 @extends('layouts.admin.main')
-@dd($restaurant)
 @section('content')
     <div class="container">
         @if (session('message'))
@@ -24,45 +23,7 @@
                 </tr>
             </thead>
             <tbody>
-                {{-- @foreach ($restaurants as $restaurant)
-                <tr>
-                    <td> {{ $restaurant->id }}</td>
-                    <td> <a href="{{route('admin.restaurants.show', $restaurant)}}">{{ $restaurant->name }}</a> </td>
-                    <td>{{ $restaurant->email }}</td>
-                    <td>{{ $restaurant->address }}</td>
-                    <td>{{ $restaurant->phone }}</td>
-                    <td>{{ $restaurant->description }}</td>
 
-                        @if (!is_null($restaurant->photo))
-                            <td>
-                                <img style="width: 200px" class="img-fluid" src="{{ asset('storage/'. $restaurant->photo) }}" alt="{{ $restaurant->name }}">
-                            </td>
-                        @else
-                            <td>
-                                <img style="width: 200px" class="img-fluid" src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
-                            </td>
-                        @endif
-                        @if (!is_null($restaurant->photo_jumbo))
-                            <td>
-                                <img style="width: 200px" class="img-fluid" src="{{ asset('storage/'. $restaurant->photo_jumbo) }}" alt="{{ $restaurant->name }}">
-                            </td>
-                        @else
-                            <td>
-                                <img style="width: 200px" class="img-fluid" src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
-                            </td>
-                        @endif
-                    <td>
-                        <a href="{{route('admin.restaurants.edit', $restaurant)}}">Modifca</a>
-                    </td>
-                    <td>
-                        <form action="{{route('admin.restaurants.destroy', $restaurant)}}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" value="Elimina">
-                        </form>
-                    </td>
-                </tr>
-                @endforeach --}}
             </tbody>
         </table>
     </div>
