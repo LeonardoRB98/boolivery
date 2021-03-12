@@ -2,6 +2,10 @@
 
 @section('content')
 
+    <div class="clearfix mb-4">
+        <a href="{{ route('admin.restaurants.index') }}" class="btn btn-primary float-right">Elenco Ristoranti</a>
+    </div> 
+
  <div class="container text-center">
      <h1>{{$restaurant->name}}</h1>
      @if (!is_null($restaurant->photo))

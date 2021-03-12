@@ -54,14 +54,15 @@ class PlateController extends Controller
         return view("admin.plates.create", compact("restaurant"));
     }
 
-    public function createPlate($id)
+    public function createPlate(Restaurant $restaurant , $id)
     {   
+        
         $id = intval($id);
         
-
+        
         // $id = User::where('email', $email)->first()->id;
 
-        return view('admin.plates.createPlate', compact('id'));
+        return view('admin.plates.createPlate', compact('id', 'restaurant'));
     }
 
     /**
