@@ -22,7 +22,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('phone', 15);
             $table->text('description');
             $table->string('email', 50);
-            $table->string('p_iva', 11);
+            $table->string('p_iva', 11)->unique();
             $table->boolean('sponsored');
             $table->string('photo', 250)->nullable();
             $table->string('photo_jumbo', 250)->nullable();

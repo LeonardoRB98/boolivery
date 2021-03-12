@@ -17,7 +17,8 @@ class PlateController extends Controller
         'name' => 'required',
         'description' => 'required',
         'price' => 'required|numeric',
-        'photo' => 'image',
+        'photo' => 'required|image|max:5000',
+        // 'required|file|size:5000',
     ];
     /**
      * Display a listing of the resource.
@@ -26,20 +27,15 @@ class PlateController extends Controller
      */
     public function showPlates($id) {
         $newId = intval($id);
-        
+
         $restaurant = Restaurant::where('user_id', Auth::id())
         ->where('id', $newId)->get();
 
         $plates = Plate::where('restaurant_id', $newId)->get();
-        
+
         return view("admin.plates.showPlates", compact("plates", 'restaurant'));
     }
 
-    public function index(Restaurant $restaurant)
-    {
-        $plates = Plate::where('restaurant_id', $restaurant->id)->get();
-       return view("admin.plates.index", compact("plates", "restaurant"));
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -55,11 +51,11 @@ class PlateController extends Controller
     }
 
     public function createPlate(Restaurant $restaurant , $id)
-    {   
-        
+    {
+
         $id = intval($id);
-        
-        
+
+
         // $id = User::where('email', $email)->first()->id;
 
         return view('admin.plates.createPlate', compact('id', 'restaurant'));
@@ -92,7 +88,7 @@ class PlateController extends Controller
         $newPlate->fill($data);
         $newPlate->save();
 
-    
+
         return redirect()
             ->route('admin.restaurants.show', compact('restaurant'))
             ->with('message', 'Il piatto ' . $newPlate->name . 'è stato creato con successo');
@@ -116,9 +112,9 @@ class PlateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Plate $plate)
     {
-        //
+        return view('admin.plates.edit', compact('plate'));
     }
 
     /**
@@ -128,9 +124,24 @@ class PlateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Plate $plate)
     {
-        //
+        $request->validate($this->plateValidation);
+        $data = $request->all();
+        // dd($data);
+
+         // GESTIONE FOTO
+         if (!empty($data['photo'])) {
+            $data['photo'] = Storage::disk('public')->put('img', $data['photo']);
+        }
+
+        $plate->fill($data);
+        $restaurant = $plate->restaurant;
+        $plate->update();
+
+        return redirect()
+            ->route('admin.restaurants.show', compact('restaurant'))
+            ->with('message', 'Il piatto ' . $plate->name . 'è stato modificato con successo');
     }
 
     /**
@@ -139,8 +150,12 @@ class PlateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Plate $plate)
     {
-        //
+        $restaurant = $plate->restaurant;
+        $plate->delete();
+        return redirect()
+            ->route('admin.restaurants.show', compact('restaurant'))
+            ->with('message', 'Il piatto ' . $plate->name . 'è stato eliminato con successo');
     }
 }

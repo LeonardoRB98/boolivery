@@ -15,17 +15,12 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('restaurant_id');
             $table->string('email', 50);
+            $table->string('name', 50);
             $table->string('address', 50);
             $table->boolean('status');
             $table->dateTime('date');
-
-            // DB relationship restaurant table
-            $table->foreign('restaurant_id')
-            ->references('id')
-            ->on('restaurants');
-            
+            $table->float('total', 6,2);
             $table->timestamps();
         });
 

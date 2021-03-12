@@ -16,10 +16,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 // ROTTE PUBBLICHE
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/Boolivery', 'GuestController@index')->name('home');
 
 // ROTTA INDEX HOME
 // ROTTA DETTAGLIO RISTORANTE
@@ -33,6 +30,7 @@ Route::prefix('admin') // inizio nome rotta url
     		->middleware('auth') // autenticazione per accesso alle rotte
     		->name('admin.') // inizio nome delle rotte
     		->group(function(){
+
         		Route::resource('restaurants', 'RestaurantController');
                 Route::get('plates/{restaurant_id}','PlateController@showPlates')->name('plates.showPlates');
                 Route::get('createPlate/{restaurant_id}', 'PlateController@createPlate')->name('plates.createPlate');

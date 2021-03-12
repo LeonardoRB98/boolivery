@@ -4,7 +4,7 @@
 
     <div class="clearfix mb-4">
         <a href="{{ route('admin.restaurants.index') }}" class="btn btn-primary float-right">Elenco Ristoranti</a>
-    </div> 
+    </div>
 
  <div class="container text-center">
      <h1>{{$restaurant->name}}</h1>
@@ -69,19 +69,19 @@
                     <td>{{ $plate->price }}</td>
                     <td>{{ $plate->description }}</td>
 
-                        
+
                     <td>
-                        <a href="#">Modifca</a>
+                        <a href="{{ route('admin.plates.edit', $plate) }}">Modifica</a>
                     </td>
                     <td>
-                        <form action="#" method="POST">
+                        <form action="{{ route('admin.plates.destroy', $plate) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <input type="submit" value="Elimina">
                         </form>
                     </td>
                 </tr>
-                @endforeach 
+                @endforeach
             </tbody>
         </table>
     </div>

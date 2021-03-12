@@ -13,14 +13,14 @@ use App\Plate;
 
 class RestaurantController extends Controller
 {
-
+    
     private $restaurantValidation = [
         'name' => 'required',
         'email' => 'required',
         'address' => 'required',
         'phone' => 'required|min:6|max:15',
         'description' => 'required',
-        'p_iva' => 'required|digits:11',
+        'p_iva' => 'required|unique:restaurants|digits:11',
         'photo' => 'image',
         'photo_jumbo' => 'image'
 

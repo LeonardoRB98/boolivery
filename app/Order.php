@@ -8,9 +8,10 @@ class Order extends Model
 {
     protected $fillable = [
         'email',
-        'restaurant_id',
+        'name',
         'indirizzo',
         'status',
+        'total',
         'date'
     ];
 
@@ -19,7 +20,4 @@ class Order extends Model
     return $this->belongsToMany('App\Order', 'order_plate');
     }
 
-    public function restaurant() {
-        return $this->belongsTo('App\Restaurant');
-        }
 }
