@@ -6,7 +6,7 @@
 
         <div class="container mb-5">
             <div class="clearfix mb-4">
-                <a href="{{ route('admin.plates.index', $restaurant) }}" class="btn btn-primary float-right">Elenco Piatti</a>
+                <a href="{{ route('admin.plates.index') }}" class="btn btn-primary float-right">Elenco Piatti</a>
             </div>
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -19,7 +19,7 @@
             @endif
         </div>
 
-        <form action="{{ route('admin.plates.store', $restaurant) }}" method='POST' enctype="multipart/form-data">
+        <form action="{{ route('admin.plates.store') }}" method='POST' enctype="multipart/form-data">
             @method('POST')
             @csrf
 
@@ -45,7 +45,9 @@
                 <input class='form-control' accept="image/*" type="file" id="photo" name="photo" value={{ old('photo') }}>
             </div>
 
-            <input type="submit" value="Crea">
+            <input type="hidden" name="id" value="{{$id}}">
+
+            <input type="submit" value="Crea Piatto">
         </form>
 
     </div>

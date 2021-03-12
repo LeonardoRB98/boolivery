@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use App\Restaurant;
 use App\Plate;
 
@@ -24,18 +25,21 @@ class PlateController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function showPlates($id) {
-        $restaurant = Restaurant::where('id', $id)->get();
-        dd($restaurant->id);
-        $plates = Plate::where('restaurant_id', $restaurant->id)->get();
+        $newId = intval($id);
         
+        $restaurant = Restaurant::where('user_id', Auth::id())
+        ->where('id', $newId)->get();
 
+        $plates = Plate::where('restaurant_id', $newId)->get();
+        
         return view("admin.plates.showPlates", compact("plates", 'restaurant'));
     }
-    // public function index(Restaurant $restaurant)
-    // {
-    //     $plates = Plate::where('restaurant_id', $restaurant->id)->get();
-    //    return view("admin.plates.index", compact("plates", "restaurant"));
-    // }
+
+    public function index(Restaurant $restaurant)
+    {
+        $plates = Plate::where('restaurant_id', $restaurant->id)->get();
+       return view("admin.plates.index", compact("plates", "restaurant"));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -52,11 +56,12 @@ class PlateController extends Controller
 
     public function createPlate($id)
     {   
-        dd($id);
+        $id = intval($id);
+        
 
         // $id = User::where('email', $email)->first()->id;
 
-        return view("admin.plates.create", compact("restaurant"));
+        return view('admin.plates.createPlate', compact('id'));
     }
 
     /**
@@ -65,13 +70,15 @@ class PlateController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Restaurant $restaurant)
+    public function store(Request $request)
     {
         $request->validate($this->plateValidation);
 
 
         $data = $request->all();
 
+        //return a model
+        $restaurant = Restaurant::where('id', $data['id'])->first();
         $newPlate = new Plate();
 
         // GESTIONE FOTO
@@ -79,15 +86,14 @@ class PlateController extends Controller
             $data['photo'] = Storage::disk('public')->put('img', $data['photo']);
         }
 
-        $newPlate['restaurant_id'] = $restaurant->id;
+        $newPlate['restaurant_id'] = $data['id'];
 
         $newPlate->fill($data);
         $newPlate->save();
 
-
-
+    
         return redirect()
-            ->route('admin.plates.index')
+            ->route('admin.restaurants.show', compact('restaurant'))
             ->with('message', 'Il piatto ' . $newPlate->name . 'è stato creato con successo');
 
     }

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Restaurant;
 use App\Category;
+use App\Plate;
 
 class RestaurantController extends Controller
 {
@@ -107,8 +108,10 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Restaurant $restaurant)
-    {
-        return view('admin.restaurants.show', compact('restaurant'));
+    {      
+        $plates = Plate::where('restaurant_id', $restaurant->id)->get();
+
+        return view('admin.restaurants.show', compact('restaurant', 'plates'));
     }
 
     /**
