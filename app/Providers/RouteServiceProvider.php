@@ -21,7 +21,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    // FACCIO IL REDIRECT DOPO IL LOGIN
+    public const HOME = '/admin/restaurants';
 
     /**
      * Define your route model bindings, pattern filters, etc.
