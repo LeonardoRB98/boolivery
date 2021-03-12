@@ -6,7 +6,7 @@
 
         <div class="container mb-5">
             <div class="clearfix mb-4">
-                <a href="{{ url()->previous() }}" class="btn btn-primary float-right">Elenco Piatti</a>
+                <a href="{{route('admin.restaurants.show', [$id]) }}" class="btn btn-primary float-right">Elenco Piatti</a>
             </div>
             @if ($errors->any())
                 <div class="alert alert-danger">
