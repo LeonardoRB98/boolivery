@@ -10,6 +10,7 @@ require('./bootstrap');
 
 window.select2 = require('select2');
 
+import axios from 'axios';
 import Vue from 'vue';
 
 
@@ -42,8 +43,22 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
     data: {
-        
+        restaurants: [],
+    },
+
+    methods : {
+
+        cercaRistoranti: function() {
+            axios
+            .get('http://127.0.0.1:8000/api/restaurants')
+            .then((response)=> {
+                this.restaurants = response.data;
+                });
+        }
+
     }
+
+    
 });
 
 

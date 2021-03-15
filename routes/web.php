@@ -21,8 +21,6 @@ Route::get('/Boolivery/restaurant', 'GuestController@show')->name('restaurant');
 Route::get('/Boolivery/restaurant/checkout', 'GuestController@checkout')->name('checkout');
 
 
-
-
 // ROTTA INDEX HOME
 // ROTTA DETTAGLIO RISTORANTE
 // ROTTA CHECKOUT

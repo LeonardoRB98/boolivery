@@ -11,7 +11,8 @@
                 <h2>Categorie</h2>
             </section>
             <section>
-                <h2>Ristoranti</h2>
+                <h2 v-on:click="cercaRistoranti">Ristoranti</h2>
+                <div v-for="restaurant in restaurants">@{{restaurant.name}}</div>
             </section>
             <section>
                 <h2>pubblicità</h2>
