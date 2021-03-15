@@ -44,6 +44,10 @@ const app = new Vue({
     el: '#app',
     data: {
         restaurants: [],
+        plates: [],
+        counter: [
+            
+        ],
     },
 
     methods : {
@@ -55,6 +59,46 @@ const app = new Vue({
                 this.restaurants = response.data;
                 });
         },
+
+        getRestaurantPlates: function(restaurant_id) {
+            axios
+            .get('http://127.0.0.1:8000/api/plates/'+ restaurant_id)
+            .then((response)=> {
+                this.restaurants = response.data;
+
+
+            for (var i = 0; i < response.data.length; i++ ) {
+                response.data[i].counter = 0;
+
+
+            }
+
+            this.plates = response.data;
+                });
+
+            
+        },
+
+        increaseCounter: function(i) {
+             this.plates[i].counter += 1;
+             this.counter = this.plates[i].counter;
+             console.log(this.plates[i].counter);
+             console.log(this.plates);
+
+        },
+
+        decreaseCounter: function(i) {
+            this.plates[i].counter -= 1;
+            this.counter = this.plates[i].counter;
+            console.log(this.plates[i].counter);
+            console.log(this.plates);
+
+            if (this.counter == 0)
+
+            return this.counter; // controllo su sottrazione piatti lato carrello
+
+       },
+
 
 
 

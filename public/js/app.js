@@ -1916,7 +1916,9 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.component('example-component', __webpac
 var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#app',
   data: {
-    restaurants: []
+    restaurants: [],
+    plates: [],
+    counter: []
   },
   methods: {
     cercaRistoranti: function cercaRistoranti() {
@@ -1925,6 +1927,32 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
         _this.restaurants = response.data;
       });
+    },
+    getRestaurantPlates: function getRestaurantPlates(restaurant_id) {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/plates/' + restaurant_id).then(function (response) {
+        _this2.restaurants = response.data;
+
+        for (var i = 0; i < response.data.length; i++) {
+          response.data[i].counter = 0;
+        }
+
+        _this2.plates = response.data;
+      });
+    },
+    increaseCounter: function increaseCounter(i) {
+      this.plates[i].counter += 1;
+      this.counter = this.plates[i].counter;
+      console.log(this.plates[i].counter);
+      console.log(this.plates);
+    },
+    decreaseCounter: function decreaseCounter(i) {
+      this.plates[i].counter -= 1;
+      this.counter = this.plates[i].counter;
+      console.log(this.plates[i].counter);
+      console.log(this.plates);
+      if (this.counter == 0) return this.counter; // controllo su sottrazione piatti lato carrello
     }
   }
 });
