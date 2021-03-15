@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Auth;
 
 // ROTTE PUBBLICHE
 Route::get('/Boolivery', 'GuestController@index')->name('home');
+Route::get('/Boolivery/restaurant', 'GuestController@show')->name('restaurant');
+Route::get('/Boolivery/restaurant/checkout', 'GuestController@checkout')->name('checkout');
+
+
+
 
 // ROTTA INDEX HOME
 // ROTTA DETTAGLIO RISTORANTE

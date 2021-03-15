@@ -27,4 +27,14 @@ class GuestController extends Controller
     {
         return view('guests.index');
     }
+
+    public function show()
+    {
+        return view('guests.show');
+    }
+
+    public function checkout()
+    {
+        return view('guests.checkout');
+    }
 }

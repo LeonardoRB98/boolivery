@@ -1,0 +1,10 @@
+
+.checkout {
+    height: calc(100vh - 90px);
+    display: flex;
+
+    section {
+        width: 50%;
+        border: 1px solid black;
+    }
+}

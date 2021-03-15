@@ -1889,7 +1889,10 @@ window.select2 = __webpack_require__(/*! select2 */ "./node_modules/select2/dist
 
 jQuery(function () {
   $('.js-select_categories').select2();
-});
+}); // jQuery(function () {
+//     $('.js-select_categories').select2();
+// });
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -1908,7 +1911,8 @@ vue__WEBPACK_IMPORTED_MODULE_0__.default.component('example-component', __webpac
  */
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
-  el: '#app'
+  el: '#app',
+  data: {}
 });
 
 /***/ }),

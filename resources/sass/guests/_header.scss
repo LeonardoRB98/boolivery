@@ -1,0 +1,25 @@
+
+nav {
+    height: 90px;
+    background-color: $blueLogo;
+    
+    .navbar-brand {
+    
+        height: 90px;
+
+        img {
+        height: 100%;
+        }
+    }
+
+
+}
+
+.jumbo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 90px);
+    background-color: brown;
+}
+
