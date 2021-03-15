@@ -54,11 +54,13 @@ const app = new Vue({
             .then((response)=> {
                 this.restaurants = response.data;
                 });
-        }
+        },
+
+
 
     }
 
-    
+
 });
 
 

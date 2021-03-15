@@ -5,7 +5,7 @@
     <div class="restaurant">
         <h1>Nome ristorante</h1>
     </div>
-    
+
 </div>
 <div class="main-menu">
     <section>
@@ -27,6 +27,7 @@
     </section>
     <div class="chart">
         <h1>Carrello</h1>
+        <h2>pasta <input type="number" id="tentacles" name="tentacles" min="0" max="100"></h2>
     </div>
 </div>
 

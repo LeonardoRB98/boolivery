@@ -11,4 +11,9 @@ class PlateController extends Controller
         $plates = Plate::all();
         return response()->json($plates);
     }
+
+    public function platesInRestaurant($id) {
+        $plates = Plate::where('restaurant_id', $id)->get();
+        return response()->json($plates);
+    }
 }

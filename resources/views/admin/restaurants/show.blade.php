@@ -65,7 +65,7 @@
                             <td>
                                 <img style="width: 200px" class="img-fluid" src="{{ asset('image/download.png') }}" alt="{{ $plate->name }}">
                             </td>
-                        @endif
+                    @endif
                     <td>{{ $plate->price }}</td>
                     <td>{{ $plate->description }}</td>
 

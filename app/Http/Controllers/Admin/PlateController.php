@@ -17,7 +17,7 @@ class PlateController extends Controller
         'name' => 'required',
         'description' => 'required',
         'price' => 'required|numeric',
-        'photo' => 'required|image|max:5000',
+        'photo' => 'image|max:5000',
         // 'required|file|size:5000',
     ];
     /**
