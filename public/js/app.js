@@ -1917,7 +1917,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#app',
   data: {
     restaurants: [],
-    filterRestaurants: [],
+    filteredRestaurants: [],
     categories: [],
     categorySelect: '',
     plates: [],
@@ -1927,61 +1927,49 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   created: function created() {
     var _this = this;
 
+    // load all restaurants
     axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
       _this.restaurants = response.data;
-      _this.filterRestaurants = response.data;
-    });
+      _this.filteredRestaurants = response.data;
+    }); // load all categories
+
     axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/categories').then(function (response) {
       _this.categories = response.data;
-      console.log(_this.categories);
     });
   },
   methods: {
-    restaurantFilter: function restaurantFilter() {
+    // get restaurants by selected category and selected name
+    // include option of more categories?
+    searchRestaurants: function searchRestaurants() {
       var _this2 = this;
 
-      this.filterRestaurants = this.restaurants.filter(function (restaurant) {
-        return restaurant.name.includes(_this2.search);
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect).then(function (response) {
+        // maybe add uppercase/lowercase inclusion
+        _this2.filteredRestaurants = response.data.filter(function (restaurant) {
+          return restaurant.name.includes(_this2.search);
+        });
       });
     },
-    selectRestaurants: function selectRestaurants() {
+    getRestaurantPlates: function getRestaurantPlates(restaurant_id) {
       var _this3 = this;
 
-      if (this.categorySelect == '' && this.search == '') {
-        axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
-          _this3.restaurants = response.data;
-          _this3.filterRestaurants = response.data;
-        });
-      } else {
-        axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect).then(function (response) {
-          _this3.filterRestaurants = response.data;
-        });
-      }
-    },
-    getRestaurantPlates: function getRestaurantPlates(restaurant_id) {
-      var _this4 = this;
-
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/plates/' + restaurant_id).then(function (response) {
-        _this4.restaurants = response.data;
+        _this3.restaurants = response.data;
 
         for (var i = 0; i < response.data.length; i++) {
           response.data[i].counter = 0;
         }
 
-        _this4.plates = response.data;
+        _this3.plates = response.data;
       });
     },
     increaseCounter: function increaseCounter(i) {
       this.plates[i].counter += 1;
       this.counter = this.plates[i].counter;
-      console.log(this.plates[i].counter);
-      console.log(this.plates);
     },
     decreaseCounter: function decreaseCounter(i) {
       this.plates[i].counter -= 1;
       this.counter = this.plates[i].counter;
-      console.log(this.plates[i].counter);
-      console.log(this.plates);
       if (this.counter == 0) return this.counter; // controllo su sottrazione piatti lato carrello
     }
   }

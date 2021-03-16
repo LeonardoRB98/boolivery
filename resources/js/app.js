@@ -44,95 +44,65 @@ const app = new Vue({
     el: '#app',
     data: {
         restaurants: [],
-        filterRestaurants: [],
+        filteredRestaurants: [],
         categories: [],
         categorySelect: '',
         plates: [],
         counter: [],
         search: '',
     },
-    created : function () {
+    created: function () {
         
-
-         axios.get('http://127.0.0.1:8000/api/restaurants')
-                .then((response)=> {
+        // load all restaurants
+        axios
+            .get('http://127.0.0.1:8000/api/restaurants')
+            .then( response => {
                  this.restaurants = response.data;
-                 this.filterRestaurants = response.data;
-                 });
+                 this.filteredRestaurants = response.data;
+            });
 
-
-         axios.get('http://127.0.0.1:8000/api/categories')
-               .then((response)=> {
+        // load all categories
+        axios
+            .get('http://127.0.0.1:8000/api/categories')
+            .then( response => {
                 this.categories = response.data;
-               console.log(this.categories)
-              }
-              )
-        
-     } ,
-        
+            });
+    },
+    methods: {
 
-
-      methods : {
-
-
-        restaurantFilter: function() {
-            this.filterRestaurants =  this.restaurants.filter(restaurant => {
-                return  restaurant.name.includes(this.search)
-            }) 
-
-        },
-
-         selectRestaurants: function() {
-             if(this.categorySelect == '' && this.search == '') {
-                 axios.get('http://127.0.0.1:8000/api/restaurants')
-                .then((response)=> {
-                 this.restaurants = response.data;
-                 this.filterRestaurants = response.data;    
+        // get restaurants by selected category and selected name
+        // include option of more categories?
+        searchRestaurants: function() {
+            axios
+                .get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect)
+                .then(response => {
+                    // maybe add uppercase/lowercase inclusion
+                    this.filteredRestaurants = response.data.filter(restaurant => {
+                        return  restaurant.name.includes(this.search)
                 });
-             } else {
-                 axios
-                 .get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect)
-                 .then((response)=> {
-                    this.filterRestaurants = response.data;
-             }
-             )
-           }
-            
-         },
+             })
+        },
 
         getRestaurantPlates: function(restaurant_id) {
             axios
-            .get('http://127.0.0.1:8000/api/plates/'+ restaurant_id)
-            .then((response)=> {
-                this.restaurants = response.data;
-
-
-            for (var i = 0; i < response.data.length; i++ ) {
-                response.data[i].counter = 0;
-
-
-            }
-
-            this.plates = response.data;
-                });
-
-            
+                .get('http://127.0.0.1:8000/api/plates/'+ restaurant_id)
+                .then(response => {
+                    this.restaurants = response.data;
+                    for (var i = 0; i < response.data.length; i++ ) {
+                        response.data[i].counter = 0;
+                    }
+                    this.plates = response.data;
+                });  
         },
 
         increaseCounter: function(i) {
              this.plates[i].counter += 1;
              this.counter = this.plates[i].counter;
-             console.log(this.plates[i].counter);
-             console.log(this.plates);
-
         },
 
         decreaseCounter: function(i) {
             this.plates[i].counter -= 1;
             this.counter = this.plates[i].counter;
-            console.log(this.plates[i].counter);
-            console.log(this.plates);
-
             if (this.counter == 0)
 
             return this.counter; // controllo su sottrazione piatti lato carrello
