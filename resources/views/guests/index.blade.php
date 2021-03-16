@@ -1,10 +1,6 @@
 @extends('layouts.guests.main')
 
 @section('content')
-<template>
-    <plate-component></plate-component>
-    <restaurant-component></restaurant-component>
-</template> 
         <div class="jumbo">
             <div>
                 <input v-model='search' v-on:keyup='searchRestaurants' type="text">
@@ -21,7 +17,9 @@
             </section> --}}
             <section>
                 <h2>Ristoranti</h2>
-                <div v-for="restaurant in filteredRestaurants">@{{restaurant.name}}</div>
+                <div v-for="(restaurant, index) in filteredRestaurants">
+                    <a href="{{ route('restaurant.show', $restaurant->slug)}}">@{{restaurant.name}}</a>
+                </div>
             </section>
             <section>
                 <h2>pubblicità</h2>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Restaurant;
 
 class GuestController extends Controller
 {
@@ -24,13 +25,17 @@ class GuestController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('guests.index');
+    {   
+        $restaurant = Restaurant::all();
+
+        return view('guests.index', compact('restaurant'));
     }
 
-    public function show()
-    {
-        return view('guests.show');
+    public function show($slug)
+    {   
+        $restaurant = Restaurant::where('slug', $slug)->first();
+
+        return view('guests.show', compact('restaurant'));
     }
 
     public function checkout()
