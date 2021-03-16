@@ -17,11 +17,11 @@
             </section> --}}
             <section>
                 <h2>Ristoranti</h2>
-                @foreach ($restaurants as $restaurant)
+
                 <div v-for="(restaurant, index) in filteredRestaurants">
-                        <a href="{{ route('restaurant', $restaurant->slug )}}">@{{restaurant.name}}</a>
+                       <a :href="'{{url('Boolivery/restaurant')}}' + '/' + restaurant.slug">@{{restaurant.name}}</a>
                 </div>
-                @endforeach
+
 
             </section>
             <section>
