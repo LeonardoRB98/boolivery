@@ -23,4 +23,5 @@ Route::namespace('Api')->group(function() {
     Route::get('/restaurants', 'RestaurantController@restaurants'); // restituisce tutte le cit per l'anno selezionato
     Route::get('/plates', 'PlateController@plates'); // restituisce tutte le cit per l'anno selezionato
     Route::get('/plates/{restaurant_id}', 'PlateController@platesInRestaurant'); //restituisce i piatti associati al ristorante
+    Route::get('/restaurants/{categories}', 'RestaurantController@restaurantByCategory'); //dovrebbe restituire i ristoranti data la categoria
 });

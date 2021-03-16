@@ -3,16 +3,21 @@
 @section('content')
         <div class="jumbo">
             <div>
-                <input type="text">
+                <input v-model='search' v-on:keyup='restaurantFilter' type="text">
+                <select name="" id="" v-model='categorySelect' v-on:change='selectRestaurants'>
+                    <option value="">All</option>
+                    <option :value="category.category" v-for='category in categories'>@{{category.category}}</option>
+                </select>
             </div>
         </div>
         <main class="container">
-            <section>
+            {{-- <section>
                 <h2>Categorie</h2>
-            </section>
+                <div v-for="category in categories">@{{category.category}}</div>
+            </section> --}}
             <section>
-                <h2 v-on:click="cercaRistoranti">Ristoranti</h2>
-                <div v-for="restaurant in restaurants">@{{restaurant.name}}</div>
+                <h2>Ristoranti</h2>
+                <div v-for="restaurant in filterRestaurants">@{{restaurant.name}}</div>
             </section>
             <section>
                 <h2>pubblicità</h2>

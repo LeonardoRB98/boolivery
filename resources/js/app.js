@@ -44,21 +44,61 @@ const app = new Vue({
     el: '#app',
     data: {
         restaurants: [],
+        filterRestaurants: [],
+        categories: [],
+        categorySelect: '',
         plates: [],
-        counter: [
-            
-        ],
+        counter: [],
+        search: '',
     },
+    created : function () {
+        
 
-    methods : {
+         axios.get('http://127.0.0.1:8000/api/restaurants')
+                .then((response)=> {
+                 this.restaurants = response.data;
+                 this.filterRestaurants = response.data;
+                 });
 
-        cercaRistoranti: function() {
-            axios
-            .get('http://127.0.0.1:8000/api/restaurants')
-            .then((response)=> {
-                this.restaurants = response.data;
-                });
+
+         axios.get('http://127.0.0.1:8000/api/categories')
+               .then((response)=> {
+                this.categories = response.data;
+               console.log(this.categories)
+              }
+              )
+        
+     } ,
+        
+
+
+      methods : {
+
+
+        restaurantFilter: function() {
+            this.filterRestaurants =  this.restaurants.filter(restaurant => {
+                return  restaurant.name.includes(this.search)
+            }) 
+
         },
+
+         selectRestaurants: function() {
+             if(this.categorySelect == '' && this.search == '') {
+                 axios.get('http://127.0.0.1:8000/api/restaurants')
+                .then((response)=> {
+                 this.restaurants = response.data;
+                 this.filterRestaurants = response.data;    
+                });
+             } else {
+                 axios
+                 .get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect)
+                 .then((response)=> {
+                    this.filterRestaurants = response.data;
+             }
+             )
+           }
+            
+         },
 
         getRestaurantPlates: function(restaurant_id) {
             axios

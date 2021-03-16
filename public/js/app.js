@@ -1917,28 +1917,58 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#app',
   data: {
     restaurants: [],
+    filterRestaurants: [],
+    categories: [],
+    categorySelect: '',
     plates: [],
-    counter: []
+    counter: [],
+    search: ''
+  },
+  created: function created() {
+    var _this = this;
+
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
+      _this.restaurants = response.data;
+      _this.filterRestaurants = response.data;
+    });
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/categories').then(function (response) {
+      _this.categories = response.data;
+      console.log(_this.categories);
+    });
   },
   methods: {
-    cercaRistoranti: function cercaRistoranti() {
-      var _this = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
-        _this.restaurants = response.data;
-      });
-    },
-    getRestaurantPlates: function getRestaurantPlates(restaurant_id) {
+    restaurantFilter: function restaurantFilter() {
       var _this2 = this;
 
+      this.filterRestaurants = this.restaurants.filter(function (restaurant) {
+        return restaurant.name.includes(_this2.search);
+      });
+    },
+    selectRestaurants: function selectRestaurants() {
+      var _this3 = this;
+
+      if (this.categorySelect == '' && this.search == '') {
+        axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
+          _this3.restaurants = response.data;
+          _this3.filterRestaurants = response.data;
+        });
+      } else {
+        axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect).then(function (response) {
+          _this3.filterRestaurants = response.data;
+        });
+      }
+    },
+    getRestaurantPlates: function getRestaurantPlates(restaurant_id) {
+      var _this4 = this;
+
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/plates/' + restaurant_id).then(function (response) {
-        _this2.restaurants = response.data;
+        _this4.restaurants = response.data;
 
         for (var i = 0; i < response.data.length; i++) {
           response.data[i].counter = 0;
         }
 
-        _this2.plates = response.data;
+        _this4.plates = response.data;
       });
     },
     increaseCounter: function increaseCounter(i) {
