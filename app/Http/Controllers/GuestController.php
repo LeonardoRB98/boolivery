@@ -25,15 +25,15 @@ class GuestController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {   
-        $restaurant = Restaurant::all();
+    {
+        $restaurants = Restaurant::all();
 
-        return view('guests.index', compact('restaurant'));
+        return view('guests.index', compact('restaurants'));
     }
 
     public function show($slug)
-    {   
-        $restaurant = Restaurant::where('slug', $slug)->first();
+    {
+        $restaurant = Restaurant::where('slug', $slug)->firstOrFail();
 
         return view('guests.show', compact('restaurant'));
     }
@@ -42,5 +42,5 @@ class GuestController extends Controller
     {
         return view('guests.checkout');
     }
-    
+
 }

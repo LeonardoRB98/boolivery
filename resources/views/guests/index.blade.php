@@ -1,5 +1,5 @@
 @extends('layouts.guests.main')
-
+{{-- @dd($restaurants) --}}
 @section('content')
         <div class="jumbo">
             <div>
@@ -17,15 +17,18 @@
             </section> --}}
             <section>
                 <h2>Ristoranti</h2>
+                @foreach ($restaurants as $restaurant)
                 <div v-for="(restaurant, index) in filteredRestaurants">
-                    <a href="{{ route('restaurant.show', $restaurant->slug)}}">@{{restaurant.name}}</a>
+                        <a href="{{ route('restaurant', $restaurant->slug )}}">@{{restaurant.name}}</a>
                 </div>
+                @endforeach
+
             </section>
             <section>
                 <h2>pubblicità</h2>
             </section>
-              
 
-            
-        </main>    
+
+
+        </main>
 @endsection
