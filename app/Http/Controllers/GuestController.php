@@ -37,4 +37,5 @@ class GuestController extends Controller
     {
         return view('guests.checkout');
     }
+    
 }
