@@ -2009,8 +2009,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
         _this.cart[k] = object; // altrimenti lo pusho!
       } else {
         _this.cart.push(object);
-      }
+      } // JSON.parse(localstorage.cart)
 
+
+      _this.cart = JSON.parse(localStorage.cart);
       console.log(_this.cart);
       console.log('Adding product with id:' + id + " and counter " + counter);
     });
@@ -2039,8 +2041,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
         _this.cart[k] = object;
       }
 
+      _this.cart = JSON.parse(localStorage.cart);
       console.log(_this.cart);
     });
+  },
+  mounted: function mounted() {
+    this.cart = JSON.parse(localStorage.cart);
   },
   methods: {
     // get restaurants by selected category and selected name
