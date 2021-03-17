@@ -22,8 +22,9 @@ Route::get('/', function() {
 });
 
 Route::get('/Boolivery', 'GuestController@index')->name('home');
-Route::get('/Boolivery/restaurant/{slug}', 'GuestController@show')->name('restaurant');
 Route::get('/Boolivery/restaurant/checkout', 'GuestController@checkout')->name('checkout');
+Route::get('/Boolivery/restaurant/{slug}', 'GuestController@show')->name('restaurant');
+
 
 
 // ROTTA INDEX HOME
