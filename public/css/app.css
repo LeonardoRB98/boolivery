@@ -10586,13 +10586,11 @@ footer {
 .main-menu {
   display: flex;
   justify-content: start;
-  height: 100%;
   padding: 30px;
   position: relative;
 }
 .main-menu section {
-  margin-top: 100px;
-  height: 300px;
+  margin-top: 50px;
   width: 50%;
   display: flex;
   flex-direction: column;
