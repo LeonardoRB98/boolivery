@@ -38,9 +38,22 @@ class GuestController extends Controller
         return view('guests.show', compact('restaurant'));
     }
 
-    public function checkout()
-    {
-        return view('guests.checkout');
+    public function checkout() {
+        // sandbox variables
+        $gateway = new \Braintree\Gateway([
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchantId'),
+            'publicKey' => config('services.braintree.publicKey'),
+            'privateKey' => config('services.braintree.privateKey')
+        ]);
+
+        // client token
+        $token = $gateway->ClientToken()->generate();
+
+        // return view checkout with client token
+        return view('guests.checkout', [
+            'token' => $token
+        ]);
     }
 
 }
