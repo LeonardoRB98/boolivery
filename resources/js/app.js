@@ -119,7 +119,7 @@ const app = new Vue({
                 this.cart.push(object);
             }
             // JSON.parse(localstorage.cart)
-            this.cart = JSON.parse(localStorage.cart);
+            // this.cart = JSON.parse(localStorage.cart);
             console.log(this.cart);
             console.log('Adding product with id:' + id + " and counter " + counter);
         });
@@ -147,12 +147,19 @@ const app = new Vue({
             } else {
                 this.cart[k] = object;
             }
-            this.cart = JSON.parse(localStorage.cart);
+            // this.cart = JSON.parse(localStorage.cart);
             console.log(this.cart);
         });
     },
     mounted: function() {
-        this.cart = JSON.parse(localStorage.cart);
+        if(localStorage.cart) {
+            this.cart = JSON.parse(localStorage.cart);
+        }
+    },
+    watch: {
+        cart(object) {
+           localStorage.cart = JSON.stringify(object);
+        }
     },
     methods: {
 

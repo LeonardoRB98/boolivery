@@ -2010,9 +2010,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
       } else {
         _this.cart.push(object);
       } // JSON.parse(localstorage.cart)
+      // this.cart = JSON.parse(localStorage.cart);
 
 
-      _this.cart = JSON.parse(localStorage.cart);
       console.log(_this.cart);
       console.log('Adding product with id:' + id + " and counter " + counter);
     });
@@ -2039,14 +2039,21 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
         _this.cart.splice(k, 1);
       } else {
         _this.cart[k] = object;
-      }
+      } // this.cart = JSON.parse(localStorage.cart);
 
-      _this.cart = JSON.parse(localStorage.cart);
+
       console.log(_this.cart);
     });
   },
   mounted: function mounted() {
-    this.cart = JSON.parse(localStorage.cart);
+    if (localStorage.cart) {
+      this.cart = JSON.parse(localStorage.cart);
+    }
+  },
+  watch: {
+    cart: function cart(object) {
+      localStorage.cart = JSON.stringify(object);
+    }
   },
   methods: {
     // get restaurants by selected category and selected name
