@@ -22,7 +22,6 @@
                        <a :href="'{{url('Boolivery/restaurant')}}' + '/' + restaurant.slug">@{{restaurant.name}}</a>
                 </div>
 
-
             </section>
             <section>
                 <h2>pubblicità</h2>

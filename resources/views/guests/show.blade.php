@@ -4,20 +4,23 @@
 <div class="jumbo">
     <div class="restaurant">
         <h1>Nome ristorante</h1>
+        
     </div>
 
 </div>
+<button v-on:click='getRestaurantPlates(3)'>Click</button>
 <div class="main-menu">
+    
     <section>
-
-        <div v-for="plate in plates">
-            <plate-component v-bind:name="plate.name"></plate-component> 
-        </div>
-
+        <h1>I piatti</h1>
+        <plate-component 
+            v-for="plate in plates"
+            :name="plate.name"
+            :id="plate.id"
+            :price="plate.price"
+            :key="plate.id">
+        </plate-component>
     </section>
-    <div class="chart">
-       <cart-component></cart-component>
-    </div>
 </div>
 
 @endsection

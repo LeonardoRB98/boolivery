@@ -11,6 +11,7 @@ require('./bootstrap');
 window.select2 = require('select2');
 
 import axios from 'axios';
+import { forEach } from 'lodash';
 import Vue from 'vue';
 
 
@@ -33,7 +34,6 @@ jQuery(function () {
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('plate-component', require('./components/PlateComponent.vue').default);
-Vue.component('cart-component', require('./components/CartComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -51,6 +51,7 @@ const app = new Vue({
         plates: [],
         counter: [],
         search: '',
+        cart: []
     },
     created: function () {
         
@@ -68,6 +69,35 @@ const app = new Vue({
             .then( response => {
                 this.categories = response.data;
             });
+
+        this.$root.$on('addToCart', (id, counter) => {
+            var object = { 
+                id: id,
+                counter: counter
+            };
+            this.cart.forEach(plate => {
+                if (plate.id == id) {
+                    plate.counter = counter;
+                } else {
+                    this.cart.push(object);
+                    console.log(this.cart);
+                }
+            });
+        
+
+
+            
+            
+            console.log('Adding product with id:' + id + " and counter " + counter);
+        });
+
+        this.$root.$on('removeFromCart', (id, counter) => {
+            console.log('Removing product with id:' + id + " and counter " + counter);
+            var object = { 
+                id: id,
+                counter: counter
+            };
+        });
     },
     methods: {
 
