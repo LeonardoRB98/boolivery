@@ -1,5 +1,4 @@
 @extends('layouts.guests.main')
-
 @section('content')
 <div class="jumbo">
     <div class="restaurant">
@@ -8,7 +7,6 @@
     </div>
 
 </div>
-<button v-on:click='getRestaurantPlates(1)'>Click</button>
 <div class="main-menu">
 
     <section>
@@ -24,3 +22,6 @@
 </div>
 
 @endsection
+<script>
+    var id = {!! json_encode($restaurant->id) !!};
+</script>

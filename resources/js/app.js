@@ -51,7 +51,8 @@ const app = new Vue({
         plates: [],
         counter: [],
         search: '',
-        cart: []
+        cart: [],
+        currentRestaurantId: ''
     },
     created: function () {
 
@@ -61,14 +62,33 @@ const app = new Vue({
             .then( response => {
                  this.restaurants = response.data;
                  this.filteredRestaurants = response.data;
-            });
+            }
+        );
 
         // load all categories
         axios
             .get('http://127.0.0.1:8000/api/categories')
             .then( response => {
                 this.categories = response.data;
-            });
+            }
+        );
+        // recupero id dalla schermata show tramite <script>var id = {!! json_encode($restaurant->id) !!};</script>
+        this.currentRestaurantId = window.id;
+
+        // caricamento piatti singolo ristorate show
+        axios
+        .get('http://127.0.0.1:8000/api/plates/'+ this.currentRestaurantId)
+            .then(response => {
+                this.restaurants = response.data;
+                for (var i = 0; i < response.data.length; i++ ) {
+                    response.data[i].counter = 0;
+                }
+                this.plates = response.data;
+                console.log();
+            }
+        );
+
+
 
         this.$root.$on('addToCart', (id, counter, price) => {
             // oggetto da pushare
@@ -100,11 +120,6 @@ const app = new Vue({
             }
 
             console.log(this.cart);
-
-
-
-
-
             console.log('Adding product with id:' + id + " and counter " + counter);
         });
 
@@ -149,17 +164,18 @@ const app = new Vue({
              })
         },
 
-        getRestaurantPlates: function(restaurant_id) {
-            axios
-                .get('http://127.0.0.1:8000/api/plates/'+ restaurant_id)
-                .then(response => {
-                    this.restaurants = response.data;
-                    for (var i = 0; i < response.data.length; i++ ) {
-                        response.data[i].counter = 0;
-                    }
-                    this.plates = response.data;
-                });
-        },
+        // getRestaurantPlates: function(restaurant_id) {
+        //     axios
+        //         .get('http://127.0.0.1:8000/api/plates/'+ restaurant_id)
+        //         .then(response => {
+        //             this.restaurants = response.data;
+        //             for (var i = 0; i < response.data.length; i++ ) {
+        //                 response.data[i].counter = 0;
+        //             }
+        //             this.plates = response.data;
+        //         }
+        //     );
+        // },
     }
 
 

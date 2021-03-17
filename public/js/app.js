@@ -1954,7 +1954,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     plates: [],
     counter: [],
     search: '',
-    cart: []
+    cart: [],
+    currentRestaurantId: ''
   },
   created: function created() {
     var _this = this;
@@ -1967,6 +1968,19 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
 
     axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/categories').then(function (response) {
       _this.categories = response.data;
+    }); // recupero id dalla schermata show tramite <script>var id = {!! json_encode($restaurant->id) !!};</script>
+
+    this.currentRestaurantId = window.id; // caricamento piatti singolo ristorate show
+
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/plates/' + this.currentRestaurantId).then(function (response) {
+      _this.restaurants = response.data;
+
+      for (var i = 0; i < response.data.length; i++) {
+        response.data[i].counter = 0;
+      }
+
+      _this.plates = response.data;
+      console.log();
     });
     this.$root.$on('addToCart', function (id, counter, price) {
       // oggetto da pushare
@@ -2040,20 +2054,19 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
           return restaurant.name.includes(_this2.search);
         });
       });
-    },
-    getRestaurantPlates: function getRestaurantPlates(restaurant_id) {
-      var _this3 = this;
+    } // getRestaurantPlates: function(restaurant_id) {
+    //     axios
+    //         .get('http://127.0.0.1:8000/api/plates/'+ restaurant_id)
+    //         .then(response => {
+    //             this.restaurants = response.data;
+    //             for (var i = 0; i < response.data.length; i++ ) {
+    //                 response.data[i].counter = 0;
+    //             }
+    //             this.plates = response.data;
+    //         }
+    //     );
+    // },
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/plates/' + restaurant_id).then(function (response) {
-        _this3.restaurants = response.data;
-
-        for (var i = 0; i < response.data.length; i++) {
-          response.data[i].counter = 0;
-        }
-
-        _this3.plates = response.data;
-      });
-    }
   }
 });
 

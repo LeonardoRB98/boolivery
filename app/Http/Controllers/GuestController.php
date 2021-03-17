@@ -34,7 +34,7 @@ class GuestController extends Controller
     public function show($slug)
     {
         $restaurant = Restaurant::where('slug', $slug)->firstOrFail();
-
+        // dd($restaurant);
         return view('guests.show', compact('restaurant'));
     }
 
