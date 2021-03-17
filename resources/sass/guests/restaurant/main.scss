@@ -13,10 +13,12 @@
 .main-menu {
     display: flex;
     justify-content: start;
+    height: 100%;
     padding: 30px;
     position: relative;
 
     section {
+        margin-top: 100px;
         height: 300px;
         width: 50%;
         display: flex;
