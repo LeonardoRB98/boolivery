@@ -4,16 +4,16 @@
 <div class="jumbo">
     <div class="restaurant">
         <h1>Nome ristorante</h1>
-        
+
     </div>
 
 </div>
-<button v-on:click='getRestaurantPlates(3)'>Click</button>
+<button v-on:click='getRestaurantPlates(1)'>Click</button>
 <div class="main-menu">
-    
+
     <section>
         <h1>I piatti</h1>
-        <plate-component 
+        <plate-component
             v-for="plate in plates"
             :name="plate.name"
             :id="plate.id"

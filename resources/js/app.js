@@ -11,7 +11,7 @@ require('./bootstrap');
 window.select2 = require('select2');
 
 import axios from 'axios';
-import { forEach } from 'lodash';
+import { forEach, isEmpty } from 'lodash';
 import Vue from 'vue';
 
 
@@ -54,7 +54,7 @@ const app = new Vue({
         cart: []
     },
     created: function () {
-        
+
         // load all restaurants
         axios
             .get('http://127.0.0.1:8000/api/restaurants')
@@ -70,33 +70,68 @@ const app = new Vue({
                 this.categories = response.data;
             });
 
-        this.$root.$on('addToCart', (id, counter) => {
-            var object = { 
+        this.$root.$on('addToCart', (id, counter, price) => {
+            // oggetto da pushare
+            var object = {
                 id: id,
-                counter: counter
+                counter: counter,
+                price: price
             };
-            this.cart.forEach(plate => {
-                if (plate.id == id) {
-                    plate.counter = counter;
-                } else {
-                    this.cart.push(object);
-                    console.log(this.cart);
+            // inzializzo var a false se l'id dell'object è presente nel carello lo cambio a true
+            var changed = false;
+            // salva la posizione del object già presente nel carrello inizializzata a -1 per evitare conflitti
+            var k = -1;
+
+            for(let i= 0; i< this.cart.length; i++) {
+                // se trovo un oggetto con id uguale a quello dell'oggetto da pushre eseguo le operazioni nelle parentesi graffe
+                //ed interrompo il loop
+                if(this.cart[i].id == id) {
+                    changed = true;
+                    k = i;
+                    break;
                 }
-            });
-        
+            }
+            // se changed è true sovrascrivo l'object
+            if(changed == true) {
+                this.cart[k] = object;
+            // altrimenti lo pusho!
+            } else {
+                this.cart.push(object);
+            }
+
+            console.log(this.cart);
 
 
-            
-            
+
+
+
             console.log('Adding product with id:' + id + " and counter " + counter);
         });
 
-        this.$root.$on('removeFromCart', (id, counter) => {
+        this.$root.$on('removeFromCart', (id, counter, price) => {
             console.log('Removing product with id:' + id + " and counter " + counter);
-            var object = { 
+            var object = {
                 id: id,
-                counter: counter
+                counter: counter,
+                price: price
             };
+            var k = -1;
+
+            for(let i= 0; i< this.cart.length; i++) {
+                // se trovo un oggetto con id uguale a quello dell'oggetto da pushre eseguo le operazioni nelle parentesi graffe
+                //ed interrompo il loop
+                if(this.cart[i].id == id) {
+                    k = i;
+                    break;
+                }
+            }
+            if(counter == 0) {
+                // rimuovi oggetto
+                this.cart.splice(k, 1);
+            } else {
+                this.cart[k] = object;
+            }
+            console.log(this.cart);
         });
     },
     methods: {
@@ -123,26 +158,8 @@ const app = new Vue({
                         response.data[i].counter = 0;
                     }
                     this.plates = response.data;
-                });  
+                });
         },
-
-        increaseCounter: function(i) {
-             this.plates[i].counter += 1;
-             this.counter = this.plates[i].counter;
-        },
-
-        decreaseCounter: function(i) {
-            this.plates[i].counter -= 1;
-            this.counter = this.plates[i].counter;
-            if (this.counter == 0)
-
-            return this.counter; // controllo su sottrazione piatti lato carrello
-
-       },
-
-
-
-
     }
 
 

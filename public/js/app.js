@@ -1875,7 +1875,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       counter: 0,
-      plateId: this.id
+      plateId: this.id,
+      platePrice: this.price
     };
   },
   methods: {
@@ -1884,12 +1885,12 @@ __webpack_require__.r(__webpack_exports__);
         this.counter = 0;
       } else {
         this.counter -= 1;
-        this.$root.$emit('removeFromCart', this.plateId, this.counter);
+        this.$root.$emit('removeFromCart', this.plateId, this.counter, this.platePrice);
       }
     },
     increaseCounter: function increaseCounter() {
       this.counter += 1;
-      this.$root.$emit('addToCart', this.id, this.counter);
+      this.$root.$emit('addToCart', this.plateId, this.counter, this.platePrice);
     }
   }
 });
@@ -1967,30 +1968,64 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/categories').then(function (response) {
       _this.categories = response.data;
     });
-    this.$root.$on('addToCart', function (id, counter) {
+    this.$root.$on('addToCart', function (id, counter, price) {
+      // oggetto da pushare
       var object = {
         id: id,
-        counter: counter
-      };
+        counter: counter,
+        price: price
+      }; // inzializzo var a false se l'id dell'object è presente nel carello lo cambio a true
 
-      _this.cart.forEach(function (plate) {
-        if (plate.id == id) {
-          plate.counter = counter;
-        } else {
-          _this.cart.push(object);
+      var changed = false; // salva la posizione del object già presente nel carrello inizializzata a -1 per evitare conflitti
 
-          console.log(_this.cart);
+      var k = -1;
+
+      for (var i = 0; i < _this.cart.length; i++) {
+        // se trovo un oggetto con id uguale a quello dell'oggetto da pushre eseguo le operazioni nelle parentesi graffe
+        //ed interrompo il loop
+        if (_this.cart[i].id == id) {
+          changed = true;
+          k = i;
+          break;
         }
-      });
+      } // se changed è true sovrascrivo l'object
 
+
+      if (changed == true) {
+        _this.cart[k] = object; // altrimenti lo pusho!
+      } else {
+        _this.cart.push(object);
+      }
+
+      console.log(_this.cart);
       console.log('Adding product with id:' + id + " and counter " + counter);
     });
-    this.$root.$on('removeFromCart', function (id, counter) {
+    this.$root.$on('removeFromCart', function (id, counter, price) {
       console.log('Removing product with id:' + id + " and counter " + counter);
       var object = {
         id: id,
-        counter: counter
+        counter: counter,
+        price: price
       };
+      var k = -1;
+
+      for (var i = 0; i < _this.cart.length; i++) {
+        // se trovo un oggetto con id uguale a quello dell'oggetto da pushre eseguo le operazioni nelle parentesi graffe
+        //ed interrompo il loop
+        if (_this.cart[i].id == id) {
+          k = i;
+          break;
+        }
+      }
+
+      if (counter == 0) {
+        // rimuovi oggetto
+        _this.cart.splice(k, 1);
+      } else {
+        _this.cart[k] = object;
+      }
+
+      console.log(_this.cart);
     });
   },
   methods: {
@@ -2018,15 +2053,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
 
         _this3.plates = response.data;
       });
-    },
-    increaseCounter: function increaseCounter(i) {
-      this.plates[i].counter += 1;
-      this.counter = this.plates[i].counter;
-    },
-    decreaseCounter: function decreaseCounter(i) {
-      this.plates[i].counter -= 1;
-      this.counter = this.plates[i].counter;
-      if (this.counter == 0) return this.counter; // controllo su sottrazione piatti lato carrello
     }
   }
 });

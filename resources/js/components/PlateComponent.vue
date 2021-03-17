@@ -4,7 +4,7 @@
         <p>Nome piatto: {{ name }}</p>
         <p>Price: {{ price }}</p>
         <p>Id: {{ id }}</p>
-        
+
         <button v-on:click="increaseCounter()">Add</button>
         <span>{{ counter }}</span>
         <button v-on:click="decreaseCounter()">Remove</button>
@@ -24,7 +24,7 @@
             'price': {
                 type: Number
             },
-            
+
         },
         components: {
 
@@ -32,7 +32,8 @@
         data: function () {
             return {
                 counter: 0,
-                plateId: this.id
+                plateId: this.id,
+                platePrice: this.price
             }
         },
         methods: {
@@ -41,14 +42,14 @@
                     this.counter = 0;
                 } else {
                     this.counter -= 1;
-                    this.$root.$emit('removeFromCart', this.plateId, this.counter)
+                    this.$root.$emit('removeFromCart', this.plateId, this.counter, this.platePrice)
 
                 }
-                
+
             },
             increaseCounter() {
                 this.counter += 1;
-                this.$root.$emit('addToCart', this.id, this.counter)
+                this.$root.$emit('addToCart', this.plateId, this.counter,this.platePrice)
             }
         }
     }
