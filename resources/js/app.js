@@ -52,7 +52,8 @@ const app = new Vue({
         counter: [],
         search: '',
         cart: [],
-        currentRestaurantId: ''
+        currentRestaurantId: '',
+        totalPrice: 0
     },
     created: function () {
 
@@ -90,12 +91,13 @@ const app = new Vue({
 
 
 
-        this.$root.$on('addToCart', (id, counter, price) => {
+        this.$root.$on('addToCart', (id, counter, price, name) => {
             // oggetto da pushare
             var object = {
                 id: id,
                 counter: counter,
-                price: price
+                price: price,
+                name: name 
             };
             // inzializzo var a false se l'id dell'object è presente nel carello lo cambio a true
             var changed = false;
@@ -124,12 +126,13 @@ const app = new Vue({
             console.log('Adding product with id:' + id + " and counter " + counter);
         });
 
-        this.$root.$on('removeFromCart', (id, counter, price) => {
+        this.$root.$on('removeFromCart', (id, counter, price, name) => {
             console.log('Removing product with id:' + id + " and counter " + counter);
             var object = {
                 id: id,
                 counter: counter,
-                price: price
+                price: price,
+                name: name
             };
             var k = -1;
 
@@ -147,6 +150,8 @@ const app = new Vue({
             } else {
                 this.cart[k] = object;
             }
+
+
             // this.cart = JSON.parse(localStorage.cart);
             console.log(this.cart);
         });
@@ -154,6 +159,10 @@ const app = new Vue({
     mounted: function() {
         if(localStorage.cart) {
             this.cart = JSON.parse(localStorage.cart);
+            for(var i = 0; i < this.cart.length; i++) {
+                console.log(i);
+                this.totalPrice += this.cart[i].price*this.cart[i].counter;
+            }
         }
     },
     watch: {
@@ -162,7 +171,10 @@ const app = new Vue({
         }
     },
     methods: {
+        
+        // calcolaPrezzo: function() {
 
+        // },
         // get restaurants by selected category and selected name
         // include option of more categories?
         searchRestaurants: function() {

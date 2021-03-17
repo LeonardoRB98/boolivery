@@ -1876,8 +1876,23 @@ __webpack_require__.r(__webpack_exports__);
     return {
       counter: 0,
       plateId: this.id,
-      platePrice: this.price
+      platePrice: this.price,
+      plateName: this.name
     };
+  },
+  mounted: function mounted() {
+    if (localStorage.cart) {
+      var savedCart = JSON.parse(localStorage.cart);
+      console.log(savedCart);
+
+      for (var i = 0; i < savedCart.length; i++) {
+        console.log(savedCart[i]);
+
+        if (savedCart[i].id == this.plateId) {
+          this.counter = savedCart[i].counter;
+        }
+      }
+    }
   },
   methods: {
     decreaseCounter: function decreaseCounter() {
@@ -1885,12 +1900,12 @@ __webpack_require__.r(__webpack_exports__);
         this.counter = 0;
       } else {
         this.counter -= 1;
-        this.$root.$emit('removeFromCart', this.plateId, this.counter, this.platePrice);
+        this.$root.$emit('removeFromCart', this.plateId, this.counter, this.platePrice, this.plateName);
       }
     },
     increaseCounter: function increaseCounter() {
       this.counter += 1;
-      this.$root.$emit('addToCart', this.plateId, this.counter, this.platePrice);
+      this.$root.$emit('addToCart', this.plateId, this.counter, this.platePrice, this.plateName);
     }
   }
 });
@@ -1955,7 +1970,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     counter: [],
     search: '',
     cart: [],
-    currentRestaurantId: ''
+    currentRestaurantId: '',
+    totalPrice: 0
   },
   created: function created() {
     var _this = this;
@@ -1982,12 +1998,13 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
       _this.plates = response.data;
       console.log();
     });
-    this.$root.$on('addToCart', function (id, counter, price) {
+    this.$root.$on('addToCart', function (id, counter, price, name) {
       // oggetto da pushare
       var object = {
         id: id,
         counter: counter,
-        price: price
+        price: price,
+        name: name
       }; // inzializzo var a false se l'id dell'object è presente nel carello lo cambio a true
 
       var changed = false; // salva la posizione del object già presente nel carrello inizializzata a -1 per evitare conflitti
@@ -2016,12 +2033,13 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
       console.log(_this.cart);
       console.log('Adding product with id:' + id + " and counter " + counter);
     });
-    this.$root.$on('removeFromCart', function (id, counter, price) {
+    this.$root.$on('removeFromCart', function (id, counter, price, name) {
       console.log('Removing product with id:' + id + " and counter " + counter);
       var object = {
         id: id,
         counter: counter,
-        price: price
+        price: price,
+        name: name
       };
       var k = -1;
 
@@ -2048,6 +2066,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   mounted: function mounted() {
     if (localStorage.cart) {
       this.cart = JSON.parse(localStorage.cart);
+
+      for (var i = 0; i < this.cart.length; i++) {
+        console.log(i);
+        this.totalPrice += this.cart[i].price * this.cart[i].counter;
+      }
     }
   },
   watch: {
@@ -2056,6 +2079,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     }
   },
   methods: {
+    // calcolaPrezzo: function() {
+    // },
     // get restaurants by selected category and selected name
     // include option of more categories?
     searchRestaurants: function searchRestaurants() {

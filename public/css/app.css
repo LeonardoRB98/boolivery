@@ -10589,6 +10589,15 @@ footer {
   padding: 30px;
   position: relative;
 }
+.main-menu .cart {
+  position: absolute;
+  top: -20px;
+  right: 30px;
+  width: 300px;
+  min-height: 100px;
+  background-color: white;
+  border: 1px solid black;
+}
 .main-menu section {
   margin-top: 50px;
   width: 50%;

@@ -33,7 +33,20 @@
             return {
                 counter: 0,
                 plateId: this.id,
-                platePrice: this.price
+                platePrice: this.price,
+                plateName: this.name
+            }
+        },
+        mounted: function() {
+            if(localStorage.cart) {
+                var savedCart = JSON.parse(localStorage.cart);
+                console.log(savedCart);
+                for(var i = 0; i < savedCart.length; i++) {
+                    console.log(savedCart[i]);
+                    if(savedCart[i].id == this.plateId) {
+                        this.counter = savedCart[i].counter;
+                    }
+                }
             }
         },
         methods: {
@@ -42,14 +55,14 @@
                     this.counter = 0;
                 } else {
                     this.counter -= 1;
-                    this.$root.$emit('removeFromCart', this.plateId, this.counter, this.platePrice)
+                    this.$root.$emit('removeFromCart', this.plateId, this.counter, this.platePrice, this.plateName)
 
                 }
 
             },
             increaseCounter() {
                 this.counter += 1;
-                this.$root.$emit('addToCart', this.plateId, this.counter,this.platePrice)
+                this.$root.$emit('addToCart', this.plateId, this.counter,this.platePrice,this.plateName)
             }
         }
     }
