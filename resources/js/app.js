@@ -120,6 +120,7 @@ const app = new Vue({
             } else {
                 this.cart.push(object);
             }
+           this.totalPrice += price;
             // JSON.parse(localstorage.cart)
             // this.cart = JSON.parse(localStorage.cart);
             console.log(this.cart);
@@ -150,7 +151,8 @@ const app = new Vue({
             } else {
                 this.cart[k] = object;
             }
-
+            
+            this.totalPrice -= price;
 
             // this.cart = JSON.parse(localStorage.cart);
             console.log(this.cart);
@@ -173,7 +175,10 @@ const app = new Vue({
     methods: {
         
         // calcolaPrezzo: function() {
-
+        //     for(var i = 0; i < this.cart.length; i++) {
+        //         console.log(i);
+        //         this.totalPrice += this.cart[i].price*this.cart[i].counter;
+        //     }
         // },
         // get restaurants by selected category and selected name
         // include option of more categories?

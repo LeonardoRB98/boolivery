@@ -11,7 +11,7 @@
         <h2>Carrello</h2>
         <div v-for='plate in cart'>
             <span>@{{ plate.name }}</span>
-            <span>@{{ plate.price*plate.counter }}</span>
+            <span> @{{ plate.price*plate.counter }}</span>
             <span>@{{ plate.counter }}</span>
         </div>
         <h4>@{{ totalPrice }}</h4>

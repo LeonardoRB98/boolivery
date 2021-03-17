@@ -2026,9 +2026,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
         _this.cart[k] = object; // altrimenti lo pusho!
       } else {
         _this.cart.push(object);
-      } // JSON.parse(localstorage.cart)
-      // this.cart = JSON.parse(localStorage.cart);
+      }
 
+      _this.totalPrice += price; // JSON.parse(localstorage.cart)
+      // this.cart = JSON.parse(localStorage.cart);
 
       console.log(_this.cart);
       console.log('Adding product with id:' + id + " and counter " + counter);
@@ -2057,8 +2058,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
         _this.cart.splice(k, 1);
       } else {
         _this.cart[k] = object;
-      } // this.cart = JSON.parse(localStorage.cart);
+      }
 
+      _this.totalPrice -= price; // this.cart = JSON.parse(localStorage.cart);
 
       console.log(_this.cart);
     });
@@ -2080,6 +2082,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   },
   methods: {
     // calcolaPrezzo: function() {
+    //     for(var i = 0; i < this.cart.length; i++) {
+    //         console.log(i);
+    //         this.totalPrice += this.cart[i].price*this.cart[i].counter;
+    //     }
     // },
     // get restaurants by selected category and selected name
     // include option of more categories?
