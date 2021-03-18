@@ -49,7 +49,6 @@ const app = new Vue({
         categories: [],
         categorySelect: '',
         plates: [],
-        counter: [],
         search: '',
         cart: [],
         currentRestaurantId: '',
@@ -115,20 +114,18 @@ const app = new Vue({
             }
             // se changed è true sovrascrivo l'object
             if(changed == true) {
-                this.cart[k] = object;
+                // SOLUZIONE 1
+                this.cart.splice(k, 1, object);
+                // this.cart[k] = object;
             // altrimenti lo pusho!
             } else {
                 this.cart.push(object);
             }
-           this.totalPrice += price;
-            // JSON.parse(localstorage.cart)
-            // this.cart = JSON.parse(localStorage.cart);
-            console.log(this.cart);
-            console.log('Adding product with id:' + id + " and counter " + counter);
+
+            this.totalPrice += price;
         });
 
         this.$root.$on('removeFromCart', (id, counter, price, name) => {
-            console.log('Removing product with id:' + id + " and counter " + counter);
             var object = {
                 id: id,
                 counter: counter,
@@ -149,40 +146,45 @@ const app = new Vue({
                 // rimuovi oggetto
                 this.cart.splice(k, 1);
             } else {
-                this.cart[k] = object;
+                // this.cart[k] = object;
+                // SOLUZIONE 1
+                this.cart.splice(k, 1, object);
             }
-            
             this.totalPrice -= price;
 
-            // this.cart = JSON.parse(localStorage.cart);
-            console.log(this.cart);
         });
     },
+
+
     mounted: function() {
         if(localStorage.cart) {
             this.cart = JSON.parse(localStorage.cart);
-            for(var i = 0; i < this.cart.length; i++) {
-                console.log(i);
-                this.totalPrice += this.cart[i].price*this.cart[i].counter;
-            }
         }
+
+        // totale nel local storage
+        if(localStorage.totalPrice) {
+            this.totalPrice = parseFloat(localStorage.totalPrice);
+        }
+
     },
     watch: {
-        cart(object) {
-           localStorage.cart = JSON.stringify(object);
+        // SOLUZIONE 1
+        cart: {
+            handler(newCart) {
+                localStorage.cart = JSON.stringify(newCart);
+            },
+            deep: true
+        },
+        totalPrice: {
+            handler(newTotal) {
+                localStorage.totalPrice = newTotal;
+            },
+            deep: true
         }
     },
-    methods: {
-        
-        // calcolaPrezzo: function() {
-        //     for(var i = 0; i < this.cart.length; i++) {
-        //         console.log(i);
-        //         this.totalPrice += this.cart[i].price*this.cart[i].counter;
-        //     }
-        // },
-        // get restaurants by selected category and selected name
-        // include option of more categories?
-        searchRestaurants: function() {
+
+    methods: {        
+        searchRestaurants() {
             axios
                 .get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect)
                 .then(response => {
@@ -191,22 +193,8 @@ const app = new Vue({
                         return  restaurant.name.includes(this.search)
                 });
              })
-        },
-
-        // getRestaurantPlates: function(restaurant_id) {
-        //     axios
-        //         .get('http://127.0.0.1:8000/api/plates/'+ restaurant_id)
-        //         .then(response => {
-        //             this.restaurants = response.data;
-        //             for (var i = 0; i < response.data.length; i++ ) {
-        //                 response.data[i].counter = 0;
-        //             }
-        //             this.plates = response.data;
-        //         }
-        //     );
-        // },
+        }
     }
-
 
 });
 

@@ -1857,7 +1857,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'plate-component',
   props: {
@@ -1883,7 +1882,6 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     if (localStorage.cart) {
       var savedCart = JSON.parse(localStorage.cart);
-      console.log(savedCart);
 
       for (var i = 0; i < savedCart.length; i++) {
         console.log(savedCart[i]);
@@ -1967,7 +1965,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     categories: [],
     categorySelect: '',
     plates: [],
-    counter: [],
     search: '',
     cart: [],
     currentRestaurantId: '',
@@ -2023,19 +2020,17 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
 
 
       if (changed == true) {
-        _this.cart[k] = object; // altrimenti lo pusho!
+        // SOLUZIONE 1
+        _this.cart.splice(k, 1, object); // this.cart[k] = object;
+        // altrimenti lo pusho!
+
       } else {
         _this.cart.push(object);
       }
 
-      _this.totalPrice += price; // JSON.parse(localstorage.cart)
-      // this.cart = JSON.parse(localStorage.cart);
-
-      console.log(_this.cart);
-      console.log('Adding product with id:' + id + " and counter " + counter);
+      _this.totalPrice += price;
     });
     this.$root.$on('removeFromCart', function (id, counter, price, name) {
-      console.log('Removing product with id:' + id + " and counter " + counter);
       var object = {
         id: id,
         counter: counter,
@@ -2057,38 +2052,40 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
         // rimuovi oggetto
         _this.cart.splice(k, 1);
       } else {
-        _this.cart[k] = object;
+        // this.cart[k] = object;
+        // SOLUZIONE 1
+        _this.cart.splice(k, 1, object);
       }
 
-      _this.totalPrice -= price; // this.cart = JSON.parse(localStorage.cart);
-
-      console.log(_this.cart);
+      _this.totalPrice -= price;
     });
   },
   mounted: function mounted() {
     if (localStorage.cart) {
       this.cart = JSON.parse(localStorage.cart);
+    } // totale nel local storage
 
-      for (var i = 0; i < this.cart.length; i++) {
-        console.log(i);
-        this.totalPrice += this.cart[i].price * this.cart[i].counter;
-      }
+
+    if (localStorage.totalPrice) {
+      this.totalPrice = parseFloat(localStorage.totalPrice);
     }
   },
   watch: {
-    cart: function cart(object) {
-      localStorage.cart = JSON.stringify(object);
+    // SOLUZIONE 1
+    cart: {
+      handler: function handler(newCart) {
+        localStorage.cart = JSON.stringify(newCart);
+      },
+      deep: true
+    },
+    totalPrice: {
+      handler: function handler(newTotal) {
+        localStorage.totalPrice = newTotal;
+      },
+      deep: true
     }
   },
   methods: {
-    // calcolaPrezzo: function() {
-    //     for(var i = 0; i < this.cart.length; i++) {
-    //         console.log(i);
-    //         this.totalPrice += this.cart[i].price*this.cart[i].counter;
-    //     }
-    // },
-    // get restaurants by selected category and selected name
-    // include option of more categories?
     searchRestaurants: function searchRestaurants() {
       var _this2 = this;
 
@@ -2098,19 +2095,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
           return restaurant.name.includes(_this2.search);
         });
       });
-    } // getRestaurantPlates: function(restaurant_id) {
-    //     axios
-    //         .get('http://127.0.0.1:8000/api/plates/'+ restaurant_id)
-    //         .then(response => {
-    //             this.restaurants = response.data;
-    //             for (var i = 0; i < response.data.length; i++ ) {
-    //                 response.data[i].counter = 0;
-    //             }
-    //             this.plates = response.data;
-    //         }
-    //     );
-    // },
-
+    }
   }
 });
 

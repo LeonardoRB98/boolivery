@@ -4,7 +4,6 @@
         <p>Nome piatto: {{ name }}</p>
         <p>Price: {{ price }}</p>
         <p>Id: {{ id }}</p>
-
         <button v-on:click="increaseCounter()">Add</button>
         <span>{{ counter }}</span>
         <button v-on:click="decreaseCounter()">Remove</button>
@@ -40,7 +39,6 @@
         mounted: function() {
             if(localStorage.cart) {
                 var savedCart = JSON.parse(localStorage.cart);
-                console.log(savedCart);
                 for(var i = 0; i < savedCart.length; i++) {
                     console.log(savedCart[i]);
                     if(savedCart[i].id == this.plateId) {
