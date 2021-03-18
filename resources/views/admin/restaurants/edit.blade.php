@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="container">
-
     <div class="container mb-5">
         <div class="clearfix mb-4">
             <a href="{{ route('admin.restaurants.index') }}" class="btn btn-primary float-right">Elenco Ristoranti</a>
@@ -25,17 +24,17 @@
     
         <div class="form-group">
             <label for="name">Nome Ristorante</label>
-            <input class='form-control' type="text" id="name" name="name" value={{ $restaurant->name }}>
+            <input class='form-control' type="text" id="name" name="name" value="{{$restaurant->name}}">
         </div>
     
         <div class="form-group">
             <label for="email">Email</label>
-            <input class='form-control' type="text" id="email" name="email" value={{ $restaurant->email }}>
+            <input class='form-control' type="text" id="email" name="email" value="{{ $restaurant->email }}">
         </div>
     
         <div class="form-group">
             <label for="address">Indirizzo</label>
-            <input class='form-control' type="text" id="address" name="address" value={{ $restaurant->address }}>
+            <input class='form-control' type="text" id="address" name="address" value="{{ $restaurant->address }}">
         </div>
     
         <div class="form-group">
@@ -45,7 +44,7 @@
 
         <div class="form-group">
             <label for="p_iva">P. IVA</label>
-            <input class='form-control' type="text" id="p_iva" name="p_iva" value={{ $restaurant->p_iva }}>
+            <input class='form-control' type="text" id="p_iva" name="p_iva" value="{{ $restaurant->p_iva }}">
         </div>
     
         <div class="form-group">
