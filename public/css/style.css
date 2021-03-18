@@ -93,3 +93,11 @@ footer {
   width: 50%;
   border: 1px solid black;
 }
+
+#stephanie .wrapper {
+  background-color: #EDF1F4;
+  height: calc(100vh - 90px);
+}
+#stephanie .wrapper .auth-card {
+  background-color: #ED4521;
+}
