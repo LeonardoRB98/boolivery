@@ -2026,9 +2026,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
 
       } else {
         _this.cart.push(object);
-      }
+      } // this.totalPrice = Math.ceil(this.totalPrice + price);
 
-      _this.totalPrice += price;
+
+      _this.totalPrice = Number((_this.totalPrice + price).toFixed(2));
     });
     this.$root.$on('removeFromCart', function (id, counter, price, name) {
       var object = {
@@ -2055,9 +2056,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
         // this.cart[k] = object;
         // SOLUZIONE 1
         _this.cart.splice(k, 1, object);
-      }
+      } // this.totalPrice = Math.ceil(this.totalPrice - price);
 
-      _this.totalPrice -= price;
+
+      _this.totalPrice = Number((_this.totalPrice - price).toFixed(2));
     });
   },
   mounted: function mounted() {

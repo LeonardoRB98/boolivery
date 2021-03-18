@@ -121,8 +121,9 @@ const app = new Vue({
             } else {
                 this.cart.push(object);
             }
-
-            this.totalPrice += price;
+            
+            // this.totalPrice = Math.ceil(this.totalPrice + price);
+            this.totalPrice = Number((this.totalPrice + price).toFixed(2));
         });
 
         this.$root.$on('removeFromCart', (id, counter, price, name) => {
@@ -150,7 +151,9 @@ const app = new Vue({
                 // SOLUZIONE 1
                 this.cart.splice(k, 1, object);
             }
-            this.totalPrice -= price;
+            
+            // this.totalPrice = Math.ceil(this.totalPrice - price);
+            this.totalPrice = Number((this.totalPrice - price).toFixed(2));
 
         });
     },
