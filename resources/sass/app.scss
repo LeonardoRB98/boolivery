@@ -5,22 +5,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'variables';
-// Commons
-@import '_commons';
-//  Mixins
-@import '_mixins';
-// vista guest
-@import 'guests/_header';
-
-@import 'guests/_main';
-
-@import 'guests/_footer';
-
-@import 'guests/restaurant/main.scss';
-
-@import 'guests/restaurant/checkout.scss';
-
 // Select 2
 @import '~select2/dist/css/select2.css';
+
