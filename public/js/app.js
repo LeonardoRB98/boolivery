@@ -1856,7 +1856,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'plate-component',
   props: {
@@ -43832,14 +43831,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v("Hello I am a plate")]),
+  return _c("div", { staticClass: "plate" }, [
+    _c("p", [_vm._v(_vm._s(_vm.name))]),
     _vm._v(" "),
-    _c("p", [_vm._v("Nome piatto: " + _vm._s(_vm.name))]),
+    _c("div", { staticClass: "photo" }),
     _vm._v(" "),
     _c("p", [_vm._v("Price: " + _vm._s(_vm.price))]),
-    _vm._v(" "),
-    _c("p", [_vm._v("Id: " + _vm._s(_vm.id))]),
     _vm._v(" "),
     _c(
       "button",

@@ -94,6 +94,46 @@ footer {
   border: 1px solid black;
 }
 
+#emilio .jumbo {
+  height: 30vh;
+  width: 100%;
+  background-color: red;
+}
+#emilio .restaurant {
+  width: 40%;
+  height: 40%;
+  border-radius: 20px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#emilio .main-menu .cart {
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+#emilio .main-menu .cart h2 {
+  text-align: center;
+}
+#emilio .main-menu .plate {
+  width: 700px;
+  height: 200px;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#emilio .main-menu .plate .photo {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
 #andrea .container {
   padding-top: 50px;
   height: 800px;

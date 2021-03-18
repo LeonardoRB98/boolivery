@@ -1,9 +1,8 @@
 <template>
-    <div class="container">
-        <h1>Hello I am a plate</h1>
-        <p>Nome piatto: {{ name }}</p>
+    <div class="plate">
+        <p>{{ name }}</p>
+         <div class="photo"></div>
         <p>Price: {{ price }}</p>
-        <p>Id: {{ id }}</p>
         <button v-on:click="increaseCounter()">Add</button>
         <span>{{ counter }}</span>
         <button v-on:click="decreaseCounter()">Remove</button>
