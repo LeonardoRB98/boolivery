@@ -1,12 +1,46 @@
 #fortunato {
     .jumbo_box {
         position: relative;
-        height: 100vh;
-        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 70vh;
         overflow: hidden;
         background: 
-        radial-gradient(100% 100% at bottom, transparent 60%, $brandBlue  60%);
+        radial-gradient(100% 100% at bottom, $brandOrange 60%, $brandBlue  60%);
+
+        .search_bar {
+            justify-content: center;
+            margin-top: 10%;
+            width: 50%;
+            height: 100px;
+            text-align: center;
+
+        }
     
+        .jumbo_title {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+    }
+
+    main {
+        background-color: $brandOrange;
+
+        .container {
+            section {
+                display: flex;
+                
+                .restaurant_card {
+                 width: calc(100% / 4 - 30px);
+                 height: 300px;
+                 background-color: $blueShock;
+                 margin:0 15px
+
+                }
+            }       
+        }
     }
     
     
