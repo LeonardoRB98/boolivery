@@ -43,23 +43,20 @@ footer {
   background-color: black;
 }
 
-.jumbo {
+#fortunato .jumbo_box {
   position: relative;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+  background: radial-gradient(100% 100% at bottom, transparent 60%, #131E52 60%);
 }
-.jumbo .restaurant {
-  background-color: white;
-  position: absolute;
-  bottom: -20px;
-  left: 30px;
-}
-
-.main-menu {
+#fortunato .main-menu {
   display: flex;
   justify-content: start;
   padding: 30px;
   position: relative;
 }
-.main-menu .cart {
+#fortunato .main-menu .cart {
   position: absolute;
   top: -20px;
   right: 30px;
@@ -68,14 +65,14 @@ footer {
   background-color: white;
   border: 1px solid black;
 }
-.main-menu section {
+#fortunato .main-menu section {
   margin-top: 50px;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.main-menu .chart {
+#fortunato .main-menu .chart {
   background-color: white;
   position: absolute;
   top: -20px;
@@ -94,7 +91,38 @@ footer {
   border: 1px solid black;
 }
 
-<<<<<<< HEAD
+#andrea .container {
+  padding-top: 50px;
+  height: 800px;
+}
+#andrea .container h1 {
+  float: left;
+}
+#andrea .container .container_card {
+  display: flex;
+  justify-content: space-around;
+}
+#andrea .container .container_card .card {
+  height: 380px;
+  width: 260px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #ccc;
+  transition: 0.2s;
+  margin-top: 30px;
+}
+#andrea .container .container_card .card:hover {
+  margin-top: 10px;
+  transition: 0.2s;
+}
+#andrea .container .container_card .card .image-box {
+  height: 50%;
+  width: 100%;
+}
+#andrea .container .container_card .card .image-box img {
+  height: 100%;
+  width: 100%;
+}
+
 #emilio .jumbo {
   height: 30vh;
   width: 100%;
@@ -135,42 +163,10 @@ footer {
   border-radius: 20px;
 }
 
-#andrea .container {
-  padding-top: 50px;
-  height: 800px;
-}
-#andrea .container h1 {
-  float: left;
-}
-#andrea .container .container_card {
-  display: flex;
-  justify-content: space-around;
-}
-#andrea .container .container_card .card {
-  height: 380px;
-  width: 260px;
-  border-radius: 5px;
-  box-shadow: 0 0 3px #ccc;
-  transition: 0.2s;
-  margin-top: 30px;
-}
-#andrea .container .container_card .card:hover {
-  margin-top: 10px;
-  transition: 0.2s;
-}
-#andrea .container .container_card .card .image-box {
-  height: 50%;
-  width: 100%;
-}
-#andrea .container .container_card .card .image-box img {
-  height: 100%;
-  width: 100%;
-=======
 #stephanie .wrapper {
   background-color: #EDF1F4;
   height: calc(100vh - 90px);
 }
 #stephanie .wrapper .auth-card {
   background-color: #ED4521;
->>>>>>> register-login
 }
