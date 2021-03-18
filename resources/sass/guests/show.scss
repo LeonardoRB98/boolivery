@@ -1,0 +1,83 @@
+#emilio {
+    .jumbo {
+        border: 1px solid black;
+        height: 30vh;
+        width: 100%;
+        position: relative;
+        img {
+            width: 100%;
+            height: 30vh;
+            object-fit: cover;
+        }
+    }
+    .restaurant {
+        width: 50%;
+        height: 50%;
+        bottom: -20%;
+        left: 16%;
+        background-color: white;
+        position: absolute;
+        border-radius: 20px;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .main-menu {
+        margin-top: 100px;
+        position: relative;
+        width: 100%;
+        .cart {
+            width: 25%;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid black;
+            float: right;
+            position: -webkit-sticky;
+            top: 0%;
+            position: sticky;
+            background-color: white;
+            text-align: center;
+            h2 {
+                text-align: center;
+            }
+            i {
+                margin-bottom: 30px;
+                font-size: 20px;
+            }
+            .order_plate {
+                width: 100%;
+                text-align: left;
+                li {
+                    display: inline-block;
+                }
+                .plateName {
+                   width: 110px;
+                }
+                .plateCounter {
+                    width: 60px;
+                }
+                .platePrice {
+                    float: right;
+                }
+            }
+        }
+        .plate {
+            width: 70%;
+            height: 15%;
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid black;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            .photo {
+                width: 50px;
+                height: 50px;
+                border: 1px solid black;
+                border-radius: 20px;
+            }
+        }
+    }
+}

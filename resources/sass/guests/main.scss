@@ -4,20 +4,20 @@
         height: 100vh;
         background-color: black;
         overflow: hidden;
-        background: 
+        background:
         radial-gradient(100% 100% at bottom, transparent 60%, $brandBlue  60%);
-    
+
     }
-    
-    
-    
-    
+
+
+
+
     .main-menu {
         display: flex;
         justify-content: start;
         padding: 30px;
         position: relative;
-    
+
         .cart {
             position: absolute;
             top: -20px;
@@ -27,7 +27,7 @@
             background-color: white;
             border: 1px solid black;
         }
-    
+
         section {
             margin-top: 50px;
             width: 50%;
@@ -35,7 +35,7 @@
             flex-direction: column;
             justify-content: space-around;
         }
-    
+
         .chart {
             background-color: white;
             position: absolute;
@@ -45,8 +45,8 @@
             width: 400px;
             border: 1px solid black;
         }
-    
+
     }
-    
+
 }
 

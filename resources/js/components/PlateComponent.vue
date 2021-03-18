@@ -1,7 +1,7 @@
 <template>
     <div class="plate">
         <p>{{ name }}</p>
-         <div class="photo"></div>
+        <div class="photo"></div>
         <p>Price: {{ price }}</p>
         <button v-on:click="increaseCounter()">Add</button>
         <span>{{ counter }}</span>

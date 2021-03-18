@@ -1,24 +1,33 @@
 @extends('layouts.main')
+
 @section('content')
 <span id="emilio">
-    <div class="container">
-        <div class="jumbo">
+    <div class="jumbo">
+        @if (!is_null($restaurant->photo_jumbo))
+            <img src="{{ asset('storage/'. $restaurant->photo_jumbo) }}" alt="{{ $restaurant->name }}">
+        @else
+            <img src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
+        @endif
+        {{-- <img src="{{asset('storage/'. $restaurant->photo_jumbo)}}" alt="{{$restaurant->name}}"> --}}
             <div class="restaurant">
                 <h1>{{$restaurant->name}}</h1>
             </div>
 
         </div>
+    <div class="container">
         <div class="main-menu">
             <div class="cart">
-                <h2>Carrello</h2>
-                <div v-for='plate in cart'>
-                    <span class="plateName">@{{ plate.name }}</span>
-
-                    <span class="platePrice"> @{{ plate.price*plate.counter }}</span>
-                    <span class="plateCounter">@{{ plate.counter }}</span>
+                <h2>Il Tuo Ordine</h2>
+                <i class="fas fa-cookie-bite"></i>
+                <div class="order_plate" v-for='plate in cart'>
+                    <ul>
+                        <li class="plateName">@{{ plate.name }}</li>
+                        <li class="plateCounter">@{{ plate.counter }} </li>
+                        <li class="platePrice">@{{ plate.price*plate.counter }} €</li>
+                    </ul>
                 </div>
-                <h4>@{{ totalPrice }}</h4>
-
+                <hr>
+                <h4>Totale: <br> @{{ totalPrice }}  €</h4>
             </div>
 
             <section>
