@@ -1,7 +1,7 @@
 <template>
     <div class="plate shadow">
         <div class="plate_photo">
-            <!-- <img src="{{ photo}}" alt="{{ name }}"> -->
+            <img src="photo" alt="name">
         </div>
         <div class="plate_utility">
             <div class="plate_info">

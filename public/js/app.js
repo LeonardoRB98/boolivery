@@ -43857,7 +43857,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "plate shadow" }, [
-    _c("div", { staticClass: "plate_photo" }),
+    _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "plate_utility" }, [
       _c("div", { staticClass: "plate_info" }, [
@@ -43904,7 +43904,16 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "plate_photo" }, [
+      _c("img", { attrs: { src: "photo", alt: "name" } })
+    ])
+  }
+]
 render._withStripped = true
 
 
