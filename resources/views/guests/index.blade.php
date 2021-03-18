@@ -1,8 +1,8 @@
 @extends('layouts.main')
 {{-- @dd($restaurants) --}}
 @section('content')
-<button type="button" class="btn btn_darkBlue">Primary</button>
-        <div class="jumbo">
+    <div id="fortunato">
+        <div class="jumbo_box">
             <div>
                 <input v-model='search' v-on:keyup='searchRestaurants' type="text">
                 <select name="" id="" v-model='categorySelect' v-on:change='searchRestaurants'>
@@ -31,4 +31,5 @@
 
 
         </main>
+    </div>
 @endsection
