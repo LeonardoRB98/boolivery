@@ -1,5 +1,9 @@
 @extends('layouts.main')
-
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+</head>
+{{-- @dd($restaurant->plates) --}}
 @section('content')
 <span id="emilio">
     <div class="jumbo">
@@ -9,14 +13,14 @@
             <img src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
         @endif
         {{-- <img src="{{asset('storage/'. $restaurant->photo_jumbo)}}" alt="{{$restaurant->name}}"> --}}
-            <div class="restaurant">
+            <div class="restaurant shadow">
                 <h1>{{$restaurant->name}}</h1>
             </div>
 
         </div>
     <div class="container">
         <div class="main-menu">
-            <div class="cart">
+            <div class="cart shadow">
                 <h2>Il Tuo Ordine</h2>
                 <i class="fas fa-cookie-bite"></i>
                 <div class="order_plate" v-for='plate in cart'>
@@ -35,6 +39,8 @@
                 <plate-component
                     v-for="plate in plates"
                     :name="plate.name"
+                    :description="plate.description"
+                    :photo="plate.photo"
                     :id="plate.id"
                     :price="plate.price"
                     :key="plate.id">
