@@ -1,0 +1,13 @@
+#stephanie {
+    .wrapper {
+        background-color: $body-bg;
+        height: calc(100vh - 90px);
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+
+        .auth-card {
+            background-color: $brandOrange;
+        }
+    }
+}

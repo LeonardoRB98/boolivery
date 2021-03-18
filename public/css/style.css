@@ -94,6 +94,7 @@ footer {
   border: 1px solid black;
 }
 
+<<<<<<< HEAD
 #emilio .jumbo {
   height: 30vh;
   width: 100%;
@@ -164,4 +165,12 @@ footer {
 #andrea .container .container_card .card .image-box img {
   height: 100%;
   width: 100%;
+=======
+#stephanie .wrapper {
+  background-color: #EDF1F4;
+  height: calc(100vh - 90px);
+}
+#stephanie .wrapper .auth-card {
+  background-color: #ED4521;
+>>>>>>> register-login
 }
