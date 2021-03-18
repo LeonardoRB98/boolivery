@@ -93,3 +93,35 @@ footer {
   width: 50%;
   border: 1px solid black;
 }
+
+#andrea .container {
+  padding-top: 50px;
+  height: 800px;
+}
+#andrea .container h1 {
+  float: left;
+}
+#andrea .container .container_card {
+  display: flex;
+  justify-content: space-around;
+}
+#andrea .container .container_card .card {
+  height: 380px;
+  width: 260px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #ccc;
+  transition: 0.2s;
+  margin-top: 30px;
+}
+#andrea .container .container_card .card:hover {
+  margin-top: 10px;
+  transition: 0.2s;
+}
+#andrea .container .container_card .card .image-box {
+  height: 50%;
+  width: 100%;
+}
+#andrea .container .container_card .card .image-box img {
+  height: 100%;
+  width: 100%;
+}
