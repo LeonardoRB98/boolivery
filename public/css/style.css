@@ -4,9 +4,23 @@
   padding: 0;
 }
 
+.btn_darkBlue {
+  background-color: #2045E3;
+  color: white;
+}
+.btn_darkBlue:hover {
+  background-color: #0F33CA;
+  color: white;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 nav {
   height: 90px;
-  background-color: #214287;
+  background-color: #131E52;
 }
 nav .navbar-brand {
   height: 90px;
@@ -15,12 +29,8 @@ nav .navbar-brand svg {
   height: 100%;
 }
 
-.jumbo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 90px);
-  background-color: brown;
+#navbarDropdown {
+  color: #FF6E00;
 }
 
 main section {

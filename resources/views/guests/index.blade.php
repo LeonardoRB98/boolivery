@@ -1,6 +1,7 @@
-@extends('layouts.guests.main')
+@extends('layouts.main')
 {{-- @dd($restaurants) --}}
 @section('content')
+<button type="button" class="btn btn_darkBlue">Primary</button>
         <div class="jumbo">
             <div>
                 <input v-model='search' v-on:keyup='searchRestaurants' type="text">

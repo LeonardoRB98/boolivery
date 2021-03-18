@@ -5,14 +5,28 @@
 //  Mixins
 @import '_mixins';
 // vista guest
-@import 'guests/_header';
+@import 'partials/_header';
 
-@import 'guests/_main';
+@import 'partials/_main';
 
-@import 'guests/_footer';
+@import 'partials/_footer';
+// VISTA HOMEPAGE
+@import 'guests/main.scss';
+// VISTA CHECKOUT
+@import 'guests/checkout.scss';
+// VISTA RISTORANTE GUEST
+@import 'guests/show.scss';
+// VISTA ADMIN EDIT/CREATE
+@import 'admin/plate/create-edit.scss';
+// VISTA HOME ADMIN
+@import 'admin/restaurant/index.scss';
+// VISTA SHOW ADMIN
+@import 'admin/restaurant/show.scss';
+// VISTA LOGIN
+@import 'admin/login.scss';
+// VISTA REGISTER
+@import 'admin/register.scss';
 
-@import 'guests/restaurant/main.scss';
 
-@import 'guests/restaurant/checkout.scss';
 
 

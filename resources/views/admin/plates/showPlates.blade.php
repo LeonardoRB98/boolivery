@@ -1,4 +1,4 @@
-@extends('layouts.admin.main')
+@extends('layouts.main')
 
 @section('content')
     <div class="container">
@@ -41,7 +41,7 @@
                     <td>{{ $plate->price }}</td>
                     <td>{{ $plate->description }}</td>
 
-                        
+
                     <td>
                         <a href="#">Modifca</a>
                     </td>

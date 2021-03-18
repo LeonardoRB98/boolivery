@@ -1,4 +1,4 @@
-@extends('layouts.guests.main')
+@extends('layouts.main')
 @section('content')
 <div class="jumbo">
     <div class="restaurant">
@@ -15,7 +15,7 @@
             <span>@{{ plate.counter }}</span>
         </div>
         <h4>@{{ totalPrice }}</h4>
-        
+
     </div>
 
     <section>

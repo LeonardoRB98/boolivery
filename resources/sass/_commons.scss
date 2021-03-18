@@ -4,15 +4,26 @@
     padding: 0;
 }
 //btn
+.btn_darkBlue {
+    background-color: $blueShock;
+    color: white;
+    &:hover {
+    background-color: $blueDark;
+    color: white;
+    }
+}
 
 //input
 
-// hoover
+// hover
 
 //font
 
 // stile link
-
+a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
 // stile ul
 
 // grandezza font

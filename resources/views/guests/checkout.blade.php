@@ -1,6 +1,7 @@
-@extends('layouts.guests.main')
+@extends('layouts.main')
 
 @section('content')
+<span id="leonardo"></span>
     <div class="checkout">
         <section>
             Dati pagamento
@@ -28,7 +29,7 @@
                 var form = document.querySelector('#payment-form');
                 // client token
                 var client_token = "{{ $token }}";
-        
+
                 braintree.dropin.create({
                   authorization: client_token,
                   selector: '#bt-dropin',
@@ -43,13 +44,13 @@
                   }
                   form.addEventListener('submit', function (event) {
                     event.preventDefault();
-        
+
                     instance.requestPaymentMethod(function (err, payload) {
                       if (err) {
                         console.log('Request Payment Method Error', err);
                         return;
                       }
-        
+
                       // Add the nonce to the form and submit
                       document.querySelector('#nonce').value = payload.nonce;
                       form.submit();
@@ -59,7 +60,7 @@
             </script>
         </section>
         <section>
-            
+
         </section>
     </div>
 @endsection
