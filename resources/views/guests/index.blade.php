@@ -23,7 +23,7 @@
         <main>
            <div class="container">
              
-                <section>
+                <section v-if="categorySelect == '' ">
                     <div class="card_restaurant" v-if="filteredRestaurants[index].sponsored == true" v-for="(restaurant, index) in filteredRestaurants">
                        <div class="image_box">
                             <i class="fas fa-medal"></i>
@@ -35,15 +35,29 @@
                     <div v-if="filteredRestaurants.length == 0" class="not_found">
                         <img src="{{asset('/image/search-results-lupa.svg')}}" alt="not found">
                     </div>
-                  
+                </section>
+                <section v-if="categorySelect != '' ">
+                    <div class="card_restaurant" v-for="(restaurant, index) in filteredRestaurants">
+                       <div class="image_box">
+                            <i v-if="filteredRestaurants[index].sponsored == true"class="fas fa-medal"></i>
+                            <img v-if="restaurant.photo == null" src="{{asset('/image/download.png')}}" alt="">
+                            <img v-else :src="'{{url('/storage')}}' + '/' + restaurant.photo" :alt="restaurant.name">
+                        </div>
+                        <a class="slug" :href="'{{url('Boolivery/restaurant')}}' + '/' + restaurant.slug">@{{restaurant.name}}</a>  
+                    </div>             
+                    <div v-if="filteredRestaurants.length == 0" class="not_found">
+                        <img src="{{asset('/image/search-results-lupa.svg')}}" alt="not found">
+                    </div>
                 </section>
            </div>
 
            
 
            <div class="wave"></div>
+           
 
            <div class="recruting">
+               <h2>Uniamo le forze</h2>
                <div class="card_recruting">
                     <div class="box">
                         <div class="inside-box">
@@ -53,8 +67,8 @@
                             </div>
                         </div>
                     </div>
-                    <h1>prova titolo</h1>
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quod ipsam ut sit a numquam, ab aut rerum, delectus, repellendus corporis voluptate nisi explicabo possimus! Doloremque harum error sunt neque.</h5>
+                    <h1>Diventa un rider</h1>
+                    <h5>Lavora per te stesso! Goditi flessibilità, libertà e guadagni competitivi effettuando consegne con Glovo.</h5>
                 </div> 
                 <div class="card_recruting">
                     <div class="box">
@@ -65,8 +79,8 @@
                             </div>
                         </div>
                     </div>
-                    <h1>prova titolo</h1>
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quod ipsam ut sit a numquam, ab aut rerum, delectus, repellendus corporis voluptate nisi explicabo possimus! Doloremque harum error sunt neque.</h5>
+                    <h1>Diventa partner</h1>
+                    <h5>Cresci con Glovo! La nostra tecnologia e la nostra base di utenti possono aiutarti a incrementare le vendite e aprire nuove opportunità!</h5>
                 </div>
                 <div class="card_recruting">
                     <div class="box">
@@ -77,8 +91,8 @@
                             </div>
                         </div>
                     </div>
-                    <h1>prova titolo</h1>
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quod ipsam ut sit a numquam, ab aut rerum, delectus, repellendus corporis voluptate nisi explicabo possimus! Doloremque harum error sunt neque.</h5>
+                    <h1>Lavora con noi</h1>
+                    <h5>Pronto per una nuova ed entusiasmante sfida? Se sei ambizioso, umile e ami lavorare con gli altri, mettiti in contatto con noi!</h5>
                 </div>
             
            </div>
