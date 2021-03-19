@@ -124,7 +124,7 @@ footer {
   font-size: 5vw;
 }
 #emilio .main-menu {
-  margin-top: 100px;
+  margin-top: 80px;
   position: relative;
   width: 100%;
 }
@@ -139,6 +139,7 @@ footer {
   position: sticky;
   background-color: white;
   text-align: center;
+  z-index: 999;
 }
 #emilio .main-menu .cart h2 {
   text-align: center;
@@ -162,6 +163,14 @@ footer {
 }
 #emilio .main-menu .cart .order_plate .platePrice {
   float: right;
+}
+#emilio .main-menu .cart h4 {
+  margin-bottom: 20px;
+}
+#emilio .main-menu .cart .to_checkout {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 #emilio .main-menu .plate {
   width: 70%;
@@ -226,6 +235,9 @@ footer {
   font-size: 50px;
 }
 @media all and (max-width: 768px) {
+  #emilio section {
+    width: 100%;
+  }
   #emilio .restaurant {
     left: 0%;
     width: 100%;
@@ -241,18 +253,30 @@ footer {
   }
   #emilio .main-menu .plate {
     width: 100%;
+    height: 200px;
+    padding: 0px;
   }
   #emilio .main-menu .plate .plate_photo {
-    display: none;
+    width: 100%;
+    position: relative;
+    border-radius: 20px;
+    background-color: black;
+  }
+  #emilio .main-menu .plate .plate_photo:hover .plate_utility {
+    display: block;
   }
   #emilio .main-menu .plate .plate_description {
     display: none;
+    background-color: black;
   }
   #emilio .main-menu .plate .plate_utility {
     display: none;
   }
   #emilio .main-menu .plate .plate_counter {
     display: none;
+  }
+  #emilio h2 {
+    text-align: center;
   }
 }
 

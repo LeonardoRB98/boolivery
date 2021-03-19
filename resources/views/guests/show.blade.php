@@ -32,10 +32,12 @@
                 </div>
                 <hr>
                 <h4>Totale: <br> @{{ totalPrice }}  €</h4>
+                {{-- SE LOCAL STORAGE è PIENO STAMPA LINK CHECKOUT --}}
+                    <a class="to_checkout" href="{{route('checkout')}}">Paga</a>
             </div>
 
             <section>
-                <h1>I Nostri Piatti</h1>
+                <h2>I Nostri Piatti</h2>
                 <plate-component
                     v-for="plate in plates"
                     :name="plate.name"

@@ -1,7 +1,8 @@
 <template>
     <div class="plate shadow">
         <div class="plate_photo">
-            <img src="photo" alt="name">
+
+            <!-- <img src="'{{asset('storage')}}' + '/' + @{{platePhoto}}" alt="name"> -->
         </div>
         <div class="plate_utility">
             <div class="plate_info">
@@ -58,6 +59,7 @@
                 plateName: this.name,
                 plateDescription: this.description,
                 platePhoto: this.photo,
+
             }
         },
         mounted: function() {
