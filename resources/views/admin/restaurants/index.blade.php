@@ -17,21 +17,33 @@
 
     <div class="container_card">
         @foreach ($restaurants as $restaurant)
-        <a href="{{route('admin.restaurants.show', $restaurant)}}">
+        
             <div class="card">
+                <a href="{{route('admin.restaurants.show', $restaurant)}}">
                 <div class="image-box">
                     @if (!is_null($restaurant->photo))
                     <img class="img-fluid" src="{{ asset('storage/'. $restaurant->photo) }}" alt="{{ $restaurant->name }}">
                     @else
                         <img src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
                     @endif
-                    
                 </div>
+            </a>    
                 
-                <h3>{{ $restaurant->name }}</h3>
-                <p>{{ $restaurant->description }}</p>
+                <div class="info">
+                    <h3>{{ $restaurant->name }}</h3>
+                    <p>{{ $restaurant->description }}</p>
+                    
+                    <div class="route">
+                        <a href="{{route('admin.restaurants.edit', $restaurant)}}">Modifca</a>
+                    <form action="{{route('admin.restaurants.destroy', $restaurant)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Elimina">
+                    </form>
+                    </div>
+                </div>
             </div>
-        </a> 
+         
                 {{-- <tr>
                     <td> {{ $restaurant->id }}</td>
                     <td> </td>
@@ -51,14 +63,10 @@
                             </td>
                         @endif
                     <td>
-                        <a href="{{route('admin.restaurants.edit', $restaurant)}}">Modifca</a>
+                        
                     </td>
                     <td>
-                        <form action="{{route('admin.restaurants.destroy', $restaurant)}}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" value="Elimina">
-                        </form>
+                        
                     </td>
                 </tr> --}}
                 @endforeach

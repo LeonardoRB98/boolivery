@@ -1,13 +1,14 @@
 #andrea {
     .container {
         padding-top: 50px;
-        height: 800px;
+        margin-bottom: 40px;
         h1 {
             float: left;
         }
         .container_card {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            flex-wrap: wrap;
             .card {
                 height: 380px;
                 width: 260px;
@@ -15,19 +16,34 @@
                 box-shadow: 0 0 3px #ccc;
                 transition: 0.2s;
                 margin-top: 30px;
+                display: flex;
+                flex-direction: column;
                 &:hover {
                     margin-top: 10px;
                     transition: 0.2s;
                 }
-                .image-box {
+                a {
                     height: 50%;
-                    width: 100%;
-                    img {
+                    .image-box {
                         height: 100%;
                         width: 100%;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px;
+                    height: 50%;
+                    .route {
+                        height: 100%;
                     }
                 }
             }
         }
     }
-}
+}   
+
