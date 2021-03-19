@@ -90,6 +90,7 @@ nav .navbar-brand svg {
   align-items: center;
   height: 70vh;
   overflow: hidden;
+  background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
   background: radial-gradient(100% 100% at bottom, #FFFFFF 60%, #ED4521 60%);
 }
 #fortunato .jumbo_box .search_bar {
@@ -108,7 +109,7 @@ nav .navbar-brand svg {
   outline: none;
   border-radius: 20px;
   border: none;
-  padding-left: 50px;
+  padding-left: 10%;
   margin-bottom: 20px;
 }
 #fortunato .jumbo_box .search_bar ul {
@@ -127,7 +128,7 @@ nav .navbar-brand svg {
 }
 #fortunato main .container section {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   height: 100%;
   margin-bottom: 40px;
@@ -135,10 +136,10 @@ nav .navbar-brand svg {
 #fortunato main .container section .card_restaurant {
   display: flex;
   flex-direction: column;
-  margin: 0 30px;
+  margin: 0 15px;
   align-items: center;
   height: 240px;
-  width: 350px;
+  width: 260px;
   background-color: #FFFFFF;
   border-radius: 10px;
   box-shadow: 0 0 3px #ccc;
@@ -156,6 +157,14 @@ nav .navbar-brand svg {
 #fortunato main .container section .card_restaurant .image_box {
   height: 80%;
   width: 100%;
+  position: relative;
+}
+#fortunato main .container section .card_restaurant .image_box .fas.fa-medal {
+  position: absolute;
+  font-size: 30px;
+  left: 10px;
+  top: 10px;
+  color: #ED4521;
 }
 #fortunato main .container section .card_restaurant .image_box img {
   height: 100%;
@@ -207,15 +216,28 @@ nav .navbar-brand svg {
   height: 100%;
   width: 100%;
   background-color: #131E52;
-  padding: 100px 0;
+  padding: 100px 50px;
   color: white;
   font-size: 15px;
 }
+#fortunato main .recruting h2 {
+  display: none;
+}
 #fortunato main .recruting .card_recruting {
   height: 50%;
+  padding: 0 20px;
+  text-align: center;
+}
+#fortunato main .recruting .card_recruting h1 {
+  margin-top: 20px;
+}
+#fortunato main .recruting .card_recruting h5 {
+  font-size: 1.25rem;
 }
 #fortunato main .recruting .card_recruting .box {
   position: relative;
+  display: flex;
+  justify-content: center;
   width: 280px;
   height: 300px;
   background: #ED4521;
@@ -252,6 +274,209 @@ nav .navbar-brand svg {
   left: 50%;
   transform: translate(-50%);
   color: white;
+}
+@media all and (max-width: 768px) {
+  #fortunato .jumbo_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 70vh;
+    overflow: hidden;
+    background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
+    background: radial-gradient(100% 100% at bottom, #FFFFFF 60%, #ED4521 60%);
+  }
+  #fortunato .jumbo_box h1 {
+    font-size: 1.25rem;
+  }
+  #fortunato .jumbo_box h5 {
+    font-size: 0.75rem;
+  }
+  #fortunato .jumbo_box .search_bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5%;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+  }
+  #fortunato .jumbo_box .search_bar input {
+    width: 50%;
+    height: 60px;
+    outline: none;
+    border-radius: 20px;
+    border: none;
+    padding-left: 10%;
+    margin-bottom: 20px;
+  }
+  #fortunato .jumbo_box .search_bar ul {
+    list-style: none;
+    display: flex;
+  }
+  #fortunato .jumbo_box .search_bar ul li {
+    margin: 0 20px;
+  }
+  #fortunato .jumbo_box .jumbo_title {
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  #fortunato main {
+    background-color: #FFFFFF;
+  }
+  #fortunato main .container section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    margin-bottom: 40px;
+  }
+  #fortunato main .container section .card_restaurant {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+    align-items: center;
+    height: 240px;
+    width: 260px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 0 3px #ccc;
+    transition: 0.2s;
+    margin-top: 30px;
+  }
+  #fortunato main .container section .card_restaurant:hover {
+    margin-top: 5px;
+    transition: 0.2s;
+  }
+  #fortunato main .container section .card_restaurant .slug {
+    font-size: 20px;
+    max-height: 10%;
+  }
+  #fortunato main .container section .card_restaurant .image_box {
+    height: 80%;
+    width: 100%;
+    position: relative;
+  }
+  #fortunato main .container section .card_restaurant .image_box .fas.fa-medal {
+    position: absolute;
+    font-size: 30px;
+    left: 10px;
+    top: 10px;
+    color: #ED4521;
+  }
+  #fortunato main .container section .card_restaurant .image_box img {
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  #fortunato main .container section .not_found {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 400px;
+  }
+  #fortunato main .container section .not_found img {
+    height: 200px;
+  }
+  #fortunato main .wave {
+    background: #ED4521;
+    height: 50px;
+    position: relative;
+  }
+  #fortunato main .wave::before, #fortunato main .wave::after {
+    border-bottom: 5px solid #131E52;
+  }
+  #fortunato main .wave::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10px;
+    background-size: 20px 40px;
+    background-image: radial-gradient(circle at 10px -15px, transparent 20px, #131E52 21px);
+  }
+  #fortunato main .wave::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 15px;
+    background-size: 40px 40px;
+    background-image: radial-gradient(circle at 10px 26px, #131E52 20px, transparent 21px);
+  }
+  #fortunato main .recruting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #131E52;
+    padding: 100px 0;
+    color: white;
+    font-size: 15px;
+  }
+  #fortunato main .recruting .card_recruting {
+    height: 50%;
+    width: 70%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  #fortunato main .recruting .card_recruting h1 {
+    margin-top: 30px;
+    font-size: 1.25rem;
+  }
+  #fortunato main .recruting .card_recruting h5 {
+    font-size: 0.75rem;
+  }
+  #fortunato main .recruting .card_recruting .box {
+    position: relative;
+    width: 200px;
+    height: 220px;
+    background: #ED4521;
+    border-radius: 60% 40% 40% 20%/70% 50% 30% 25%;
+    margin: 0 50px;
+  }
+  #fortunato main .recruting .card_recruting .box .inside-box {
+    overflow: hidden;
+    border-radius: 60% 40% 30% 20%/70% 50% 40% 25%;
+  }
+  #fortunato main .recruting .card_recruting .box .inside-box img {
+    position: absolute;
+    -o-object-fit: fill;
+       object-fit: fill;
+    top: 30px;
+    left: 30px;
+    width: 100%;
+    border-radius: 60% 40% 30% 20%/70% 50% 40% 25%;
+  }
+  #fortunato main .recruting .card_recruting .box .inside-box h1 {
+    font-size: 18px;
+    white-space: nowrap;
+    color: white;
+    background-color: #111A51;
+    padding: 10px 20px;
+    border-radius: 20px 20px;
+  }
+  #fortunato main .recruting .card_recruting .box .inside-box h1:hover {
+    font-size: 20px;
+  }
+  #fortunato main .recruting .card_recruting .box .inside-box .title {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    color: white;
+  }
 }
 
 .checkout {
