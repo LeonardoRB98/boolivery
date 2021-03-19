@@ -1,13 +1,34 @@
 #stephanie {
-    .wrapper {
-        background-color: $body-bg;
-        height: calc(100vh - 90px);
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
 
-        .auth-card {
-            background-color: $brandOrange;
-        }
-    }
+
+
+.login-form {
+  padding: 20px 20px;
+  background: #f05837;
+  border-radius: 8px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form h3 {
+  text-align: center;
+  color: #fff;
+}
+.btnSubmit{
+  font-weight: 600;
+  width: 50%;
+  color: #282726;
+  background-color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  padding:2%;
+}
+.btnForgetPwd{
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btnForgetPwd:hover{
+  text-decoration:none;
+  color:#fff;
+}
+
 }

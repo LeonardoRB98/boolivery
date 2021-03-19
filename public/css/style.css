@@ -179,10 +179,31 @@ footer {
   border-radius: 20px;
 }
 
-#stephanie .wrapper {
-  background-color: #EDF1F4;
-  height: calc(100vh - 90px);
+#stephanie .login-form {
+  padding: 20px 20px;
+  background: #f05837;
+  border-radius: 8px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
-#stephanie .wrapper .auth-card {
-  background-color: #ED4521;
+#stephanie .login-form h3 {
+  text-align: center;
+  color: #fff;
+}
+#stephanie .btnSubmit {
+  font-weight: 600;
+  width: 50%;
+  color: #282726;
+  background-color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 2%;
+}
+#stephanie .btnForgetPwd {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+#stephanie .btnForgetPwd:hover {
+  text-decoration: none;
+  color: #fff;
 }
