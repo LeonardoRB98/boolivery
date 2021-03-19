@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
-<span id="leonardo"></span>
+<span id="emilio"></span>
     <div class="checkout">
-        <section>
+        <section class="checkout_left">
             Dati pagamento
             <form method="post" id="payment-form" action="{{ url('/checkout')}}">
                 @csrf
@@ -59,7 +59,7 @@
                 });
             </script>
         </section>
-        <section>
+        <section class="checkout_right">
 
         </section>
     </div>

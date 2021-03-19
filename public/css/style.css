@@ -479,13 +479,9 @@ nav .navbar-brand svg {
   }
 }
 
-.checkout {
+#emilio .checkout {
   height: calc(100vh - 90px);
   display: flex;
-}
-.checkout section {
-  width: 50%;
-  border: 1px solid black;
 }
 
 #emilio .jumbo {
