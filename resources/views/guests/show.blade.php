@@ -20,9 +20,11 @@
         </div>
     <div class="container">
         <div class="main-menu">
-            <div class="cart shadow">
+            <i v-on:click="hiddenCart = !hiddenCart" id="trigger_cart_mobile" class="fas fa-shopping-cart"></i>
+            <div v-if="!hiddenCart"  class="cart shadow">
                 <h2>Il Tuo Ordine</h2>
                 <i class="fas fa-cookie-bite"></i>
+                @{{hiddenCart}}
                 <div class="order_plate" v-for='plate in cart'>
                     <ul>
                         <li class="plateName">@{{ plate.name }}</li>

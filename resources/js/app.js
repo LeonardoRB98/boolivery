@@ -60,7 +60,8 @@ const app = new Vue({
         search: '',
         cart: [],
         currentRestaurantId: '',
-        totalPrice: 0
+        totalPrice: 0,
+        hiddenCart: true,
     },
     created: function () {
 

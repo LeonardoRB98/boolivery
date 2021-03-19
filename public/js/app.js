@@ -1999,7 +1999,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     search: '',
     cart: [],
     currentRestaurantId: '',
-    totalPrice: 0
+    totalPrice: 0,
+    hiddenCart: true
   },
   created: function created() {
     var _this = this;

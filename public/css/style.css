@@ -387,12 +387,20 @@ nav .navbar-brand svg {
   cursor: pointer;
   transform: scale(1.5);
 }
+#emilio #trigger_cart_mobile {
+  display: none;
+}
 @media all and (max-width: 1024px) and (min-width: 768px) {
   #emilio .main-menu .cart .order_plate .plateName {
     width: 150px;
   }
 }
 @media all and (max-width: 768px) {
+  #emilio #trigger_cart_mobile {
+    display: block;
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
   #emilio section {
     width: 100%;
   }
