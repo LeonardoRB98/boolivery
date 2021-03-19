@@ -1,11 +1,29 @@
 <template>
-    <div class="plate">
-        <p>{{ name }}</p>
-         <div class="photo"></div>
-        <p>Price: {{ price }}</p>
+    <div class="plate shadow">
+        <div class="plate_photo">
+
+            <!-- <img src="'{{asset('storage')}}' + '/' + @{{platePhoto}}" alt="name"> -->
+        </div>
+        <div class="plate_utility">
+            <div class="plate_info">
+                <h5 class="plate_name">{{ name }}</h5>
+                <h5 class="plate_price">€ {{ price }}</h5>
+            </div>
+
+            <div class="plate_description">
+                <h5>INGREDIENTI</h5>
+                <p>{{ description }}</p>
+            </div>
+        </div>
+        <div class="plate_counter">
+            <span class="plate_add" v-on:click="increaseCounter()"><i class="fas fa-plus-square"></i></span>
+            <span class="plate_remove" v-on:click="decreaseCounter()"><i class="fas fa-minus-square"></i></span>
+        </div>
+        <!-- <div class="photo"></div>
+        <p>Prezzo: {{ price }} €</p>
         <button v-on:click="increaseCounter()">Add</button>
         <span>{{ counter }}</span>
-        <button v-on:click="decreaseCounter()">Remove</button>
+        <button v-on:click="decreaseCounter()">Remove</button> -->
     </div>
 </template>
 
@@ -22,6 +40,12 @@
             'price': {
                 type: Number
             },
+            'description': {
+                type: String
+            },
+            'photo': {
+                type: String
+            },
 
         },
         components: {
@@ -32,7 +56,10 @@
                 counter: 0,
                 plateId: this.id,
                 platePrice: this.price,
-                plateName: this.name
+                plateName: this.name,
+                plateDescription: this.description,
+                platePhoto: this.photo,
+
             }
         },
         mounted: function() {

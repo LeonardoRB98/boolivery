@@ -96,7 +96,7 @@ const app = new Vue({
                 id: id,
                 counter: counter,
                 price: price,
-                name: name 
+                name: name
             };
             // inzializzo var a false se l'id dell'object è presente nel carello lo cambio a true
             var changed = false;
@@ -121,7 +121,7 @@ const app = new Vue({
             } else {
                 this.cart.push(object);
             }
-            
+
             // this.totalPrice = Math.ceil(this.totalPrice + price);
             this.totalPrice = Number((this.totalPrice + price).toFixed(2));
         });
@@ -151,7 +151,7 @@ const app = new Vue({
                 // SOLUZIONE 1
                 this.cart.splice(k, 1, object);
             }
-            
+
             // this.totalPrice = Math.ceil(this.totalPrice - price);
             this.totalPrice = Number((this.totalPrice - price).toFixed(2));
 
@@ -168,6 +168,7 @@ const app = new Vue({
         if(localStorage.totalPrice) {
             this.totalPrice = parseFloat(localStorage.totalPrice);
         }
+
 
     },
     watch: {
@@ -186,7 +187,7 @@ const app = new Vue({
         }
     },
 
-    methods: {        
+    methods: {
         searchRestaurants() {
             axios
                 .get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect)

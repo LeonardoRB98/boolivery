@@ -107,6 +107,195 @@ footer {
   border: 1px solid black;
 }
 
+#emilio .shadow {
+  box-shadow: 0 0 3px #ccc !important;
+}
+#emilio .jumbo {
+  border: 1px solid black;
+  height: 50vh;
+  width: 100%;
+  position: relative;
+}
+#emilio .jumbo img {
+  width: 100%;
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#emilio .restaurant {
+  width: 50%;
+  height: 50%;
+  bottom: -20%;
+  left: 16%;
+  background-color: white;
+  position: absolute;
+  border-radius: 20px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#emilio .restaurant h1 {
+  font-family: "Bangers", cursive;
+  font-size: 5vw;
+}
+#emilio .main-menu {
+  margin-top: 80px;
+  position: relative;
+  width: 100%;
+}
+#emilio .main-menu .cart {
+  width: 24%;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid black;
+  float: right;
+  position: -webkit-sticky;
+  top: 0%;
+  position: sticky;
+  background-color: white;
+  text-align: center;
+  z-index: 999;
+}
+#emilio .main-menu .cart h2 {
+  text-align: center;
+}
+#emilio .main-menu .cart i {
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+#emilio .main-menu .cart .order_plate {
+  width: 100%;
+  text-align: left;
+}
+#emilio .main-menu .cart .order_plate li {
+  display: inline-block;
+}
+#emilio .main-menu .cart .order_plate .plateName {
+  width: 110px;
+}
+#emilio .main-menu .cart .order_plate .plateCounter {
+  width: 60px;
+}
+#emilio .main-menu .cart .order_plate .platePrice {
+  float: right;
+}
+#emilio .main-menu .cart h4 {
+  margin-bottom: 20px;
+}
+#emilio .main-menu .cart .to_checkout {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#emilio .main-menu .plate {
+  width: 70%;
+  height: 20%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  transition: 0.4;
+}
+#emilio .main-menu .plate:hover {
+  transition: 0.4;
+  transform: scale(1.1);
+}
+#emilio .main-menu .plate .plate_photo {
+  width: 40%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#emilio .main-menu .plate .plate_utility {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+#emilio .main-menu .plate .plate_utility .plate_info {
+  width: 100%;
+  height: 50%;
+  padding: 20px;
+}
+#emilio .main-menu .plate .plate_utility .plate_info .plate_name {
+  float: left;
+}
+#emilio .main-menu .plate .plate_utility .plate_info .plate_price {
+  float: right;
+}
+#emilio .main-menu .plate .plate_utility .plate_description {
+  width: 100%;
+  height: 50%;
+  border: 1px solid black;
+  padding: 5px;
+}
+#emilio .main-menu .plate .plate_counter {
+  width: 10%;
+  height: 100%;
+  border: 1px solid black;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+#emilio .main-menu .plate .plate_counter .plate_add {
+  font-size: 30px;
+}
+#emilio .main-menu .plate .plate_counter .plate_remove {
+  font-size: 30px;
+}
+#emilio .main-menu .plate .plate_counter .plate_remove:hover, #emilio .main-menu .plate .plate_counter .plate_add:hover {
+  cursor: pointer;
+  font-size: 50px;
+}
+@media all and (max-width: 768px) {
+  #emilio section {
+    width: 100%;
+  }
+  #emilio .restaurant {
+    left: 0%;
+    width: 100%;
+    height: 20%;
+  }
+  #emilio .main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #emilio .main-menu .cart {
+    width: 100%;
+  }
+  #emilio .main-menu .plate {
+    width: 100%;
+    height: 200px;
+    padding: 0px;
+  }
+  #emilio .main-menu .plate .plate_photo {
+    width: 100%;
+    position: relative;
+    border-radius: 20px;
+    background-color: black;
+  }
+  #emilio .main-menu .plate .plate_photo:hover .plate_utility {
+    display: block;
+  }
+  #emilio .main-menu .plate .plate_description {
+    display: none;
+    background-color: black;
+  }
+  #emilio .main-menu .plate .plate_utility {
+    display: none;
+  }
+  #emilio .main-menu .plate .plate_counter {
+    display: none;
+  }
+  #emilio h2 {
+    text-align: center;
+  }
+}
+
 #andrea .container {
   padding-top: 50px;
   height: 800px;
@@ -139,6 +328,7 @@ footer {
   width: 100%;
 }
 
+<<<<<<< HEAD
 #emilio .jumbo {
   height: 30vh;
   width: 100%;
@@ -184,6 +374,11 @@ footer {
   background: #f05837;
   border-radius: 8px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+=======
+#stephanie .wrapper {
+  background-color: #EDF1F4;
+  height: calc(100vh - 90px);
+>>>>>>> showEmilio2
 }
 #stephanie .login-form h3 {
   text-align: center;
