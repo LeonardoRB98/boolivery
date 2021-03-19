@@ -7,6 +7,7 @@
         align-items: center;
         height: 70vh;
         overflow: hidden;
+        background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
         background:
         radial-gradient(100% 100% at bottom, $superWhite 60%, $brandOrange  60%);
 
@@ -26,7 +27,7 @@
                 outline: none;
                 border-radius: 20px;
                 border: none;
-                padding-left: 50px;
+                padding-left: 10%;
                 margin-bottom: 20px;
             }
 
@@ -54,17 +55,17 @@
 
             section {
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: center;
                     flex-wrap: wrap;
                     height: 100%;
                     margin-bottom: 40px;
                     .card_restaurant {
                         display: flex;
                         flex-direction: column;
-                        margin: 0 30px;
+                        margin: 0 15px;
                         align-items: center;
                         height: 240px;
-                        width: 350px;
+                        width: calc(100% / 3);
                         background-color: $superWhite;
                         border-radius: 10px;
                         box-shadow: 0 0 3px #ccc;

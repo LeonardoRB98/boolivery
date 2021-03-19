@@ -4,7 +4,7 @@
     <div id="fortunato">
         <div class="jumbo_box">
             <div class="search_bar">
-                <input  v-model='search' v-on:keyup='searchRestaurants' type="text">
+                <input  v-model='search' v-on:keyup='searchRestaurants' type="text" placeholder="Cerca per cucina o ristorante">
                 <select name="" id="" v-model='categorySelect' v-on:change='searchRestaurants'>
                     <option value="">All</option>
                     <option :value="category.category" v-for='category in categories'>@{{category.category}}</option>
