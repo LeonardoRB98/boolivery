@@ -343,22 +343,43 @@ nav .navbar-brand svg {
 }
 #andrea .container .container_card {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 #andrea .container .container_card .card {
+  position: relative;
+  min-height: 380px;
   height: 380px;
-  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
   border-radius: 5px;
   box-shadow: 0 0 3px #ccc;
-  transition: 0.2s;
+  transition: 0.5s;
   margin-top: 30px;
   display: flex;
   flex-direction: column;
 }
 #andrea .container .container_card .card:hover {
   margin-top: 10px;
-  transition: 0.2s;
+  transition: 0.5s;
+}
+#andrea .container .container_card .card .name {
+  width: 180px;
+}
+#andrea .container .container_card .card .orange {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 258px;
+  border-bottom: 200px solid #ED4521;
+  border-left: 100px solid transparent;
+}
+#andrea .container .container_card .card .active {
+  position: absolute;
+  bottom: -180px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
 }
 #andrea .container .container_card .card a {
   height: 50%;
@@ -374,11 +395,20 @@ nav .navbar-brand svg {
 #andrea .container .container_card .card .info {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   padding: 10px;
   height: 50%;
 }
 #andrea .container .container_card .card .info .route {
-  height: 100%;
+  display: flex;
+}
+#andrea .container .container_card .card .info .route a {
+  margin-right: 10px;
+}
+#andrea .container .container_card .card .info .route button {
+  border: none;
+  color: red;
+  background-color: white;
 }
 
 #stephanie .login-form {

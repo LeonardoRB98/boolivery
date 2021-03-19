@@ -69,10 +69,12 @@ class RestaurantController extends Controller
         $data['user_id'] = Auth::id();
         $data["slug"] = Str::slug($data["name"]);
 
-        $data['sponsored'] = false;
+        
 
         if($data['sponsored'] == 'true') {
             $data['sponsored'] = true;
+        } else {
+            $data['sponsored'] = false;
         };
 
 
