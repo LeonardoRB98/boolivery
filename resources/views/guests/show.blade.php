@@ -37,9 +37,11 @@
                 <hr>
                 <h4>Totale: <br> @{{ totalPrice }}  €</h4>
                 {{-- SE LOCAL STORAGE è PIENO STAMPA LINK CHECKOUT --}}
-                {{-- @if (plate.counter > 0)
-                    <a class="to_checkout" href="{{route('checkout')}}">Paga</a>
-                @endif --}}
+
+                    <a class="to_checkout" href="{{route('checkout')}}">
+                        <i class="far fa-credit-card"></i>
+                    </a>
+
             </div>
             {{-- SECONDO CARRELLO DA NASCONDERE IN MOBILE --}}
             <div class="cart shadow animate__animated animate__jello" id="mobileCartNoMobile">
@@ -55,9 +57,9 @@
                 <hr>
                 <h4>Totale: <br> @{{ totalPrice }}  €</h4>
                 {{-- SE LOCAL STORAGE è PIENO STAMPA LINK CHECKOUT --}}
-                {{-- @if (plate.counter > 0)
-                    <a class="to_checkout" href="{{route('checkout')}}">Paga</a>
-                @endif --}}
+                <a class="to_checkout" href="{{route('checkout')}}">
+                    <i class="far fa-credit-card"></i>
+                </a>
             </div>
 
             <section>

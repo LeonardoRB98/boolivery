@@ -327,11 +327,11 @@ nav .navbar-brand svg {
 }
 #emilio .main-menu .cart h4 {
   margin-bottom: 20px;
+  font-size: 40px;
 }
-#emilio .main-menu .cart .to_checkout {
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
+#emilio .main-menu .cart .to_checkout i {
+  font-size: 50px;
+  color: black !important;
 }
 #emilio .main-menu .plate {
   width: 70%;
