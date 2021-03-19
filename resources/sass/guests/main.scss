@@ -8,19 +8,35 @@
         height: 70vh;
         overflow: hidden;
         background:
-        radial-gradient(100% 100% at bottom, $superWhite 60%, $brandBlue  60%);
+        radial-gradient(100% 100% at bottom, $superWhite 60%, $brandOrange  60%);
 
         .search_bar {
-            justify-content: center;
-            margin-top: 10%;
-            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 5%;
+            width: 100%;
             height: 100px;
             text-align: center;
 
             input {
+                width: 50%;
+                height: 60px;
                 outline: none;
-                border-radius: 50px;
+                border-radius: 20px;
+                border: none;
                 padding-left: 50px;
+                margin-bottom: 20px;
+            }
+
+            ul {
+                list-style: none;
+                display: flex;
+
+                li {
+                    margin: 0 20px;
+                }
             }
 
         }
@@ -35,37 +51,171 @@
         background-color: $superWhite;
 
         .container {
+
             section {
                     display: flex;
                     justify-content: space-around;
-                    flex: wrap;
+                    flex-wrap: wrap;
                     height: 100%;
-                    .card {
+                    margin-bottom: 40px;
+                    .card_restaurant {
                         display: flex;
-                        justify-content: space-between;
+                        flex-direction: column;
+                        margin: 0 30px;
                         align-items: center;
-                        height: 300px;
-                        width: calc(100% / 5);
-                        background-color: $blueShock;
-                        border-radius: 5px;
+                        height: 240px;
+                        width: 350px;
+                        background-color: $superWhite;
+                        border-radius: 10px;
                         box-shadow: 0 0 3px #ccc;
                         transition: 0.2s;
                         margin-top: 30px;
                         &:hover {
-                            margin-top: 10px;
+                            margin-top: 5px;
                             transition: 0.2s;
                         }
-                        .image-box {
-                            height: 50%;
+
+                        .slug {
+                            font-size: 20px;
+                            max-height: 10%;
+                        }
+
+                        .image_box {
+                            height: 80%;
                             width: 100%;
+                            
                             img {
                                 height: 100%;
                                 width: 100%;
+                                border-top-left-radius: 10px;
+                                border-top-right-radius: 10px;
                            }
+                        }
+                    }
+
+                    .not_found {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        height: 400px;
+
+                        img {
+                            height: 200px;
                         }
                     }
             }
         }
+
+        .wave{
+            background: $brandOrange;
+            height: 50px;
+            position: relative;  
+          }
+          .wave::before, .wave::after{
+            border-bottom: 5px solid $brandBlue;
+          }
+          .wave::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 10px;
+            background-size: 20px 40px;
+            background-image:
+              radial-gradient(circle at 10px -15px, transparent 20px, $brandBlue 21px);
+          }
+          .wave::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 15px;
+            background-size: 40px 40px;
+            background-image:
+              radial-gradient(circle at 10px 26px, $brandBlue 20px, transparent 21px);
+          }
+
+        .recruting {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            background-color: $brandBlue;
+            padding: 100px 0;
+            color: white;
+            font-size: 15px;
+
+            .card_recruting {
+                height: 50%;
+
+
+                .box {
+                    position: relative;
+                    width: 280px;
+                    height: 300px;
+                    background: $brandOrange;
+                    border-radius: 60% 40% 40% 20% / 70% 50% 30% 25%; 
+                    margin: 0 50px; 
+    
+                    
+    
+                    .inside-box {
+                        overflow: hidden;
+                        border-radius: 60% 40% 30% 20% / 70% 50% 40% 25%;
+                        img {
+                            position: absolute;
+                            object-fit: fill;
+                            top: 30px;
+                            left: 30px;
+                            width: 100%;
+                            border-radius: 60% 40% 30% 20% / 70% 50% 40% 25%; 
+                        }
+    
+                        h1 {
+                            font-size: 18px;
+                            white-space: nowrap;
+                            color: white;
+                            background-color: #111A51;
+                            padding: 10px 20px;
+                            border-radius: 20px 20px;
+                        }
+                        
+                        h1:hover {
+                            font-size: 20px;
+                        }
+    
+                        
+                        .title {
+                            position: absolute; 
+                            bottom: 0; 
+                            left: 50%;
+                            transform: translate(-50%);
+                            color: white;
+                        }
+                    }
+            }
+
+            
+
+
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+
+       
     }
 
 
