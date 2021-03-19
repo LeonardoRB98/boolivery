@@ -61,6 +61,7 @@ const app = new Vue({
         cart: [],
         currentRestaurantId: '',
         totalPrice: 0,
+        // TRIGGER VIEW CART ON MOBILE
         hiddenCart: true,
     },
     created: function () {

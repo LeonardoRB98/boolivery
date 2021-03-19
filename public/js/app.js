@@ -2000,6 +2000,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     cart: [],
     currentRestaurantId: '',
     totalPrice: 0,
+    // TRIGGER VIEW CART ON MOBILE
     hiddenCart: true
   },
   created: function created() {

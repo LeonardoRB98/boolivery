@@ -390,6 +390,9 @@ nav .navbar-brand svg {
 #emilio #trigger_cart_mobile {
   display: none;
 }
+#emilio #desktopCartNoDesktop {
+  display: none;
+}
 @media all and (max-width: 1024px) and (min-width: 768px) {
   #emilio .main-menu .cart .order_plate .plateName {
     width: 150px;
@@ -400,6 +403,8 @@ nav .navbar-brand svg {
     display: block;
     font-size: 50px;
     margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 20px;
   }
   #emilio section {
     width: 100%;
@@ -476,6 +481,9 @@ nav .navbar-brand svg {
   }
   #emilio #text_plate {
     text-align: center;
+  }
+  #emilio #mobileCartNoMobile {
+    display: none;
   }
 }
 

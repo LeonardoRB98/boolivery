@@ -2,6 +2,9 @@
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 {{-- @dd($restaurant->plates) --}}
 @section('content')
@@ -20,11 +23,28 @@
         </div>
     <div class="container">
         <div class="main-menu">
-            <i v-on:click="hiddenCart = !hiddenCart" id="trigger_cart_mobile" class="fas fa-shopping-cart"></i>
-            <div v-if="!hiddenCart"  class="cart shadow">
+            <i v-on:click="hiddenCart = !hiddenCart" id="trigger_cart_mobile" class="fas fa-shopping-cart shadow"></i>
+            <div v-if="!hiddenCart"  class="cart shadow animate__animated animate__jello" id="desktopCartNoDeskop">
                 <h2>Il Tuo Ordine</h2>
                 <i class="fas fa-cookie-bite"></i>
-                @{{hiddenCart}}
+                <div class="order_plate" v-for='plate in cart'>
+                    <ul>
+                        <li class="plateName">@{{ plate.name }}</li>
+                        <li class="plateCounter">X @{{ plate.counter }} </li>
+                        <li class="platePrice">@{{ plate.price*plate.counter }} €</li>
+                    </ul>
+                </div>
+                <hr>
+                <h4>Totale: <br> @{{ totalPrice }}  €</h4>
+                {{-- SE LOCAL STORAGE è PIENO STAMPA LINK CHECKOUT --}}
+                {{-- @if (plate.counter > 0)
+                    <a class="to_checkout" href="{{route('checkout')}}">Paga</a>
+                @endif --}}
+            </div>
+            {{-- SECONDO CARRELLO DA NASCONDERE IN MOBILE --}}
+            <div class="cart shadow animate__animated animate__jello" id="mobileCartNoMobile">
+                <h2>Il Tuo Ordine</h2>
+                <i class="fas fa-cookie-bite"></i>
                 <div class="order_plate" v-for='plate in cart'>
                     <ul>
                         <li class="plateName">@{{ plate.name }}</li>

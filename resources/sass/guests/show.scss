@@ -148,6 +148,9 @@
     #trigger_cart_mobile {
         display: none;
     }
+    #desktopCartNoDesktop {
+        display: none;
+    }
 
     @media all and (max-width: 1024px) and ( min-width: 768px) {
 
@@ -169,6 +172,8 @@
         display: block;
         font-size: 50px;
         margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 20px;
     }
         section{
             width: 100%;
@@ -245,6 +250,9 @@
         }
         #text_plate {
              text-align: center;
+        }
+        #mobileCartNoMobile {
+            display: none;
         }
 
     }
