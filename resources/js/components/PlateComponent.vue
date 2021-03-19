@@ -1,8 +1,8 @@
 <template>
     <div class="plate shadow">
-        <div class="plate_photo">
+        <div class="plate_photo plate_photo_trigger">
 
-            <!-- <img src="'{{asset('storage')}}' + '/' + @{{platePhoto}}" alt="name"> -->
+            <!-- <img :src="'{{url('/storage')}}' + '/' + restaurant.photo" :alt="restaurant.name"> -->
         </div>
         <div class="plate_utility">
             <div class="plate_info">
@@ -87,7 +87,8 @@
             increaseCounter() {
                 this.counter += 1;
                 this.$root.$emit('addToCart', this.plateId, this.counter,this.platePrice,this.plateName)
-            }
+            },
+
         }
     }
 </script>

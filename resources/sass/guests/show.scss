@@ -1,10 +1,10 @@
 #emilio {
-    .shadow {
-        box-shadow: 0 0 3px #ccc!important;
-    }
+    // .shadow {
+    //     box-shadow: 5px 10px!important;
+    // }
 
     .jumbo {
-        border: 1px solid black;
+        // border: 1px solid black;
         height: 50vh;
         width: 100%;
         position: relative;
@@ -23,7 +23,7 @@
         background-color: white;
         position: absolute;
         border-radius: 20px;
-        border: 1px solid black;
+        // border: 1px solid black;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -40,7 +40,7 @@
             width: 24%;
             padding: 20px;
             border-radius: 20px;
-            border: 1px solid black;
+            // border: 1px solid black;
             float: right;
             position: -webkit-sticky;
             top: 0%;
@@ -88,24 +88,23 @@
             height: 20%;
             padding: 20px;
             margin-bottom: 20px;
-            border: 1px solid black;
+            // border: 1px solid black;
             border-radius: 20px;
             display: flex;
-            transition: 0.4;
+            transition: transform .5s;
             &:hover {
-                transition: 0.4;
                 transform: scale(1.1);
             }
             .plate_photo {
                 width: 40%;
                 height: 100%;
-                border: 1px solid black;
+                // border: 1px solid black;
                 border-radius: 5px;
             }
             .plate_utility {
                 width: 100%;
                 height: 100%;
-                border: 1px solid black;
+                // border: 1px solid black;
                 .plate_info {
                     width: 100%;
                     height: 50%;
@@ -122,42 +121,57 @@
                 .plate_description {
                     width: 100%;
                     height: 50%;
-                    border: 1px solid black;
+                    // border: 1px solid black;
                     padding: 5px;
                 }
             }
             .plate_counter {
                 width: 10%;
                 height: 100%;
-                border: 1px solid black;
+                // border: 1px solid black;
                 padding: 20px;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
                 flex-direction: column;
-                .plate_add {
-                    font-size: 30px;
-                }
-                .plate_remove {
+                transition: transform .2s;
+                .plate_add, .plate_remove {
                     font-size: 30px;
                 }
                 .plate_remove:hover, .plate_add:hover {
                     cursor: pointer;
-                    font-size: 50px;
+                    transform: scale(1.5);
                 }
             }
         }
     }
+
+    @media all and (max-width: 1024px) and ( min-width: 768px) {
+
+        .main-menu {
+            .cart {
+                .order_plate {
+                    .plateName {
+                        width: 150px;
+                    }
+                }
+            }
+        }
+
+    }
+
+
     @media all and (max-width: 768px) {
         section{
             width: 100%;
         }
         .restaurant {
-             left: 0%;
-             width: 100%;
-             height: 20%;
+            left: 0%;
+            width: 100%;
+            height: 20%;
         }
         .main-menu {
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -172,12 +186,11 @@
                 .plate_photo {
                     width: 100%;
                     height: 100%;
-                    border-radius: 20px;
                     position: absolute;
                     left: 0%;
                     top: 0%;
                     z-index: 1;
-                    background-color: black;
+                    display: none;
                 }
                 .plate_utility {
                     width: 100%;
@@ -185,17 +198,40 @@
                     position: absolute;
                     left: 0%;
                     top: 0%;
-                    border-radius: 20px;
                     z-index: -1;
                     text-align: center;
                 }
-                .plate_photo:hover {
+                &:active .plate_photo {
                     display: none;
+                }
+                &:focus .plate_photo {
+                    display: none;
+                }
+                &:target .plate_photo {
+                   display: none;
                 }
                 .plate_description{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
                 }
                 .plate_counter {
-                    display: none;
+                    width: 100%;
+                    height: 80%;
+                    position: absolute;
+                    left: 0%;
+                    top: 0%;
+                    z-index: 2;
+                    flex-direction: row;
+                    align-items: center;
+                    font-size: 50px;
+                    .plate_add, .plate_remove {
+                        font-size: 50px;
+                    }
+                    .plate_remove:hover, .plate_add:hover {
+                        cursor: pointer;
+                        font-size: 50px;
+                    }
                 }
             }
         }
