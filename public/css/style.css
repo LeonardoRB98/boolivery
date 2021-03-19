@@ -127,6 +127,7 @@ footer {
   height: 50%;
   bottom: -20%;
   left: 16%;
+  margin-bottom: 20px;
   background-color: white;
   position: absolute;
   border-radius: 20px;
@@ -271,27 +272,35 @@ footer {
     width: 100%;
     height: 200px;
     padding: 0px;
+    position: relative;
   }
   #emilio .main-menu .plate .plate_photo {
     width: 100%;
-    position: relative;
+    height: 100%;
     border-radius: 20px;
-    background-color: black;
-  }
-  #emilio .main-menu .plate .plate_photo:hover .plate_utility {
-    display: block;
-  }
-  #emilio .main-menu .plate .plate_description {
-    display: none;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: 1;
     background-color: black;
   }
   #emilio .main-menu .plate .plate_utility {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    border-radius: 20px;
+    z-index: -1;
+    text-align: center;
+  }
+  #emilio .main-menu .plate .plate_photo:hover {
     display: none;
   }
   #emilio .main-menu .plate .plate_counter {
     display: none;
   }
-  #emilio h2 {
+  #emilio #text_plate {
     text-align: center;
   }
 }

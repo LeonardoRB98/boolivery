@@ -37,7 +37,7 @@
             </div>
 
             <section>
-                <h2>I Nostri Piatti</h2>
+                <h2 id="text_plate">I Nostri Piatti</h2>
                 <plate-component
                     v-for="plate in plates"
                     :name="plate.name"
