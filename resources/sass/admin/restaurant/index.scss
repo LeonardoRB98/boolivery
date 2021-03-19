@@ -1,9 +1,16 @@
 #andrea {
     .container {
         padding-top: 50px;
-        margin-bottom: 40px;
+        padding-bottom: 40px;
         h1 {
             float: left;
+        }
+        .fail {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         .container_card {
             display: flex;
@@ -22,7 +29,7 @@
                 display: flex;
                 flex-direction: column;
                 &:hover {
-                    margin-top: 10px;
+                    transform: translateY(-1rem);
                     transition: 0.5s;
                 }
                 .name {
@@ -32,13 +39,13 @@
                     position: absolute;
                     right: 0;
                     bottom: 0;
-                    height: 258px;
-                    border-bottom: 200px solid $brandOrange;
+                    height: 180px;
+                    border-bottom: 180px solid $brandOrange;
                     border-left: 100px solid transparent;
                 }
                 .active {
                     position: absolute;
-                    bottom: -180px;
+                    bottom: -170px;
                     right: 10px;
                     width: 35px;
                     height: 35px;
@@ -46,11 +53,14 @@
                 a {
                     height: 50%;
                     .image-box {
-                        height: 100%;
                         width: 100%;
+                        height: 100%;
                         img {
-                            width: 100%;
                             height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            border-top-left-radius: 8px;
+                            border-top-right-radius: 8px;
                         }
                     }
                 }
