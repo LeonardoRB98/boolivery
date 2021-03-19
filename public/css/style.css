@@ -34,7 +34,9 @@ nav .navbar-brand svg {
 }
 
 #leonardo_footer footer {
+  position: relative;
   background-color: #131E52;
+  background: radial-gradient(100% 100% at bottom, #131E52 70%, #ED4521 60%);
 }
 #leonardo_footer footer ul {
   list-style: none;
@@ -57,15 +59,14 @@ nav .navbar-brand svg {
   font-size: 22px;
 }
 #leonardo_footer footer #top_footer {
-  height: 60px;
-  text-align: center;
-  margin-bottom: 50px;
-}
-#leonardo_footer footer #top_footer svg {
-  height: 100%;
+  width: 100%;
+  height: 180px;
 }
 
 @media all and (max-width: 768px) {
+  #leonardo_footer footer {
+    background: radial-gradient(160% 110% at bottom, #131E52 70%, #ED4521 60%);
+  }
   #leonardo_footer footer .container {
     font-size: 22px;
   }
@@ -74,6 +75,11 @@ nav .navbar-brand svg {
   }
   #leonardo_footer footer .container ul li:first-child {
     font-size: 26px;
+  }
+}
+@media all and (max-width: 320px) {
+  footer {
+    background: radial-gradient(250% 123% at bottom, #131E52 70%, #ED4521 60%);
   }
 }
 #fortunato .jumbo_box {
