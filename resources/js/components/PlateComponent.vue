@@ -77,10 +77,10 @@
             decreaseCounter() {
                 if (this.counter <= 0) {
                     this.counter = 0;
+
                 } else {
                     this.counter -= 1;
                     this.$root.$emit('removeFromCart', this.plateId, this.counter, this.platePrice, this.plateName)
-
                 }
 
             },
