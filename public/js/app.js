@@ -2001,7 +2001,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     currentRestaurantId: '',
     totalPrice: 0,
     // TRIGGER VIEW CART ON MOBILE
-    hiddenCart: true
+    hiddenCart: true,
+    hiddenPaymentCart: true
   },
   created: function created() {
     var _this = this;
@@ -2104,6 +2105,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     if (localStorage.totalPrice) {
       this.totalPrice = parseFloat(localStorage.totalPrice);
     }
+
+    if ((0,lodash__WEBPACK_IMPORTED_MODULE_1__.isEmpty)(this.cart)) {}
   },
   watch: {
     // SOLUZIONE 1

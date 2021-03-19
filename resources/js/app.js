@@ -63,6 +63,7 @@ const app = new Vue({
         totalPrice: 0,
         // TRIGGER VIEW CART ON MOBILE
         hiddenCart: true,
+        hiddenPaymentCart: true,
     },
     created: function () {
 
@@ -178,6 +179,12 @@ const app = new Vue({
         if(localStorage.totalPrice) {
             this.totalPrice = parseFloat(localStorage.totalPrice);
         }
+
+        if(isEmpty(this.cart)) {
+
+        }
+
+
 
     },
     watch: {
