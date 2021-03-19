@@ -20,9 +20,15 @@
            <div class="container">
             <h2>Ristoranti</h2>
                 <section>
-                    <div class="restaurant_card" v-for="(restaurant, index) in filteredRestaurants">
+                    <div class="card" v-for="(restaurant, index) in filteredRestaurants">
                        <a :href="'{{url('Boolivery/restaurant')}}' + '/' + restaurant.slug">@{{restaurant.name}}</a>
+                       <div class="image-box">
+                        {{-- <img src="@{{asset('storage/')+'restaurant.photo'}}">                       </div> --}}
+                        <img src="{{asset('image/logo.png')}}" alt="">
+                        </div>
+                        <p>@{{restaurant.description}}</p>
                     </div>
+
 
                    
                 </section>
