@@ -9,9 +9,9 @@
         </div>
         @endif
 
-    <h1>I tuoi Ristoranti</h1>
 
-    <div class="clearfix mb-4">
+    <div class="clearfix mb-4 col-sm-12">   
+        <h1 class="col-sm-4 col-xs-12">I tuoi Ristoranti</h1>
         <a href="{{ route('admin.restaurants.create') }}" class="btn btn-primary float-right">Crea Ristorante</a>
     </div>
 
@@ -30,16 +30,25 @@
             </a>    
                 
                 <div class="info">
-                    <h3>{{ $restaurant->name }}</h3>
-                    <p>{{ $restaurant->description }}</p>
+                    <div class="name">
+                        <a href="{{route('admin.restaurants.show', $restaurant)}}"><h3>{{ $restaurant->name }}</h3></a>
+                        <p>{{ $restaurant->description }}</p>
+                    </div>
+                    
                     
                     <div class="route">
-                        <a href="{{route('admin.restaurants.edit', $restaurant)}}">Modifca</a>
+                        <a href="{{route('admin.restaurants.edit', $restaurant)}}"><i class="fas fa-edit"></i></a>
                     <form action="{{route('admin.restaurants.destroy', $restaurant)}}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" value="Elimina">
+                        <button type="submit" value="Elimina"><i class="fas fa-trash"></i>
+                        </button>
                     </form>
+                    </div>
+                    <div class="orange">
+                        @if ($restaurant->sponsored     ==   1) 
+                            <img src="https://img.icons8.com/flat-round/452/rubber-duck--v1.png" alt="" class="active">
+                        @endIf
                     </div>
                 </div>
             </div>
