@@ -5,11 +5,10 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        height: 70vh;
+        height: 100%;
         overflow: hidden;
-        background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
-        background:
-        radial-gradient(100% 100% at bottom, $superWhite 60%, $brandOrange  60%);
+        background-color: $brandOrange;
+       
 
         .search_bar {
             display: flex;
@@ -42,16 +41,22 @@
 
         }
 
-        .jumbo_title {
-            text-align: center;
-            margin-bottom: 100px;
+        .wave_one {
+            width: 100%;
         }
+
+        
     }
 
     main {
         background-color: $superWhite;
 
         .container {
+
+            .jumbo_title {
+                text-align: center;
+                margin-bottom: 100px;
+            }
 
             section {
                     display: flex;
@@ -117,35 +122,35 @@
         }
 
         .wave{
-            background: $brandOrange;
-            height: 50px;
+            background: $superWhite;
+            height: 100%;
             position: relative;  
           }
-          .wave::before, .wave::after{
-            border-bottom: 5px solid $brandBlue;
-          }
-          .wave::before{
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 10px;
-            background-size: 20px 40px;
-            background-image:
-              radial-gradient(circle at 10px -15px, transparent 20px, $brandBlue 21px);
-          }
-          .wave::after{
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 15px;
-            background-size: 40px 40px;
-            background-image:
-              radial-gradient(circle at 10px 26px, $brandBlue 20px, transparent 21px);
-          }
+        //   .wave::before, .wave::after{
+        //     border-bottom: 5px solid $brandBlue;
+        //   }
+        //   .wave::before{
+        //     content: "";
+        //     position: absolute;
+        //     left: 0;
+        //     right: 0;
+        //     bottom: 0;
+        //     height: 10px;
+        //     background-size: 20px 40px;
+        //     background-image:
+        //       radial-gradient(circle at 10px -15px, transparent 20px, $brandBlue 21px);
+        //   }
+        //   .wave::after{
+        //     content: "";
+        //     position: absolute;
+        //     left: 0;
+        //     right: 0;
+        //     bottom: 0;
+        //     height: 15px;
+        //     background-size: 40px 40px;
+        //     background-image:
+        //       radial-gradient(circle at 10px 26px, $brandBlue 20px, transparent 21px);
+        //   }
 
         .recruting {
             display: flex;
@@ -239,10 +244,6 @@
             align-items: center;
             height: 70vh;
             overflow: hidden;
-            background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
-            background:
-            radial-gradient(100% 100% at bottom, $superWhite 60%, $brandOrange  60%);
-            
             h1 {
                 font-size: 1.25rem;
             }
@@ -356,36 +357,7 @@
                 }
             }
     
-            .wave{
-                background: $brandOrange;
-                height: 50px;
-                position: relative;  
-              }
-              .wave::before, .wave::after{
-                border-bottom: 5px solid $brandBlue;
-              }
-              .wave::before{
-                content: "";
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                height: 10px;
-                background-size: 20px 40px;
-                background-image:
-                  radial-gradient(circle at 10px -15px, transparent 20px, $brandBlue 21px);
-              }
-              .wave::after{
-                content: "";
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                height: 15px;
-                background-size: 40px 40px;
-                background-image:
-                  radial-gradient(circle at 10px 26px, $brandBlue 20px, transparent 21px);
-              }
+            
     
             .recruting {
                 display: flex;

@@ -88,10 +88,9 @@ nav .navbar-brand svg {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 70vh;
+  height: 100%;
   overflow: hidden;
-  background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
-  background: radial-gradient(100% 100% at bottom, #FFFFFF 60%, #ED4521 60%);
+  background-color: #ED4521;
 }
 #fortunato .jumbo_box .search_bar {
   display: flex;
@@ -119,12 +118,15 @@ nav .navbar-brand svg {
 #fortunato .jumbo_box .search_bar ul li {
   margin: 0 20px;
 }
-#fortunato .jumbo_box .jumbo_title {
-  text-align: center;
-  margin-bottom: 100px;
+#fortunato .jumbo_box .wave_one {
+  width: 100%;
 }
 #fortunato main {
   background-color: #FFFFFF;
+}
+#fortunato main .container .jumbo_title {
+  text-align: center;
+  margin-bottom: 100px;
 }
 #fortunato main .container section {
   display: flex;
@@ -182,32 +184,9 @@ nav .navbar-brand svg {
   height: 200px;
 }
 #fortunato main .wave {
-  background: #ED4521;
-  height: 50px;
+  background: #FFFFFF;
+  height: 100%;
   position: relative;
-}
-#fortunato main .wave::before, #fortunato main .wave::after {
-  border-bottom: 5px solid #131E52;
-}
-#fortunato main .wave::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 10px;
-  background-size: 20px 40px;
-  background-image: radial-gradient(circle at 10px -15px, transparent 20px, #131E52 21px);
-}
-#fortunato main .wave::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 15px;
-  background-size: 40px 40px;
-  background-image: radial-gradient(circle at 10px 26px, #131E52 20px, transparent 21px);
 }
 #fortunato main .recruting {
   display: flex;
@@ -284,8 +263,6 @@ nav .navbar-brand svg {
     align-items: center;
     height: 70vh;
     overflow: hidden;
-    background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
-    background: radial-gradient(100% 100% at bottom, #FFFFFF 60%, #ED4521 60%);
   }
   #fortunato .jumbo_box h1 {
     font-size: 1.25rem;
@@ -380,34 +357,6 @@ nav .navbar-brand svg {
   }
   #fortunato main .container section .not_found img {
     height: 200px;
-  }
-  #fortunato main .wave {
-    background: #ED4521;
-    height: 50px;
-    position: relative;
-  }
-  #fortunato main .wave::before, #fortunato main .wave::after {
-    border-bottom: 5px solid #131E52;
-  }
-  #fortunato main .wave::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 10px;
-    background-size: 20px 40px;
-    background-image: radial-gradient(circle at 10px -15px, transparent 20px, #131E52 21px);
-  }
-  #fortunato main .wave::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 15px;
-    background-size: 40px 40px;
-    background-image: radial-gradient(circle at 10px 26px, #131E52 20px, transparent 21px);
   }
   #fortunato main .recruting {
     display: flex;
