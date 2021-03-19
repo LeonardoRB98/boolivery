@@ -549,7 +549,18 @@ nav .navbar-brand svg {
 }
 
 #stephanie-2 {
-  background-color: #EDF1F4;
+  background-color: red;
+}
+#stephanie-2 .curved {
+  background-color: #ED4521;
+  text-align: center;
+  color: white;
+}
+#stephanie-2 .curved svg {
+  display: block;
+}
+#stephanie-2 .curved.upper {
+  background-color: white;
 }
 #stephanie-2 .one {
   height: 400px;

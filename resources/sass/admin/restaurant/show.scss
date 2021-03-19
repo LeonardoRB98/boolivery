@@ -1,5 +1,19 @@
 #stephanie-2 {
-    background-color: $body-bg;
+    background-color: red;
+
+    .curved {
+        background-color: $brandOrange;
+        text-align: center;
+        color: white;
+
+        svg {
+            display: block;
+        }
+
+        &.upper {
+            background-color: white;
+        }
+    }
     .one {
         
         height: 400px;
