@@ -7,8 +7,7 @@
         align-items: center;
         height: 70vh;
         overflow: hidden;
-<<<<<<< HEAD
-        background: 
+        background:
         radial-gradient(100% 100% at bottom, $superWhite 60%, $brandBlue  60%);
 
         .search_bar {
@@ -25,7 +24,7 @@
             }
 
         }
-    
+
         .jumbo_title {
             text-align: center;
             margin-bottom: 100px;
@@ -44,7 +43,7 @@
                     .card {
                         display: flex;
                         justify-content: space-between;
-                        align-items: center;                        
+                        align-items: center;
                         height: 300px;
                         width: calc(100% / 5);
                         background-color: $blueShock;
@@ -65,19 +64,19 @@
                            }
                         }
                     }
-            }       
+            }
         }
     }
-    
-    
-    
-    
+
+
+
+
     // .main-menu {
     //     display: flex;
     //     justify-content: start;
     //     padding: 30px;
     //     position: relative;
-    
+
     //     .cart {
     //         position: absolute;
     //         top: -20px;
@@ -87,7 +86,7 @@
     //         background-color: white;
     //         border: 1px solid black;
     //     }
-    
+
     //     section {
     //         margin-top: 50px;
     //         width: 50%;
@@ -95,7 +94,7 @@
     //         flex-direction: column;
     //         justify-content: space-around;
     //     }
-    
+
     //     .chart {
     //         background-color: white;
     //         position: absolute;
@@ -105,54 +104,8 @@
     //         width: 400px;
     //         border: 1px solid black;
     //     }
-    
+
     // }
-    
-=======
-        background:
-        radial-gradient(100% 100% at bottom, transparent 60%, $brandBlue  60%);
 
-    }
-
-
-
-
-    .main-menu {
-        display: flex;
-        justify-content: start;
-        padding: 30px;
-        position: relative;
-
-        .cart {
-            position: absolute;
-            top: -20px;
-            right: 30px;
-            width: 300px;
-            min-height: 100px;
-            background-color: white;
-            border: 1px solid black;
-        }
-
-        section {
-            margin-top: 50px;
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
-
-        .chart {
-            background-color: white;
-            position: absolute;
-            top: - 20px;
-            right: 30px;
-            height: calc(100% - 50px);
-            width: 400px;
-            border: 1px solid black;
-        }
-
-    }
-
->>>>>>> showEmilio2
 }
 

@@ -34734,9 +34734,12 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************!*\
   !*** ./resources/sass/style.scss ***!
   \***********************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n   ╷\n12 │         radial-gradient(100% 100% at bottom, $superWhite 60%, $brandBlue  60%);\n   │                                                                               ^\n   ╵\n  resources/sass/guests/main.scss 12:79  @import\n  /Users/emiliofurnari/Documents/Boolean/boolivery/resources/sass/style.scss 14:9                             root stylesheet\n    at processResult (/Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/webpack/lib/NormalModule.js:598:19)\n    at /Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/webpack/lib/NormalModule.js:692:5\n    at /Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/loader-runner/lib/LoaderRunner.js:399:11\n    at /Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/loader-runner/lib/LoaderRunner.js:251:18\n    at context.callback (/Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/loader-runner/lib/LoaderRunner.js:124:13)\n    at /Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/sass-loader/dist/index.js:73:7\n    at Function.call$2 (/Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/sass/sass.dart.js:91729:16)\n    at _render_closure1.call$2 (/Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/sass/sass.dart.js:80373:12)\n    at _RootZone.runBinary$3$3 (/Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/sass/sass.dart.js:27269:18)\n    at _FutureListener.handleError$1 (/Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/sass/sass.dart.js:25797:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/sass/sass.dart.js:26094:49)\n    at Object._Future__propagateToListeners (/Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/sass/sass.dart.js:4543:77)\n    at _Future._completeError$2 (/Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/sass/sass.dart.js:25927:9)\n    at _AsyncAwaitCompleter.completeError$2 (/Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/sass/sass.dart.js:25270:12)\n    at Object._asyncRethrow (/Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/sass/sass.dart.js:4292:17)\n    at /Users/emiliofurnari/Documents/Boolean/boolivery/node_modules/sass/sass.dart.js:13233:20");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
