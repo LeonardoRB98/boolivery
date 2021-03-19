@@ -1961,8 +1961,14 @@ window.select2 = __webpack_require__(/*! select2 */ "./node_modules/select2/dist
 
 jQuery(function () {
   $('.js-select_categories').select2();
-}); // jQuery(function () {
-//     $('.js-select_categories').select2();
+}); // $('.plate_photo_trigger').click(function() {
+//     this.$('.plate_photo_trigger').toggle();
+// });
+// $(".plate_photo_trigger").click(function () {
+//     $('.plate_photo_trigger').addClass('display_none');
+// });
+// jQuery(function ().click {
+//     $('#plate_photo_trigger').toggle();
 // });
 
 /**
@@ -43858,7 +43864,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "plate shadow" }, [
-    _c("div", { staticClass: "plate_photo" }),
+    _c("div", { staticClass: "plate_photo plate_photo_trigger" }),
     _vm._v(" "),
     _c("div", { staticClass: "plate_utility" }, [
       _c("div", { staticClass: "plate_info" }, [

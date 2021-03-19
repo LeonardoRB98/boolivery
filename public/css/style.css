@@ -257,11 +257,7 @@ nav .navbar-brand svg {
   border: 1px solid black;
 }
 
-#emilio .shadow {
-  box-shadow: 0 0 3px #ccc !important;
-}
 #emilio .jumbo {
-  border: 1px solid black;
   height: 50vh;
   width: 100%;
   position: relative;
@@ -277,10 +273,10 @@ nav .navbar-brand svg {
   height: 50%;
   bottom: -20%;
   left: 16%;
+  margin-bottom: 20px;
   background-color: white;
   position: absolute;
   border-radius: 20px;
-  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -298,7 +294,6 @@ nav .navbar-brand svg {
   width: 24%;
   padding: 20px;
   border-radius: 20px;
-  border: 1px solid black;
   float: right;
   position: -webkit-sticky;
   top: 0%;
@@ -343,25 +338,21 @@ nav .navbar-brand svg {
   height: 20%;
   padding: 20px;
   margin-bottom: 20px;
-  border: 1px solid black;
   border-radius: 20px;
   display: flex;
-  transition: 0.4;
+  transition: transform 0.5s;
 }
 #emilio .main-menu .plate:hover {
-  transition: 0.4;
   transform: scale(1.1);
 }
 #emilio .main-menu .plate .plate_photo {
   width: 40%;
   height: 100%;
-  border: 1px solid black;
   border-radius: 5px;
 }
 #emilio .main-menu .plate .plate_utility {
   width: 100%;
   height: 100%;
-  border: 1px solid black;
 }
 #emilio .main-menu .plate .plate_utility .plate_info {
   width: 100%;
@@ -377,28 +368,29 @@ nav .navbar-brand svg {
 #emilio .main-menu .plate .plate_utility .plate_description {
   width: 100%;
   height: 50%;
-  border: 1px solid black;
   padding: 5px;
 }
 #emilio .main-menu .plate .plate_counter {
   width: 10%;
   height: 100%;
-  border: 1px solid black;
   padding: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  transition: transform 0.2s;
 }
-#emilio .main-menu .plate .plate_counter .plate_add {
-  font-size: 30px;
-}
-#emilio .main-menu .plate .plate_counter .plate_remove {
+#emilio .main-menu .plate .plate_counter .plate_add, #emilio .main-menu .plate .plate_counter .plate_remove {
   font-size: 30px;
 }
 #emilio .main-menu .plate .plate_counter .plate_remove:hover, #emilio .main-menu .plate .plate_counter .plate_add:hover {
   cursor: pointer;
-  font-size: 50px;
+  transform: scale(1.5);
+}
+@media all and (max-width: 1024px) and (min-width: 768px) {
+  #emilio .main-menu .cart .order_plate .plateName {
+    width: 150px;
+  }
 }
 @media all and (max-width: 768px) {
   #emilio section {
@@ -410,6 +402,7 @@ nav .navbar-brand svg {
     height: 20%;
   }
   #emilio .main-menu {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -421,27 +414,59 @@ nav .navbar-brand svg {
     width: 100%;
     height: 200px;
     padding: 0px;
+    position: relative;
   }
   #emilio .main-menu .plate .plate_photo {
     width: 100%;
-    position: relative;
-    border-radius: 20px;
-    background-color: black;
-  }
-  #emilio .main-menu .plate .plate_photo:hover .plate_utility {
-    display: block;
-  }
-  #emilio .main-menu .plate .plate_description {
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: 1;
     display: none;
-    background-color: black;
   }
   #emilio .main-menu .plate .plate_utility {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: -1;
+    text-align: center;
+  }
+  #emilio .main-menu .plate:active .plate_photo {
     display: none;
+  }
+  #emilio .main-menu .plate:focus .plate_photo {
+    display: none;
+  }
+  #emilio .main-menu .plate:target .plate_photo {
+    display: none;
+  }
+  #emilio .main-menu .plate .plate_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
   #emilio .main-menu .plate .plate_counter {
-    display: none;
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: 2;
+    flex-direction: row;
+    align-items: center;
+    font-size: 50px;
   }
-  #emilio h2 {
+  #emilio .main-menu .plate .plate_counter .plate_add, #emilio .main-menu .plate .plate_counter .plate_remove {
+    font-size: 50px;
+  }
+  #emilio .main-menu .plate .plate_counter .plate_remove:hover, #emilio .main-menu .plate .plate_counter .plate_add:hover {
+    cursor: pointer;
+    font-size: 50px;
+  }
+  #emilio #text_plate {
     text-align: center;
   }
 }

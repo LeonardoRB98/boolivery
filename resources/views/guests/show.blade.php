@@ -26,18 +26,20 @@
                 <div class="order_plate" v-for='plate in cart'>
                     <ul>
                         <li class="plateName">@{{ plate.name }}</li>
-                        <li class="plateCounter">@{{ plate.counter }} </li>
+                        <li class="plateCounter">X @{{ plate.counter }} </li>
                         <li class="platePrice">@{{ plate.price*plate.counter }} €</li>
                     </ul>
                 </div>
                 <hr>
                 <h4>Totale: <br> @{{ totalPrice }}  €</h4>
                 {{-- SE LOCAL STORAGE è PIENO STAMPA LINK CHECKOUT --}}
+                {{-- @if (plate.counter > 0)
                     <a class="to_checkout" href="{{route('checkout')}}">Paga</a>
+                @endif --}}
             </div>
 
             <section>
-                <h2>I Nostri Piatti</h2>
+                <h2 id="text_plate">I Nostri Piatti</h2>
                 <plate-component
                     v-for="plate in plates"
                     :name="plate.name"

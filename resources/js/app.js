@@ -18,8 +18,16 @@ import Vue from 'vue';
 jQuery(function () {
     $('.js-select_categories').select2();
 });
-// jQuery(function () {
-//     $('.js-select_categories').select2();
+// $('.plate_photo_trigger').click(function() {
+//     this.$('.plate_photo_trigger').toggle();
+// });
+
+// $(".plate_photo_trigger").click(function () {
+//     $('.plate_photo_trigger').addClass('display_none');
+// });
+
+// jQuery(function ().click {
+//     $('#plate_photo_trigger').toggle();
 // });
 
 /**
@@ -169,7 +177,6 @@ const app = new Vue({
             this.totalPrice = parseFloat(localStorage.totalPrice);
         }
 
-
     },
     watch: {
         // SOLUZIONE 1
@@ -197,7 +204,7 @@ const app = new Vue({
                         return  restaurant.name.includes(this.search)
                 });
              })
-        }
+        },
     }
 
 });

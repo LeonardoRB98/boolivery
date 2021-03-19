@@ -13,7 +13,7 @@ use App\Plate;
 
 class RestaurantController extends Controller
 {
-    
+
     private $restaurantValidation = [
         'name' => 'required',
         'email' => 'required',
@@ -64,12 +64,13 @@ class RestaurantController extends Controller
 
         $data = $request->all();
 
+
         $newRestaurant = new Restaurant();
 
         $data['user_id'] = Auth::id();
         $data["slug"] = Str::slug($data["name"]);
 
-        
+
 
         if($data['sponsored'] == 'true') {
             $data['sponsored'] = true;
@@ -89,8 +90,8 @@ class RestaurantController extends Controller
         }
 
         $newRestaurant->fill($data);
-
         $newRestaurant->save();
+
 
         if(!empty($data['categories'])) {
             $newRestaurant->categories()->attach($data["categories"]);
@@ -110,7 +111,7 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Restaurant $restaurant)
-    {      
+    {
         $plates = Plate::where('restaurant_id', $restaurant->id)->get();
 
         return view('admin.restaurants.show', compact('restaurant', 'plates'));
