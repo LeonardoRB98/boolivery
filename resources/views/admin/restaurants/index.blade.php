@@ -9,15 +9,22 @@
         </div>
         @endif
 
-
-    <div class="clearfix mb-4 col-sm-12">   
+    <div class="fail" v-if="filteredRestaurants.length == 0">
+        <h2>Non hai ancora inserito nessun ristorante</h2>
+        <a href="{{ route('admin.restaurants.create') }}" class="btn btn-primary">Crea Ristorante</a>
+    </div>
+    <div class="clearfix mb-4 col-sm-12" v-else>   
         <h1 class="col-sm-4 col-xs-12">I tuoi Ristoranti</h1>
         <a href="{{ route('admin.restaurants.create') }}" class="btn btn-primary float-right">Crea Ristorante</a>
     </div>
 
+    
+
     <div class="container_card">
-        @foreach ($restaurants as $restaurant)
         
+
+        @foreach ($restaurants as $restaurant)
+
             <div class="card">
                 <a href="{{route('admin.restaurants.show', $restaurant)}}">
                 <div class="image-box">
