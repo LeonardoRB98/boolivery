@@ -33,11 +33,6 @@ nav .navbar-brand svg {
   color: #FF6E00;
 }
 
-main section {
-  height: 300px;
-  border: 1px solid black;
-}
-
 footer {
   height: 400px;
   background-color: black;
@@ -45,41 +40,62 @@ footer {
 
 #fortunato .jumbo_box {
   position: relative;
-  height: 100vh;
-  background-color: black;
-  overflow: hidden;
-  background: radial-gradient(100% 100% at bottom, transparent 60%, #131E52 60%);
-}
-#fortunato .main-menu {
-  display: flex;
-  justify-content: start;
-  padding: 30px;
-  position: relative;
-}
-#fortunato .main-menu .cart {
-  position: absolute;
-  top: -20px;
-  right: 30px;
-  width: 300px;
-  min-height: 100px;
-  background-color: white;
-  border: 1px solid black;
-}
-#fortunato .main-menu section {
-  margin-top: 50px;
-  width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  height: 70vh;
+  overflow: hidden;
+  background: radial-gradient(100% 100% at bottom, #FFFFFF 60%, #131E52 60%);
 }
-#fortunato .main-menu .chart {
-  background-color: white;
-  position: absolute;
-  top: -20px;
-  right: 30px;
-  height: calc(100% - 50px);
-  width: 400px;
-  border: 1px solid black;
+#fortunato .jumbo_box .search_bar {
+  justify-content: center;
+  margin-top: 10%;
+  width: 50%;
+  height: 100px;
+  text-align: center;
+}
+#fortunato .jumbo_box .search_bar input {
+  outline: none;
+  border-radius: 50px;
+  padding-left: 50px;
+}
+#fortunato .jumbo_box .jumbo_title {
+  text-align: center;
+  margin-bottom: 100px;
+}
+#fortunato main {
+  background-color: #FFFFFF;
+}
+#fortunato main .container section {
+  display: flex;
+  justify-content: space-around;
+  flex: wrap;
+  height: 100%;
+}
+#fortunato main .container section .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
+  width: calc(100% / 5);
+  background-color: #2045E3;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #ccc;
+  transition: 0.2s;
+  margin-top: 30px;
+}
+#fortunato main .container section .card:hover {
+  margin-top: 10px;
+  transition: 0.2s;
+}
+#fortunato main .container section .card .image-box {
+  height: 50%;
+  width: 100%;
+}
+#fortunato main .container section .card .image-box img {
+  height: 100%;
+  width: 100%;
 }
 
 .checkout {
