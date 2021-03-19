@@ -1989,6 +1989,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     filteredRestaurants: [],
     categories: [],
     categorySelect: '',
+    sponsoredRestaurant: [],
     plates: [],
     search: '',
     cart: [],

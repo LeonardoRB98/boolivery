@@ -1,5 +1,4 @@
 @extends('layouts.main')
-{{-- @dd($restaurants) --}}
 @section('content')
     <div id="fortunato">
         <div class="jumbo_box">
@@ -23,9 +22,11 @@
         </div>
         <main>
            <div class="container">
+             
                 <section>
-                    <div class="card_restaurant" v-if="filteredRestaurants.length >= 0" v-for="(restaurant, index) in filteredRestaurants">
+                    <div class="card_restaurant" v-if="filteredRestaurants[index].sponsored == true" v-for="(restaurant, index) in filteredRestaurants">
                        <div class="image_box">
+                            <i class="fas fa-medal"></i>
                             <img v-if="restaurant.photo == null" src="{{asset('/image/download.png')}}" alt="">
                             <img v-else :src="'{{url('/storage')}}' + '/' + restaurant.photo" :alt="restaurant.name">
                         </div>

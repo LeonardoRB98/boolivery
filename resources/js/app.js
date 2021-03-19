@@ -48,6 +48,7 @@ const app = new Vue({
         filteredRestaurants: [],
         categories: [],
         categorySelect: '',
+        sponsoredRestaurant: [],
         plates: [],
         search: '',
         cart: [],
@@ -64,12 +65,13 @@ const app = new Vue({
                  this.filteredRestaurants = response.data;
             }
         );
-
         // load all categories
         axios
             .get('http://127.0.0.1:8000/api/categories')
             .then( response => {
                 this.categories = response.data;
+
+
             }
         );
         // recupero id dalla schermata show tramite <script>var id = {!! json_encode($restaurant->id) !!};</script>

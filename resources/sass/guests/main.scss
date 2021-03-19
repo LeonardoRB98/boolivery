@@ -65,7 +65,7 @@
                         margin: 0 15px;
                         align-items: center;
                         height: 240px;
-                        width: calc(100% / 3);
+                        width: 260px;
                         background-color: $superWhite;
                         border-radius: 10px;
                         box-shadow: 0 0 3px #ccc;
@@ -84,6 +84,15 @@
                         .image_box {
                             height: 80%;
                             width: 100%;
+                            position: relative;
+                            
+                            .fas.fa-medal {
+                                position: absolute;
+                                font-size: 30px;
+                                left: 10px;
+                                top: 10px;
+                                color: $brandOrange;
+                            }
                             
                             img {
                                 height: 100%;
