@@ -482,6 +482,7 @@ nav .navbar-brand svg {
 #emilio .checkout {
   width: 100%;
   display: flex;
+  min-height: calc(100vh - 90px);
 }
 #emilio .checkout .checkout_left, #emilio .checkout .checkout_right {
   width: 50%;
