@@ -504,6 +504,7 @@ nav .navbar-brand svg {
   padding: 20px;
   border-radius: 20px;
   text-align: center;
+  background-color: white;
 }
 #emilio .checkout .checkout_left .cart_checkout .cart h2, #emilio .checkout .checkout_right .cart_checkout .cart h2 {
   font-size: 35px;
@@ -623,7 +624,13 @@ nav .navbar-brand svg {
 }
 #emilio .restaurant h1 {
   font-family: "Bangers", cursive;
-  font-size: 5vw;
+  font-size: 80px;
+}
+#emilio .restaurant i {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  font-size: 30px;
 }
 #emilio .main-menu {
   margin-top: 80px;
@@ -634,11 +641,11 @@ nav .navbar-brand svg {
   width: 26%;
   padding: 20px;
   border-radius: 20px;
+  background-color: white;
   float: right;
   position: -webkit-sticky;
   top: 0%;
   position: sticky;
-  background-color: white;
   text-align: center;
   z-index: 999;
 }
@@ -684,7 +691,7 @@ nav .navbar-brand svg {
   border-radius: 20px;
   display: flex;
   transition: transform 0.5s;
-  background-color: white !important;
+  background-color: white;
 }
 #emilio .main-menu .plate:hover {
   transform: scale(1.1);
@@ -817,6 +824,7 @@ nav .navbar-brand svg {
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 20px;
+    background-color: white;
   }
   #emilio section {
     width: 100%;
@@ -825,6 +833,9 @@ nav .navbar-brand svg {
     left: 0%;
     width: 100%;
     height: 200px;
+  }
+  #emilio .restaurant h1 {
+    font-size: 55px;
   }
   #emilio .main-menu {
     width: 100%;
@@ -858,8 +869,8 @@ nav .navbar-brand svg {
     position: absolute;
     left: 0%;
     top: 0%;
-    z-index: -1;
     text-align: center;
+    z-index: 2;
   }
   #emilio .main-menu .plate:active .plate_photo {
     display: none;
@@ -874,6 +885,7 @@ nav .navbar-brand svg {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    z-index: 2;
   }
   #emilio .main-menu .plate .plate_counter {
     width: 100%;

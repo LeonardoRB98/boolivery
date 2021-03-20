@@ -5,7 +5,7 @@
     <div class="checkout">
         <section class="checkout_left">
             <div class="cart_checkout">
-                <div class="cart">
+                <div class="cart shadow">
                     <h2>Controlla Il Tuo Ordine</h2>
                     <i class="fas fa-cart-arrow-down"></i>
                     <div class="order_plate" v-for='plate in cart'>

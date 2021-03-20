@@ -20,6 +20,9 @@
             <div class="flip_card_inner shadow">
                 <div class="flip_card_front">
                   <h1>{{$restaurant->name}}</h1>
+                  @if ($restaurant->sponsored == true)
+                      <i class="fas fa-medal"></i>
+                  @endif
 
                 </div>
                 <div class="flip_card_back">

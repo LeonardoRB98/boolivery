@@ -25,7 +25,13 @@
         position: absolute;
         h1 {
             font-family: 'Bangers', cursive;
-            font-size: 5vw;
+            font-size: 80px;
+        }
+        i {
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+            font-size: 30px;
         }
     }
     .main-menu {
@@ -37,11 +43,11 @@
             padding: 20px;
             border-radius: 20px;
             // border: 1px solid black;
+            background-color: white;
             float: right;
             position: -webkit-sticky;
             top: 0%;
             position: sticky;
-            background-color: white;
             text-align: center;
             z-index: 999;
             h2 {
@@ -95,7 +101,7 @@
             border-radius: 20px;
             display: flex;
             transition: transform .5s;
-            background-color: white!important;
+            background-color: white;
             &:hover {
                 transform: scale(1.1);
             }
@@ -236,6 +242,7 @@
         margin-bottom: 20px;
         padding: 20px;
         border-radius: 20px;
+        background-color: white;
     }
         section{
             width: 100%;
@@ -244,6 +251,9 @@
             left: 0%;
             width: 100%;
             height: 200px;
+            h1 {
+                font-size: 55px;
+            }
         }
         .main-menu {
             width: 100%;
@@ -275,8 +285,8 @@
                     position: absolute;
                     left: 0%;
                     top: 0%;
-                    z-index: -1;
                     text-align: center;
+                    z-index: 2;
                 }
                 &:active .plate_photo {
                     display: none;
@@ -291,6 +301,7 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-end;
+                    z-index: 2;
                 }
                 .plate_counter {
                     width: 100%;
