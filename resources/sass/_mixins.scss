@@ -1,0 +1,42 @@
+// FLIP CARD
+
+@mixin flip_card{
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+@mixin flip_card_inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+}
+
+@mixin flip_card_hover_Y {
+  -webkit-transform: rotateY(-180deg);
+}
+@mixin flip_card_hover_X {
+  -webkit-transform: rotateX(180deg);
+}
+
+@mixin flip_card_front_back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-perspective: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+  visibility:visible;
+}
+
+@mixin flip_card_front {
+  z-index: 2;
+}
+
+@mixin flip_card_back {
+  -webkit-transform: rotateY(180deg);
+}
+// FLIP CARD

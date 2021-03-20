@@ -615,12 +615,7 @@ nav .navbar-brand svg {
   bottom: -20%;
   left: 16%;
   margin-bottom: 20px;
-  background-color: white;
   position: absolute;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 #emilio .restaurant h1 {
   font-family: "Bangers", cursive;
@@ -632,7 +627,7 @@ nav .navbar-brand svg {
   width: 100%;
 }
 #emilio .main-menu .cart {
-  width: 24%;
+  width: 26%;
   padding: 20px;
   border-radius: 20px;
   float: right;
@@ -658,7 +653,10 @@ nav .navbar-brand svg {
   display: inline-block;
 }
 #emilio .main-menu .cart .order_plate .plateName {
-  width: 110px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
 }
 #emilio .main-menu .cart .order_plate .plateCounter {
   width: 60px;
@@ -740,6 +738,68 @@ nav .navbar-brand svg {
 #emilio #desktopCartNoDesktop {
   display: none;
 }
+#emilio .flip_card {
+  background-color: transparent;
+  perspective: 1000px;
+}
+#emilio .flip_card_inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+}
+#emilio .flip_card:hover .flip_card_inner {
+  -webkit-transform: rotateX(180deg);
+}
+#emilio .flip_card_front, #emilio .flip_card_back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-perspective: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  visibility: visible;
+  border-radius: 20px;
+}
+#emilio .flip_card_front {
+  z-index: 2;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#emilio .flip_card_back {
+  -webkit-transform: rotateY(180deg);
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  align-items: flex-end;
+}
+#emilio .flip_card_back .title_description {
+  width: 60%;
+  height: 100%;
+  padding: 20px;
+  overflow-y: auto;
+  transform: rotate(180deg);
+}
+#emilio .flip_card_back .photo_description {
+  width: 40%;
+  height: 100%;
+  transform: rotate(180deg);
+}
+#emilio .flip_card_back .photo_description img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#emilio .display_none {
+  display: none;
+}
 @media all and (max-width: 1024px) and (min-width: 768px) {
   #emilio .main-menu .cart .order_plate .plateName {
     width: 150px;
@@ -759,7 +819,7 @@ nav .navbar-brand svg {
   #emilio .restaurant {
     left: 0%;
     width: 100%;
-    height: 20%;
+    height: 200px;
   }
   #emilio .main-menu {
     width: 100%;
