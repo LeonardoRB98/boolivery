@@ -91,6 +91,7 @@ nav .navbar-brand svg {
   height: 100%;
   overflow: hidden;
   background-color: #ED4521;
+  background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
 }
 #fortunato .jumbo_box .search_bar {
   display: flex;
@@ -105,11 +106,12 @@ nav .navbar-brand svg {
 #fortunato .jumbo_box .search_bar input {
   width: 50%;
   height: 60px;
+  padding-left: 40px;
   outline: none;
-  border-radius: 20px;
+  border-radius: 30px;
   border: none;
-  padding-left: 10%;
   margin-bottom: 20px;
+  transition: width 1s ease-in-out;
 }
 #fortunato .jumbo_box .search_bar ul {
   list-style: none;
@@ -198,6 +200,7 @@ nav .navbar-brand svg {
   padding: 100px 50px;
   color: white;
   font-size: 15px;
+  background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
 }
 #fortunato main .recruting h2 {
   display: none;
