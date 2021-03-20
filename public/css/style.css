@@ -480,10 +480,122 @@ nav .navbar-brand svg {
 }
 
 #emilio .checkout {
-  height: calc(100vh - 90px);
+  width: 100%;
   display: flex;
 }
+#emilio .checkout .checkout_left, #emilio .checkout .checkout_right {
+  width: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#emilio .checkout .checkout_left .cart_checkout, #emilio .checkout .checkout_right .cart_checkout {
+  width: 90%;
+  height: 90%;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart, #emilio .checkout .checkout_right .cart_checkout .cart {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid black;
+  text-align: center;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart h2, #emilio .checkout .checkout_right .cart_checkout .cart h2 {
+  font-size: 35px;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart i, #emilio .checkout .checkout_right .cart_checkout .cart i {
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate {
+  width: 100%;
+  text-align: left;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate li, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate li {
+  display: inline-block;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateName, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateName {
+  font-size: 20px;
+  width: 30%;
+  text-transform: capitalize;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter {
+  width: 10%;
+  text-align: left;
+  position: relative;
+  float: left;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter i, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter i {
+  font-size: 20px;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter:hover, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter:hover {
+  cursor: pointer;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter .left, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter .left {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(20%, -50%);
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter .right, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter .right {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(60%, -50%);
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter input, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter input {
+  width: 30px;
+  text-align: center;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter input::-webkit-outer-spin-button, #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter input::-webkit-inner-spin-button, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter input::-webkit-outer-spin-button, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .platePrice, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .platePrice {
+  float: right;
+  width: 15%;
+  text-align: right;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart h4, #emilio .checkout .checkout_right .cart_checkout .cart h4 {
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+#emilio .pay {
+  width: 100%;
+}
+#emilio .amount {
+  display: none;
+}
+@media all and (max-width: 1024px) {
+  #emilio .checkout {
+    flex-direction: column;
+  }
+  #emilio .checkout .checkout_left, #emilio .checkout .checkout_right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  #emilio .checkout .checkout_left .plateCounter {
+    width: 15% !important;
+  }
+  #emilio .checkout .checkout_left .plateName {
+    width: 45% !important;
+  }
+  #emilio .checkout .checkout_left .platePrice {
+    width: 21% !important;
+  }
+}
+@media all and (max-width: 768px) {
+  #emilio .checkout .checkout_left .cart_checkout, #emilio .checkout .checkout_right .cart_checkout {
+    width: 100%;
+  }
+}
 
+#emilio .container {
+  min-height: 500px;
+}
 #emilio .jumbo {
   height: 50vh;
   width: 100%;
@@ -576,6 +688,12 @@ nav .navbar-brand svg {
   width: 40%;
   height: 100%;
   border-radius: 5px;
+  margin-right: 35px;
+}
+#emilio .main-menu .plate .plate_photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
 }
 #emilio .main-menu .plate .plate_utility {
   width: 100%;
@@ -652,9 +770,12 @@ nav .navbar-brand svg {
   }
   #emilio .main-menu .plate {
     width: 100%;
-    height: 200px;
+    height: 300px;
     padding: 0px;
     position: relative;
+  }
+  #emilio .main-menu .plate:hover {
+    transform: unset;
   }
   #emilio .main-menu .plate .plate_photo {
     width: 100%;
@@ -662,8 +783,7 @@ nav .navbar-brand svg {
     position: absolute;
     left: 0%;
     top: 0%;
-    z-index: 1;
-    display: none;
+    z-index: 10;
   }
   #emilio .main-menu .plate .plate_utility {
     width: 100%;

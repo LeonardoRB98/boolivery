@@ -15,7 +15,6 @@
         @else
             <img src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
         @endif
-        {{-- <img src="{{asset('storage/'. $restaurant->photo_jumbo)}}" alt="{{$restaurant->name}}"> --}}
             <div class="restaurant shadow">
                 <h1>{{$restaurant->name}}</h1>
             </div>

@@ -1,8 +1,7 @@
 <template>
     <div class="plate shadow">
         <div class="plate_photo plate_photo_trigger">
-
-            <!-- <img :src="'{{url('/storage')}}' + '/' + restaurant.photo" :alt="restaurant.name"> -->
+            <img class="" v-bind:src="'http://127.0.0.1:8000/storage/'+ platePhoto">
         </div>
         <div class="plate_utility">
             <div class="plate_info">
