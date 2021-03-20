@@ -4,7 +4,6 @@
         display: flex;
         .checkout_left, .checkout_right {
             width: 50%;
-            border: 1px solid black;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,7 +15,6 @@
                     height: 100%;
                     padding: 20px;
                     border-radius: 20px;
-                    border: 1px solid black;
                     text-align: center;
                 h2 {
                     font-size: 35px;
@@ -117,7 +115,9 @@
 
             }
         }
-
+        .pay {
+         margin-bottom: 100px;
+        }
 
     }
     @media all and (max-width: 768px) {
