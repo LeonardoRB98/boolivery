@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+body {
+  background-color: #F2F5F9;
+}
+
 .btn_darkBlue {
   background-color: #2045E3;
   color: white;
@@ -680,6 +684,7 @@ nav .navbar-brand svg {
   border-radius: 20px;
   display: flex;
   transition: transform 0.5s;
+  background-color: white !important;
 }
 #emilio .main-menu .plate:hover {
   transform: scale(1.1);
