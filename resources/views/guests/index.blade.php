@@ -1,6 +1,13 @@
 @extends('layouts.main')
 @section('content')
-    <div id="fortunato">
+    <div v-if="isLoading" id="fortunato_loading">
+        <h1 class="animate__animated animate__heartBeat">Loading</h1>
+        <div class="dot-floating">
+
+        </div>
+    </div>
+<transition name="fade">
+    <div v-if="!isLoading" id="fortunato">
         <div class="jumbo_box">
             <div class="search_bar">
                 <input  v-model='search' v-on:keyup='searchRestaurants' type="text" placeholder="Cerca per cucina o ristorante">
@@ -105,4 +112,6 @@
 
         </main>
     </div>
+</transition>
+    
 @endsection

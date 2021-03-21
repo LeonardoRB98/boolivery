@@ -1991,6 +1991,7 @@ vue__WEBPACK_IMPORTED_MODULE_2__.default.component('plate-component', __webpack_
 var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   el: '#app',
   data: {
+    isLoading: true,
     restaurants: [],
     filteredRestaurants: [],
     categories: [],
@@ -2098,6 +2099,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     });
   },
   mounted: function mounted() {
+    var _this2 = this;
+
     if (localStorage.cart) {
       this.cart = JSON.parse(localStorage.cart);
     } // totale nel local storage
@@ -2108,6 +2111,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     }
 
     if ((0,lodash__WEBPACK_IMPORTED_MODULE_1__.isEmpty)(this.cart)) {}
+
+    setTimeout(function () {
+      _this2.isLoading = false;
+    }, 4000);
   },
   watch: {
     // SOLUZIONE 1
@@ -2126,12 +2133,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   },
   methods: {
     searchRestaurants: function searchRestaurants() {
-      var _this2 = this;
+      var _this3 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect).then(function (response) {
         // maybe add uppercase/lowercase inclusion
-        _this2.filteredRestaurants = response.data.filter(function (restaurant) {
-          return restaurant.name.includes(_this2.search);
+        _this3.filteredRestaurants = response.data.filter(function (restaurant) {
+          return restaurant.name.includes(_this3.search);
         });
       });
     }
