@@ -1873,8 +1873,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'plate-component',
   props: {
@@ -2115,7 +2113,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
 
     setTimeout(function () {
       _this2.isLoading = false;
-    }, 4000);
+    }, 2000);
   },
   watch: {
     // SOLUZIONE 1
@@ -43878,12 +43876,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "plate shadow" }, [
-    _c("div", { staticClass: "plate_photo plate_photo_trigger" }, [
-      _c("img", {
-        staticStyle: { width: "100px" },
-        attrs: { src: "http://127.0.0.1:8000/storage/" + _vm.platePhoto }
-      })
-    ]),
     _c("div", { staticClass: "plate_photo plate_photo_trigger" }, [
       _c("img", {
         attrs: { src: "http://127.0.0.1:8000/storage/" + _vm.platePhoto }

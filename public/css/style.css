@@ -330,7 +330,7 @@ body {
   width: 100%;
 }
 #fortunato main {
-  background-color: #FFFFFF;
+  background-color: #F6D9D3;
 }
 #fortunato main .container .jumbo_title {
   text-align: center;
@@ -350,7 +350,7 @@ body {
   align-items: center;
   height: 240px;
   width: 260px;
-  background-color: #FFFFFF;
+  background-color: #F6D9D3;
   border-radius: 10px;
   box-shadow: 0 0 3px #ccc;
   transition: 0.2s;
@@ -392,7 +392,7 @@ body {
   height: 200px;
 }
 #fortunato main .wave {
-  background: #FFFFFF;
+  background: #F6D9D3;
   height: 100%;
   position: relative;
 }
@@ -407,6 +407,8 @@ body {
   color: white;
   font-size: 15px;
   background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
+  background-repeat: repeat-x;
+  background-size: cover;
 }
 #fortunato main .recruting h2 {
   display: none;
@@ -510,7 +512,7 @@ body {
     margin-bottom: 100px;
   }
   #fortunato main {
-    background-color: #FFFFFF;
+    background-color: #F6D9D3;
   }
   #fortunato main .container section {
     display: flex;
@@ -526,7 +528,7 @@ body {
     align-items: center;
     height: 240px;
     width: 260px;
-    background-color: #FFFFFF;
+    background-color: #F6D9D3;
     border-radius: 10px;
     box-shadow: 0 0 3px #ccc;
     transition: 0.2s;

@@ -74,33 +74,27 @@
                     <div class="box">
                         <div class="inside-box">
                             <img src="{{asset('/image/rider.png')}}" alt="">
-                            <div class="title">
-                                <h1>Unisciti a Noi</h1>
-                            </div>
+                           
                         </div>
                     </div>
                     <h1>Diventa un rider</h1>
-                    <h5>Lavora per te stesso! Goditi flessibilità, libertà e guadagni competitivi effettuando consegne con Glovo.</h5>
+                    <h5>Lavora per te stesso! Goditi flessibilità, libertà e guadagni competitivi effettuando consegne con Boolivery.</h5>
                 </div> 
                 <div class="card_recruting">
                     <div class="box">
                         <div class="inside-box">
                             <img src="{{asset('/image/partner.png')}}" alt="">
-                            <div class="title">
-                                <h1>Unisciti a Noi</h1>
-                            </div>
+                           
                         </div>
                     </div>
                     <h1>Diventa partner</h1>
-                    <h5>Cresci con Glovo! La nostra tecnologia e la nostra base di utenti possono aiutarti a incrementare le vendite e aprire nuove opportunità!</h5>
+                    <h5>Cresci con Boolivery! La nostra tecnologia e la nostra base di utenti possono aiutarti a incrementare le vendite e aprire nuove opportunità!</h5>
                 </div>
                 <div class="card_recruting">
                     <div class="box">
                         <div class="inside-box">
                             <img src="{{asset('/image/careers.png')}}" alt="">
-                            <div class="title">
-                                <h1>Unisciti a Noi</h1>
-                            </div>
+                           
                         </div>
                     </div>
                     <h1>Lavora con noi</h1>
