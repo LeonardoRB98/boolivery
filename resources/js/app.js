@@ -226,19 +226,19 @@ const app = new Vue({
                 .get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect)
                 .then(response => {
                     // maybe add uppercase/lowercase inclusion
-                    
+
                     this.filteredRestaurants = response.data;
                 });
-            
+
         },
 
         buttonRestaurants(category) {
-                    this.categorySelect = category;
-                    this.searchRestaurants();
+            this.categorySelect = category;
+            this.searchRestaurants();
 
-                    if( this.categorySelect != category) {
-                        this.deleteSelect();
-                    }
+            if( this.categorySelect != category) {
+                this.deleteSelect();
+            }
         },
 
         deleteSelect() {
@@ -250,7 +250,7 @@ const app = new Vue({
                  this.filteredRestaurants = response.data;
             }
         );
-            
+
         },
 
 
@@ -261,8 +261,8 @@ const app = new Vue({
             this.$root.$emit('addToCart', plateId, newPlateCounter, platePrice, plateName);
             this.$root.$emit('addToComponent', plateId, newPlateCounter);
         },
-        
-        
+
+
         remove(plateId, plateCounter, platePrice, plateName) {
             // aggiorniamo i counter del piatto e del carrello
             if  (plateCounter > 0) {
@@ -270,10 +270,15 @@ const app = new Vue({
                 this.$root.$emit('removeFromCart', plateId, newPlateCounter, platePrice, plateName);
                 this.$root.$emit('removeFromComponent', plateId, newPlateCounter);
             }
-            
+
         },
 
-        
+
+        trashCart() {
+            this.cart = [];
+        }
+
+
     }
 
 });

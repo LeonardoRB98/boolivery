@@ -12,7 +12,8 @@
                         <ul>
                             <li class="plateCounter">
                                 {{-- <i class="fas fa-arrow-left left"></i> --}}
-                                <input type="number" :value="plate.counter">
+                                <i v-on:click="add(plate.id, plate.counter, plate.price, plate.name)" class="fas fa-plus-square" id="plus"></i>
+                                <i v-on:click="remove(plate.id, plate.counter, plate.price, plate.name)" class="fas fa-minus-square" id="minus"></i>
                                 {{-- <i class="fas fa-arrow-right right"></i> --}}
                             </li>
                              <li class="plateName">@{{ plate.name }}</li>

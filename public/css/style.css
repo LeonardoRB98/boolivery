@@ -704,36 +704,17 @@ footer ul li i {
   text-transform: capitalize;
 }
 #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter {
-  width: 10%;
+  width: 15%;
   text-align: left;
   position: relative;
   float: left;
 }
-#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter i, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter i {
-  font-size: 20px;
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter #minus, #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter #plus, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter #minus, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter #plus {
+  font-size: 30px;
+  margin-right: 10px;
 }
 #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter:hover, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter:hover {
   cursor: pointer;
-}
-#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter .left, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter .left {
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  transform: translate(20%, -50%);
-}
-#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter .right, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter .right {
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(60%, -50%);
-}
-#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter input, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter input {
-  width: 30px;
-  text-align: center;
-}
-#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter input::-webkit-outer-spin-button, #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter input::-webkit-inner-spin-button, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter input::-webkit-outer-spin-button, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .platePrice, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .platePrice {
   float: right;
@@ -760,7 +741,7 @@ footer ul li i {
     align-items: center;
   }
   #emilio .checkout .checkout_left .plateCounter {
-    width: 15% !important;
+    width: 20% !important;
   }
   #emilio .checkout .checkout_left .plateName {
     width: 45% !important;
@@ -801,7 +782,6 @@ footer ul li i {
   position: absolute;
 }
 #emilio .restaurant h1 {
-  font-family: "Bangers", cursive;
   font-size: 80px;
 }
 #emilio .restaurant i {
@@ -809,6 +789,7 @@ footer ul li i {
   right: 5%;
   bottom: 5%;
   font-size: 30px;
+  color: #D64129;
 }
 #emilio .main-menu {
   margin-top: 80px;
@@ -864,6 +845,7 @@ footer ul li i {
 }
 #emilio .main-menu .cart .order_plate .plateAddRemove #plus, #emilio .main-menu .cart .order_plate .plateAddRemove #minus {
   cursor: pointer;
+  color: #D64129;
 }
 #emilio .main-menu .cart .order_plate .plateAddRemove #plus {
   padding-right: 20px;
@@ -879,6 +861,7 @@ footer ul li i {
 #emilio .main-menu .cart .delete {
   margin-top: 50px;
   cursor: pointer;
+  color: #D64129;
 }
 #emilio .main-menu .plate {
   width: 70%;
@@ -901,6 +884,7 @@ footer ul li i {
 #emilio .main-menu .plate .plate_photo img {
   height: 100%;
   border-radius: 5px;
+  margin-right: 10px;
 }
 #emilio .main-menu .plate .plate_utility {
   width: 100%;
@@ -935,6 +919,7 @@ footer ul li i {
 }
 #emilio .main-menu .plate .plate_counter .plate_add, #emilio .main-menu .plate .plate_counter .plate_remove {
   font-size: 30px;
+  color: #D64129;
 }
 #emilio .main-menu .plate .plate_counter .plate_remove:hover, #emilio .main-menu .plate .plate_counter .plate_add:hover {
   cursor: pointer;
@@ -1069,6 +1054,10 @@ footer ul li i {
     left: 0%;
     top: 0%;
     z-index: 10;
+  }
+  #emilio .main-menu .plate .plate_photo img {
+    width: 100%;
+    height: 100%;
   }
   #emilio .main-menu .plate .plate_utility {
     width: 100%;

@@ -16,11 +16,11 @@
             <img src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
         @endif
         {{-- FLIP CARD --}}
-        <div class="restaurant flip_card ">
+        <div class="restaurant flip_card">
             <div class="flip_card_inner shadow">
                 <div class="flip_card_front">
                   <h1>{{$restaurant->name}}</h1>
-                  @if ($restaurant->sponsored == true)ƒ
+                  @if ($restaurant->sponsored == true)
                       <i class="fas fa-medal"></i>
                   @endif
                 </div>
@@ -52,19 +52,24 @@
                         <li class="platePrice">@{{ plate.price*plate.counter }} €</li>
                     </ul>
                 </div>
-                <i class="fas fa-trash-alt delete"></i>
+                <span v-if="cart.length != 0">
+                    <i v-on:click="trashCart" class="fas fa-trash-alt delete"></i>
+                </span>
                 <hr>
-                <h4>Totale: <br> @{{ totalPrice }}  €</h4>
-                {{-- SE LOCAL STORAGE è PIENO STAMPA LINK CHECKOUT --}}
-                <a class="to_checkout" href="{{route('checkout')}}">
-                    <i class="far fa-credit-card"></i>
-                </a>
+                <span v-if="cart.length != 0">
+                    <h4>Totale: <br> @{{ totalPrice }}  €</h4>
+                </span>
+                 <span v-if="cart.length != 0">
+                    <a class="to_checkout" href="{{route('checkout')}}">
+                        <i class="far fa-credit-card animate__animated animate__wobble"></i>
+                    </a>
+                </span>
 
             </div>
             {{-- SECONDO CARRELLO DA NASCONDERE IN MOBILE --}}
             <div class="cart shadow animate__animated animate__jello" id="mobileCartNoMobile">
                 <h2>Il Tuo Ordine</h2>
-                <i class="fas fa-cookie-bite"></i>
+                <i class="fas fa-cookie-bite"></i><br>
                 <div class="order_plate shadow" v-for='plate in cart'>
                     <ul>
                         <li class="plateName">@{{ plate.name }}</li>
@@ -75,13 +80,19 @@
                         <li class="platePrice">@{{ plate.price*plate.counter }} €</li>
                     </ul>
                 </div>
-                <i class="fas fa-trash-alt delete"></i>
+                <span v-if="cart.length != 0">
+                    <i v-on:click="trashCart" class="fas fa-trash-alt delete"></i>
+                </span>
                 <hr>
-                <h4>Totale: <br> @{{ totalPrice }}  €</h4>
-                {{-- SE LOCAL STORAGE è PIENO STAMPA LINK CHECKOUT --}}
-                <a class="to_checkout" href="{{route('checkout')}}">
-                    <i class="far fa-credit-card"></i>
-                </a>
+                <span v-if="cart.length != 0">
+                    <h4>Totale: <br> @{{ totalPrice }}  €</h4>
+                </span>
+                <span v-if="cart.length != 0">
+                    <a class="to_checkout" href="{{route('checkout')}}">
+                        <i class="far fa-credit-card animate__animated animate__wobble"></i>
+                    </a>
+                </span>
+
             </div>
 
             <section>

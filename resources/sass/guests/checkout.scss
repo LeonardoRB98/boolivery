@@ -39,37 +39,18 @@
                     }
 
                     .plateCounter {
-                        width: 10%;
+                        width: 15%;
                         text-align: left;
                         position: relative;
                         float: left;
-
-                        i {
-                            font-size: 20px;
+                        #minus, #plus {
+                            font-size: 30px;
+                            margin-right: 10px;
                         }&:hover {
                             cursor: pointer;
+
                         }
-                        .left {
-                            position: absolute;
-                            top: 50%;
-                            left: 20%;
-                            transform: translate(20%, -50%);
-                        }
-                        .right {
-                            position: absolute;
-                            top: 50%;
-                            left: 60%;
-                            transform: translate(60%, -50%);
-                        }
-                        input {
-                            width: 30px;
-                            text-align: center;
-                            &::-webkit-outer-spin-button,
-                            &::-webkit-inner-spin-button  {
-                            -webkit-appearance: none;
-                            margin: 0;
-                        }
-                    }
+
                     }
                     .platePrice {
                         float: right;
@@ -106,7 +87,7 @@
             .checkout_left {
 
                 .plateCounter {
-                    width: 15%!important;
+                    width: 20%!important;
                 }
                 .plateName {
                     width: 45%!important;
