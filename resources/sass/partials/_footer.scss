@@ -9,22 +9,17 @@
     footer {
         position: relative;
         background-color: $brandBlue;
-        #top_footer {
-            position: absolute;
-            top: 0;
-            left: 0;
             .wawe_one {
                 background-color: $superWhite;
                 width: 100%;
             }
-        }
 
         ul {
             list-style: none;
             text-align: center;
             li {
                 padding: 10px;
-
+                //hoover
                 &:first-child {
                     font-size: 22px;
                     font-weight: 800;
@@ -34,7 +29,6 @@
                 }
                 a {
                     color: $body-bg;
-                    // line-height: 45px;
                 }
                 i {
                     font-size: 22px;
@@ -45,23 +39,13 @@
 
 }
 @media all and (max-width: 768px) {
-    #leonardo_footer {
-        footer {
-            .container {
-                font-size: 22px;
-                ul {
-                    list-style: none;
-                    li:first-child {
-                        font-size: 26px;
-                        // display: inline;
-                    }
-                }
+    footer {
+        font-size: 22px;
+        ul {
+            li:first-child {
+                font-size: 26px;
             }
         }
-
     }
 }
 
-@media all and (max-width: 320px) {
-
-}
