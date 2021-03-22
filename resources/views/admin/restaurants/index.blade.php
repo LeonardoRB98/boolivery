@@ -19,15 +19,13 @@
             <h2>Non hai ancora inserito nessun ristorante</h2>
             <a href="{{ route('admin.restaurants.create') }}" class="btn btn-primary">Crea Ristorante</a>
         </div>
+        
+        @else
         <div class="d-flex justify-content-between align-items-center">
             <h1>I tuoi Ristoranti</h1>
             <a class="orange-link" href="{{ route('admin.restaurants.create') }}">
                 <span>Crea Ristorante<i class="fas fa-plus-square"></i></span>
             </a>
-        @else
-        <div class="clearfix mb-4 col-sm-12">
-            <h1 class="col-sm-4 col-xs-12">I tuoi Ristoranti</h1>
-            <a href="{{ route('admin.restaurants.create') }}" class="btn btn-primary float-right">Crea Ristorante</a>
         </div>
             
         
@@ -70,22 +68,6 @@
                                 <img src="https://img.icons8.com/flat-round/452/rubber-duck--v1.png" alt="" class="active">
                             @endIf
                         </div>
-                    </div>
-
-
-                    <div class="route">
-                        <a href="{{route('admin.restaurants.edit', $restaurant)}}"><i class="fas fa-edit"></i></a>
-                    <form action="{{route('admin.restaurants.destroy', $restaurant)}}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" value="Elimina" onclick='return confirm("Sei sicuro di voler cancellare l&apos;elemento?")'><i class="fas fa-trash"></i>
-                        </button>
-                    </form>
-                    </div>
-                    <div class="orange">
-                        @if ($restaurant->sponsored     ==   1)
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Emblem-star.svg/1200px-Emblem-star.svg.png" alt="" class="active">
-                        @endIf
                     </div>
                 </div>
             @endforeach
