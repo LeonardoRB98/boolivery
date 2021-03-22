@@ -2,24 +2,23 @@
 
 @section('content')
 
-<div class="container">
+<div class="container wrapper">
 
-    <div class="container mb-5">
-        <div class="clearfix mb-4">
+    <div class="clearfix mb-4 col-sm-12">
+            <h1 class="col-sm-4 col-xs-12">Crea Ristorante</h1>
             <a href="{{ route('admin.restaurants.index') }}" class="btn btn-primary float-right">Elenco Ristoranti</a>
-        </div>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
     </div>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-    <form action="{{ route('admin.restaurants.store') }}" method='POST' enctype="multipart/form-data">
+    <form action="{{ route('admin.restaurants.store') }}" method='POST' enctype="multipart/form-data" class="login-form">
         @method('POST')
         @csrf
 
@@ -93,7 +92,7 @@
       </fieldset>
 
 
-        <input type="submit" value="Crea">
+        <input type="submit" value="Crea" class="btn btn_darkBlue">
      </form>
 
 </div>
