@@ -5,39 +5,40 @@
 
 // QUI LEONARDO!
 
-#leonardo_footer {
-    footer {
-        position: relative;
-        background-color: $brandBlue;
-            .wawe_one {
-                background-color: $superWhite;
-                width: 100%;
-            }
 
-        ul {
-            list-style: none;
-            text-align: center;
-            li {
-                padding: 10px;
-                //hoover
-                &:first-child {
-                    font-size: 22px;
-                    font-weight: 800;
-                    a {
-                        color:$brandOrange;
-                    }
-                }
+footer {
+    // width: 100vw;
+    position: relative;
+    background-color: $brandBlue;
+        .wawe_one {
+            background-color: $superWhite;
+            width: 100%;
+        }
+
+    ul {
+        list-style: none;
+        text-align: center;
+        li {
+            padding: 10px;
+            //hoover
+            &:first-child {
+                font-size: 22px;
+                font-weight: 800;
                 a {
-                    color: $body-bg;
+                    color:$brandOrange;
                 }
-                i {
-                    font-size: 22px;
-                }
+            }
+            a {
+                color: $body-bg;
+            }
+            i {
+                font-size: 22px;
             }
         }
     }
-
 }
+
+
 @media all and (max-width: 768px) {
     footer {
         font-size: 22px;

@@ -101,9 +101,7 @@ const app = new Vue({
                 console.log();
             }
         );
-
-
-
+        console.log(this.$root.$on());
         this.$root.$on('addToCart', (id, counter, price, name) => {
             // oggetto da pushare
             var object = {
@@ -224,7 +222,8 @@ const app = new Vue({
                 });
              })
         },
-        
+
+
     }
 
 });

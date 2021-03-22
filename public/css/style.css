@@ -77,32 +77,32 @@ body {
   }
 }
 
-#leonardo_footer footer {
+footer {
   position: relative;
   background-color: #131E52;
 }
-#leonardo_footer footer .wawe_one {
+footer .wawe_one {
   background-color: #FFFFFF;
   width: 100%;
 }
-#leonardo_footer footer ul {
+footer ul {
   list-style: none;
   text-align: center;
 }
-#leonardo_footer footer ul li {
+footer ul li {
   padding: 10px;
 }
-#leonardo_footer footer ul li:first-child {
+footer ul li:first-child {
   font-size: 22px;
   font-weight: 800;
 }
-#leonardo_footer footer ul li:first-child a {
+footer ul li:first-child a {
   color: #ED4521;
 }
-#leonardo_footer footer ul li a {
+footer ul li a {
   color: #F3F4F5;
 }
-#leonardo_footer footer ul li i {
+footer ul li i {
   font-size: 22px;
 }
 
