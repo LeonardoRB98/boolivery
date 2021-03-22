@@ -69,6 +69,7 @@
                                         {{ Auth::user()->name }}
                                     </a>
 
+
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a href="{{ route('admin.restaurants.index') }}" class="dropdown-item">
                                             My Dashboard
@@ -90,8 +91,8 @@
                 </div>
             </nav>
         </div>
-
-
+        {{-- qui --}}
+        <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
         @yield('content')
             {{-- footer --}}
         <div id="top_footer" class="wave_one">
@@ -139,56 +140,56 @@
             {{-- bottom footer --}}
             <div id="bottom_footer">
                 <div class="container-fluid">
-                <div class="row">
-                    <ul class="col-lg-3 col-md-6">
-                        <li><a href="#">Titolo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                    </ul>
-                    <ul class="col-lg-3 col-md-6">
-                        <li><a href="#">Titolo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                    </ul>
-                    <ul class="col-lg-3 col-md-6">
-                        <li><a href="#">Social</a></li>
-                        <li class="">
-                            <a href="#">
+                    <div class="row">
+                        <ul class="col-lg-3 col-md-6">
+                            <li><a href="#">Titolo</a></li>
+                            <li><a href="#">prova testo</a></li>
+                            <li><a href="#">prova testo</a></li>
+                            <li><a href="#">prova testo</a></li>
+                            <li><a href="#">prova testo</a></li>
+                        </ul>
+                        <ul class="col-lg-3 col-md-6">
+                            <li><a href="#">Titolo</a></li>
+                            <li><a href="#">prova testo</a></li>
+                            <li><a href="#">prova testo</a></li>
+                            <li><a href="#">prova testo</a></li>
+                            <li><a href="#">prova testo</a></li>
+                        </ul>
+                        <ul class="col-lg-3 col-md-6">
+                            <li><a href="#">Social</a></li>
+                            <li class="">
+                                <a href="#">
 
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
 
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
 
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
 
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="col-lg-3 col-md-6">
-                        <li><a href="#">Titolo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                    </ul>
-                </div>
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col-lg-3 col-md-6">
+                            <li><a href="#">Titolo</a></li>
+                            <li><a href="#">prova testo</a></li>
+                            <li><a href="#">prova testo</a></li>
+                            <li><a href="#">prova testo</a></li>
+                            <li><a href="#">prova testo</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             {{-- top footer --}}

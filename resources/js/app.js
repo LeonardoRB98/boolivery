@@ -18,6 +18,23 @@ import Vue from 'vue';
 jQuery(function () {
     $('.js-select_categories').select2();
 });
+
+$(document).ready(function(){
+	$(window).scroll(function () {
+			if ($(this).scrollTop() > 50) {
+				$('#back-to-top').fadeIn();
+			} else {
+				$('#back-to-top').fadeOut();
+			}
+		});
+		// scroll body to 0px on click
+		$('#back-to-top').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 400);
+			return false;
+		});
+});
 // $('.plate_photo_trigger').click(function() {
 //     this.$('.plate_photo_trigger').toggle();
 // });
@@ -226,10 +243,10 @@ const app = new Vue({
                 .get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect)
                 .then(response => {
                     // maybe add uppercase/lowercase inclusion
-                    
+
                     this.filteredRestaurants = response.data;
                 });
-            
+
         },
 
         buttonRestaurants(category) {
@@ -250,7 +267,7 @@ const app = new Vue({
                  this.filteredRestaurants = response.data;
             }
         );
-            
+
         },
 
 
@@ -261,8 +278,8 @@ const app = new Vue({
             this.$root.$emit('addToCart', plateId, newPlateCounter, platePrice, plateName);
             this.$root.$emit('addToComponent', plateId, newPlateCounter);
         },
-        
-        
+
+
         remove(plateId, plateCounter, platePrice, plateName) {
             // aggiorniamo i counter del piatto e del carrello
             if  (plateCounter > 0) {
@@ -270,10 +287,10 @@ const app = new Vue({
                 this.$root.$emit('removeFromCart', plateId, newPlateCounter, platePrice, plateName);
                 this.$root.$emit('removeFromComponent', plateId, newPlateCounter);
             }
-            
+
         },
 
-        
+
     }
 
 });
