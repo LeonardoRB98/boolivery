@@ -83,7 +83,7 @@ body {
   background-color: #131E52;
 }
 #leonardo_header nav .dropdown-menu-right a {
-  color: #FFFFFF;
+  color: #F6D9D3;
 }
 #leonardo_header nav .dropdown-menu-right a:hover {
   background-color: #ED4521;
@@ -115,7 +115,7 @@ footer {
   background-color: #131E52;
 }
 footer .wawe_one {
-  background-color: #FFFFFF;
+  background-color: #F6D9D3;
   width: 100%;
 }
 footer ul {
@@ -387,7 +387,7 @@ footer ul li i {
   width: 100%;
 }
 #fortunato main {
-  background-color: #FFFFFF;
+  background-color: #F6D9D3;
 }
 #fortunato main .container .jumbo_title {
   text-align: center;
@@ -456,7 +456,7 @@ footer ul li i {
   height: 200px;
 }
 #fortunato main .wave {
-  background: #FFFFFF;
+  background: #F6D9D3;
   height: 100%;
   position: relative;
 }
@@ -581,7 +581,7 @@ footer ul li i {
     margin-bottom: 100px;
   }
   #fortunato main {
-    background-color: #FFFFFF;
+    background-color: #F6D9D3;
   }
   #fortunato main .container section {
     display: flex;
@@ -598,7 +598,7 @@ footer ul li i {
     align-items: center;
     height: 240px;
     width: 260px;
-    background-color: #FFFFFF;
+    background-color: #F6D9D3;
     border-radius: 10px;
     box-shadow: 0 0 3px #ccc;
     transition: 0.2s;
@@ -765,7 +765,7 @@ footer ul li i {
     width: 100%;
   }
   #fortunato main {
-    background-color: #FFFFFF;
+    background-color: #F6D9D3;
   }
   #fortunato main .container .jumbo_title {
     text-align: center;
@@ -834,7 +834,7 @@ footer ul li i {
     height: 200px;
   }
   #fortunato main .wave {
-    background: #FFFFFF;
+    background: #F6D9D3;
     height: 100%;
     position: relative;
   }
@@ -862,6 +862,7 @@ footer ul li i {
     align-items: center;
     height: 50%;
     width: 60%;
+    margin: 20px;
     padding: 0 20px;
     text-align: center;
   }
