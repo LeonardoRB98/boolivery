@@ -1,28 +1,21 @@
 
-// nav {
-//     height: 90px;
-//     background-color: $brandBlue;
-//     .navbar-light .navbar-nav .nav-link {
-//         color: white!important;
-//     }
-//     .navbar-brand {
-//         height: 90px;
-
-//     }
-//     svg {
-//     height:100%;
-//     }
-
-
-// }
-
-// QUI LEONARDO!
 
 #navbarDropdown {
     color:  #FF6E00;
 }
 body {
     margin-top: 90px;
+}
+.back-to-top {
+    background-color: $brandOrange;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    z-index: 9999;
+    &:hover {
+        background-color: lighten($color: $brandOrange, $amount: 10%)
+    }
 }
 #leonardo_header {
     nav {
@@ -38,7 +31,15 @@ body {
         svg {
         height:100%;
         }
-
+        .dropdown-menu-right {
+            background-color: $brandBlue ;
+            a {
+                color: $superWhite;
+                &:hover {
+                    background-color: $brandOrange;
+                }
+            }
+        }
 
     }
     .navbar-toggler {
