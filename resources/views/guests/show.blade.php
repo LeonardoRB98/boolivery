@@ -23,7 +23,6 @@
                   @if ($restaurant->sponsored == true)ƒ
                       <i class="fas fa-medal"></i>
                   @endif
-
                 </div>
                 <div class="flip_card_back">
                     <div class="photo_description">
@@ -45,7 +44,6 @@
                 <i class="fas fa-cookie-bite"></i>
                 <div class="order_plate shadow" v-for='plate in cart'>
                     <ul>
-                        
                         <li class="plateName">@{{ plate.name }}</li>
                         <li class="plateAddRemove">
                             <i v-on:click="add(plate.id, plate.counter, plate.price, plate.name)" class="fas fa-plus-square" id="plus"></i>
@@ -54,14 +52,13 @@
                         <li class="platePrice">@{{ plate.price*plate.counter }} €</li>
                     </ul>
                 </div>
-
+                <i class="fas fa-trash-alt delete"></i>
                 <hr>
                 <h4>Totale: <br> @{{ totalPrice }}  €</h4>
                 {{-- SE LOCAL STORAGE è PIENO STAMPA LINK CHECKOUT --}}
-
-                    <a class="to_checkout" href="{{route('checkout')}}">
-                        <i class="far fa-credit-card"></i>
-                    </a>
+                <a class="to_checkout" href="{{route('checkout')}}">
+                    <i class="far fa-credit-card"></i>
+                </a>
 
             </div>
             {{-- SECONDO CARRELLO DA NASCONDERE IN MOBILE --}}
@@ -78,6 +75,7 @@
                         <li class="platePrice">@{{ plate.price*plate.counter }} €</li>
                     </ul>
                 </div>
+                <i class="fas fa-trash-alt delete"></i>
                 <hr>
                 <h4>Totale: <br> @{{ totalPrice }}  €</h4>
                 {{-- SE LOCAL STORAGE è PIENO STAMPA LINK CHECKOUT --}}
