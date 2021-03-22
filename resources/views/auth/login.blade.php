@@ -1,9 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-    <div id="stephanie">
         <div class="container-fluid">
-            <div class="row justify-content-center align-items-center wrapper">
+            <div class="row justify-content-center align-items-center wrap-box">
                 <div class="col-md-6">
                     <form method="POST" action="{{ route('login') }}" class="login-form">
                         @csrf
@@ -55,7 +54,4 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
 @endsection

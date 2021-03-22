@@ -1242,20 +1242,17 @@ body {
     height: 600px;
   }
 }
-#stephanie {
-  background-color: #EDF1F4;
-}
-#stephanie .wrapper {
+.wrap-box {
   height: calc(100vh - 90px);
 }
-#stephanie .wrapper .login-form {
+.wrap-box .login-form {
   padding: 60px 40px 10px 40px;
   background: #ED4521;
   border-radius: 8px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
   position: relative;
 }
-#stephanie .wrapper .login-form h3 {
+.wrap-box .login-form h3 {
   position: absolute;
   padding: 20px 40px;
   left: 50%;
@@ -1267,15 +1264,15 @@ body {
   border-radius: 79% 21% 80% 20%/26% 85% 15% 74%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
-#stephanie .wrapper .btnForgetPwd {
+.wrap-box .btnForgetPwd {
   color: #fff;
   text-decoration: none;
 }
-#stephanie .wrapper .btnForgetPwd:hover {
+.wrap-box .btnForgetPwd:hover {
   text-decoration: none;
   color: #fff;
 }
-#stephanie .wrapper .small-link {
+.wrap-box .small-link {
   text-decoration: none;
   font-size: 12px;
 }
