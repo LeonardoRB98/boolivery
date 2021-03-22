@@ -20,7 +20,7 @@
             <div class="flip_card_inner shadow">
                 <div class="flip_card_front">
                   <h1>{{$restaurant->name}}</h1>
-                  @if ($restaurant->sponsored == true)
+                  @if ($restaurant->sponsored == true)ƒ
                       <i class="fas fa-medal"></i>
                   @endif
 
@@ -45,8 +45,11 @@
                 <i class="fas fa-cookie-bite"></i>
                 <div class="order_plate shadow" v-for='plate in cart'>
                     <ul>
+                        
                         <li class="plateName">@{{ plate.name }}</li>
-                        <li class="plateAddRemove"><i class="fas fa-plus-square" id="plus"></i><i class="fas fa-minus-square" id="minus"></i></li>
+                        <li class="plateAddRemove">
+                            <i v-on:click="add(plate.id, plate.counter, plate.price, plate.name)" class="fas fa-plus-square" id="plus"></i>
+                            <i v-on:click="remove(plate.id, plate.counter, plate.price, plate.name)" class="fas fa-minus-square" id="minus"></i></li>
                         <li class="plateCounter">X @{{ plate.counter }} </li>
                         <li class="platePrice">@{{ plate.price*plate.counter }} €</li>
                     </ul>
@@ -68,7 +71,9 @@
                 <div class="order_plate shadow" v-for='plate in cart'>
                     <ul>
                         <li class="plateName">@{{ plate.name }}</li>
-                        <li class="plateAddRemove"><i class="fas fa-plus-square" id="plus"></i><i class="fas fa-minus-square" id="minus"></i></li>
+                        <li class="plateAddRemove">
+                            <i v-on:click="add(plate.id, plate.counter, plate.price, plate.name)" class="fas fa-plus-square" id="plus"></i>
+                            <i v-on:click="remove(plate.id, plate.counter, plate.price, plate.name)" class="fas fa-minus-square" id="minus"></i></li>
                         <li class="plateCounter">X @{{ plate.counter }} </li>
                         <li class="platePrice">@{{ plate.price*plate.counter }} €</li>
                     </ul>

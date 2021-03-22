@@ -98,7 +98,6 @@ const app = new Vue({
                     response.data[i].counter = 0;
                 }
                 this.plates = response.data;
-                console.log();
             }
         );
 
@@ -136,7 +135,6 @@ const app = new Vue({
                 this.cart.push(object);
             }
 
-            // this.totalPrice = Math.ceil(this.totalPrice + price);
             this.totalPrice = Number((this.totalPrice + price).toFixed(2));
         });
 
@@ -166,7 +164,6 @@ const app = new Vue({
                 this.cart.splice(k, 1, object);
             }
 
-            // this.totalPrice = Math.ceil(this.totalPrice - price);
             this.totalPrice = Number((this.totalPrice - price).toFixed(2));
 
         });
@@ -224,6 +221,24 @@ const app = new Vue({
                 });
              })
         },
+
+        add(plateId, plateCounter, platePrice, plateName) {
+            // aggiorniamo i counter del piatto e del carrello
+            var newPlateCounter = plateCounter + 1;
+            this.$root.$emit('addToCart', plateId, newPlateCounter, platePrice, plateName);
+            this.$root.$emit('addToComponent', plateId, newPlateCounter);
+        },
+        
+        remove(plateId, plateCounter, platePrice, plateName) {
+            // aggiorniamo i counter del piatto e del carrello
+            if  (plateCounter > 0) {
+                var newPlateCounter = plateCounter - 1;
+                this.$root.$emit('removeFromCart', plateId, newPlateCounter, platePrice, plateName);
+                this.$root.$emit('removeFromComponent', plateId, newPlateCounter);
+            }
+            
+        },
+
         
     }
 
