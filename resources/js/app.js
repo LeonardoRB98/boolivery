@@ -100,9 +100,7 @@ const app = new Vue({
                 this.plates = response.data;
             }
         );
-
-
-
+        console.log(this.$root.$on());
         this.$root.$on('addToCart', (id, counter, price, name) => {
             // oggetto da pushare
             var object = {

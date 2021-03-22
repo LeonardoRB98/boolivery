@@ -2046,6 +2046,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
 
       _this.plates = response.data;
     });
+    console.log(this.$root.$on());
     this.$root.$on('addToCart', function (id, counter, price, name) {
       // oggetto da pushare
       var object = {
