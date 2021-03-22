@@ -694,15 +694,10 @@ footer ul li i {
     flex-wrap: wrap;
     align-items: center;
   }
-  #fortunato .jumbo_box .search_bar .wrap_card .category_card {
-    width: 100px;
-    height: 100px;
-    margin: 0 2px;
-    border-radius: 50%;
-    background-color: #2045E3;
-  }
-  #fortunato .jumbo_box .search_bar .wrap_card .category_card button {
-    margin: 30px;
+  #fortunato .jumbo_box .search_bar .wrap_card .button_category {
+    border: none;
+    border-radius: 20px;
+    background-color: white;
   }
   #fortunato .jumbo_box .search_bar input {
     width: 50%;

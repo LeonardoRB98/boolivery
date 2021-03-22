@@ -17,16 +17,16 @@
                 </select> --}}
                 <div class="wrap_card">
                    
-                        <button v-on:click="buttonRestaurants('Internazionale')"  class="" >Internazionale</button>
-                        <button v-on:click="buttonRestaurants('Italiano')"  class="" >Italiano</button> 
-                        <button v-on:click="buttonRestaurants('Indiano')"  class="" >Indiano</button> 
-                        <button v-on:click="buttonRestaurants('Carne')"  class="" >Carne</button> 
-                        <button v-on:click="buttonRestaurants('Pesce')"  class="" >Pesce</button> 
-                        <button v-on:click="buttonRestaurants('Pizza')"  class="" >Pizza</button> 
-                        <button v-on:click="buttonRestaurants('Messicano')"  class="" >Messicano</button> 
-                        <button v-on:click="buttonRestaurants('Giapponese')"  class="" >Giapponese</button> 
-                        <button v-on:click="buttonRestaurants('Cinese')"  class="" >Cinese</button> 
-                        <button v-on:click="buttonRestaurants('Vegano')"  class="" >Vegano</button> 
+                        <button v-on:click="buttonRestaurants('Internazionale')"  class="button_category">Internazionale</button>
+                        <button v-on:click="buttonRestaurants('Italiano')"  class="button_category" >Italiano</button> 
+                        <button v-on:click="buttonRestaurants('Indiano')"  class="button_category" >Indiano</button> 
+                        <button v-on:click="buttonRestaurants('Carne')"  class="button_category" >Carne</button> 
+                        <button v-on:click="buttonRestaurants('Pesce')"  class="button_category" >Pesce</button> 
+                        <button v-on:click="buttonRestaurants('Pizza')"  class="button_category" >Pizza</button> 
+                        <button v-on:click="buttonRestaurants('Messicano')"  class="button_category" >Messicano</button> 
+                        <button v-on:click="buttonRestaurants('Giapponese')"  class="button_category" >Giapponese</button> 
+                        <button v-on:click="buttonRestaurants('Cinese')"  class="button_category" >Cinese</button> 
+                        <button v-on:click="buttonRestaurants('Vegano')"  class="button_category" >Vegano</button> 
                 </div>
             </div>
             <div class="wave_one">
