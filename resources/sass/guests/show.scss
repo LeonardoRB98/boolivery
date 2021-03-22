@@ -60,6 +60,10 @@
             .order_plate {
                 width: 100%;
                 text-align: left;
+                border-radius: 20px;
+                padding: 15px;
+                margin-bottom: 5px;
+                height: 100px;
                 li {
                     display: inline-block;
                 }
@@ -76,6 +80,17 @@
                 }
                 .platePrice {
                     float: right;
+                }
+                .plateAddRemove {
+                    width: 100%;
+                    height: 20px;
+                    text-align: center;
+                    #plus, #minus{
+                        cursor: pointer;
+                    }
+                    #plus {
+                        padding-right: 20px;
+                    }
                 }
             }
             h4 {
@@ -263,6 +278,17 @@
             align-items: center;
             .cart {
                 width: 100%;
+                .plateAddRemove {
+                    width: 100%;
+                    height: 20px;
+                    text-align: center;
+                    #plus{
+                        font-size: 30px;
+                    }
+                    #minus {
+                        font-size: 30px;
+                    }
+                }
             }
             .plate {
                 width: 100%;
