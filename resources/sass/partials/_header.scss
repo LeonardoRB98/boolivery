@@ -1,23 +1,73 @@
 
-nav {
-    height: 90px;
-    background-color: $brandBlue;
+// nav {
+//     height: 90px;
+//     background-color: $brandBlue;
+//     .navbar-light .navbar-nav .nav-link {
+//         color: white!important;
+//     }
+//     .navbar-brand {
+//         height: 90px;
 
-    .navbar-brand {
-
-        height: 90px;
-
-        svg {
-        height: 100%;
-        }
-    }
+//     }
+//     svg {
+//     height:100%;
+//     }
 
 
-}
+// }
 
 // QUI LEONARDO!
 
 #navbarDropdown {
     color:  #FF6E00;
 }
+body {
+    margin-top: 90px;
+}
+#leonardo_header {
+    nav {
+        height: 90px;
+        background-color: $brandBlue;
+        .nav-link {
+            color: white;
+        }
+        .navbar-brand {
+            height: 90px;
 
+        }
+        svg {
+        height:100%;
+        }
+
+
+    }
+    .navbar-toggler {
+        background-color: $brandOrange;
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            svg {
+                height: calc(100% - 16px);
+            }
+            .navbar-nav {
+                background-color:$brandBlue;
+                text-align: center;
+                border-radius: 10px;
+            }
+            .navbar-light .navbar-nav .nav-link {
+                color: white!important;
+            }
+        }
+     }
+    @media all and (max-width: 320px) {
+        nav {
+            .navbar-brand {
+                svg {
+                    height: calc(100% - 16px);
+                }
+            }
+
+        }
+    }
+}
