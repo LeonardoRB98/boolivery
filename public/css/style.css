@@ -303,6 +303,24 @@ body {
   height: 100%;
   text-align: center;
 }
+#fortunato .jumbo_box .search_bar .wrap_card {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#fortunato .jumbo_box .search_bar .wrap_card .category_card {
+  width: 100px;
+  height: 100px;
+  margin: 0 2px;
+  border-radius: 50%;
+  background-color: #2045E3;
+}
+#fortunato .jumbo_box .search_bar .wrap_card .category_card button {
+  margin: 30px;
+}
 #fortunato .jumbo_box .search_bar input {
   width: 50%;
   height: 60px;
@@ -338,12 +356,19 @@ body {
 }
 #fortunato main .container section {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   height: 100%;
   margin-bottom: 40px;
 }
-#fortunato main .container section .card_restaurant {
+#fortunato main .container section .wrapper_restaurant {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#fortunato main .container section .wrapper_restaurant .card_restaurant {
   display: flex;
   flex-direction: column;
   margin: 0 15px;
@@ -356,39 +381,39 @@ body {
   transition: 0.2s;
   margin-top: 30px;
 }
-#fortunato main .container section .card_restaurant:hover {
+#fortunato main .container section .wrapper_restaurant .card_restaurant:hover {
   transform: translateY(-1rem);
   transition: 0.2s;
 }
-#fortunato main .container section .card_restaurant .slug {
+#fortunato main .container section .wrapper_restaurant .card_restaurant .slug {
   font-size: 20px;
   max-height: 10%;
 }
-#fortunato main .container section .card_restaurant .image_box {
+#fortunato main .container section .wrapper_restaurant .card_restaurant .image_box {
   height: 80%;
   width: 100%;
   position: relative;
 }
-#fortunato main .container section .card_restaurant .image_box .fas.fa-medal {
+#fortunato main .container section .wrapper_restaurant .card_restaurant .image_box .fas.fa-medal {
   position: absolute;
   font-size: 30px;
   left: 10px;
   top: 10px;
   color: #ED4521;
 }
-#fortunato main .container section .card_restaurant .image_box img {
+#fortunato main .container section .wrapper_restaurant .card_restaurant .image_box img {
   height: 100%;
   width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-#fortunato main .container section .not_found {
+#fortunato main .container section .wrapper_restaurant .not_found {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   height: 400px;
 }
-#fortunato main .container section .not_found img {
+#fortunato main .container section .wrapper_restaurant .not_found img {
   height: 200px;
 }
 #fortunato main .wave {

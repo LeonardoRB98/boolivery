@@ -1994,7 +1994,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     restaurants: [],
     filteredRestaurants: [],
     categories: [],
-    categorySelect: '',
+    categorySelect: 'All',
     sponsoredRestaurant: [],
     plates: [],
     search: '',
@@ -2131,14 +2131,40 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     }
   },
   methods: {
-    searchRestaurants: function searchRestaurants() {
+    searchInputRestaurants: function searchInputRestaurants() {
       var _this3 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants/').then(function (response) {
+        // maybe add uppercase/lowercase inclusion
+        _this3.filteredRestaurants = response.data.filter(function (restaurant) {
+          _this3.categorySelect = '';
+          return restaurant.name.includes(_this3.search);
+        });
+      });
+    },
+    searchRestaurants: function searchRestaurants() {
+      var _this4 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect).then(function (response) {
         // maybe add uppercase/lowercase inclusion
-        _this3.filteredRestaurants = response.data.filter(function (restaurant) {
-          return restaurant.name.includes(_this3.search);
-        });
+        _this4.filteredRestaurants = response.data;
+      });
+    },
+    buttonRestaurants: function buttonRestaurants(category) {
+      this.categorySelect = category;
+      this.searchRestaurants();
+
+      if (this.categorySelect != category) {
+        this.deleteSelect();
+      }
+    },
+    deleteSelect: function deleteSelect() {
+      var _this5 = this;
+
+      this.categorySelect = "All";
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
+        _this5.restaurants = response.data;
+        _this5.filteredRestaurants = response.data;
       });
     }
   }
