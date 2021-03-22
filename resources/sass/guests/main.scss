@@ -293,6 +293,8 @@ transition: opacity 4s
             color: white;
             font-size: 15px;
             background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
+            background-repeat:repeat-x;
+            background-size: cover;
 
 
             h2 {
