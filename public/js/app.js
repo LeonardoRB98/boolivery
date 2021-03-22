@@ -2180,6 +2180,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     buttonRestaurants: function buttonRestaurants(category) {
       this.categorySelect = category;
       this.searchRestaurants();
+      this.search = '';
     },
     deleteSelect: function deleteSelect() {
       var _this5 = this;
