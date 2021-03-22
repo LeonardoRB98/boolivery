@@ -851,6 +851,10 @@ body {
   font-size: 50px;
   color: black !important;
 }
+#emilio .main-menu .cart .delete {
+  margin-top: 50px;
+  cursor: pointer;
+}
 #emilio .main-menu .plate {
   width: 70%;
   height: 20%;
@@ -865,13 +869,11 @@ body {
   transform: scale(1.1);
 }
 #emilio .main-menu .plate .plate_photo {
-  width: 40%;
+  width: 30%;
   height: 100%;
   border-radius: 5px;
-  margin-right: 35px;
 }
 #emilio .main-menu .plate .plate_photo img {
-  width: 100%;
   height: 100%;
   border-radius: 5px;
 }
@@ -882,10 +884,10 @@ body {
 #emilio .main-menu .plate .plate_utility .plate_info {
   width: 100%;
   height: 50%;
-  padding: 20px;
 }
 #emilio .main-menu .plate .plate_utility .plate_info .plate_name {
   float: left;
+  font-size: 30px;
 }
 #emilio .main-menu .plate .plate_utility .plate_info .plate_price {
   float: right;
@@ -1051,6 +1053,10 @@ body {
     top: 0%;
     text-align: center;
     z-index: 2;
+    padding: 20px;
+  }
+  #emilio .main-menu .plate .plate_utility .plate_name {
+    font-size: 20px !important;
   }
   #emilio .main-menu .plate:active .plate_photo {
     display: none;

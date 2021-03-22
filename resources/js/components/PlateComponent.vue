@@ -18,7 +18,6 @@
             <span class="plate_add" v-on:click="increaseCounter()"><i class="fas fa-plus-square"></i></span>
             <span class="plate_remove" v-on:click="decreaseCounter()"><i class="fas fa-minus-square"></i></span>
         </div>
-        {{ counter }}
         <!-- <div class="photo"></div>
         <p>Prezzo: {{ price }} €</p>
         <button v-on:click="increaseCounter()">Add</button>

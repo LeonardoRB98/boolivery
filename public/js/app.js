@@ -1873,7 +1873,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'plate-component',
   props: {
@@ -43952,8 +43951,7 @@ var render = function() {
         },
         [_c("i", { staticClass: "fas fa-minus-square" })]
       )
-    ]),
-    _vm._v("\n    " + _vm._s(_vm.counter) + "\n    ")
+    ])
   ])
 }
 var staticRenderFns = []
