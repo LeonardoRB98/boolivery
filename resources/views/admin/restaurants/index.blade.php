@@ -8,14 +8,26 @@
         </div>
         @endif
 
-        <div class="fail" v-if="filteredRestaurants.length == 0">
+        @if (session('message_entry'))
+        <div class="alert welcome">
+        {{ session('message_entry') }} {{  Auth::user()->name }}!
+        </div>
+        @endif
+
+        @if (!count($restaurants))
+        <div class="fail">
             <h2>Non hai ancora inserito nessun ristorante</h2>
             <a href="{{ route('admin.restaurants.create') }}" class="btn btn-primary">Crea Ristorante</a>
         </div>
-        <div class="clearfix mb-4 col-sm-12" v-else>
+        @else
+        <div class="clearfix mb-4 col-sm-12">
             <h1 class="col-sm-4 col-xs-12">I tuoi Ristoranti</h1>
             <a href="{{ route('admin.restaurants.create') }}" class="btn btn-primary float-right">Crea Ristorante</a>
         </div>
+            
+        
+        
+        
 
 
 
@@ -53,7 +65,7 @@
                     </div>
                     <div class="orange">
                         @if ($restaurant->sponsored     ==   1)
-                            <img src="https://img.icons8.com/flat-round/452/rubber-duck--v1.png" alt="" class="active">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Emblem-star.svg/1200px-Emblem-star.svg.png" alt="" class="active">
                         @endIf
                     </div>
                 </div>
@@ -62,6 +74,7 @@
 
                 @endforeach
         </div>
+        @endif
     </div>
 
 

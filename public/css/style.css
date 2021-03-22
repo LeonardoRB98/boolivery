@@ -1129,6 +1129,9 @@ footer ul li i {
   padding-top: 50px;
   padding-bottom: 40px;
 }
+.wrapper .welcome {
+  background-color: #ED4521;
+}
 .wrapper h1 {
   float: left;
 }
