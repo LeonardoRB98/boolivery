@@ -16,9 +16,17 @@
                     <option :value="category.category" v-for='category in categories'>@{{category.category}}</option>
                 </select> --}}
                 <div class="wrap_card">
-                    <div class="category_card" v-for="(category, index) in categories">
-                        <button v-on:click="buttonRestaurants(category.category)"  class="" >@{{category.category}}</button> 
-                    </div>
+                   
+                        <button v-on:click="buttonRestaurants('Internazionale')"  class="button_category">Internazionale</button>
+                        <button v-on:click="buttonRestaurants('Italiano')"  class="button_category" >Italiano</button> 
+                        <button v-on:click="buttonRestaurants('Indiano')"  class="button_category" >Indiano</button> 
+                        <button v-on:click="buttonRestaurants('Carne')"  class="button_category" >Carne</button> 
+                        <button v-on:click="buttonRestaurants('Pesce')"  class="button_category" >Pesce</button> 
+                        <button v-on:click="buttonRestaurants('Pizza')"  class="button_category" >Pizza</button> 
+                        <button v-on:click="buttonRestaurants('Messicano')"  class="button_category" >Messicano</button> 
+                        <button v-on:click="buttonRestaurants('Giapponese')"  class="button_category" >Giapponese</button> 
+                        <button v-on:click="buttonRestaurants('Cinese')"  class="button_category" >Cinese</button> 
+                        <button v-on:click="buttonRestaurants('Vegano')"  class="button_category" >Vegano</button> 
                 </div>
             </div>
             <div class="wave_one">
