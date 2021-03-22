@@ -1,62 +1,108 @@
 #stephanie-2 {
-    background-color: red;
-
-    .curved {
-        background-color: $brandOrange;
-        text-align: center;
-        color: white;
-
-        svg {
-            display: block;
-        }
-
-        &.upper {
-            background-color: white;
-        }
+    background-color: $body-bg;
+    .img-layer {
+        display: block;
     }
-    .one {
+    .curved-top {
+        background-color: trasparent;
         
-        height: 400px;
         position: relative;
-        .box {
+        height: 300px;
+        .img-container {
             width: 100%;
             height: 100%;
-            overflow: hidden;
-
+            position: relative;
             img {
-                width: 30%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .img-layover {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.3);
+
+            }
+            
+        }
+        
+        .img-layer-bottom {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            box-shadow: 0 5px 5px rgba(23, 19, 80, 0.75);
+        }
+
+        .title-layer {
+            color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%; 
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            font-size: 8vw;
+            border: 5px solid white;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        
+        
+
+    }
+    .curved-bottom {
+        background-color:$brandBlue;
+    } 
+
+    .main-content {
+        padding: 40px 0;
+
+        img {
+            width: 100%;
+            border-radius: 60% 40% 40% 20% / 70% 50% 30% 25%; 
+        }
+        
+        .wrapper {
+            position: sticky;
+            top: 0;
+            .info {
+                background-color: white;
+                border-left: 4px solid $brandOrange;
+                border-radius: 0px 40px 40px 0px;
+                color: black;
+                padding: 20px;
+                margin-bottom: 5px;
+                transition: all 1s ease-in-out;
+                &:hover {
+                    margin-left: 15px;
+                }
+            }
+    
+            .tag {
+                background-color: $brandOrange;
+                padding: 5px 10px;
+                color: white;
+                border-radius: 5px;
+            }
+
+            .icon {
+                font-size: 20px;
             }
         }
         
+
+        
+        
+    }
+}
+
+
+@media all and (min-width: 768px) {
+    #stephanie-2 .curved-top {
+        height: 600px;
     }
 
-    .one::before {
-        content: '';
-        width: 100%;
-        height: 150px;
-        position: absolute;
-        background-color: $superWhite;
-        bottom: 0;
-        left: 0;
-        top: 320px;
-        transform: skewY(-5deg);
-    }
-
-   
-
-    .main-content {
-        margin-top: 150px;
-    }
-    // .one::after {
-    //     content: '';
-    //     width: 50%;
-    //     height: 100px;
-    //     position: absolute;
-    //     background-color: blue;
-    //     bottom: 0;
-    //     right: 0;
-    //     top:550px;
-    //     transform: skewY(10deg);
-    // }
-    
 }

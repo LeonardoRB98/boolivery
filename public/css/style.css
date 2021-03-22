@@ -807,46 +807,94 @@ nav .navbar-brand svg {
 }
 
 #stephanie-2 {
-  background-color: red;
+  background-color: #EDF1F4;
 }
-#stephanie-2 .curved {
-  background-color: #ED4521;
-  text-align: center;
-  color: white;
-}
-#stephanie-2 .curved svg {
+#stephanie-2 .img-layer {
   display: block;
 }
-#stephanie-2 .curved.upper {
-  background-color: white;
-}
-#stephanie-2 .one {
-  height: 400px;
+#stephanie-2 .curved-top {
+  background-color: trasparent;
   position: relative;
+  height: 300px;
 }
-#stephanie-2 .one .box {
+#stephanie-2 .curved-top .img-container {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  position: relative;
 }
-#stephanie-2 .one .box img {
-  width: 30%;
-}
-#stephanie-2 .one::before {
-  content: "";
+#stephanie-2 .curved-top .img-container img {
   width: 100%;
-  height: 150px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#stephanie-2 .curved-top .img-container .img-layover {
   position: absolute;
-  background-color: #FFFFFF;
-  bottom: 0;
   left: 0;
-  top: 320px;
-  transform: skewY(-5deg);
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+#stephanie-2 .curved-top .img-layer-bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 5px 5px rgba(23, 19, 80, 0.75);
+}
+#stephanie-2 .curved-top .title-layer {
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: 8vw;
+  border: 5px solid white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+#stephanie-2 .curved-bottom {
+  background-color: #131E52;
 }
 #stephanie-2 .main-content {
-  margin-top: 150px;
+  padding: 40px 0;
+}
+#stephanie-2 .main-content img {
+  width: 100%;
+  border-radius: 60% 40% 40% 20%/70% 50% 30% 25%;
+}
+#stephanie-2 .main-content .wrapper {
+  position: sticky;
+  top: 0;
+}
+#stephanie-2 .main-content .wrapper .info {
+  background-color: white;
+  border-left: 4px solid #ED4521;
+  border-radius: 0px 40px 40px 0px;
+  color: black;
+  padding: 20px;
+  margin-bottom: 5px;
+  transition: all 1s ease-in-out;
+}
+#stephanie-2 .main-content .wrapper .info:hover {
+  margin-left: 15px;
+}
+#stephanie-2 .main-content .wrapper .tag {
+  background-color: #ED4521;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+}
+#stephanie-2 .main-content .wrapper .icon {
+  font-size: 20px;
 }
 
+@media all and (min-width: 768px) {
+  #stephanie-2 .curved-top {
+    height: 600px;
+  }
+}
 #stephanie {
   background-color: #EDF1F4;
 }
