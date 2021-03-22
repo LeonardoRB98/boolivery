@@ -63,9 +63,9 @@
                                 </button>
                             </form>
                         </div>
-                        <div class="orange">
+                        <div class="blue">
                             @if ($restaurant->sponsored == 1)
-                                <img src="https://img.icons8.com/flat-round/452/rubber-duck--v1.png" alt="" class="active">
+                            <i class="fas fa-medal active"></i> 
                             @endIf
                         </div>
                     </div>

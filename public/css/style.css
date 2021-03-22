@@ -1420,22 +1420,23 @@ footer ul li i {
   transition: 0.5s;
 }
 .container_card .card .name {
-  width: 180px;
+  width: 170px;
+  height: 140px;
 }
-.container_card .card .orange {
+.container_card .card .blue {
   position: absolute;
   right: 0;
   bottom: 0;
   height: 180px;
-  border-bottom: 180px solid #ED4521;
+  border-bottom: 180px solid #2045E3;
   border-left: 100px solid transparent;
 }
 .container_card .card .active {
   position: absolute;
   bottom: -170px;
   right: 10px;
-  width: 35px;
-  height: 35px;
+  font-size: 30px;
+  color: #ED4521;
 }
 .container_card .card a {
   height: 50%;

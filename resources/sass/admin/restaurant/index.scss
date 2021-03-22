@@ -38,22 +38,23 @@
             transition: 0.5s;
         }
         .name {
-            width: 180px;
+            width: 170px;
+            height: 140px;
         }
-        .orange {
+        .blue {
             position: absolute;
             right: 0;
             bottom: 0;
             height: 180px;
-            border-bottom: 180px solid $brandOrange;
+            border-bottom: 180px solid $blueShock;
             border-left: 100px solid transparent;
         }
         .active {
             position: absolute;
             bottom: -170px;
             right: 10px;
-            width: 35px;
-            height: 35px;
+            font-size: 30px;
+            color: $brandOrange;
         }
         a {
             height: 50%;
