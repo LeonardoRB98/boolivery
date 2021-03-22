@@ -358,6 +358,7 @@ footer ul li i {
   position: absolute;
   top: 13px;
   left: 5px;
+  z-index: 5;
 }
 #fortunato .jumbo_box .search_bar .wrap_card .button_category .fa-check-square {
   position: absolute;

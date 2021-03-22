@@ -16,65 +16,65 @@
                     <option value="">All</option>
                     <option :value="category.category" v-for='category in categories'>@{{category.category}}</option>
                 </select> --}}
-                    <div class="wrap_card">
-                        <button v-on:click="sponsoredRestaurants" class="button_category">
+                    <div  id="scroll" class="wrap_card">
+                        <button v-scroll-to="'#scroll'" v-on:click="sponsoredRestaurants" class="button_category">
                             Sponsored
                             <i class="fas fa-medal"></i>
                             <i v-if="categorySelect == '' && search == '' "
                                 class="far fa-check-square"></i>
                         </button>
 
-                        <button v-on:click="buttonRestaurants('Internazionale')" class="button_category">
+                        <button v-scroll-to="'#scroll'" v-on:click="buttonRestaurants('Internazionale')" class="button_category">
                             Internazionale
                             <img src="{{ asset('/image/category/internazionale.webp') }}" alt="">
                             <i v-if="categorySelect == 'Internazionale' "
                                 class="far fa-check-square"></i>
                         </button>
-                        <button v-on:click="buttonRestaurants('Italiano')" class="button_category">
+                        <button v-scroll-to="'#scroll'" v-on:click="buttonRestaurants('Italiano')" class="button_category">
                             Italiano
                             <img src="{{ asset('/image/category/italiano.webp') }}" alt="">
                             <i v-if="categorySelect == 'Italiano' " class="far fa-check-square"></i>
 
                         </button>
-                        <button v-on:click="buttonRestaurants('Indiano')" class="button_category">
+                        <button v-scroll-to="'#scroll'" v-on:click="buttonRestaurants('Indiano')" class="button_category">
                             Indiano
                             <img src="{{ asset('/image/category/indiano.webp') }}" alt="">
                             <i v-if="categorySelect == 'Indiano'" class="far fa-check-square"></i>
                         </button>
-                        <button v-on:click="buttonRestaurants('Carne')" class="button_category">
+                        <button v-scroll-to="'#scroll'" v-on:click="buttonRestaurants('Carne')" class="button_category">
                             Carne
                             <img src="{{ asset('/image/category/carne.webp') }}" alt="">
                             <i v-if="categorySelect == 'Carne' " class="far fa-check-square"></i>
                         </button>
-                        <button v-on:click="buttonRestaurants('Pesce')" class="button_category">
+                        <button v-scroll-to="'#scroll'" v-on:click="buttonRestaurants('Pesce')" class="button_category">
                             Pesce
                             <img src="{{ asset('/image/category/pesce.webp') }}" alt="">
                             <i v-if="categorySelect == 'Pesce' " class="far fa-check-square"></i>
                         </button>
-                        <button v-on:click="buttonRestaurants('Pizza')" class="button_category">
+                        <button v-scroll-to="'#scroll'" v-on:click="buttonRestaurants('Pizza')" class="button_category">
                             Pizza
                             <img src="{{ asset('/image/category/pizza.webp') }}" alt="">
                             <i v-if="categorySelect == 'Pizza' " class="far fa-check-square"></i>
                         </button>
-                        <button v-on:click="buttonRestaurants('Messicano')" class="button_category">
+                        <button v-scroll-to="'#scroll'" v-on:click="buttonRestaurants('Messicano')" class="button_category">
                             Messicano
                             <img src="{{ asset('/image/category/messicano.webp') }}" alt="">
                             <i v-if="categorySelect == 'Messicano' " class="far fa-check-square"></i>
 
                         </button>
-                        <button v-on:click="buttonRestaurants('Giapponese')" class="button_category">
+                        <button v-scroll-to="'#scroll'" v-on:click="buttonRestaurants('Giapponese')" class="button_category">
                             Giapponese
                             <img src="{{ asset('/image/category/giapponese.webp') }}" alt="">
                             <i v-if="categorySelect == 'Giapponese' " class="far fa-check-square"></i>
 
                         </button>
-                        <button v-on:click="buttonRestaurants('Cinese')" class="button_category">
+                        <button v-scroll-to="'#scroll'" v-on:click="buttonRestaurants('Cinese')" class="button_category">
                             Cinese
                             <img src="{{ asset('/image/category/cinese.webp') }}" alt="">
                             <i v-if="categorySelect == 'Cinese' " class="far fa-check-square"></i>
 
                         </button>
-                        <button v-on:click="buttonRestaurants('Vegano')" class="button_category">
+                        <button v-scroll-to="'#scroll'" v-on:click="buttonRestaurants('Vegano')" class="button_category">
                             Vegano
                             <img src="{{ asset('/image/category/vegano.webp') }}" alt="">
                             <i v-if="categorySelect == 'Vegano' " class="far fa-check-square"></i>
@@ -160,7 +160,7 @@
                     {{-- fine sezione ristoranti sponsorizzati --}}
                     {{-- sezione ristolanti scelti per categoria --}}
                     <section v-if="categorySelect != ''">
-                        <h1 v-if="filteredRestaurants != 0 && search == '' ">I ristoranti della categoria
+                        <h1  v-if="filteredRestaurants != 0 && search == '' ">I ristoranti della categoria
                             @{{ categorySelect }}</h1>
                         <div class="wrapper_restaurant">
                             <div class="card_restaurant" v-for="(restaurant, index) in filteredRestaurants">
