@@ -296,7 +296,7 @@ body {
   align-items: center;
   margin-top: 5%;
   width: 100%;
-  height: 100px;
+  height: 100%;
   text-align: center;
 }
 #fortunato .jumbo_box .search_bar input {
@@ -353,7 +353,7 @@ body {
   margin-top: 30px;
 }
 #fortunato main .container section .card_restaurant:hover {
-  margin-top: 5px;
+  transform: translateY(-1rem);
   transition: 0.2s;
 }
 #fortunato main .container section .card_restaurant .slug {
