@@ -21,7 +21,19 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers {
+        redirectPath as laravelRedirectPath;
+    }
+
+    public function redirectPath()
+{
+
+    // Do your logic to flash data to session...
+    session()->flash('message_entry', 'Bentornato');
+
+    // Return the results of the method we are overriding that we aliased.
+    return $this->laravelRedirectPath();
+}
 
 
     protected function loggedOut()
