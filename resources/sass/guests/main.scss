@@ -1,4 +1,4 @@
-// transition al caricamento 
+// transition al caricamento
 .fade-enter-active,
 .fade-leave-active {
 transition: opacity 4s
@@ -15,22 +15,22 @@ transition: opacity 4s
     justify-content: center;
     align-items: center;
     background-color: $brandBlue;
-    
+
     h1 {
         margin-top: 100px;
         color: $brandOrange;
         align-self: flex-start;
         animation: pulsate 3s ease-out;
-        animation-iteration-count: infinite; 
+        animation-iteration-count: infinite;
         opacity: 0.2;
         @keyframes pulsate {
-            0% { 
+            0% {
                 opacity: 0.2;
             }
-            50% { 
+            50% {
                 opacity: 1.0;
             }
-            100% { 
+            100% {
                 opacity: 0.2;
             }
         }
@@ -46,14 +46,14 @@ transition: opacity 4s
         color: $brandOrange;
         animation: dotFloating 3s infinite cubic-bezier(0.15, 0.6, 0.9, 0.1);
       }
-      
+
       .dot-floating::before, .dot-floating::after {
         content: '';
         display: inline-block;
         position: absolute;
         top: 0;
       }
-      
+
       .dot-floating::before {
         left: -30px;
         width: 30px;
@@ -63,7 +63,7 @@ transition: opacity 4s
         color: $brandOrange;
         animation: dotFloatingBefore 3s infinite ease-in-out;
       }
-      
+
       .dot-floating::after {
         left: -60px;
         width: 30px;
@@ -73,7 +73,7 @@ transition: opacity 4s
         color: $brandOrange;
         animation: dotFloatingAfter 3s infinite cubic-bezier(0.4, 0, 1, 1);
       }
-      
+
       @keyframes dotFloating {
         0% {
           left: calc(-50% - 5px);
@@ -85,7 +85,7 @@ transition: opacity 4s
           left: calc(50% + 105px);
         }
       }
-      
+
       @keyframes dotFloatingBefore {
         0% {
           left: -50px;
@@ -100,7 +100,7 @@ transition: opacity 4s
           left: -50px;
         }
       }
-      
+
       @keyframes dotFloatingAfter {
         0% {
           left: -100px;
@@ -115,7 +115,7 @@ transition: opacity 4s
           left: -100px;
         }
       }
-      
+
 }
 
 #fortunato {
@@ -129,7 +129,7 @@ transition: opacity 4s
         overflow: hidden;
         background-color: $brandOrange;
         background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
-        
+
 
         .search_bar {
             display: flex;
@@ -158,7 +158,7 @@ transition: opacity 4s
                 outline: none;
             }
 
-           
+
 
             ul {
                 list-style: none;
@@ -175,7 +175,7 @@ transition: opacity 4s
             width: 100%;
         }
 
-        
+
     }
 
     main {
@@ -201,7 +201,7 @@ transition: opacity 4s
                         align-items: center;
                         height: 240px;
                         width: 260px;
-                        background-color: $superWhite;
+                        background-color: $body-bg;
                         border-radius: 10px;
                         box-shadow: 0 0 3px #ccc;
                         transition: 0.2s;
@@ -220,7 +220,7 @@ transition: opacity 4s
                             height: 80%;
                             width: 100%;
                             position: relative;
-                            
+
                             .fas.fa-medal {
                                 position: absolute;
                                 font-size: 30px;
@@ -228,7 +228,7 @@ transition: opacity 4s
                                 top: 10px;
                                 color: $brandOrange;
                             }
-                            
+
                             img {
                                 height: 100%;
                                 width: 100%;
@@ -254,7 +254,7 @@ transition: opacity 4s
         .wave{
             background: $superWhite;
             height: 100%;
-            position: relative;  
+            position: relative;
           }
         //   .wave::before, .wave::after{
         //     border-bottom: 5px solid $brandBlue;
@@ -322,11 +322,11 @@ transition: opacity 4s
                     width: 280px;
                     height: 300px;
                     background: $brandOrange;
-                    border-radius: 60% 40% 40% 20% / 70% 50% 30% 25%; 
-                    margin: 0 50px; 
-    
-                    
-    
+                    border-radius: 60% 40% 40% 20% / 70% 50% 30% 25%;
+                    margin: 0 50px;
+
+
+
                     .inside-box {
                         overflow: hidden;
                         border-radius: 60% 40% 30% 20% / 70% 50% 40% 25%;
@@ -336,9 +336,9 @@ transition: opacity 4s
                             top: 30px;
                             left: 30px;
                             width: 100%;
-                            border-radius: 60% 40% 30% 20% / 70% 50% 40% 25%; 
+                            border-radius: 60% 40% 30% 20% / 70% 50% 40% 25%;
                         }
-    
+
                         h1 {
                             font-size: 18px;
                             white-space: nowrap;
@@ -347,15 +347,15 @@ transition: opacity 4s
                             padding: 10px 20px;
                             border-radius: 20px 20px;
                         }
-                        
+
                         h1:hover {
                             font-size: 20px;
                         }
-    
-                        
+
+
                         .title {
-                            position: absolute; 
-                            bottom: 0; 
+                            position: absolute;
+                            bottom: 0;
                             left: 50%;
                             transform: translate(-50%);
                             color: white;
@@ -363,10 +363,10 @@ transition: opacity 4s
                     }
             }
             }
-            
+
         }
 
-       
+
     }
 
     @media all and (max-width: 768px){
@@ -385,7 +385,7 @@ transition: opacity 4s
             h5 {
                 font-size: 0.75rem;
             }
-    
+
             .search_bar {
                 display: flex;
                 flex-direction: column;
@@ -395,7 +395,7 @@ transition: opacity 4s
                 width: 100%;
                 height: 80px;
                 text-align: center;
-    
+
                 input {
                     width: 50%;
                     height: 60px;
@@ -405,18 +405,18 @@ transition: opacity 4s
                     padding-left: 10%;
                     margin-bottom: 20px;
                 }
-    
+
                 ul {
                     list-style: none;
                     display: flex;
-    
+
                     li {
                         margin: 0 20px;
                     }
                 }
-    
+
             }
-    
+
             .jumbo_title {
                 text-align: center;
                 margin-bottom: 100px;
@@ -425,9 +425,9 @@ transition: opacity 4s
 
         main {
             background-color: $superWhite;
-    
+
             .container {
-    
+
                 section {
                         display: flex;
                         justify-content: center;
@@ -450,17 +450,17 @@ transition: opacity 4s
                                 margin-top: 5px;
                                 transition: 0.2s;
                             }
-    
+
                             .slug {
                                 font-size: 20px;
                                 max-height: 10%;
                             }
-    
+
                             .image_box {
                                 height: 80%;
                                 width: 100%;
                                 position: relative;
-                                
+
                                 .fas.fa-medal {
                                     position: absolute;
                                     font-size: 30px;
@@ -468,7 +468,7 @@ transition: opacity 4s
                                     top: 10px;
                                     color: $brandOrange;
                                 }
-                                
+
                                 img {
                                     height: 100%;
                                     width: 100%;
@@ -477,22 +477,22 @@ transition: opacity 4s
                                }
                             }
                         }
-    
+
                         .not_found {
                             display: flex;
                             flex-direction: column;
                             justify-content: flex-start;
                             height: 400px;
-    
+
                             img {
                                 height: 200px;
                             }
                         }
                 }
             }
-    
-            
-    
+
+
+
             .recruting {
                 display: flex;
                 flex-direction: column;
@@ -505,8 +505,8 @@ transition: opacity 4s
                 color: white;
                 font-size: 15px;
 
-               
-    
+
+
                 .card_recruting {
                     height: 50%;
                     width: 70%;
@@ -521,23 +521,23 @@ transition: opacity 4s
                         margin-top: 30px;
                         font-size: 1.25rem;
                     }
-        
+
                     h5 {
                         font-size: 0.75rem;
                     }
-                
-    
-    
+
+
+
                     .box {
                         position: relative;
                         width: 200px;
                         height: 220px;
                         background: $brandOrange;
-                        border-radius: 60% 40% 40% 20% / 70% 50% 30% 25%; 
-                        margin: 0 50px; 
-        
-                        
-        
+                        border-radius: 60% 40% 40% 20% / 70% 50% 30% 25%;
+                        margin: 0 50px;
+
+
+
                         .inside-box {
                             overflow: hidden;
                             border-radius: 60% 40% 30% 20% / 70% 50% 40% 25%;
@@ -547,9 +547,9 @@ transition: opacity 4s
                                 top: 30px;
                                 left: 30px;
                                 width: 100%;
-                                border-radius: 60% 40% 30% 20% / 70% 50% 40% 25%; 
+                                border-radius: 60% 40% 30% 20% / 70% 50% 40% 25%;
                             }
-        
+
                             h1 {
                                 font-size: 18px;
                                 white-space: nowrap;
@@ -558,15 +558,15 @@ transition: opacity 4s
                                 padding: 10px 20px;
                                 border-radius: 20px 20px;
                             }
-                            
+
                             h1:hover {
                                 font-size: 20px;
                             }
-        
-                            
+
+
                             .title {
-                                position: absolute; 
-                                bottom: 0; 
+                                position: absolute;
+                                bottom: 0;
                                 left: 50%;
                                 transform: translate(-50%);
                                 color: white;
@@ -574,12 +574,12 @@ transition: opacity 4s
                         }
                 }
                 }
-                
+
             }
-    
-           
+
+
         }
-    
+
     }
 
 }

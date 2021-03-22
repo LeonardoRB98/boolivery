@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #EDF1F4;
+  background-color: #F3F4F5;
 }
 
 .btn_darkBlue {
@@ -16,6 +16,10 @@ body {
 .btn_darkBlue:hover {
   background-color: #0F33CA;
   color: white;
+}
+
+a {
+  color: #ED4521;
 }
 
 a:hover {
@@ -78,7 +82,7 @@ body {
   background-color: #131E52;
 }
 #leonardo_footer footer .wawe_one {
-  background-color: #F6D9D3;
+  background-color: #FFFFFF;
   width: 100%;
 }
 #leonardo_footer footer ul {
@@ -96,7 +100,7 @@ body {
   color: #ED4521;
 }
 #leonardo_footer footer ul li a {
-  color: #EDF1F4;
+  color: #F3F4F5;
 }
 #leonardo_footer footer ul li i {
   font-size: 22px;
@@ -323,7 +327,7 @@ body {
   width: 100%;
 }
 #fortunato main {
-  background-color: #F6D9D3;
+  background-color: #FFFFFF;
 }
 #fortunato main .container .jumbo_title {
   text-align: center;
@@ -343,7 +347,7 @@ body {
   align-items: center;
   height: 240px;
   width: 260px;
-  background-color: #F6D9D3;
+  background-color: #F3F4F5;
   border-radius: 10px;
   box-shadow: 0 0 3px #ccc;
   transition: 0.2s;
@@ -385,7 +389,7 @@ body {
   height: 200px;
 }
 #fortunato main .wave {
-  background: #F6D9D3;
+  background: #FFFFFF;
   height: 100%;
   position: relative;
 }
@@ -505,7 +509,7 @@ body {
     margin-bottom: 100px;
   }
   #fortunato main {
-    background-color: #F6D9D3;
+    background-color: #FFFFFF;
   }
   #fortunato main .container section {
     display: flex;
@@ -521,7 +525,7 @@ body {
     align-items: center;
     height: 240px;
     width: 260px;
-    background-color: #F6D9D3;
+    background-color: #FFFFFF;
     border-radius: 10px;
     box-shadow: 0 0 3px #ccc;
     transition: 0.2s;

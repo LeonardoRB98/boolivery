@@ -25,6 +25,9 @@ body {
 //font
 
 // stile link
+a {
+    color: $brandOrange;
+}
 a:hover {
     cursor: pointer;
     text-decoration: none;
