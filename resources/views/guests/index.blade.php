@@ -10,23 +10,67 @@
     <div v-if="!isLoading" id="fortunato">
         <div class="jumbo_box">
             <div class="search_bar">
-                <input  v-model='search' v-on:keyup='searchInputRestaurants' type="text" placeholder="Cerca per nome">
+                <input  v-model='search' v-on:keyup='searchInputRestaurants' type="text" placeholder="Ricerca il ristorante per nome">
                 {{-- <select name="" id="" v-model='categorySelect' v-on:change='searchRestaurants'>
                     <option value="">All</option>
                     <option :value="category.category" v-for='category in categories'>@{{category.category}}</option>
                 </select> --}}
                 <div class="wrap_card">
                    
-                        <button v-on:click="buttonRestaurants('Internazionale')"  class="button_category">Internazionale</button>
-                        <button v-on:click="buttonRestaurants('Italiano')"  class="button_category" >Italiano</button> 
-                        <button v-on:click="buttonRestaurants('Indiano')"  class="button_category" >Indiano</button> 
-                        <button v-on:click="buttonRestaurants('Carne')"  class="button_category" >Carne</button> 
-                        <button v-on:click="buttonRestaurants('Pesce')"  class="button_category" >Pesce</button> 
-                        <button v-on:click="buttonRestaurants('Pizza')"  class="button_category" >Pizza</button> 
-                        <button v-on:click="buttonRestaurants('Messicano')"  class="button_category" >Messicano</button> 
-                        <button v-on:click="buttonRestaurants('Giapponese')"  class="button_category" >Giapponese</button> 
-                        <button v-on:click="buttonRestaurants('Cinese')"  class="button_category" >Cinese</button> 
-                        <button v-on:click="buttonRestaurants('Vegano')"  class="button_category" >Vegano</button> 
+                        <button v-on:click="buttonRestaurants('Internazionale')"  class="button_category">
+                            Internazionale
+                            <img src="{{asset('/image/category/internazionale.webp')}}" alt="">
+                            <i v-if="categorySelect == 'Internazionale' " v-on:click="deleteSelect" class="far fa-check-square"></i>
+                        </button>
+                        <button v-on:click="buttonRestaurants('Italiano')"  class="button_category">
+                            Italiano
+                            <img src="{{asset('/image/category/italiano.webp')}}" alt="">
+                            <i v-if="categorySelect == 'Italiano' " class="far fa-check-square"></i>
+
+                        </button> 
+                        <button v-on:click="buttonRestaurants('Indiano')"  class="button_category" >
+                            Indiano
+                            <img src="{{asset('/image/category/indiano.webp')}}" alt="">
+                            <i v-if="categorySelect == 'Indiano'" class="far fa-check-square"></i>
+                        </button> 
+                        <button v-on:click="buttonRestaurants('Carne')"  class="button_category" >
+                            Carne
+                            <img src="{{asset('/image/category/carne.webp')}}" alt="">
+                            <i v-if="categorySelect == 'Carne' " class="far fa-check-square"></i>
+                        </button> 
+                        <button v-on:click="buttonRestaurants('Pesce')"  class="button_category" >
+                            Pesce
+                            <img src="{{asset('/image/category/pesce.webp')}}" alt="">
+                            <i v-if="categorySelect == 'Pesce' " class="far fa-check-square"></i>
+                        </button> 
+                        <button v-on:click="buttonRestaurants('Pizza')"  class="button_category" >
+                            Pizza
+                            <img src="{{asset('/image/category/pizza.webp')}}" alt="">
+                            <i v-if="categorySelect == 'Pizza' " class="far fa-check-square"></i>
+                        </button> 
+                        <button v-on:click="buttonRestaurants('Messicano')"  class="button_category" >
+                            Messicano
+                            <img src="{{asset('/image/category/messicano.webp')}}" alt="">
+                            <i v-if="categorySelect == 'Messicano' " class="far fa-check-square"></i>
+
+                        </button> 
+                        <button v-on:click="buttonRestaurants('Giapponese')"  class="button_category" >
+                            Giapponese
+                            <img src="{{asset('/image/category/giapponese.webp')}}" alt="">
+                            <i v-if="categorySelect == 'Giapponese' " class="far fa-check-square"></i>
+
+                        </button> 
+                        <button v-on:click="buttonRestaurants('Cinese')"  class="button_category" >
+                            Cinese
+                            <img src="{{asset('/image/category/cinese.webp')}}" alt="">
+                            <i v-if="categorySelect == 'Cinese' "class="far fa-check-square"></i>
+
+                        </button> 
+                        <button v-on:click="buttonRestaurants('Vegano')"  class="button_category" >
+                            Vegano
+                            <img src="{{asset('/image/category/vegano.webp')}}" alt="">
+                            <i v-if="categorySelect == 'Vegano' " class="far fa-check-square"></i>
+                        </button> 
                 </div>
             </div>
             <div class="wave_one">
@@ -43,7 +87,7 @@
                 <h1>In evidenza nella tua città</h1>
                 <h5>Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio</h5>
             </div>
-            <div v-if="categorySelect == '' && search != '' ">
+            <div v-if="categorySelect == '' && search != '' " class="jumbo_title">
                 <h1>Risultati per la ricerca:  @{{search}}</h1>
             </div>
                 {{-- sezione ristoranti sponsorizzati --}}

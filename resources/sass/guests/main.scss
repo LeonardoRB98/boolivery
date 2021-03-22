@@ -150,16 +150,30 @@ transition: opacity 4s
 
                 align-items: center;
 
-                .category_card {
-                    width: 100px;
-                    height: 100px;
-                    margin: 0 2px;
-                    border-radius: 50%;
-                    background-color: $blueShock;
+                .button_category {
+                    position: relative;
+                    border: none;
+                    background-color: white;
+                    border-radius: 30px;
+                    margin: 2px;
+                    padding: 10px 25px;
 
-                    button {
-                        margin: 30px
+                    img {
+                        position: absolute;
+                        top: 13px;
+                        left: 5px
                     }
+
+                    .fa-check-square {
+                        position:absolute;
+                        top: 13px;
+                        right: 5px;
+                        z-index: 5;
+
+                    }
+
+
+                    
                 }
 
             }
@@ -170,7 +184,7 @@ transition: opacity 4s
                 width: 50%;
                 height: 60px;
                 margin-bottom: 50px;
-                padding: 15px;
+                text-align: center;
                 font-size: 26px;
                 border-width: 5px;
                 border-color: #ffffff;
@@ -434,7 +448,7 @@ transition: opacity 4s
                 align-items: center;
                 margin-top: 5%;
                 width: 100%;
-                height: 80px;
+                height: 100%;
                 text-align: center;
 
                 input {
@@ -443,8 +457,9 @@ transition: opacity 4s
                     outline: none;
                     border-radius: 20px;
                     border: none;
-                    padding-left: 10%;
                     margin-bottom: 20px;
+                    font-size: 12px;
+                    text-align: center;
                 }
 
                 ul {
@@ -622,7 +637,7 @@ transition: opacity 4s
         }
 
     }
-    @media all and (max-width: 1140px){
+    @media screen and (min-width: 769px) and (max-width: 1139px){
         .jumbo_box {
             position: relative;
             display: flex;
@@ -653,11 +668,6 @@ transition: opacity 4s
                     flex-wrap: wrap;
                     align-items: center;
 
-                    .button_category {
-                        border: none;
-                        border-radius: 20px;
-                        background-color: white;
-                    }
     
                 }
     
