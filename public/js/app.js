@@ -1873,6 +1873,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'plate-component',
   props: {
@@ -1904,17 +1905,33 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
+    var _this = this;
+
+    // prende il counter dal local storage
     if (localStorage.cart) {
       var savedCart = JSON.parse(localStorage.cart);
 
       for (var i = 0; i < savedCart.length; i++) {
-        console.log(savedCart[i]);
-
         if (savedCart[i].id == this.plateId) {
           this.counter = savedCart[i].counter;
         }
       }
-    }
+    } // ascolto di evento addToComponent che parte dal carrello
+
+
+    this.$root.$on('addToComponent', function (plateId, plateCounter) {
+      // se l'id ricevuto è uguale a quello del piatto aggiorno il counter
+      if (_this.plateId == plateId) {
+        _this.counter = plateCounter;
+      }
+    }); // ascolto di evento removeFromComponent che parte dal carrello
+
+    this.$root.$on('removeFromComponent', function (plateId, plateCounter) {
+      // se l'id ricevuto è uguale a quello del piatto aggiorno il counter
+      if (_this.plateId == plateId) {
+        _this.counter = plateCounter;
+      }
+    });
   },
   methods: {
     decreaseCounter: function decreaseCounter() {
@@ -2028,7 +2045,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
       }
 
       _this.plates = response.data;
-      console.log();
     });
     this.$root.$on('addToCart', function (id, counter, price, name) {
       // oggetto da pushare
@@ -2061,8 +2077,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
 
       } else {
         _this.cart.push(object);
-      } // this.totalPrice = Math.ceil(this.totalPrice + price);
-
+      }
 
       _this.totalPrice = Number((_this.totalPrice + price).toFixed(2));
     });
@@ -2091,8 +2106,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
         // this.cart[k] = object;
         // SOLUZIONE 1
         _this.cart.splice(k, 1, object);
-      } // this.totalPrice = Math.ceil(this.totalPrice - price);
-
+      }
 
       _this.totalPrice = Number((_this.totalPrice - price).toFixed(2));
     });
@@ -2140,6 +2154,20 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
           return restaurant.name.includes(_this3.search);
         });
       });
+    },
+    add: function add(plateId, plateCounter, platePrice, plateName) {
+      // aggiorniamo i counter del piatto e del carrello
+      var newPlateCounter = plateCounter + 1;
+      this.$root.$emit('addToCart', plateId, newPlateCounter, platePrice, plateName);
+      this.$root.$emit('addToComponent', plateId, newPlateCounter);
+    },
+    remove: function remove(plateId, plateCounter, platePrice, plateName) {
+      // aggiorniamo i counter del piatto e del carrello
+      if (plateCounter > 0) {
+        var newPlateCounter = plateCounter - 1;
+        this.$root.$emit('removeFromCart', plateId, newPlateCounter, platePrice, plateName);
+        this.$root.$emit('removeFromComponent', plateId, newPlateCounter);
+      }
     }
   }
 });
@@ -43924,7 +43952,8 @@ var render = function() {
         },
         [_c("i", { staticClass: "fas fa-minus-square" })]
       )
-    ])
+    ]),
+    _vm._v("\n    " + _vm._s(_vm.counter) + "\n    ")
   ])
 }
 var staticRenderFns = []
