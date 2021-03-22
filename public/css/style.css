@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Blinker", sans-serif;
 }
 
 .btn_darkBlue {
@@ -18,19 +19,47 @@ a:hover {
   text-decoration: none;
 }
 
-nav {
+#navbarDropdown {
+  color: #FF6E00;
+}
+
+body {
+  margin-top: 90px;
+}
+
+#leonardo_header nav {
   height: 90px;
   background-color: #131E52;
 }
-nav .navbar-brand {
+#leonardo_header nav .nav-link {
+  color: white;
+}
+#leonardo_header nav .navbar-brand {
   height: 90px;
 }
-nav .navbar-brand svg {
+#leonardo_header nav svg {
   height: 100%;
 }
-
-#navbarDropdown {
-  color: #FF6E00;
+#leonardo_header .navbar-toggler {
+  background-color: #ED4521;
+}
+@media (max-width: 768px) {
+  #leonardo_header nav svg {
+    height: calc(100% - 16px);
+  }
+  #leonardo_header nav .navbar-nav {
+    background-color: #131E52;
+    text-align: center;
+    border-radius: 10px;
+  }
+  #leonardo_header nav .navbar-light .navbar-nav .nav-link {
+    color: white !important;
+  }
+}
+@media all and (max-width: 320px) {
+  #leonardo_header nav .navbar-brand svg {
+    height: calc(100% - 16px);
+  }
 }
 
 #leonardo_footer footer {
@@ -61,6 +90,8 @@ nav .navbar-brand svg {
 #leonardo_footer footer #top_footer {
   width: 100%;
   height: 180px;
+  background-image: image("../image/curve.svg");
+  background-size: cover;
 }
 
 @media all and (max-width: 768px) {
