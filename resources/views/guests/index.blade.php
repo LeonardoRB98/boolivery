@@ -17,11 +17,17 @@
                     <option :value="category.category" v-for='category in categories'>@{{category.category}}</option>
                 </select> --}}
                     <div class="wrap_card">
+                        <button v-on:click="sponsoredRestaurants" class="button_category">
+                            Sponsored
+                            <i class="fas fa-medal"></i>
+                            <i v-if="categorySelect == '' && search == '' "
+                                class="far fa-check-square"></i>
+                        </button>
 
                         <button v-on:click="buttonRestaurants('Internazionale')" class="button_category">
                             Internazionale
                             <img src="{{ asset('/image/category/internazionale.webp') }}" alt="">
-                            <i v-if="categorySelect == 'Internazionale' " v-on:click="deleteSelect"
+                            <i v-if="categorySelect == 'Internazionale' "
                                 class="far fa-check-square"></i>
                         </button>
                         <button v-on:click="buttonRestaurants('Italiano')" class="button_category">
@@ -175,7 +181,7 @@
                     {{-- sezione ristolanti scelti per categoria --}}
                     {{-- sezione ristoranti con ricerca input --}}
                     <section v-if="search != '' ">
-                        <h1>Risultati per la ricerca: @{{ search }}</h1>
+                        <h1 v-if="filteredRestaurants.length > 0">Risultati per la ricerca: @{{ search }}</h1>
                         <div class="wrapper_restaurant">
                             <div class="card_restaurant" v-for="(restaurant, index) in filteredRestaurants">
 
