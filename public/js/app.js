@@ -2127,7 +2127,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
 
     setTimeout(function () {
       _this2.isLoading = false;
-    }, 2000);
+    }, 1500);
   },
   watch: {
     // SOLUZIONE 1

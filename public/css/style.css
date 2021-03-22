@@ -436,7 +436,11 @@ footer ul li i {
   display: none;
 }
 #fortunato main .recruting .card_recruting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 50%;
+  width: 33%;
   padding: 0 20px;
   text-align: center;
 }
@@ -624,6 +628,221 @@ footer ul li i {
     position: relative;
     width: 200px;
     height: 220px;
+    background: #ED4521;
+    border-radius: 60% 40% 40% 20%/70% 50% 30% 25%;
+    margin: 0 50px;
+  }
+  #fortunato main .recruting .card_recruting .box .inside-box {
+    overflow: hidden;
+    border-radius: 60% 40% 30% 20%/70% 50% 40% 25%;
+  }
+  #fortunato main .recruting .card_recruting .box .inside-box img {
+    position: absolute;
+    -o-object-fit: fill;
+       object-fit: fill;
+    top: 30px;
+    left: 30px;
+    width: 100%;
+    border-radius: 60% 40% 30% 20%/70% 50% 40% 25%;
+  }
+  #fortunato main .recruting .card_recruting .box .inside-box h1 {
+    font-size: 18px;
+    white-space: nowrap;
+    color: white;
+    background-color: #111A51;
+    padding: 10px 20px;
+    border-radius: 20px 20px;
+  }
+  #fortunato main .recruting .card_recruting .box .inside-box h1:hover {
+    font-size: 20px;
+  }
+  #fortunato main .recruting .card_recruting .box .inside-box .title {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    color: white;
+  }
+}
+@media all and (max-width: 1140px) {
+  #fortunato .jumbo_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    background-color: #ED4521;
+    background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
+  }
+  #fortunato .jumbo_box .search_bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  #fortunato .jumbo_box .search_bar .wrap_card {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  #fortunato .jumbo_box .search_bar .wrap_card .category_card {
+    width: 100px;
+    height: 100px;
+    margin: 0 2px;
+    border-radius: 50%;
+    background-color: #2045E3;
+  }
+  #fortunato .jumbo_box .search_bar .wrap_card .category_card button {
+    margin: 30px;
+  }
+  #fortunato .jumbo_box .search_bar input {
+    width: 50%;
+    height: 60px;
+    margin-bottom: 50px;
+    padding: 15px;
+    font-size: 26px;
+    border-width: 5px;
+    border-color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
+    border-style: solid;
+    border-radius: 50px;
+    box-shadow: 0px 0px 30px rgba(237, 69, 34, 0.97);
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.99);
+    outline: none;
+  }
+  #fortunato .jumbo_box .search_bar ul {
+    list-style: none;
+    display: flex;
+  }
+  #fortunato .jumbo_box .search_bar ul li {
+    margin: 0 20px;
+  }
+  #fortunato .jumbo_box .wave_one {
+    width: 100%;
+  }
+  #fortunato main {
+    background-color: #FFFFFF;
+  }
+  #fortunato main .container .jumbo_title {
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  #fortunato main .container section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 40px;
+  }
+  #fortunato main .container section .wrapper_restaurant {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #fortunato main .container section .wrapper_restaurant .card_restaurant {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+    align-items: center;
+    height: 240px;
+    width: 260px;
+    background-color: #F3F4F5;
+    border-radius: 10px;
+    box-shadow: 0 0 3px #ccc;
+    transition: 0.2s;
+    margin-top: 30px;
+  }
+  #fortunato main .container section .wrapper_restaurant .card_restaurant:hover {
+    transform: translateY(-1rem);
+    transition: 0.2s;
+  }
+  #fortunato main .container section .wrapper_restaurant .card_restaurant .slug {
+    font-size: 20px;
+    max-height: 10%;
+  }
+  #fortunato main .container section .wrapper_restaurant .card_restaurant .image_box {
+    height: 80%;
+    width: 100%;
+    position: relative;
+  }
+  #fortunato main .container section .wrapper_restaurant .card_restaurant .image_box .fas.fa-medal {
+    position: absolute;
+    font-size: 30px;
+    left: 10px;
+    top: 10px;
+    color: #ED4521;
+  }
+  #fortunato main .container section .wrapper_restaurant .card_restaurant .image_box img {
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  #fortunato main .container section .wrapper_restaurant .not_found {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 400px;
+  }
+  #fortunato main .container section .wrapper_restaurant .not_found img {
+    height: 200px;
+  }
+  #fortunato main .wave {
+    background: #FFFFFF;
+    height: 100%;
+    position: relative;
+  }
+  #fortunato main .recruting {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #131E52;
+    padding: 100px 50px;
+    color: white;
+    font-size: 15px;
+    background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+  }
+  #fortunato main .recruting h2 {
+    display: none;
+  }
+  #fortunato main .recruting .card_recruting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    width: 60%;
+    padding: 0 20px;
+    text-align: center;
+  }
+  #fortunato main .recruting .card_recruting h1 {
+    margin-top: 20px;
+  }
+  #fortunato main .recruting .card_recruting h5 {
+    font-size: 1.25rem;
+  }
+  #fortunato main .recruting .card_recruting .box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 280px;
+    height: 300px;
     background: #ED4521;
     border-radius: 60% 40% 40% 20%/70% 50% 30% 25%;
     margin: 0 50px;
