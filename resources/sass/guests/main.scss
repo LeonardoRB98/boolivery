@@ -431,7 +431,7 @@ transition: opacity 4s
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            height: 70vh;
+            height: 100%;
             overflow: hidden;
             h1 {
                 font-size: 1.25rem;
@@ -455,10 +455,10 @@ transition: opacity 4s
                     width: 50%;
                     height: 60px;
                     outline: none;
-                    border-radius: 20px;
+                    border-radius: 30px;
                     border: none;
                     margin-bottom: 20px;
-                    font-size: 12px;
+                    font-size: 14px;
                     text-align: center;
                 }
 
@@ -490,6 +490,7 @@ transition: opacity 4s
                         flex-wrap: wrap;
                         height: 100%;
                         margin-bottom: 40px;
+                        text-align: center;
                         .card_restaurant {
                             display: flex;
                             flex-direction: column;
