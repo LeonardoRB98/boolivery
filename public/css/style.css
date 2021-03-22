@@ -1068,26 +1068,26 @@ body {
   }
 }
 
-#andrea .container {
+.wrapper {
   padding-top: 50px;
   padding-bottom: 40px;
 }
-#andrea .container h1 {
+.wrapper h1 {
   float: left;
 }
-#andrea .container .fail {
+.wrapper .fail {
   height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-#andrea .container .container_card {
+.wrapper .container_card {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-#andrea .container .container_card .card {
+.wrapper .container_card .card {
   position: relative;
   min-height: 380px;
   height: 380px;
@@ -1100,14 +1100,14 @@ body {
   display: flex;
   flex-direction: column;
 }
-#andrea .container .container_card .card:hover {
+.wrapper .container_card .card:hover {
   transform: translateY(-1rem);
   transition: 0.5s;
 }
-#andrea .container .container_card .card .name {
+.wrapper .container_card .card .name {
   width: 180px;
 }
-#andrea .container .container_card .card .orange {
+.wrapper .container_card .card .orange {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -1115,21 +1115,21 @@ body {
   border-bottom: 180px solid #ED4521;
   border-left: 100px solid transparent;
 }
-#andrea .container .container_card .card .active {
+.wrapper .container_card .card .active {
   position: absolute;
   bottom: -170px;
   right: 10px;
   width: 35px;
   height: 35px;
 }
-#andrea .container .container_card .card a {
+.wrapper .container_card .card a {
   height: 50%;
 }
-#andrea .container .container_card .card a .image-box {
+.wrapper .container_card .card a .image-box {
   width: 100%;
   height: 100%;
 }
-#andrea .container .container_card .card a .image-box img {
+.wrapper .container_card .card a .image-box img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -1137,20 +1137,24 @@ body {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
-#andrea .container .container_card .card .info {
+.wrapper .container_card .card .info_card {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 10px;
   height: 50%;
 }
-#andrea .container .container_card .card .info .route {
+.wrapper .container_card .card .info_card .name p {
+  height: 50px;
+  overflow-y: scroll;
+}
+.wrapper .container_card .card .info_card .route {
   display: flex;
 }
-#andrea .container .container_card .card .info .route a {
+.wrapper .container_card .card .info_card .route a {
   margin-right: 10px;
 }
-#andrea .container .container_card .card .info .route button {
+.wrapper .container_card .card .info_card .route button {
   border: none;
   color: red;
   background-color: white;

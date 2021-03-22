@@ -1,8 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<div id="andrea">
-    <div class="container">
+    <div class="container wrapper">
         @if (session('message'))
         <div class="alert alert-success">
         {{ session('message') }}
@@ -36,7 +35,7 @@
                 </div>
             </a>    
                 
-                <div class="info">
+                <div class="info_card">
                     <div class="name">
                         <a href="{{route('admin.restaurants.show', $restaurant)}}"><h3>{{ $restaurant->name }}</h3></a>
                         <p>{{ $restaurant->description }}</p>
@@ -48,7 +47,7 @@
                     <form action="{{route('admin.restaurants.destroy', $restaurant)}}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" value="Elimina"><i class="fas fa-trash"></i>
+                        <button type="submit" value="Elimina" onclick='return confirm("Sei sicuro di voler cancellare l&apos;elemento?")'><i class="fas fa-trash"></i>
                         </button>
                     </form>
                     </div>
@@ -60,36 +59,12 @@
                 </div>
             </div>
          
-                {{-- <tr>
-                    <td> {{ $restaurant->id }}</td>
-                    <td> </td>
-                    <td>{{ $restaurant->email }}</td>
-                    <td>{{ $restaurant->address }}</td>
-                    <td>{{ $restaurant->phone }}</td>
-                    <td>{{ $restaurant->description }}</td>
-
-                       
-                        @if (!is_null($restaurant->photo_jumbo))
-                            <td>
-                                <img style="width: 200px" class="img-fluid" src="{{ asset('storage/'. $restaurant->photo_jumbo) }}" alt="{{ $restaurant->name }}">
-                            </td>
-                        @else
-                            <td>
-                                <img style="width: 200px" class="img-fluid" src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
-                            </td>
-                        @endif
-                    <td>
-                        
-                    </td>
-                    <td>
-                        
-                    </td>
-                </tr> --}}
+               
                 @endforeach
     </div>
 
 
-</div>
+
     
 
 @endsection
