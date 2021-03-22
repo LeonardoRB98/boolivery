@@ -2194,6 +2194,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
         this.$root.$emit('removeFromCart', plateId, newPlateCounter, platePrice, plateName);
         this.$root.$emit('removeFromComponent', plateId, newPlateCounter);
       }
+    },
+    trashCart: function trashCart() {
+      this.cart = [];
     }
   }
 });
