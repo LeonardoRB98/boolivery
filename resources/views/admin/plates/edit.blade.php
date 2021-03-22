@@ -2,10 +2,9 @@
 
 @section('content')
     <div class="container">
-
-        <div class="clearfix mb-4 col-sm-12">
-            <h1 class="col-sm-4 col-xs-12">Modifica Piatto</h1>
-            <a href="{{ route('admin.restaurants.show', [$plate->restaurant_id]) }}" class="btn btn-primary float-right">Elenco Piatti</a>
+        <div class="d-flex justify-content-between align-items-center">
+            <h1>Modifica Piatto</h1>
+            <a href="{{ route('admin.restaurants.show', [$plate->restaurant_id]) }}">Torna al ristorante</a>
         </div>
         @if ($errors->any())
             <div class="alert alert-danger">

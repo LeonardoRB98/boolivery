@@ -31,7 +31,7 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         $restaurants = Restaurant::where('user_id', Auth::id())->get();
 
         return view('admin.restaurants.index', compact('restaurants'));

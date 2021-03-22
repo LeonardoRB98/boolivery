@@ -3,10 +3,11 @@
 @section('content')
 
 <div class="container wrapper">
-
-    <div class="clearfix mb-4 col-sm-12">
-            <h1 class="col-sm-4 col-xs-12">Crea Ristorante</h1>
-            <a href="{{ route('admin.restaurants.index') }}" class="btn btn-primary float-right">Elenco Ristoranti</a>
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>Crea Ristorante</h1>
+        <a class="orange-link" href="{{ route('admin.restaurants.index') }}">
+            <span>Elenco Ristoranti</span>
+        </a>
     </div>
     @if ($errors->any())
         <div class="alert alert-danger">

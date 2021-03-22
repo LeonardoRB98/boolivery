@@ -3,10 +3,9 @@
 
 
     <div class="container wrapper">
-
-        <div class="clearfix mb-4 col-sm-12">
-            <h1 class="col-sm-4 col-xs-12">Crea Piatto</h1>
-            <a href="{{ route('admin.restaurants.show', [$id]) }}" class="btn btn-primary float-right">Elenco Piatti</a>
+        <div class="d-flex justify-content-between align-items-center">
+            <h1>Crea Piatto</h1>
+            <a href="{{ route('admin.restaurants.show', [$id]) }}">Torna al ristorante</a>
         </div>
         @if ($errors->any())
             <div class="alert alert-danger">

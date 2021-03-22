@@ -34,6 +34,18 @@ ul a {
   text-decoration: none;
 }
 
+.orange-link span {
+  display: flex;
+  align-items: center;
+}
+.orange-link span i {
+  font-size: 30px;
+  margin-left: 5px;
+}
+.orange-link:hover {
+  color: #131E52;
+}
+
 #navbarDropdown {
   color: #FF6E00;
 }

@@ -24,20 +24,20 @@
 
     </div>
     <div class="main-content">
-        @if (session('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
         <div class="container">
-            <a href="{{ route('admin.restaurants.index') }}">I tuoi Ristoranti</a> 
-            <span> > {{$restaurant->name}}</span>
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
+            <a class="orange-link" href="{{ route('admin.restaurants.index') }}">I tuoi Ristoranti</a>
+            <span> > {{ $restaurant->name }}</span>
             <div class="row">
                 <div class="col-md-4">
                     <div class="info-wrapper">
                         <div class="d-flex justify-content-between align-items-center">
                             <h2>Le tue info</h2>
-                            <a href="{{ route('admin.restaurants.edit', $restaurant) }}">
+                            <a class="orange-link" href="{{ route('admin.restaurants.edit', $restaurant) }}">
                                 <i class="fas fa-edit"></i>
                             </a>
                         </div>
@@ -76,13 +76,14 @@
                 <div class="col-md-8">
                     <div class="d-flex justify-content-between align-items-center">
                         <h2>I tuoi piatti</h2>
-                        <a href="{{ route('admin.plates.createPlate', ['restaurant_id' => $restaurant->id]) }}">
+                        <a class="orange-link"
+                            href="{{ route('admin.plates.createPlate', ['restaurant_id' => $restaurant->id]) }}">
                             <span>Aggiungi piatto<i class="fas fa-plus-square"></i></span>
                         </a>
                     </div>
-                        @if (!count($plates))
-                            <h1>Non hai piatti</h1>
-                        @else
+                    @if (!count($plates))
+                        <h1>Non hai piatti</h1>
+                    @else
                         <div class="container_card">
                             @foreach ($plates as $plate)
                                 <div class="card">
@@ -104,7 +105,8 @@
                                             <p>{{ $plate->description }}</p>
                                         </div>
                                         <div class="route">
-                                            <a href="{{ route('admin.plates.edit', $plate) }}"><i class="fas fa-edit"></i></a>
+                                            <a href="{{ route('admin.plates.edit', $plate) }}"><i
+                                                    class="fas fa-edit"></i></a>
                                             <form action="{{ route('admin.plates.destroy', $plate) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
@@ -119,7 +121,7 @@
                                 </div>
                             @endforeach
                         </div>
-                        @endif
+                    @endif
                 </div>
             </div>
         </div>

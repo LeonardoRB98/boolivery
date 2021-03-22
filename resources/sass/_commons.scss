@@ -10,19 +10,13 @@ body {
 }
 //btn
 .btn_darkBlue {
-    background-color: $blueShock;
-    color: white;
+        background-color: $blueShock;
+        color: white;
     &:hover {
-    background-color: $blueDark;
-    color: white;
+        background-color: $blueDark;
+        color: white;
     }
 }
-
-//input
-
-// hover
-
-//font
 
 // stile link
 a {
@@ -40,4 +34,19 @@ ul {
     }
 }
 
-// grandezza H
+// link arancioni
+
+.orange-link {
+    span {
+        display: flex;
+        align-items: center;
+        i {
+            font-size: 30px;
+            margin-left: 5px;
+        }
+    }
+    &:hover {
+        color: $brandBlue;
+    }
+
+}
