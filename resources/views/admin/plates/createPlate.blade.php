@@ -2,24 +2,24 @@
 @section('content')
 
 
-    <div class="container">
+    <div class="container wrapper">
 
-        <div class="container mb-5">
-            <div class="clearfix mb-4">
-                <a href="{{route('admin.restaurants.show', [$id]) }}" class="btn btn-primary float-right">Elenco Piatti</a>
-            </div>
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+        <div class="clearfix mb-4 col-sm-12">
+            <h1 class="col-sm-4 col-xs-12">Crea Piatto</h1>
+            <a href="{{ route('admin.restaurants.show', [$id]) }}" class="btn btn-primary float-right">Elenco Piatti</a>
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-        <form action="{{ route('admin.plates.store') }}" method='POST' enctype="multipart/form-data">
+
+        <form action="{{ route('admin.plates.store') }}" method='POST' enctype="multipart/form-data" class="login-form">
             @method('POST')
             @csrf
 
@@ -47,7 +47,7 @@
 
             <input type="hidden" name="id" value="{{$id}}">
 
-            <input type="submit" value="Crea Piatto">
+            <input type="submit" value="Crea Piatto" class="btn btn_darkBlue">
         </form>
 
     </div>
