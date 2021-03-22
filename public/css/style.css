@@ -350,7 +350,7 @@ body {
   align-items: center;
   height: 240px;
   width: 260px;
-  background-color: #F6D9D3;
+  background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 3px #ccc;
   transition: 0.2s;
