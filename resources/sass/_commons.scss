@@ -4,8 +4,9 @@
     padding: 0;
     font-family: 'Blinker', sans-serif;
 }
+
 body {
-    background-color: #F2F5F9;
+    background-color: $body-bg;
 }
 //btn
 .btn_darkBlue {
@@ -24,12 +25,19 @@ body {
 //font
 
 // stile link
+a {
+    color: $brandOrange;
+}
 a:hover {
     cursor: pointer;
     text-decoration: none;
 }
 // stile ul
-
-// grandezza font
+ul {
+    list-style: none;
+    a {
+        text-decoration: none;
+    }
+}
 
 // grandezza H

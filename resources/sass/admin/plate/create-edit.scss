@@ -1,0 +1,13 @@
+.login-form {
+    padding: 60px 40px 10px 40px;
+    background: $brandOrange;
+    border-radius: 8px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    font-size: 20px;
+    .form-group {
+        img {
+            margin: 20px;
+        }
+    }
+  }

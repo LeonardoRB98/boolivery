@@ -5,76 +5,48 @@
 
 // QUI LEONARDO!
 
-#leonardo_footer {
-    footer {
-        position: relative;
-        background-color: $brandBlue;
-        background:radial-gradient(100% 100% at bottom, $brandBlue 70%, $brandOrange  60%);
-        ul {
-            list-style: none;
-            text-align: center;
-            li {
-                padding: 10px;
 
-                &:first-child {
-                    font-size: 22px;
-                    font-weight: 800;
-                    a {
-                        color:$brandOrange;
-                    }
-                }
-                a {
-                    color: $body-bg;
-                    // line-height: 45px;
-                }
-                i {
-                    font-size: 22px;
-                }
-            }
-        }
-
-        #top_footer {
+footer {
+    // width: 100vw;
+    position: relative;
+    background-color: $brandBlue;
+        .wawe_one {
+            background-color: $superWhite;
             width: 100%;
-            height: 180px;
-            background-image: image('../image/curve.svg');
-            background-size: cover;
-            // text-align: center;
-            // margin-bottom: 50px;
-            // svg {
-            //     object-fit: cover;
-            //     width: 100%;
-
-            // }
         }
-    }
 
-}
-// @media all and (max-width: 992px) and (min-width: 769px) {
-//     footer {
-//         background: radial-gradient(130% 107% at bottom, #131E52 70%, #ED4521 60%);
-//     }
-// }
-@media all and (max-width: 768px) {
-    #leonardo_footer {
-        footer {
-            background:radial-gradient(160% 110% at bottom, #131E52 70%, #ED4521 60%);
-            .container {
+    ul {
+        list-style: none;
+        text-align: center;
+        li {
+            padding: 10px;
+            //hoover
+            &:first-child {
                 font-size: 22px;
-                ul {
-                    list-style: none;
-                    li:first-child {
-                        font-size: 26px;
-                        // display: inline;
-                    }
+                font-weight: 800;
+                a {
+                    color:$brandOrange;
                 }
             }
+            a {
+                color: $body-bg;
+            }
+            i {
+                font-size: 22px;
+            }
         }
-
     }
 }
 
-@media all and (max-width: 320px) {
+
+@media all and (max-width: 768px) {
     footer {
-        background:radial-gradient(250% 123% at bottom, #131E52 70%, #ED4521 60%);
+        font-size: 22px;
+        ul {
+            li:first-child {
+                font-size: 26px;
+            }
+        }
     }
 }
+

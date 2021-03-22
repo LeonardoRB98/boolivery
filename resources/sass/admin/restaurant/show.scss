@@ -1,13 +1,13 @@
-#stephanie-2 {
-    background-color: $body-bg;
-    .img-layer {
-        display: block;
-    }
+
+    
     .curved-top {
         background-color: trasparent;
-        
         position: relative;
         height: 300px;
+        .img-layer {
+            display: block;
+        }
+
         .img-container {
             width: 100%;
             height: 100%;
@@ -48,24 +48,13 @@
             padding: 10px 20px;
             border-radius: 10px;
         }
-
-        
-        
-
     }
-    .curved-bottom {
-        background-color:$brandBlue;
-    } 
+
 
     .main-content {
         padding: 40px 0;
-
-        img {
-            width: 100%;
-            border-radius: 60% 40% 40% 20% / 70% 50% 30% 25%; 
-        }
         
-        .wrapper {
+        .info-wrapper {
             position: sticky;
             top: 0;
             .info {
@@ -86,6 +75,8 @@
                 padding: 5px 10px;
                 color: white;
                 border-radius: 5px;
+                margin-bottom: 5px;
+                display: inline-block;
             }
 
             .icon {
@@ -97,11 +88,11 @@
         
         
     }
-}
+
 
 
 @media all and (min-width: 768px) {
-    #stephanie-2 .curved-top {
+    .curved-top {
         height: 600px;
     }
 

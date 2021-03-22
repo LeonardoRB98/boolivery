@@ -1,94 +1,95 @@
+.wrapper {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    h1 {
+        float: left;
+    }
+    .fail {
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
 
-    .wrapper {
-        padding-top: 50px;
-        padding-bottom: 40px;
-        h1 {
-            float: left;
+.container_card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .card {
+        position: relative;
+        min-height: 380px;
+        height: 380px;
+        min-width: 260px;
+        max-width: 260px;
+        border-radius: 5px;
+        box-shadow: 0 0 3px #ccc;
+        transition: 0.5s;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        &:hover {
+            transform: translateY(-1rem);
+            transition: 0.5s;
         }
-        .fail {
-            height: 500px;
+        .name {
+            width: 180px;
+        }
+        .orange {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 180px;
+            border-bottom: 180px solid $brandOrange;
+            border-left: 100px solid transparent;
+        }
+        .active {
+            position: absolute;
+            bottom: -170px;
+            right: 10px;
+            width: 35px;
+            height: 35px;
+        }
+        a {
+            height: 50%;
+            .image-box {
+                width: 100%;
+                height: 100%;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
+                }
+            }
+        }
+        .info_card {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .container_card {
-            display: flex;
             justify-content: space-around;
-            flex-wrap: wrap;
-            .card {
-                position: relative;
-                min-height: 380px;
-                height: 380px;
-                min-width: 260px;
-                max-width: 260px;
-                border-radius: 5px;
-                box-shadow: 0 0 3px #ccc;
-                transition: 0.5s;
-                margin-top: 30px;
+            padding: 10px;
+            height: 50%;
+            .name {
+                overflow-y: scroll;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+            .route {
                 display: flex;
-                flex-direction: column;
-                &:hover {
-                    transform: translateY(-1rem);
-                    transition: 0.5s;
-                }
-                .name {
-                    width: 180px;
-                }
-                .orange {
-                    position: absolute;
-                    right: 0;
-                    bottom: 0;
-                    height: 180px;
-                    border-bottom: 180px solid $brandOrange;
-                    border-left: 100px solid transparent;
-                }
-                .active {
-                    position: absolute;
-                    bottom: -170px;
-                    right: 10px;
-                    width: 35px;
-                    height: 35px;
-                }
                 a {
-                    height: 50%;
-                    .image-box {
-                        width: 100%;
-                        height: 100%;
-                        img {
-                            height: 100%;
-                            width: 100%;
-                            object-fit: cover;
-                            border-top-left-radius: 8px;
-                            border-top-right-radius: 8px;
-                        }
-                    }
+                    margin-right: 10px;
                 }
-                .info_card {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    padding: 10px;
-                    height: 50%;
-                    .name {
-                        p {
-                            height: 50px;
-                            overflow-y: scroll;
-                        }
-                    }
-                    .route {
-                        display: flex;
-                        a {
-                            margin-right: 10px;
-                        }
-                        button {
-                            border: none;
-                            color: red;
-                            background-color: white;
-                        }
-                    }
+                button {
+                    border: none;
+                    color: red;
+                    background-color: white;
                 }
             }
         }
     }
+}
   
