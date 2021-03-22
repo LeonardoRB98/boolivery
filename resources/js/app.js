@@ -73,7 +73,7 @@ const app = new Vue({
         restaurants: [],
         filteredRestaurants: [],
         categories: [],
-        categorySelect: 'All',
+        categorySelect: '',
         sponsoredRestaurant: [],
         plates: [],
         search: '',
@@ -235,7 +235,7 @@ const app = new Vue({
                         this.categorySelect = '';
                         return  restaurant.name.includes(this.search)
                 });
-             })
+            })
         },
 
         searchRestaurants() {

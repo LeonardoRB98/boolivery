@@ -83,15 +83,17 @@
                 <h1>Siamo spiacenti</h1>
                 <h5>nella tua zona non sono presenti ristoranti con queste caratteristiche</h5>
             </div>
-            <div v-if="categorySelect == 'All' " class="jumbo_title">
+            {{-- <div v-if="categorySelect == '' " class="jumbo_title">
                 <h1>In evidenza nella tua città</h1>
                 <h5>Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio</h5>
-            </div>
-            <div v-if="categorySelect == '' && search != '' " class="jumbo_title">
+            </div> --}}
+            {{-- <div v-if="categorySelect == '' && search != '' " class="jumbo_title">
                 <h1>Risultati per la ricerca:  @{{search}}</h1>
-            </div>
+            </div> --}}
                 {{-- sezione ristoranti sponsorizzati --}}
-                <section v-if="categorySelect == 'All' && search == '' ">
+                <section v-if="categorySelect == '' && search == '' ">
+                    <h1>In evidenza nella tua città</h1>
+                    <h5>Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio</h5>
                     <div class="wrapper_restaurant">
                         <div class="card_restaurant" v-if="filteredRestaurants[index].sponsored == true" v-for="(restaurant, index) in filteredRestaurants">
                         <div class="image_box">
@@ -108,7 +110,7 @@
                 </section>
                 {{-- fine sezione ristoranti sponsorizzati --}}
                 {{-- sezione ristolanti scelti per categoria --}}
-                <section v-if="categorySelect != 'All' && search == '' ">
+                <section v-if="categorySelect != ''">
                     <h1 v-if="filteredRestaurants != 0 && search == '' ">I ristoranti della categoria @{{categorySelect}}</h1>
                     <div class="wrapper_restaurant">
                         <div class="card_restaurant" v-for="(restaurant, index) in filteredRestaurants">
@@ -127,6 +129,7 @@
                 {{-- sezione ristolanti scelti per categoria --}}
                 {{-- sezione ristoranti con ricerca input --}}
                 <section v-if="search != '' ">
+                    <h1>Risultati per la ricerca:  @{{search}}</h1>
                     <div class="wrapper_restaurant">
                         <div class="card_restaurant" v-for="(restaurant, index) in filteredRestaurants">
         

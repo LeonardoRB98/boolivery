@@ -2026,7 +2026,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     restaurants: [],
     filteredRestaurants: [],
     categories: [],
-    categorySelect: 'All',
+    categorySelect: '',
     sponsoredRestaurant: [],
     plates: [],
     search: '',
