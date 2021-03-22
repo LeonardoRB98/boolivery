@@ -71,9 +71,9 @@
                     padding: 10px;
                     height: 50%;
                     .name {
-                        p {
-                            height: 50px;
-                            overflow-y: scroll;
+                        overflow-y: scroll;
+                        &::-webkit-scrollbar {
+                            display: none;
                         }
                     }
                     .route {
