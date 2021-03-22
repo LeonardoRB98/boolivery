@@ -56,7 +56,7 @@ const app = new Vue({
         restaurants: [],
         filteredRestaurants: [],
         categories: [],
-        categorySelect: '',
+        categorySelect: 'All',
         sponsoredRestaurant: [],
         plates: [],
         search: '',
@@ -214,16 +214,52 @@ const app = new Vue({
     },
 
     methods: {
+        searchInputRestaurants() {
+            axios
+                .get('http://127.0.0.1:8000/api/restaurants/')
+                .then(response => {
+                    // maybe add uppercase/lowercase inclusion
+                    this.filteredRestaurants = response.data.filter(restaurant => {
+                        this.categorySelect = '';
+                        return  restaurant.name.includes(this.search)
+                });
+             })
+        },
+
         searchRestaurants() {
             axios
                 .get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect)
                 .then(response => {
                     // maybe add uppercase/lowercase inclusion
-                    this.filteredRestaurants = response.data.filter(restaurant => {
-                        return  restaurant.name.includes(this.search)
+                    
+                    this.filteredRestaurants = response.data;
                 });
-             })
+            
         },
+
+        buttonRestaurants(category) {
+                    this.categorySelect = category;
+                    this.searchRestaurants();
+
+                    if( this.categorySelect != category) {
+                        this.deleteSelect();
+                    }
+        },
+
+        deleteSelect() {
+            this.categorySelect = "All";
+            axios
+            .get('http://127.0.0.1:8000/api/restaurants')
+            .then( response => {
+                 this.restaurants = response.data;
+                 this.filteredRestaurants = response.data;
+            }
+        );
+            
+        },
+
+
+        
         
     }
 
