@@ -117,7 +117,7 @@ const app = new Vue({
                 this.plates = response.data;
             }
         );
-        console.log(this.$root.$on());
+
         this.$root.$on('addToCart', (id, counter, price, name) => {
             // oggetto da pushare
             var object = {
@@ -187,8 +187,6 @@ const app = new Vue({
 
     mounted: function() {
 
-
-
         if(localStorage.cart) {
             this.cart = JSON.parse(localStorage.cart);
         }
@@ -197,11 +195,6 @@ const app = new Vue({
         if(localStorage.totalPrice) {
             this.totalPrice = parseFloat(localStorage.totalPrice);
         }
-
-        if(isEmpty(this.cart)) {
-
-        }
-
 
         setTimeout(() => {
             this.isLoading = false
@@ -233,7 +226,7 @@ const app = new Vue({
                     // maybe add uppercase/lowercase inclusion
                     this.filteredRestaurants = response.data.filter(restaurant => {
                         this.categorySelect = '';
-                        return  restaurant.name.includes(this.search)
+                        return  restaurant.name.toLowerCase().includes(this.search.toLowerCase());
                 });
             })
         },
@@ -252,32 +245,25 @@ const app = new Vue({
         buttonRestaurants(category) {
             this.categorySelect = category;
             this.searchRestaurants();
-
-            
         },
 
         deleteSelect() {
-            
             axios
             .get('http://127.0.0.1:8000/api/restaurants')
             .then(response => {
-                // maybe add uppercase/lowercase inclusion
-
                 this.filteredRestaurants = response.data;
             });
 
         },
 
 
-
+        // functions for cart and plates
         add(plateId, plateCounter, platePrice, plateName) {
             // aggiorniamo i counter del piatto e del carrello
             var newPlateCounter = plateCounter + 1;
             this.$root.$emit('addToCart', plateId, newPlateCounter, platePrice, plateName);
             this.$root.$emit('addToComponent', plateId, newPlateCounter);
         },
-
-
         remove(plateId, plateCounter, platePrice, plateName) {
             // aggiorniamo i counter del piatto e del carrello
             if  (plateCounter > 0) {
@@ -285,15 +271,11 @@ const app = new Vue({
                 this.$root.$emit('removeFromCart', plateId, newPlateCounter, platePrice, plateName);
                 this.$root.$emit('removeFromComponent', plateId, newPlateCounter);
             }
-
         },
-
-
+        // empty trash
         trashCart() {
             this.cart = [];
         }
-
-
     }
 
 });

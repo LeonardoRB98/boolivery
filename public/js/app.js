@@ -2061,7 +2061,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
 
       _this.plates = response.data;
     });
-    console.log(this.$root.$on());
     this.$root.$on('addToCart', function (id, counter, price, name) {
       // oggetto da pushare
       var object = {
@@ -2139,8 +2138,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
       this.totalPrice = parseFloat(localStorage.totalPrice);
     }
 
-    if ((0,lodash__WEBPACK_IMPORTED_MODULE_1__.isEmpty)(this.cart)) {}
-
     setTimeout(function () {
       _this2.isLoading = false;
     }, 1500);
@@ -2168,7 +2165,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
         // maybe add uppercase/lowercase inclusion
         _this3.filteredRestaurants = response.data.filter(function (restaurant) {
           _this3.categorySelect = '';
-          return restaurant.name.includes(_this3.search);
+          return restaurant.name.toLowerCase().includes(_this3.search.toLowerCase());
         });
       });
     },
@@ -2188,10 +2185,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
       var _this5 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
-        // maybe add uppercase/lowercase inclusion
         _this5.filteredRestaurants = response.data;
       });
     },
+    // functions for cart and plates
     add: function add(plateId, plateCounter, platePrice, plateName) {
       // aggiorniamo i counter del piatto e del carrello
       var newPlateCounter = plateCounter + 1;
@@ -2206,6 +2203,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
         this.$root.$emit('removeFromComponent', plateId, newPlateCounter);
       }
     },
+    // empty trash
     trashCart: function trashCart() {
       this.cart = [];
     }
