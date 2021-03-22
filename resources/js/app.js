@@ -253,20 +253,18 @@ const app = new Vue({
             this.categorySelect = category;
             this.searchRestaurants();
 
-            if( this.categorySelect != category) {
-                this.deleteSelect();
-            }
+            
         },
 
         deleteSelect() {
-            this.categorySelect = "All";
+            
             axios
             .get('http://127.0.0.1:8000/api/restaurants')
-            .then( response => {
-                 this.restaurants = response.data;
-                 this.filteredRestaurants = response.data;
-            }
-        );
+            .then(response => {
+                // maybe add uppercase/lowercase inclusion
+
+                this.filteredRestaurants = response.data;
+            });
 
         },
 

@@ -2183,17 +2183,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     buttonRestaurants: function buttonRestaurants(category) {
       this.categorySelect = category;
       this.searchRestaurants();
-
-      if (this.categorySelect != category) {
-        this.deleteSelect();
-      }
     },
     deleteSelect: function deleteSelect() {
       var _this5 = this;
 
-      this.categorySelect = "All";
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
-        _this5.restaurants = response.data;
+        // maybe add uppercase/lowercase inclusion
         _this5.filteredRestaurants = response.data;
       });
     },
