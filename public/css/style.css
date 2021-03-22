@@ -1151,29 +1151,27 @@ body {
   background-color: white;
 }
 
-#stephanie-2 {
-  background-color: #EDF1F4;
-}
-#stephanie-2 .img-layer {
+.img-layer {
   display: block;
 }
-#stephanie-2 .curved-top {
+
+.curved-top {
   background-color: trasparent;
   position: relative;
   height: 300px;
 }
-#stephanie-2 .curved-top .img-container {
+.curved-top .img-container {
   width: 100%;
   height: 100%;
   position: relative;
 }
-#stephanie-2 .curved-top .img-container img {
+.curved-top .img-container img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-#stephanie-2 .curved-top .img-container .img-layover {
+.curved-top .img-container .img-layover {
   position: absolute;
   left: 0;
   top: 0;
@@ -1181,13 +1179,13 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
 }
-#stephanie-2 .curved-top .img-layer-bottom {
+.curved-top .img-layer-bottom {
   position: absolute;
   left: 0;
   bottom: 0;
   box-shadow: 0 5px 5px rgba(23, 19, 80, 0.75);
 }
-#stephanie-2 .curved-top .title-layer {
+.curved-top .title-layer {
   color: white;
   position: absolute;
   left: 50%;
@@ -1199,21 +1197,23 @@ body {
   padding: 10px 20px;
   border-radius: 10px;
 }
-#stephanie-2 .curved-bottom {
+
+.curved-bottom {
   background-color: #131E52;
 }
-#stephanie-2 .main-content {
+
+.main-content {
   padding: 40px 0;
 }
-#stephanie-2 .main-content img {
+.main-content img {
   width: 100%;
   border-radius: 60% 40% 40% 20%/70% 50% 30% 25%;
 }
-#stephanie-2 .main-content .wrapper {
+.main-content .wrapper {
   position: sticky;
   top: 0;
 }
-#stephanie-2 .main-content .wrapper .info {
+.main-content .wrapper .info {
   background-color: white;
   border-left: 4px solid #ED4521;
   border-radius: 0px 40px 40px 0px;
@@ -1222,21 +1222,21 @@ body {
   margin-bottom: 5px;
   transition: all 1s ease-in-out;
 }
-#stephanie-2 .main-content .wrapper .info:hover {
+.main-content .wrapper .info:hover {
   margin-left: 15px;
 }
-#stephanie-2 .main-content .wrapper .tag {
+.main-content .wrapper .tag {
   background-color: #ED4521;
   padding: 5px 10px;
   color: white;
   border-radius: 5px;
 }
-#stephanie-2 .main-content .wrapper .icon {
+.main-content .wrapper .icon {
   font-size: 20px;
 }
 
 @media all and (min-width: 768px) {
-  #stephanie-2 .curved-top {
+  .curved-top {
     height: 600px;
   }
 }
