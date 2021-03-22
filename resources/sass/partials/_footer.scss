@@ -9,10 +9,16 @@
     footer {
         position: relative;
         background-color: $brandBlue;
-        .wawe_one {
-            background-color: $superWhite;
-            width: 100%;
+        #top_footer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            .wawe_one {
+                background-color: $superWhite;
+                width: 100%;
+            }
         }
+
         ul {
             list-style: none;
             text-align: center;

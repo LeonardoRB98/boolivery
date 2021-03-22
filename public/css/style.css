@@ -70,7 +70,12 @@ body {
   position: relative;
   background-color: #131E52;
 }
-#leonardo_footer footer .wawe_one {
+#leonardo_footer footer #top_footer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#leonardo_footer footer #top_footer .wawe_one {
   background-color: #F6D9D3;
   width: 100%;
 }
