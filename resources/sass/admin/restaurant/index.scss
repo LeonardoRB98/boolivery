@@ -1,5 +1,5 @@
-#andrea {
-    .container {
+
+    .wrapper {
         padding-top: 50px;
         padding-bottom: 40px;
         h1 {
@@ -64,12 +64,18 @@
                         }
                     }
                 }
-                .info {
+                .info_card {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-around;
                     padding: 10px;
                     height: 50%;
+                    .name {
+                        p {
+                            height: 50px;
+                            overflow-y: scroll;
+                        }
+                    }
                     .route {
                         display: flex;
                         a {
@@ -85,4 +91,4 @@
             }
         }
     }
-}   
+  
