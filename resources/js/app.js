@@ -271,7 +271,7 @@ const app = new Vue({
                 this.$root.$emit('removeFromComponent', plateId, newPlateCounter);
             }
             
-        },
+        }
 
         
     }
