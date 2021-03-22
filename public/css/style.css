@@ -5,6 +5,10 @@
   font-family: "Blinker", sans-serif;
 }
 
+body {
+  background-color: #F2F5F9;
+}
+
 .btn_darkBlue {
   background-color: #2045E3;
   color: white;
@@ -633,15 +637,126 @@ body {
   }
 }
 
-.checkout {
-  height: calc(100vh - 90px);
+#emilio .checkout {
+  width: 100%;
   display: flex;
+  min-height: calc(100vh - 90px);
 }
-.checkout section {
+#emilio .checkout .checkout_left, #emilio .checkout .checkout_right {
   width: 50%;
-  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#emilio .checkout .checkout_left .cart_checkout, #emilio .checkout .checkout_right .cart_checkout {
+  width: 90%;
+  height: 90%;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart, #emilio .checkout .checkout_right .cart_checkout .cart {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: white;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart h2, #emilio .checkout .checkout_right .cart_checkout .cart h2 {
+  font-size: 35px;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart i, #emilio .checkout .checkout_right .cart_checkout .cart i {
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate {
+  width: 100%;
+  text-align: left;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate li, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate li {
+  display: inline-block;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateName, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateName {
+  font-size: 20px;
+  width: 30%;
+  text-transform: capitalize;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter {
+  width: 10%;
+  text-align: left;
+  position: relative;
+  float: left;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter i, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter i {
+  font-size: 20px;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter:hover, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter:hover {
+  cursor: pointer;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter .left, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter .left {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(20%, -50%);
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter .right, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter .right {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(60%, -50%);
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter input, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter input {
+  width: 30px;
+  text-align: center;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter input::-webkit-outer-spin-button, #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter input::-webkit-inner-spin-button, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter input::-webkit-outer-spin-button, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .platePrice, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .platePrice {
+  float: right;
+  width: 15%;
+  text-align: right;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart h4, #emilio .checkout .checkout_right .cart_checkout .cart h4 {
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+#emilio .pay {
+  width: 100%;
+}
+#emilio .amount {
+  display: none;
+}
+@media all and (max-width: 1024px) {
+  #emilio .checkout {
+    flex-direction: column;
+  }
+  #emilio .checkout .checkout_left, #emilio .checkout .checkout_right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  #emilio .checkout .checkout_left .plateCounter {
+    width: 15% !important;
+  }
+  #emilio .checkout .checkout_left .plateName {
+    width: 45% !important;
+  }
+  #emilio .checkout .checkout_left .platePrice {
+    width: 21% !important;
+  }
+  #emilio .pay {
+    margin-bottom: 100px;
+  }
+}
+@media all and (max-width: 768px) {
+  #emilio .checkout .checkout_left .cart_checkout, #emilio .checkout .checkout_right .cart_checkout {
+    width: 100%;
+  }
 }
 
+#emilio .container {
+  min-height: 500px;
+}
 #emilio .jumbo {
   height: 50vh;
   width: 100%;
@@ -659,16 +774,17 @@ body {
   bottom: -20%;
   left: 16%;
   margin-bottom: 20px;
-  background-color: white;
   position: absolute;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 #emilio .restaurant h1 {
   font-family: "Bangers", cursive;
-  font-size: 5vw;
+  font-size: 80px;
+}
+#emilio .restaurant i {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  font-size: 30px;
 }
 #emilio .main-menu {
   margin-top: 80px;
@@ -676,14 +792,14 @@ body {
   width: 100%;
 }
 #emilio .main-menu .cart {
-  width: 24%;
+  width: 26%;
   padding: 20px;
   border-radius: 20px;
+  background-color: white;
   float: right;
   position: -webkit-sticky;
   top: 0%;
   position: sticky;
-  background-color: white;
   text-align: center;
   z-index: 999;
 }
@@ -702,7 +818,10 @@ body {
   display: inline-block;
 }
 #emilio .main-menu .cart .order_plate .plateName {
-  width: 110px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
 }
 #emilio .main-menu .cart .order_plate .plateCounter {
   width: 60px;
@@ -726,12 +845,19 @@ body {
   border-radius: 20px;
   display: flex;
   transition: transform 0.5s;
+  background-color: white;
 }
 #emilio .main-menu .plate:hover {
   transform: scale(1.1);
 }
 #emilio .main-menu .plate .plate_photo {
   width: 40%;
+  height: 100%;
+  border-radius: 5px;
+  margin-right: 35px;
+}
+#emilio .main-menu .plate .plate_photo img {
+  width: 100%;
   height: 100%;
   border-radius: 5px;
 }
@@ -754,6 +880,7 @@ body {
   width: 100%;
   height: 50%;
   padding: 5px;
+  overflow-y: auto;
 }
 #emilio .main-menu .plate .plate_counter {
   width: 10%;
@@ -778,6 +905,68 @@ body {
 #emilio #desktopCartNoDesktop {
   display: none;
 }
+#emilio .flip_card {
+  background-color: transparent;
+  perspective: 1000px;
+}
+#emilio .flip_card_inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+}
+#emilio .flip_card:hover .flip_card_inner {
+  -webkit-transform: rotateX(180deg);
+}
+#emilio .flip_card_front, #emilio .flip_card_back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-perspective: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  visibility: visible;
+  border-radius: 20px;
+}
+#emilio .flip_card_front {
+  z-index: 2;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#emilio .flip_card_back {
+  -webkit-transform: rotateY(180deg);
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  align-items: flex-end;
+}
+#emilio .flip_card_back .title_description {
+  width: 60%;
+  height: 100%;
+  padding: 20px;
+  overflow-y: auto;
+  transform: rotate(180deg);
+}
+#emilio .flip_card_back .photo_description {
+  width: 40%;
+  height: 100%;
+  transform: rotate(180deg);
+}
+#emilio .flip_card_back .photo_description img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#emilio .display_none {
+  display: none;
+}
 @media all and (max-width: 1024px) and (min-width: 768px) {
   #emilio .main-menu .cart .order_plate .plateName {
     width: 150px;
@@ -790,6 +979,7 @@ body {
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 20px;
+    background-color: white;
   }
   #emilio section {
     width: 100%;
@@ -797,7 +987,10 @@ body {
   #emilio .restaurant {
     left: 0%;
     width: 100%;
-    height: 20%;
+    height: 200px;
+  }
+  #emilio .restaurant h1 {
+    font-size: 55px;
   }
   #emilio .main-menu {
     width: 100%;
@@ -810,9 +1003,12 @@ body {
   }
   #emilio .main-menu .plate {
     width: 100%;
-    height: 200px;
+    height: 300px;
     padding: 0px;
     position: relative;
+  }
+  #emilio .main-menu .plate:hover {
+    transform: unset;
   }
   #emilio .main-menu .plate .plate_photo {
     width: 100%;
@@ -820,8 +1016,7 @@ body {
     position: absolute;
     left: 0%;
     top: 0%;
-    z-index: 1;
-    display: none;
+    z-index: 10;
   }
   #emilio .main-menu .plate .plate_utility {
     width: 100%;
@@ -829,8 +1024,8 @@ body {
     position: absolute;
     left: 0%;
     top: 0%;
-    z-index: -1;
     text-align: center;
+    z-index: 2;
   }
   #emilio .main-menu .plate:active .plate_photo {
     display: none;
@@ -845,6 +1040,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    z-index: 2;
   }
   #emilio .main-menu .plate .plate_counter {
     width: 100%;

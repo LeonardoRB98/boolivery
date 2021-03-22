@@ -15,11 +15,27 @@
         @else
             <img src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
         @endif
-        {{-- <img src="{{asset('storage/'. $restaurant->photo_jumbo)}}" alt="{{$restaurant->name}}"> --}}
-            <div class="restaurant shadow">
-                <h1>{{$restaurant->name}}</h1>
-            </div>
+        {{-- FLIP CARD --}}
+        <div class="restaurant flip_card ">
+            <div class="flip_card_inner shadow">
+                <div class="flip_card_front">
+                  <h1>{{$restaurant->name}}</h1>
+                  @if ($restaurant->sponsored == true)
+                      <i class="fas fa-medal"></i>
+                  @endif
 
+                </div>
+                <div class="flip_card_back">
+                    <div class="photo_description">
+                        <img src="{{ asset('storage/'. $restaurant->photo) }}" alt="{{ $restaurant->name }}">
+                    </div>
+                    <div class="title_description">
+                        <p>{{$restaurant->description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- FLIP CARD --}}
         </div>
     <div class="container">
         <div class="main-menu">
@@ -81,3 +97,6 @@
 <script>
     var id = {!! json_encode($restaurant->id) !!};
 </script>
+
+
+

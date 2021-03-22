@@ -2,7 +2,9 @@
     // .shadow {
     //     box-shadow: 5px 10px!important;
     // }
-
+    .container {
+        min-height: 500px;
+    }
     .jumbo {
         // border: 1px solid black;
         height: 50vh;
@@ -20,16 +22,16 @@
         bottom: -20%;
         left: 16%;
         margin-bottom: 20px;
-        background-color: white;
         position: absolute;
-        border-radius: 20px;
-        // border: 1px solid black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         h1 {
             font-family: 'Bangers', cursive;
-            font-size: 5vw;
+            font-size: 80px;
+        }
+        i {
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+            font-size: 30px;
         }
     }
     .main-menu {
@@ -37,15 +39,15 @@
         position: relative;
         width: 100%;
         .cart {
-            width: 24%;
+            width: 26%;
             padding: 20px;
             border-radius: 20px;
             // border: 1px solid black;
+            background-color: white;
             float: right;
             position: -webkit-sticky;
             top: 0%;
             position: sticky;
-            background-color: white;
             text-align: center;
             z-index: 999;
             h2 {
@@ -62,7 +64,12 @@
                     display: inline-block;
                 }
                 .plateName {
-                   width: 110px;
+                   width: 100%;
+                   overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    // -webkit-line-clamp: 2; /* number of lines to show */
+                    // -webkit-box-orient: vertical;
                 }
                 .plateCounter {
                     width: 60px;
@@ -94,6 +101,7 @@
             border-radius: 20px;
             display: flex;
             transition: transform .5s;
+            background-color: white;
             &:hover {
                 transform: scale(1.1);
             }
@@ -102,6 +110,13 @@
                 height: 100%;
                 // border: 1px solid black;
                 border-radius: 5px;
+                margin-right: 35px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 5px;
+                    // transition: transform .12s;
+                }
             }
             .plate_utility {
                 width: 100%;
@@ -125,6 +140,7 @@
                     height: 50%;
                     // border: 1px solid black;
                     padding: 5px;
+                    overflow-y: auto;
                 }
             }
             .plate_counter {
@@ -153,7 +169,58 @@
     #desktopCartNoDesktop {
         display: none;
     }
+    // FLIP CARD
+    .flip_card {
+      @include flip_card;
+    }
+    .flip_card_inner {
+      @include flip_card_inner;
+    }
+    .flip_card:hover .flip_card_inner {
+      @include flip_card_hover_X;
+    }
+    .flip_card_front, .flip_card_back {
+      @include flip_card_front_back;
+      border-radius: 20px;
+    }
+    .flip_card_front {
+      @include flip_card_front;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .flip_card_back {
+      @include flip_card_back;
+      background-color: white;
+      padding: 10px;
+      display: flex;
+      align-items: flex-end;
+      .title_description {
+        width: 60%;
+        height: 100%;
+        padding: 20px;
+        overflow-y: auto;
+        transform: rotate(180deg);
+      }
+      .photo_description {
+          width: 40%;
+          height: 100%;
+          transform: rotate(180deg);
+          img {
+              width: 100%;
+              height: 100%;
+              border-radius: 20px;
+              object-fit: cover;
+          }
+        }
 
+    }
+
+    //   FLIP CARD
+    .display_none {
+        display: none;
+    }
     @media all and (max-width: 1024px) and ( min-width: 768px) {
 
         .main-menu {
@@ -176,6 +243,7 @@
         margin-bottom: 20px;
         padding: 20px;
         border-radius: 20px;
+        background-color: white;
     }
         section{
             width: 100%;
@@ -183,7 +251,10 @@
         .restaurant {
             left: 0%;
             width: 100%;
-            height: 20%;
+            height: 200px;
+            h1 {
+                font-size: 55px;
+            }
         }
         .main-menu {
             width: 100%;
@@ -195,17 +266,19 @@
             }
             .plate {
                 width: 100%;
-                height: 200px;
+                height: 300px;
                 padding: 0px;
                 position: relative;
+                &:hover {
+                    transform: unset;
+                }
                 .plate_photo {
                     width: 100%;
                     height: 100%;
                     position: absolute;
                     left: 0%;
                     top: 0%;
-                    z-index: 1;
-                    display: none;
+                    z-index: 10;
                 }
                 .plate_utility {
                     width: 100%;
@@ -213,8 +286,8 @@
                     position: absolute;
                     left: 0%;
                     top: 0%;
-                    z-index: -1;
                     text-align: center;
+                    z-index: 2;
                 }
                 &:active .plate_photo {
                     display: none;
@@ -229,6 +302,7 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-end;
+                    z-index: 2;
                 }
                 .plate_counter {
                     width: 100%;
@@ -259,3 +333,8 @@
 
     }
 }
+
+
+
+
+

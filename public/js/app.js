@@ -43884,6 +43884,11 @@ var render = function() {
         attrs: { src: "http://127.0.0.1:8000/storage/" + _vm.platePhoto }
       })
     ]),
+    _c("div", { staticClass: "plate_photo plate_photo_trigger" }, [
+      _c("img", {
+        attrs: { src: "http://127.0.0.1:8000/storage/" + _vm.platePhoto }
+      })
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "plate_utility" }, [
       _c("div", { staticClass: "plate_info" }, [

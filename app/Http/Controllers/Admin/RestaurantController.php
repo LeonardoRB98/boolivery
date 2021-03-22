@@ -61,7 +61,6 @@ class RestaurantController extends Controller
 
         $request->validate($this->restaurantValidation);
 
-
         $data = $request->all();
 
 
@@ -142,10 +141,12 @@ class RestaurantController extends Controller
         $request->validate($this->restaurantValidation);
         $data = $request->all();
         $data["slug"] = Str::slug($data["name"]);
-        $data['sponsored'] = false;
+
         if($data['sponsored'] == 'true') {
             $data['sponsored'] = true;
-        };
+        } else {
+            $data['sponsored'] = false;
+        }
 
 
 

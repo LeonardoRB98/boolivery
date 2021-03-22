@@ -1,16 +1,36 @@
 @extends('layouts.main')
 
 @section('content')
-<span id="leonardo"></span>
+<span id="emilio">
     <div class="checkout">
-        <section>
-            Dati pagamento
+        <section class="checkout_left">
+            <div class="cart_checkout">
+                <div class="cart shadow">
+                    <h2>Controlla Il Tuo Ordine</h2>
+                    <i class="fas fa-cart-arrow-down"></i>
+                    <div class="order_plate" v-for='plate in cart'>
+                        <ul>
+                            <li class="plateCounter">
+                                {{-- <i class="fas fa-arrow-left left"></i> --}}
+                                <input type="number" :value="plate.counter">
+                                {{-- <i class="fas fa-arrow-right right"></i> --}}
+                            </li>
+                             <li class="plateName">@{{ plate.name }}</li>
+                            <li class="platePrice">@{{ plate.price*plate.counter }} €</li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <h4>Totale: <br> @{{ totalPrice }}  €</h4>
+                </div>
+            </div>
+        </section>
+        <section class="checkout_right">
             <form method="post" id="payment-form" action="{{ url('/checkout')}}">
                 @csrf
                 <section>
                     <label for="amount">
-                        <span class="input-label">Amount</span>
-                        <div class="input-wrapper amount-wrapper">
+                        {{-- <span class="input-label">Totale</span> --}}
+                        <div class="input-wrapper amount-wrapper amount">
                             <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="11">
                         </div>
                     </label>
@@ -20,8 +40,8 @@
                     </div>
                 </section>
 
-                <input id="nonce" name="payment_method_nonce" type="hidden" />
-                <button class="btn btn-success" type="submit"><span>Proceed</span></button>
+                <input id="nonce" name="payment_method_nonce" type="hidden"/>
+                <button class="btn btn-success pay" type="submit"><span>Paga</span></button>
             </form>
             <script src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js"></script>
             <script>
@@ -59,8 +79,6 @@
                 });
             </script>
         </section>
-        <section>
-
-        </section>
     </div>
+</span>
 @endsection
