@@ -43,13 +43,15 @@
             <div v-if="!hiddenCart"  class="cart shadow animate__animated animate__jello" id="desktopCartNoDeskop">
                 <h2>Il Tuo Ordine</h2>
                 <i class="fas fa-cookie-bite"></i>
-                <div class="order_plate" v-for='plate in cart'>
+                <div class="order_plate shadow" v-for='plate in cart'>
                     <ul>
                         <li class="plateName">@{{ plate.name }}</li>
+                        <li class="plateAddRemove"><i class="fas fa-plus-square" id="plus"></i><i class="fas fa-minus-square" id="minus"></i></li>
                         <li class="plateCounter">X @{{ plate.counter }} </li>
                         <li class="platePrice">@{{ plate.price*plate.counter }} €</li>
                     </ul>
                 </div>
+
                 <hr>
                 <h4>Totale: <br> @{{ totalPrice }}  €</h4>
                 {{-- SE LOCAL STORAGE è PIENO STAMPA LINK CHECKOUT --}}
@@ -63,9 +65,10 @@
             <div class="cart shadow animate__animated animate__jello" id="mobileCartNoMobile">
                 <h2>Il Tuo Ordine</h2>
                 <i class="fas fa-cookie-bite"></i>
-                <div class="order_plate" v-for='plate in cart'>
+                <div class="order_plate shadow" v-for='plate in cart'>
                     <ul>
                         <li class="plateName">@{{ plate.name }}</li>
+                        <li class="plateAddRemove"><i class="fas fa-plus-square" id="plus"></i><i class="fas fa-minus-square" id="minus"></i></li>
                         <li class="plateCounter">X @{{ plate.counter }} </li>
                         <li class="platePrice">@{{ plate.price*plate.counter }} €</li>
                     </ul>
