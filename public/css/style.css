@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #F2F5F9;
+  background-color: #EDF1F4;
 }
 
 .btn_darkBlue {
@@ -20,6 +20,13 @@ body {
 
 a:hover {
   cursor: pointer;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+ul a {
   text-decoration: none;
 }
 
@@ -96,13 +103,10 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  #leonardo_footer footer .container {
+  footer {
     font-size: 22px;
   }
-  #leonardo_footer footer .container ul {
-    list-style: none;
-  }
-  #leonardo_footer footer .container ul li:first-child {
+  footer ul li:first-child {
     font-size: 26px;
   }
 }
