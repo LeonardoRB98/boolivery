@@ -1,37 +1,35 @@
-#stephanie {
-  background-color: $body-bg;
-  .wrapper {
-    height: calc(100vh - 90px);
-    .login-form {
-      padding: 60px 40px 10px 40px;
-      background: $brandOrange;
-      border-radius: 8px;
-      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-      position: relative;
-    }
-    .login-form h3 {
-      position: absolute;
-      padding: 20px 40px;
-      left: 50%;
-      top: -30px;
-      transform: translateX(-50%);
-      color: $brandBlue;
-      text-align: center;
-      background-color: white;
-      border-radius: 79% 21% 80% 20% / 26% 85% 15% 74% ;
-      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-    }
-    .btnForgetPwd{
-      color: #fff;
-      text-decoration: none;
-    }
-    .btnForgetPwd:hover{
-      text-decoration:none;
-      color:#fff;
-    }
-    .small-link {
-      text-decoration: none;
-      font-size: 12px;
-    }
+
+.wrap-box {
+  height: calc(100vh - 90px);
+  .login-form {
+    padding: 60px 40px 10px 40px;
+    background: $brandOrange;
+    border-radius: 8px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+  }
+  .login-form h3 {
+    position: absolute;
+    padding: 20px 40px;
+    left: 50%;
+    top: -30px;
+    transform: translateX(-50%);
+    color: $brandBlue;
+    text-align: center;
+    background-color: white;
+    border-radius: 79% 21% 80% 20% / 26% 85% 15% 74% ;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  }
+  .btnForgetPwd{
+    color: #fff;
+    text-decoration: none;
+  }
+  .btnForgetPwd:hover{
+    text-decoration:none;
+    color:#fff;
+  }
+  .small-link {
+    text-decoration: none;
+    font-size: 12px;
   }
 }
