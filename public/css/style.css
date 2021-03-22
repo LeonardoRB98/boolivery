@@ -113,16 +113,181 @@ body {
     background: radial-gradient(250% 123% at bottom, #131E52 70%, #ED4521 60%);
   }
 }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 4s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+#fortunato_loading {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #131E52;
+}
+#fortunato_loading h1 {
+  margin-top: 100px;
+  color: #ED4521;
+  align-self: flex-start;
+  -webkit-animation: pulsate 3s ease-out;
+          animation: pulsate 3s ease-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  opacity: 0.2;
+}
+@-webkit-keyframes pulsate {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+@keyframes pulsate {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+#fortunato_loading .dot-floating {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #ED4521;
+  color: #ED4521;
+  -webkit-animation: dotFloating 3s infinite cubic-bezier(0.15, 0.6, 0.9, 0.1);
+          animation: dotFloating 3s infinite cubic-bezier(0.15, 0.6, 0.9, 0.1);
+}
+#fortunato_loading .dot-floating::before, #fortunato_loading .dot-floating::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+#fortunato_loading .dot-floating::before {
+  left: -30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #ED4521;
+  color: #ED4521;
+  -webkit-animation: dotFloatingBefore 3s infinite ease-in-out;
+          animation: dotFloatingBefore 3s infinite ease-in-out;
+}
+#fortunato_loading .dot-floating::after {
+  left: -60px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #ED4521;
+  color: #ED4521;
+  -webkit-animation: dotFloatingAfter 3s infinite cubic-bezier(0.4, 0, 1, 1);
+          animation: dotFloatingAfter 3s infinite cubic-bezier(0.4, 0, 1, 1);
+}
+@-webkit-keyframes dotFloating {
+  0% {
+    left: calc(-50% - 5px);
+  }
+  75% {
+    left: calc(50% + 105px);
+  }
+  100% {
+    left: calc(50% + 105px);
+  }
+}
+@keyframes dotFloating {
+  0% {
+    left: calc(-50% - 5px);
+  }
+  75% {
+    left: calc(50% + 105px);
+  }
+  100% {
+    left: calc(50% + 105px);
+  }
+}
+@-webkit-keyframes dotFloatingBefore {
+  0% {
+    left: -50px;
+  }
+  50% {
+    left: -30px;
+  }
+  75% {
+    left: -50px;
+  }
+  100% {
+    left: -50px;
+  }
+}
+@keyframes dotFloatingBefore {
+  0% {
+    left: -50px;
+  }
+  50% {
+    left: -30px;
+  }
+  75% {
+    left: -50px;
+  }
+  100% {
+    left: -50px;
+  }
+}
+@-webkit-keyframes dotFloatingAfter {
+  0% {
+    left: -100px;
+  }
+  50% {
+    left: -60px;
+  }
+  75% {
+    left: -100px;
+  }
+  100% {
+    left: -100px;
+  }
+}
+@keyframes dotFloatingAfter {
+  0% {
+    left: -100px;
+  }
+  50% {
+    left: -60px;
+  }
+  75% {
+    left: -100px;
+  }
+  100% {
+    left: -100px;
+  }
+}
+
 #fortunato .jumbo_box {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 70vh;
+  height: 100%;
   overflow: hidden;
+  background-color: #ED4521;
   background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
-  background: radial-gradient(100% 100% at bottom, #FFFFFF 60%, #ED4521 60%);
 }
 #fortunato .jumbo_box .search_bar {
   display: flex;
@@ -137,11 +302,18 @@ body {
 #fortunato .jumbo_box .search_bar input {
   width: 50%;
   height: 60px;
+  margin-bottom: 50px;
+  padding: 15px;
+  font-size: 26px;
+  border-width: 5px;
+  border-color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
+  border-style: solid;
+  border-radius: 50px;
+  box-shadow: 0px 0px 30px rgba(237, 69, 34, 0.97);
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.99);
   outline: none;
-  border-radius: 20px;
-  border: none;
-  padding-left: 10%;
-  margin-bottom: 20px;
 }
 #fortunato .jumbo_box .search_bar ul {
   list-style: none;
@@ -150,12 +322,15 @@ body {
 #fortunato .jumbo_box .search_bar ul li {
   margin: 0 20px;
 }
-#fortunato .jumbo_box .jumbo_title {
-  text-align: center;
-  margin-bottom: 100px;
+#fortunato .jumbo_box .wave_one {
+  width: 100%;
 }
 #fortunato main {
   background-color: #FFFFFF;
+}
+#fortunato main .container .jumbo_title {
+  text-align: center;
+  margin-bottom: 100px;
 }
 #fortunato main .container section {
   display: flex;
@@ -213,32 +388,9 @@ body {
   height: 200px;
 }
 #fortunato main .wave {
-  background: #ED4521;
-  height: 50px;
+  background: #FFFFFF;
+  height: 100%;
   position: relative;
-}
-#fortunato main .wave::before, #fortunato main .wave::after {
-  border-bottom: 5px solid #131E52;
-}
-#fortunato main .wave::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 10px;
-  background-size: 20px 40px;
-  background-image: radial-gradient(circle at 10px -15px, transparent 20px, #131E52 21px);
-}
-#fortunato main .wave::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 15px;
-  background-size: 40px 40px;
-  background-image: radial-gradient(circle at 10px 26px, #131E52 20px, transparent 21px);
 }
 #fortunato main .recruting {
   display: flex;
@@ -250,6 +402,7 @@ body {
   padding: 100px 50px;
   color: white;
   font-size: 15px;
+  background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
 }
 #fortunato main .recruting h2 {
   display: none;
@@ -315,8 +468,6 @@ body {
     align-items: center;
     height: 70vh;
     overflow: hidden;
-    background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
-    background: radial-gradient(100% 100% at bottom, #FFFFFF 60%, #ED4521 60%);
   }
   #fortunato .jumbo_box h1 {
     font-size: 1.25rem;
@@ -411,34 +562,6 @@ body {
   }
   #fortunato main .container section .not_found img {
     height: 200px;
-  }
-  #fortunato main .wave {
-    background: #ED4521;
-    height: 50px;
-    position: relative;
-  }
-  #fortunato main .wave::before, #fortunato main .wave::after {
-    border-bottom: 5px solid #131E52;
-  }
-  #fortunato main .wave::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 10px;
-    background-size: 20px 40px;
-    background-image: radial-gradient(circle at 10px -15px, transparent 20px, #131E52 21px);
-  }
-  #fortunato main .wave::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 15px;
-    background-size: 40px 40px;
-    background-image: radial-gradient(circle at 10px 26px, #131E52 20px, transparent 21px);
   }
   #fortunato main .recruting {
     display: flex;

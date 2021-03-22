@@ -52,6 +52,7 @@ Vue.component('plate-component', require('./components/PlateComponent.vue').defa
 const app = new Vue({
     el: '#app',
     data: {
+        isLoading: true,
         restaurants: [],
         filteredRestaurants: [],
         categories: [],
@@ -173,6 +174,9 @@ const app = new Vue({
 
 
     mounted: function() {
+
+
+
         if(localStorage.cart) {
             this.cart = JSON.parse(localStorage.cart);
         }
@@ -186,6 +190,10 @@ const app = new Vue({
 
         }
 
+
+        setTimeout(() => {
+            this.isLoading = false
+          }, 4000)
 
 
     },
@@ -216,6 +224,7 @@ const app = new Vue({
                 });
              })
         },
+        
     }
 
 });
