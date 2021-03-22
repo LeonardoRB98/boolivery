@@ -2182,10 +2182,13 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
       this.searchRestaurants();
       this.search = '';
     },
-    deleteSelect: function deleteSelect() {
+    sponsoredRestaurants: function sponsoredRestaurants() {
       var _this5 = this;
 
+      this.search = '';
+      this.categorySelect = '';
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
+        _this5.restaurants = response.data;
         _this5.filteredRestaurants = response.data;
       });
     },

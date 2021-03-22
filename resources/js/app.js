@@ -248,14 +248,25 @@ const app = new Vue({
             this.search = '';
         },
 
-        deleteSelect() {
+        sponsoredRestaurants() {
+            
+                 
+            this.search = '';
+            this.categorySelect = '';
+
             axios
             .get('http://127.0.0.1:8000/api/restaurants')
-            .then(response => {
-                this.filteredRestaurants = response.data;
-            });
-
+            .then( response => {
+                 this.restaurants = response.data;
+                 this.filteredRestaurants = response.data;
+            }
+        );
+            
+ 
+            
         },
+
+       
 
 
         // functions for cart and plates
