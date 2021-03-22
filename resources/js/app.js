@@ -245,6 +245,7 @@ const app = new Vue({
         buttonRestaurants(category) {
             this.categorySelect = category;
             this.searchRestaurants();
+            this.search = '';
         },
 
         deleteSelect() {
