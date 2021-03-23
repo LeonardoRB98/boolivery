@@ -14,7 +14,7 @@ class PaymentController extends Controller
             'publicKey' => config('services.braintree.publicKey'),
             'privateKey' => config('services.braintree.privateKey')
         ]);
-    
+
         $token = $gateway->ClientToken()->generate();
         return view('guests.checkout', compact('token'));
     }
@@ -26,13 +26,13 @@ class PaymentController extends Controller
             'publicKey' => config('services.braintree.publicKey'),
             'privateKey' => config('services.braintree.privateKey')
         ]);
-        
+
         $totalPrice = $request->totalPrice;
         $nonce = $request->payment_method_nonce;
         $name = $request->name;
         $surname = $request->surname;
         $email = $request->email;
-    
+
         $result = $gateway->transaction()->sale([
             'amount' => $totalPrice,
             'paymentMethodNonce' => $nonce,
@@ -47,17 +47,17 @@ class PaymentController extends Controller
 
         ]);
 
-    
+
         if ($result->success) {
             $transaction = $result->transaction;
-            return view('success', [ 'message' => 'Payment successfull!']);
+            return view('guests.checkoutconfirm', [ 'message' => 'Pagamento avvenuto con successo']);
         } else {
             $errorString = "";
-    
+
             foreach($result->errors->deepAll() as $error) {
                 $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
             }
-    
+
             return back()->withErrors('message', 'Transaction succsessfull. Id ' . $result->message);
         }
     }
