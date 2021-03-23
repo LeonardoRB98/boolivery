@@ -45,7 +45,7 @@
                 <i class="fas fa-cookie-bite"></i>
                 <div class="order_plate shadow" v-for='plate in cart'>
                     <ul>
-                        
+
                         <li class="plateName">@{{ plate.name }}</li>
                         <li class="plateAddRemove">
                             <i v-on:click="add(plate.id, plate.counter, plate.price, plate.name)" class="fas fa-plus-square" id="plus"></i>
@@ -66,11 +66,6 @@
                         <i class="far fa-credit-card animate__animated animate__wobble"></i>
                     </a>
                 </span>
-
-                    <a class="to_checkout" href="{{route('checkout')}}">
-                        <i class="far fa-credit-card"></i>
-                    </a>
-
             </div>
             {{-- SECONDO CARRELLO DA NASCONDERE IN MOBILE --}}
             <div class="cart shadow animate__animated animate__jello" id="mobileCartNoMobile">

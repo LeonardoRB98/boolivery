@@ -966,7 +966,6 @@ footer ul li i {
   width: 15%;
   text-align: left;
   position: relative;
-  float: left;
 }
 #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter #minus, #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter #plus, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter #minus, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter #plus {
   font-size: 30px;
