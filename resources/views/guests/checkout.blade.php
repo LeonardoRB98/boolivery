@@ -67,47 +67,46 @@
                 <button class="btn btn-success pay" type="submit"><span>Paga</span></button>
             </form>
            @section('braintree')
-            <script src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js"></script>
-            <script>
+                <script src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js"></script>
+                <script>
 
-                // PRENDO I DATI DEL FORM
-                var form = document.querySelector('#payment-form');
+                    // PRENDO I DATI DEL FORM
+                    var form = document.querySelector('#payment-form');
 
-                // PRENDO IL TOKEN DAL CONTROLLER
-                var client_token = "{{ $token }}";
+                    // PRENDO IL TOKEN DAL CONTROLLER
+                    var client_token = "{{ $token }}";
 
-                // CREO INTERFACCIA BRAINTREE
-                braintree.dropin.create({
-                  authorization: client_token,
-                  selector: '#bt-dropin',
-                //   RIMUOVO PAYPAL
-                    //   paypal: {
-                    //     flow: 'vault'
-                    //   }
-                }, function (createErr, instance) {
-                  if (createErr) {
-                    console.log('Create Error', createErr);
-                    return;
-                  }
-                  form.addEventListener('submit', function (event) {
-                    event.preventDefault();
-
-                    instance.requestPaymentMethod(function (err, payload) {
-                      if (err) {
-                        console.log('Request Payment Method Error', err);
+                    // CREO INTERFACCIA BRAINTREE
+                    braintree.dropin.create({
+                    authorization: client_token,
+                    selector: '#bt-dropin',
+                    //   RIMUOVO PAYPAL
+                        //   paypal: {
+                        //     flow: 'vault'
+                        //   }
+                    }, function (createErr, instance) {
+                    if (createErr) {
+                        console.log('Create Error', createErr);
                         return;
-                      }
+                    }
+                    form.addEventListener('submit', function (event) {
+                        event.preventDefault();
 
-                    //   FACCIO SUBMIT
-                      document.querySelector('#nonce').value = payload.nonce;
-                      form.submit();
+                        instance.requestPaymentMethod(function (err, payload) {
+                        if (err) {
+                            console.log('Request Payment Method Error', err);
+                            return;
+                        }
+
+                        //   FACCIO SUBMIT
+                        document.querySelector('#nonce').value = payload.nonce;
+                        form.submit();
+                        });
                     });
-                  });
-                });
-            </script>
-        </section>
-
-           @endsection
+                    });
+                </script>
+            </section>
+        @endsection
     </div>
 </span>
 @endsection
