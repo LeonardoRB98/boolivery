@@ -37,7 +37,7 @@
         </div>
         {{-- FLIP CARD --}}
         </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="main-menu">
             <i v-on:click="hiddenCart = !hiddenCart" id="trigger_cart_mobile" class="fas fa-shopping-cart shadow"></i>
             <div v-if="!hiddenCart"  class="cart shadow animate__animated animate__jello" id="desktopCartNoDeskop">

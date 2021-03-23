@@ -1037,9 +1037,9 @@ footer ul li i {
 }
 #emilio .restaurant {
   width: 50%;
-  height: 50%;
+  height: 35%;
   bottom: -20%;
-  left: 16%;
+  left: 10%;
   margin-bottom: 20px;
   position: absolute;
 }
@@ -1059,13 +1059,14 @@ footer ul li i {
   width: 100%;
 }
 #emilio .main-menu .cart {
-  width: 26%;
+  width: 30%;
   padding: 20px;
   border-radius: 20px;
   background-color: white;
   float: right;
+  margin-right: 100px;
   position: -webkit-sticky;
-  top: 0%;
+  top: 10%;
   position: sticky;
   text-align: center;
   z-index: 999;
@@ -1126,9 +1127,10 @@ footer ul li i {
   color: #D64129;
 }
 #emilio .main-menu .plate {
-  width: 70%;
+  width: 50%;
   height: 20%;
   padding: 20px;
+  margin-left: 160px;
   margin-bottom: 20px;
   border-radius: 20px;
   display: flex;
@@ -1192,6 +1194,11 @@ footer ul li i {
 }
 #emilio #desktopCartNoDesktop {
   display: none;
+}
+#emilio #text_plate {
+  text-align: center;
+  font-size: 50px;
+  padding: 40px 35px;
 }
 #emilio .flip_card {
   background-color: transparent;
