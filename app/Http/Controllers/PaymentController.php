@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
+use App\Plate;
 
 class PaymentController extends Controller
 {
@@ -37,7 +38,7 @@ class PaymentController extends Controller
         $surname = $request->surname;
         $email = $request->email;
 
-
+        // QUESTO ASSOCIA I DATI E LI INVIA
         $result = $gateway->transaction()->sale([
             'amount' => $total,
             'paymentMethodNonce' => $nonce,
@@ -52,18 +53,20 @@ class PaymentController extends Controller
 
         ]);
 
-
         if ($result->success) {
             $transaction = $result->transaction;
 
-
+            // QUI DEFINISCO UN NUOVO ORDINE
             $newOrder = new Order();
             $newOrder['status'] = true;
             $newOrder['date'] = date("Y-m-d H:i:s");
             $newOrder->fill($data);
-
-            // dd($newOrder);
             $newOrder->save();
+
+            // QUI ASSOCIO L'ID DEI PIATTI ALL'ID DELL ORDINE
+            $newOrder->plates()->attach($data["plates"]);
+
+
 
             return view('guests.checkoutconfirm', ['message' => 'Pagamento avvenuto con successo']);
 
@@ -76,7 +79,7 @@ class PaymentController extends Controller
 
             $newOrder = new Order();
             $newOrder['status'] = false;
-            $newOrder['plate_id'] = $data[''];
+            // $newOrder['plate_id'] = $data[''];
             $newOrder->fill($data);
             // dd($newOrder);
             $newOrder->save();

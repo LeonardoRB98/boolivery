@@ -17,8 +17,9 @@ class Order extends Model
     ];
 
     // DB relationships
-    public function orders() {
-    return $this->belongsToMany('App\Order', 'order_plate');
+    public function plates() {
+    return $this->belongsToMany('App\Plate', 'order_plate');
     }
+
 
 }

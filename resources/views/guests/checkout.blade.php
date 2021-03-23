@@ -1,5 +1,6 @@
 @extends('layouts.main')
 
+
 @section('content')
     <span id="emilio">
         <div class="checkout">
