@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
 
 class PaymentController extends Controller
 {
@@ -27,14 +28,18 @@ class PaymentController extends Controller
             'privateKey' => config('services.braintree.privateKey')
         ]);
 
-        $totalPrice = $request->totalPrice;
+        // QUESTO MANDA I DATI A BRAINTREE
+        $data = $request->all();
+        // dd($data);
+        $total = $request->total;
         $nonce = $request->payment_method_nonce;
         $name = $request->name;
         $surname = $request->surname;
         $email = $request->email;
 
+
         $result = $gateway->transaction()->sale([
-            'amount' => $totalPrice,
+            'amount' => $total,
             'paymentMethodNonce' => $nonce,
             'options' => [
                 'submitForSettlement' => true
@@ -50,13 +55,31 @@ class PaymentController extends Controller
 
         if ($result->success) {
             $transaction = $result->transaction;
-            return view('guests.checkoutconfirm', [ 'message' => 'Pagamento avvenuto con successo']);
+
+
+            $newOrder = new Order();
+            $newOrder['status'] = true;
+            $newOrder['date'] = date("Y-m-d H:i:s");
+            $newOrder->fill($data);
+
+            // dd($newOrder);
+            $newOrder->save();
+
+            return view('guests.checkoutconfirm', ['message' => 'Pagamento avvenuto con successo']);
+
         } else {
             $errorString = "";
 
             foreach($result->errors->deepAll() as $error) {
                 $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
             }
+
+            $newOrder = new Order();
+            $newOrder['status'] = false;
+            $newOrder['plate_id'] = $data[''];
+            $newOrder->fill($data);
+            // dd($newOrder);
+            $newOrder->save();
 
             return back()->withErrors('message', 'Transaction succsessfull. Id ' . $result->message);
         }

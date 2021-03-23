@@ -41,19 +41,27 @@
                 @csrf
                 @method("post")
                 <div class="row">
-                    <input type="text" name="name" class="form-control" placeholder="Inserisci il tuo nome">
+                    <input type="text" name="name" class="form-control" placeholder="Inserisci il tuo nome" value="Emilio">
                 </div>
                 <div class="row">
-                    <input type="text" name="surname" class="form-control" placeholder="Inserisci il tuo cognome">
+                    <input type="text" name="surname" class="form-control" placeholder="Inserisci il tuo cognome" value="Furnari">
                 </div>
                 <div class="row">
-                    <input type="email" name="mail" class="form-control" id="mail" placeholder="Inserisci la tua email">
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci la tua email" value="Furnari@mail.com">
                 </div>
+                <div class="row">
+                    <input type="address" name="address" class="form-control" id="address" value="Via delle cose" placeholder="Inserisci la tua email">
+                </div>
+                <div class="form-group">
+                    <select style="display:none;"  class="form-control" name="plates[]" multiple>
+                            <option v-for="plate in cart" :value="plate.id" selected>@{{plate.id}}</option>
+                    </select>
+            </div>
                 <section>
                     <label for="amount">
                         <span class="input-label">Totale da pagare: @{{ totalPrice }}  € </span>
                         <div class="input-wrapper amount-wrapper amount">
-                            <input id="totalPrice" name="totalPrice" type="tel" min="1" placeholder="Totale" :value="totalPrice">
+                            <input id="total" name="total" type="tel" min="1" placeholder="Totale" :value="totalPrice">
                         </div>
                     </label>
 
