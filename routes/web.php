@@ -23,6 +23,7 @@ Route::get('/', function() {
 
 Route::get('/Boolivery', 'GuestController@index')->name('home');
 Route::get('/Boolivery/restaurant/checkout', 'GuestController@checkout')->name('checkout');
+Route::post('/Boolivery/restaurant/checkout', 'GuestController@payment')->name('payment');
 Route::get('/Boolivery/restaurant/{slug}', 'GuestController@show')->name('restaurant');
 
 
