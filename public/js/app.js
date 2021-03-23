@@ -1930,6 +1930,10 @@ __webpack_require__.r(__webpack_exports__);
       if (_this.plateId == plateId) {
         _this.counter = plateCounter;
       }
+    }); // reset counter imposta il counter a zero
+
+    this.$root.$on('resetCounter', function () {
+      _this.counter = 0;
     });
   },
   methods: {
@@ -2210,6 +2214,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     // empty trash
     trashCart: function trashCart() {
       this.cart = [];
+      localStorage.removeItem('cart');
+      this.totalPrice = 0;
+      localStorage.removeItem('totalPrice');
+      this.$root.$emit('resetCounter');
     }
   }
 });

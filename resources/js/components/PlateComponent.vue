@@ -87,6 +87,11 @@
                     this.counter = plateCounter;
                 }
             })
+
+            // reset counter imposta il counter a zero
+            this.$root.$on('resetCounter', () => {
+                this.counter = 0;
+            })
         },
         methods: {
             decreaseCounter() {

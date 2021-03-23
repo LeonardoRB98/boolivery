@@ -287,6 +287,10 @@ const app = new Vue({
         // empty trash
         trashCart() {
             this.cart = [];
+            localStorage.removeItem('cart');
+            this.totalPrice = 0;
+            localStorage.removeItem('totalPrice');
+            this.$root.$emit('resetCounter');
         }
     }
 
