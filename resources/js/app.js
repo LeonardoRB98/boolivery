@@ -13,6 +13,9 @@ window.select2 = require('select2');
 import axios from 'axios';
 import { forEach, isEmpty } from 'lodash';
 import Vue from 'vue';
+import vueScrollto from 'vue-scrollto'
+
+Vue.use(vueScrollto)
 
 
 jQuery(function () {
