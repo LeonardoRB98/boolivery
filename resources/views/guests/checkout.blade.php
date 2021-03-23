@@ -26,18 +26,29 @@
             </div>
         </section>
         <section class="checkout_right">
-            <form method="post" id="payment-form" action="{{ url('/checkout')}}">
+            <form method="post" id="payment-form" action="{{ route('payment')}}">
                 @csrf
+                @method("post")
+                <div class="row">
+                    <input type="text" name="name" class="form-control" placeholder="Inserisci il tuo nome">
+                </div>
+                <div class="row">
+                    <input type="text" name="surname" class="form-control" placeholder="Inserisci il tuo cognome">
+                </div>
+                <div class="row">
+                    <input type="email" name="mail" class="form-control" id="mail" placeholder="Inserisci la tua email">
+                </div>
                 <section>
                     <label for="amount">
-                        {{-- <span class="input-label">Totale</span> --}}
+                        <span class="input-label">Totale da pagare: @{{ totalPrice }}  € </span>
                         <div class="input-wrapper amount-wrapper amount">
-                            <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="11">
+                            <input id="totalPrice" name="totalPrice" type="tel" min="1" placeholder="Totale" :value="totalPrice">
                         </div>
                     </label>
 
                     <div class="bt-drop-in-wrapper">
-                        <div id="bt-dropin"></div>
+                        <div id="bt-dropin">
+                        </div>
                     </div>
                 </section>
 
@@ -46,15 +57,18 @@
             </form>
             <script src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js"></script>
             <script>
-                // extract from
+
+                // PRENDO I DATI DEL FORM
                 var form = document.querySelector('#payment-form');
-                // client token
+
+                // PRENDO IL TOKEN DAL CONTROLLER
                 var client_token = "{{ $token }}";
 
+                // CREO INTERFACCIA BRAINTREE
                 braintree.dropin.create({
                   authorization: client_token,
                   selector: '#bt-dropin',
-                    // remove paypall
+                //   RIMUOVO PAYPAL
                     //   paypal: {
                     //     flow: 'vault'
                     //   }
@@ -72,7 +86,7 @@
                         return;
                       }
 
-                      // Add the nonce to the form and submit
+                    //   FACCIO SUBMIT
                       document.querySelector('#nonce').value = payload.nonce;
                       form.submit();
                     });
