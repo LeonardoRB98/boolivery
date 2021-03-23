@@ -151,6 +151,9 @@ transition: opacity 4s
                 align-items: center;
 
                 .button_category {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
                     position: relative;
                     border: none;
                     background-color: white;
@@ -161,7 +164,8 @@ transition: opacity 4s
                     img {
                         position: absolute;
                         top: 13px;
-                        left: 5px
+                        left: 5px;
+
                     }
 
                     .fa-medal {
@@ -176,7 +180,6 @@ transition: opacity 4s
                         top: 13px;
                         right: 5px;
                         z-index: 5;
-
                     }
 
 

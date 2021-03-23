@@ -17,6 +17,7 @@
                     <option :value="category.category" v-for='category in categories'>@{{category.category}}</option>
                 </select> --}}
                     <div  id="scroll" class="wrap_card">
+                        
                         <button v-scroll-to="'#scroll'" v-on:click="sponsoredRestaurants" class="button_category">
                             Sponsored
                             <i class="fas fa-medal"></i>

@@ -342,6 +342,9 @@ footer ul li i {
   align-items: center;
 }
 #fortunato .jumbo_box .search_bar .wrap_card .button_category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   border: none;
   background-color: white;

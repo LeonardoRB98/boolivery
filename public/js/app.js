@@ -2135,8 +2135,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
     });
   },
   mounted: function mounted() {
-    var _this2 = this;
-
     if (localStorage.cart) {
       this.cart = JSON.parse(localStorage.cart);
     } // totale nel local storage
@@ -2146,9 +2144,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
       this.totalPrice = parseFloat(localStorage.totalPrice);
     }
 
-    setTimeout(function () {
-      _this2.isLoading = false;
-    }, 1500);
+    this.isLoading = false;
   },
   watch: {
     // SOLUZIONE 1
@@ -2167,22 +2163,22 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
   },
   methods: {
     searchInputRestaurants: function searchInputRestaurants() {
-      var _this3 = this;
+      var _this2 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants/').then(function (response) {
         // maybe add uppercase/lowercase inclusion
-        _this3.filteredRestaurants = response.data.filter(function (restaurant) {
-          _this3.categorySelect = '';
-          return restaurant.name.toLowerCase().includes(_this3.search.toLowerCase());
+        _this2.filteredRestaurants = response.data.filter(function (restaurant) {
+          _this2.categorySelect = '';
+          return restaurant.name.toLowerCase().includes(_this2.search.toLowerCase());
         });
       });
     },
     searchRestaurants: function searchRestaurants() {
-      var _this4 = this;
+      var _this3 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect).then(function (response) {
         // maybe add uppercase/lowercase inclusion
-        _this4.filteredRestaurants = response.data;
+        _this3.filteredRestaurants = response.data;
       });
     },
     buttonRestaurants: function buttonRestaurants(category) {
@@ -2191,13 +2187,13 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
       this.search = '';
     },
     sponsoredRestaurants: function sponsoredRestaurants() {
-      var _this5 = this;
+      var _this4 = this;
 
       this.search = '';
       this.categorySelect = '';
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
-        _this5.restaurants = response.data;
-        _this5.filteredRestaurants = response.data;
+        _this4.restaurants = response.data;
+        _this4.filteredRestaurants = response.data;
       });
     },
     // functions for cart and plates
