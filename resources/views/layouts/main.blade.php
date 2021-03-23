@@ -75,7 +75,7 @@
                                             My Dashboard
                                         </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
+                                                                document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
 
@@ -92,9 +92,10 @@
             </nav>
         </div>
         {{-- qui --}}
-        <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+        <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i
+                class="fas fa-chevron-up"></i></a>
         @yield('content')
-            {{-- footer --}}
+        {{-- footer --}}
         <div id="top_footer" class="wave_one">
             <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 190" version="1.1"
                 xmlns="http://www.w3.org/2000/svg">
@@ -196,6 +197,42 @@
         </footer>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="application/javascript" src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js">
+    </script>
+    <script type="application/javascript">
+        var form = document.querySelector('#payment-form');
+        var client_token = "{{ $token }}";
+
+        braintree.dropin.create({
+            authorization: client_token,
+            selector: '#bt-dropin',
+            //   paypal: {
+            //     flow: 'vault'
+            //   }
+        }, function(createErr, instance) {
+            if (createErr) {
+                console.log('Create Error', createErr);
+                return;
+            }
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                instance.requestPaymentMethod(function(err, payload) {
+                    if (err) {
+                        console.log('Request Payment Method Error', err);
+                        return;
+                    }
+
+                    // Add the nonce to the form and submit
+                    document.querySelector('#nonce').value = payload.nonce;
+                    form.submit();
+                });
+            });
+        });
+
+    </script>
+
+
 </body>
 
 </html>
