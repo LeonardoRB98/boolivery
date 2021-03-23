@@ -199,9 +199,9 @@ const app = new Vue({
             this.totalPrice = parseFloat(localStorage.totalPrice);
         }
 
-        setTimeout(() => {
-            this.isLoading = false
-          }, 1500)
+     
+        this.isLoading = false
+        
 
 
     },
