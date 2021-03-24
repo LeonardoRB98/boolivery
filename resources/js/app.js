@@ -319,6 +319,15 @@ const app = new Vue({
             this.totalPrice = 0;
             localStorage.removeItem('totalPrice');
             this.$root.$emit('resetCounter');
+        },
+        
+        // CALCOLO TOTALE SINGOLO PIATTO
+        calculatePrice(counter , price) {
+            return this.formatFix(counter*price);
+        },
+
+        formatFix(price) {
+            return price.toFixed(2);
         }
     }
 

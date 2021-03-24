@@ -1948,6 +1948,10 @@ __webpack_require__.r(__webpack_exports__);
     increaseCounter: function increaseCounter() {
       this.counter += 1;
       this.$root.$emit('addToCart', this.plateId, this.counter, this.platePrice, this.plateName);
+    },
+    // DECIMALI PREZZO SINGOLO PIATTO
+    formatFix: function formatFix(price) {
+      return price.toFixed(2);
     }
   }
 });
@@ -2238,6 +2242,13 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
       this.totalPrice = 0;
       localStorage.removeItem('totalPrice');
       this.$root.$emit('resetCounter');
+    },
+    // CALCOLO TOTALE SINGOLO PIATTO
+    calculatePrice: function calculatePrice(counter, price) {
+      return this.formatFix(counter * price);
+    },
+    formatFix: function formatFix(price) {
+      return price.toFixed(2);
     }
   }
 });
@@ -81600,7 +81611,7 @@ var render = function() {
         _c("h5", { staticClass: "plate_name" }, [_vm._v(_vm._s(_vm.name))]),
         _vm._v(" "),
         _c("h5", { staticClass: "plate_price" }, [
-          _vm._v("€ " + _vm._s(_vm.price))
+          _vm._v("€ " + _vm._s(_vm.formatFix(_vm.price)))
         ])
       ]),
       _vm._v(" "),
