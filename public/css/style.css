@@ -350,24 +350,38 @@ footer ul li i {
   background-color: white;
   border-radius: 30px;
   margin: 2px;
-  padding: 10px 25px;
+  padding: 10px 10px 10px 30px;
 }
 #fortunato .jumbo_box .search_bar .wrap_card .button_category img {
   position: absolute;
   top: 13px;
-  left: 5px;
+  left: 8px;
 }
 #fortunato .jumbo_box .search_bar .wrap_card .button_category .fa-medal {
   position: absolute;
   top: 13px;
-  left: 5px;
-  z-index: 5;
+  left: 8px;
 }
-#fortunato .jumbo_box .search_bar .wrap_card .button_category .fa-check-square {
+#fortunato .jumbo_box .search_bar .wrap_card .button_selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border: none;
+  background-color: #ED4521;
+  border-radius: 30px;
+  margin: 2px;
+  padding: 10px 10px 10px 30px;
+}
+#fortunato .jumbo_box .search_bar .wrap_card .button_selected img {
   position: absolute;
   top: 13px;
-  right: 5px;
-  z-index: 5;
+  left: 8px;
+}
+#fortunato .jumbo_box .search_bar .wrap_card .button_selected .fa-medal {
+  position: absolute;
+  top: 13px;
+  left: 8px;
 }
 #fortunato .jumbo_box .search_bar input {
   width: 50%;
@@ -435,6 +449,7 @@ footer ul li i {
 }
 #fortunato main .container section .wrapper_restaurant .card_restaurant .slug {
   font-size: 20px;
+  margin-top: 8px;
   max-height: 10%;
 }
 #fortunato main .container section .wrapper_restaurant .card_restaurant .image_box {

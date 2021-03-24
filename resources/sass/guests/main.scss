@@ -159,28 +159,52 @@ transition: opacity 4s
                     background-color: white;
                     border-radius: 30px;
                     margin: 2px;
-                    padding: 10px 25px;
+                    padding: 10px 10px 10px 30px;
 
                     img {
                         position: absolute;
                         top: 13px;
-                        left: 5px;
+                        left: 8px;
 
                     }
 
                     .fa-medal {
                         position:absolute;
                         top: 13px;
-                        left: 5px;
-                        z-index: 5;
+                        left: 8px;
+                                     }
+
+
+
+                    
+                }
+
+
+                .button_selected {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+                    border: none;
+                    background-color: $brandOrange;
+                    border-radius: 30px;
+                    margin: 2px;
+                    padding: 10px 10px 10px 30px;
+
+                  
+                    img {
+                        position: absolute;
+                        top: 13px;
+                        left: 8px;
+
                     }
 
-                    .fa-check-square {
+                    .fa-medal {
                         position:absolute;
                         top: 13px;
-                        right: 5px;
-                        z-index: 5;
+                        left: 8px;
                     }
+
 
 
                     
@@ -271,6 +295,7 @@ transition: opacity 4s
 
                         .slug {
                             font-size: 20px;
+                            margin-top: 8px;
                             max-height: 10%;
                         }
 
