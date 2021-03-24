@@ -242,6 +242,11 @@
     .display_none {
         display: none;
     }
+    @media all and (max-width: 1400px) {
+        .plate {
+            margin-left: 20px!important;
+        }
+    }
     @media all and (max-width: 1024px) and ( min-width: 768px) {
 
         .main-menu {
@@ -271,9 +276,6 @@
         border-radius: 20px;
         background-color: white;
     }
-        section{
-            width: 100%;
-        }
         .restaurant {
             left: 0%;
             width: 100%;
@@ -303,10 +305,9 @@
                 }
             }
             .plate {
-                width: 80%;
-                height: 300px;
-                padding: 0px;
-                margin-left: 0px;
+                width: 100%;
+                height: 400px;
+                padding-left: 0px;
                 position: relative;
                 &:hover {
                     transform: unset;
@@ -320,7 +321,6 @@
                     z-index: 10;
                     img {
                         width: 100%;
-                        height: 100%;
                     }
                 }
                 .plate_utility {
@@ -376,6 +376,12 @@
         }
         #mobileCartNoMobile {
             display: none;
+        }
+
+    }
+    @media all and (max-width: 425px) {
+        .plate {
+            margin-left: 0px!important;
         }
 
     }
