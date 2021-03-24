@@ -139,13 +139,13 @@ class RestaurantController extends Controller
             // dd($currentMonth);
             $graphicsOrder[$currentMonth - 1] += $order->price * $order->quantity;
 
-
-
         }
-        dd($graphicsOrder);
+
+        
+        //  dd($graphicsOrder);
         // dd($orders);
 
-        return view('admin.restaurants.show', compact('restaurant', 'plates', 'orders'));
+        return view('admin.restaurants.show', compact('restaurant', 'plates', 'orders' , 'graphicsOrder'));
     }
 
     /**

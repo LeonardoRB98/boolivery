@@ -125,7 +125,7 @@
             </div>
             {{-- analythics --}}
             <div id="analythics">
-                <canvas id="myChart" width="100%" height="100%">
+                <canvas id="myChart" width="90%" height="50%">
 
                 </canvas>
 
@@ -136,14 +136,15 @@
 @endsection
 @section('chart')
 <script>
+    var orderArray = @json($graphicsOrder);
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno','Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
         datasets: [{
-            label: '# of Votes',
-            data: [{!!$men_learning!!}],
+            label: 'Incasso',
+            data: orderArray,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
