@@ -1,8 +1,11 @@
 @extends('layouts.main')
 @section('content')
+    {{-- circle caricamento dati all'avvio --}}
     <div v-if="isLoading" id="fortunato_loading">
         <div class="dot-floating"></div>
     </div>
+    {{-- / cicle caricamento dati all'avvio --}}
+    {{-- dopo che il created ha fatto tutte le chiamate carico la pagina --}}
     <transition name="fade">
         <div v-if="!isLoading" id="fortunato">
             <div class="jumbo_box">
@@ -10,16 +13,35 @@
                     <input v-model='search' v-on:keyup='searchInputRestaurants' type="text"
                         placeholder="Ricerca il ristorante per nome">
                     <div  id="scroll" class="wrap_card">
-                        <button v-scroll-to="'#scroll'" v-on:click="sponsoredRestaurants"  class="button_category">
+                        {{-- tasto per seleziona i ristoranti sponsorizzati --}}
+                        <button 
+                        :class="sponsoredRestaurant == true ? 'button_selected' : 'button_category' "
+                        v-scroll-to="'#scroll'" 
+                        v-on:click="sponsoredRestaurants" 
+                        >
                             Sponsored
                             <i class="fas fa-medal"></i>
                         </button>
-                        <button v-for="category in categories"  v-scroll-to="'#scroll'" v-on:click="buttonRestaurants(category.category)" class="button_category">
+                        {{-- <button 
+                        v-if="categorySelect != '' && search == ''"
+                        v-scroll-to="'#scroll'" 
+                        v-on:click="sponsoredRestaurants" 
+                        class="button_category">
+                            Sponsored
+                            <i class="fas fa-medal"></i>
+                        </button> --}}
+                        {{-- genero tanti tasti quante sono le categorie in categories --}}
+                        <button 
+                        v-for="category in categories"  
+                        v-scroll-to="'#scroll'" 
+                        v-on:click="buttonRestaurants(category.category), category.show = !category.show" 
+                        :class="category.show == true ? 'button_category' : 'button_selected' ">
                             @{{category.category}}
-                            <img :src="'{{ asset('/image/category')}}' + '/' + category.category + '.webp'" :alt="category.category">
+                            <img :src="'{{ asset('/image/category')}}' + '/' + category.category + '.webp'" :alt="category.category"> 
                         </button>
                     </div>
                 </div>
+                {{-- svg onda  --}}
                 <div class="wave_one">
                     <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 190" version="1.1"
                         xmlns="http://www.w3.org/2000/svg">
@@ -61,13 +83,18 @@
                         </path>
                     </svg>
                 </div>
+                {{-- / svg onda  --}}
             </div>
             <main>
+                {{-- container dove vengono visualizzati i ristoranti  --}}
                 <div class="container">
+                    {{-- div che si crea solo se non vengono trovati ristoranti  --}}
                     <div v-if="filteredRestaurants.length == 0" class="jumbo_title">
                         <h1>Siamo spiacenti</h1>
                         <h5>nella tua zona non sono presenti ristoranti con queste caratteristiche</h5>
                     </div>
+                   {{-- / div che si crea solo se non vengono trovati ristoranti  --}}
+                   {{-- div che si crea in automatico al caricamento della pagina con i ristoranti sponsorrizati --}}
                     <section v-if="categorySelect == '' && search == '' ">
                         <h1>In evidenza nella tua città</h1>
                         <h5>Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio</h5>
@@ -88,8 +115,9 @@
                             </div>
                         </div>
                     </section>
-                    {{-- fine sezione ristoranti sponsorizzati --}}
-                    {{-- sezione ristolanti scelti per categoria --}}
+                    {{-- / div che si crea in automatico al caricamento della pagina con i ristoranti sponsorrizati --}}
+
+                    {{-- div che si crea al momento del click sui tasti categoria con la categoria selezionata --}}
                     <section v-if="categorySelect != ''">
                         <h1  v-if="filteredRestaurants != 0 && search == '' ">I ristoranti della categoria
                             @{{ categorySelect }}</h1>
@@ -109,8 +137,9 @@
                             </div>
                         </div>
                     </section>
-                    {{-- sezione ristolanti scelti per categoria --}}
-                    {{-- sezione ristoranti con ricerca input --}}
+                    {{-- / div che si crea al momento del click sui tasti categoria con la categoria selezionata --}}
+
+                    {{-- div che si crea al momento della ricerca tramite input  --}}
                     <section v-if="search != '' ">
                         <h1 v-if="filteredRestaurants.length > 0">Risultati per la ricerca: @{{ search }}</h1>
                         <div class="wrapper_restaurant">
@@ -130,16 +159,11 @@
                             </div>
                         </div>
                     </section>
-                    {{-- sezione ristoranti con ricerca input --}}
-
+                    {{--  /div che si crea al momento della ricerca tramite input  --}}
                 </div>
-
-
-
+                {{-- / container dove vengono visualizzati i ristoranti  --}}
+                {{-- div svg onda 2 --}}
                 <div class="wave">
-                    {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#131E52" fill-opacity="1" d="M0,128L60,149.3C120,171,240,213,360,234.7C480,256,600,256,720,224C840,192,960,128,1080,128C1200,128,1320,192,1380,224L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-              </svg> --}}
                     <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 230" version="1.1"
                         xmlns="http://www.w3.org/2000/svg">
                         <defs>
@@ -162,8 +186,8 @@
                         </path>
                     </svg>
                 </div>
-
-
+                {{-- / div svg onda 2 --}}
+                {{-- sezione informazioni su boolivery  --}}
                 <div class="recruting">
                     <h2>Uniamo le forze</h2>
                     <div class="card_recruting">
@@ -201,8 +225,7 @@
                     </div>
 
                 </div>
-
-
+                {{--  / sezione informazioni su boolivery  --}}
             </main>
         </div>
     </transition>

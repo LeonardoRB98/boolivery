@@ -80,7 +80,7 @@ const app = new Vue({
         filteredRestaurants: [],
         categories: [],
         categorySelect: '',
-        sponsoredRestaurant: [],
+        sponsoredRestaurant: true,
         plates: [],
         search: '',
         cart: [],
@@ -105,10 +105,16 @@ const app = new Vue({
             .get('http://127.0.0.1:8000/api/categories')
             .then( response => {
                 this.categories = response.data;
+                this.categories.forEach(element => {
+                    element.show = true;
+                });
 
-
+                console.log(this.categories);
             }
+
+          
         );
+
         // recupero id dalla schermata show tramite <script>var id = {!! json_encode($restaurant->id) !!};</script>
         this.currentRestaurantId = window.id;
 
@@ -252,13 +258,29 @@ const app = new Vue({
             this.categorySelect = category;
             this.searchRestaurants();
             this.search = '';
+            this.sponsoredRestaurant = false;
+
+            this.categories.forEach(element => {
+                if (element.show != true) {
+                    element.show = true;
+                }
+            });
+
+            
+
         },
+
 
         sponsoredRestaurants() {
 
 
             this.search = '';
             this.categorySelect = '';
+            this.sponsoredRestaurant = true;
+            
+            this.categories.forEach(element => {
+                element.show = true;
+            });
 
             axios
             .get('http://127.0.0.1:8000/api/restaurants')

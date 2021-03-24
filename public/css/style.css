@@ -367,8 +367,7 @@ footer ul li i {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  border: none;
-  background-color: #ED4521;
+  border: 3px solid #131E52;
   border-radius: 30px;
   margin: 2px;
   padding: 10px 10px 10px 30px;

@@ -2039,7 +2039,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
     filteredRestaurants: [],
     categories: [],
     categorySelect: '',
-    sponsoredRestaurant: [],
+    sponsoredRestaurant: true,
     plates: [],
     search: '',
     cart: [],
@@ -2060,6 +2060,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
 
     axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/categories').then(function (response) {
       _this.categories = response.data;
+
+      _this.categories.forEach(function (element) {
+        element.show = true;
+      });
+
+      console.log(_this.categories);
     }); // recupero id dalla schermata show tramite <script>var id = {!! json_encode($restaurant->id) !!};</script>
 
     this.currentRestaurantId = window.id; // caricamento piatti singolo ristorate show
@@ -2189,12 +2195,22 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
       this.categorySelect = category;
       this.searchRestaurants();
       this.search = '';
+      this.sponsoredRestaurant = false;
+      this.categories.forEach(function (element) {
+        if (element.show != true) {
+          element.show = true;
+        }
+      });
     },
     sponsoredRestaurants: function sponsoredRestaurants() {
       var _this4 = this;
 
       this.search = '';
       this.categorySelect = '';
+      this.sponsoredRestaurant = true;
+      this.categories.forEach(function (element) {
+        element.show = true;
+      });
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
         _this4.restaurants = response.data;
         _this4.filteredRestaurants = response.data;

@@ -25,6 +25,8 @@ class CreateOrderPlateTable extends Migration
             ->references('id')
             ->on('orders');
 
+            $table->integer('quantity');
+
             $table->timestamps();
         });
     }
