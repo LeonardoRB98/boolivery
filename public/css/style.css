@@ -935,6 +935,13 @@ footer ul li i {
   justify-content: center;
   align-items: center;
 }
+#emilio .checkout .checkout_left .checkout_braintree, #emilio .checkout .checkout_right .checkout_braintree {
+  width: 80%;
+  height: 80%;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: white;
+}
 #emilio .checkout .checkout_left .cart_checkout, #emilio .checkout .checkout_right .cart_checkout {
   width: 90%;
   height: 90%;
@@ -946,6 +953,7 @@ footer ul li i {
   border-radius: 20px;
   text-align: center;
   background-color: white;
+  overflow-y: auto;
 }
 #emilio .checkout .checkout_left .cart_checkout .cart h2, #emilio .checkout .checkout_right .cart_checkout .cart h2 {
   font-size: 35px;
@@ -958,34 +966,31 @@ footer ul li i {
   width: 100%;
   text-align: left;
 }
-#emilio .checkout .checkout_left .cart_checkout .cart .order_plate li, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate li {
-  display: inline-block;
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate ul, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate ul {
+  display: flex;
+  justify-content: space-around;
+  line-height: 50px;
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateAddRemove #minus_checkout, #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateAddRemove #plus_checkout, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateAddRemove #minus_checkout, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateAddRemove #plus_checkout {
+  font-size: 25px;
+}
+#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateAddRemove:hover, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateAddRemove:hover {
+  cursor: pointer;
 }
 #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateName, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateName {
   font-size: 20px;
   width: 30%;
   text-transform: capitalize;
 }
-#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter {
-  width: 15%;
-  text-align: left;
-  position: relative;
-}
-#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter #minus, #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter #plus, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter #minus, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter #plus {
-  font-size: 30px;
-  margin-right: 10px;
-}
-#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateCounter:hover, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateCounter:hover {
-  cursor: pointer;
-}
-#emilio .checkout .checkout_left .cart_checkout .cart .order_plate .platePrice, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .platePrice {
-  float: right;
-  width: 15%;
-  text-align: right;
-}
 #emilio .checkout .checkout_left .cart_checkout .cart h4, #emilio .checkout .checkout_right .cart_checkout .cart h4 {
   margin-bottom: 20px;
   font-size: 40px;
+}
+#emilio input {
+  text-align: center;
 }
 #emilio .pay {
   width: 100%;
@@ -1001,6 +1006,9 @@ footer ul li i {
     width: 100%;
     display: flex;
     align-items: center;
+  }
+  #emilio .checkout .checkout_right {
+    margin-top: 100px;
   }
   #emilio .checkout .checkout_left .plateCounter {
     width: 20% !important;
@@ -1018,6 +1026,14 @@ footer ul li i {
 @media all and (max-width: 768px) {
   #emilio .checkout .checkout_left .cart_checkout, #emilio .checkout .checkout_right .cart_checkout {
     width: 100%;
+  }
+}
+@media all and (max-width: 320px) {
+  #emilio .plateAddRemove #minus_checkout, #emilio .plateAddRemove #plus_checkout {
+    font-size: 20px !important;
+  }
+  #emilio .plateAddRemove:hover {
+    cursor: pointer;
   }
 }
 
