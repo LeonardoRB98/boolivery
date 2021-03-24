@@ -1,10 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <div v-if="isLoading" id="fortunato_loading">
-        <h1 class="animate__animated animate__heartBeat">Loading</h1>
-        <div class="dot-floating">
-
-        </div>
+        <div class="dot-floating"></div>
     </div>
     <transition name="fade">
         <div v-if="!isLoading" id="fortunato">
@@ -12,20 +9,14 @@
                 <div class="search_bar">
                     <input v-model='search' v-on:keyup='searchInputRestaurants' type="text"
                         placeholder="Ricerca il ristorante per nome">
- 
                     <div  id="scroll" class="wrap_card">
-                        
-                        <button v-scroll-to="'#scroll'" v-on:click="sponsoredRestaurants" class="button_category">
+                        <button v-scroll-to="'#scroll'" v-on:click="sponsoredRestaurants"  class="button_category">
                             Sponsored
                             <i class="fas fa-medal"></i>
-                            <i v-if="categorySelect == '' && search == '' "
-                                class="far fa-check-square"></i>
                         </button>
                         <button v-for="category in categories"  v-scroll-to="'#scroll'" v-on:click="buttonRestaurants(category.category)" class="button_category">
                             @{{category.category}}
                             <img :src="'{{ asset('/image/category')}}' + '/' + category.category + '.webp'" :alt="category.category">
-                            <i v-if="categorySelect == category.category "
-                                class="far fa-check-square"></i>
                         </button>
                     </div>
                 </div>
@@ -77,14 +68,6 @@
                         <h1>Siamo spiacenti</h1>
                         <h5>nella tua zona non sono presenti ristoranti con queste caratteristiche</h5>
                     </div>
-                    {{-- <div v-if="categorySelect == '' " class="jumbo_title">
-                <h1>In evidenza nella tua città</h1>
-                <h5>Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio</h5>
-            </div> --}}
-                    {{-- <div v-if="categorySelect == '' && search != '' " class="jumbo_title">
-                <h1>Risultati per la ricerca:  @{{search}}</h1>
-            </div> --}}
-                    {{-- sezione ristoranti sponsorizzati --}}
                     <section v-if="categorySelect == '' && search == '' ">
                         <h1>In evidenza nella tua città</h1>
                         <h5>Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio</h5>
