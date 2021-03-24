@@ -62,9 +62,15 @@ class PaymentController extends Controller
             $newOrder['date'] = date("Y-m-d H:i:s");
             $newOrder->fill($data);
             $newOrder->save();
+            // dd($data);
 
-            // QUI ASSOCIO L'ID DEI PIATTI ALL'ID DELL ORDINE
-            $newOrder->plates()->attach($data["plates"]);
+
+            $i = 0;
+            foreach($data["plates"] as $plate) {
+                // aggiungo la colonna quantity al piatto dell ordine
+                $newOrder->plates()->attach($plate,['quantity' => $data["quantities"][$i]]);
+                $i++;
+            }
 
 
 

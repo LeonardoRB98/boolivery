@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 use App\Restaurant;
 use App\Category;
 use App\Plate;
@@ -31,7 +32,7 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         $restaurants = Restaurant::where('user_id', Auth::id())->get();
 
         return view('admin.restaurants.index', compact('restaurants'));
@@ -113,7 +114,15 @@ class RestaurantController extends Controller
     {
         $plates = Plate::where('restaurant_id', $restaurant->id)->get();
 
-        return view('admin.restaurants.show', compact('restaurant', 'plates'));
+        // prendo la tabella order_plate,
+        $orders = DB::table('order_plate')
+        // aggiungo i piatti con id == order_plate.plate_id
+        ->join('plates', 'order_plate.plate_id' ,'=', 'plates.id')
+        // recupero i piatti che hanno l'id del ristorante
+        ->where('restaurant_id', $restaurant->id)->get();
+        // dd($orders);
+
+        return view('admin.restaurants.show', compact('restaurant', 'plates', 'orders'));
     }
 
     /**
