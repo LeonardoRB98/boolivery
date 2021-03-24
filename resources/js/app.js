@@ -7,8 +7,10 @@
 require('./bootstrap');
 
 
-
+// select 2
 window.select2 = require('select2');
+//chart js
+import Chart from 'chart.js';
 
 import axios from 'axios';
 import { forEach, isEmpty } from 'lodash';
@@ -199,9 +201,9 @@ const app = new Vue({
             this.totalPrice = parseFloat(localStorage.totalPrice);
         }
 
-     
+
         this.isLoading = false
-        
+
 
 
     },
@@ -252,8 +254,8 @@ const app = new Vue({
         },
 
         sponsoredRestaurants() {
-            
-                 
+
+
             this.search = '';
             this.categorySelect = '';
 
@@ -264,12 +266,12 @@ const app = new Vue({
                  this.filteredRestaurants = response.data;
             }
         );
-            
- 
-            
+
+
+
         },
 
-       
+
 
 
         // functions for cart and plates

@@ -116,7 +116,6 @@
                                                 </button>
                                             </form>
                                         </div>
-
                                     </div>
                                 </div>
                             @endforeach
@@ -124,57 +123,21 @@
                     @endif
                 </div>
             </div>
+            {{-- analythics --}}
+            <div id="analythics">
+                <canvas id="myChart" width="100%" height="100%">
+
+                </canvas>
+
+            </div>
+             {{-- /analythics --}}
         </div>
     </div>
+    <script>
+        import Chart from 'chart.js'
 
-
-
-
-    {{-- <table class="table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Foto</th>
-                        <th>Prezzo</th>
-                        <th>Descrizione</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($plates as $plate)
-                        <tr>
-                            <td> {{ $plate->id }}</td>
-                            <td> <a href="#">{{ $plate->name }}</a> </td>
-                            @if (!is_null($plate->photo))
-                                <td>
-                                    <img style="width: 200px" class="img-fluid"
-                                        src="{{ asset('storage/' . $plate->photo) }}" alt="{{ $plate->name }}">
-                                </td>
-                            @else
-                                <td>
-                                    <img style="width: 200px" class="img-fluid" src="{{ asset('image/download.png') }}"
-                                        alt="{{ $plate->name }}">
-                                </td>
-                            @endif
-                            <td>{{ $plate->price }}</td>
-                            <td>{{ $plate->description }}</td>
-
-
-                            <td>
-                                <a href="{{ route('admin.plates.edit', $plate) }}">Modifica</a>
-                            </td>
-                            <td>
-                                <form action="{{ route('admin.plates.destroy', $plate) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <input type="submit" value="Elimina">
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table> --}}
-    {{-- </div>
-    </div> --}}
-
+        export default {
+          name: 'PlanetChart'
+        }
+        </script>
 @endsection

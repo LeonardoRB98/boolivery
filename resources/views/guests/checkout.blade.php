@@ -57,7 +57,13 @@
                     <select style="display:none;"  class="form-control" name="plates[]" multiple>
                             <option v-for="plate in cart" :value="plate.id" selected>@{{plate.id}}</option>
                     </select>
-            </div>
+                </div>
+
+                <div class="form-group">
+                    <select style="display:none;"  class="form-control" name="quantities[]" multiple>
+                            <option v-for="plate in cart" :value="plate.counter" selected>@{{plate.id}}</option>
+                    </select>
+                </div>
                 <section>
                     <label for="amount">
                         <span class="input-label">Totale da pagare: @{{ totalPrice }}  € </span>
