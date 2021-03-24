@@ -96,7 +96,7 @@
 
             </div>
 
-            <section>
+            <section class="plate_container">
                 <h2 id="text_plate">I Nostri Piatti</h2>
                 <plate-component
                     v-for="plate in plates"
