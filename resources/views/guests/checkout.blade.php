@@ -42,34 +42,13 @@
             <form method="post" id="payment-form" action="{{ route('payment')}}">
                 @csrf
                 @method("post")
-                <div class="row">
-                    <input type="text" name="name" class="form-control" placeholder="Inserisci il tuo nome" value="Emilio">
-                </div>
-                <div class="row">
-                    <input type="text" name="surname" class="form-control" placeholder="Inserisci il tuo cognome" value="Furnari">
-                </div>
-                <div class="row">
-                    <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci la tua email" value="Furnari@mail.com">
-                </div>
-                <div class="row">
-                    <input type="address" name="address" class="form-control" id="address" value="Via delle cose" placeholder="Inserisci la tua email">
-                </div>
-                <div class="form-group">
-                    <select style="display:none;"  class="form-control" name="plates[]" multiple>
-                            <option v-for="plate in cart" :value="plate.id" selected>@{{plate.id}}</option>
-                    </select>
-                </div>
 
-                <div class="form-group">
-                    <select style="display:none;"  class="form-control" name="quantities[]" multiple>
-                            <option v-for="plate in cart" :value="plate.counter" selected>@{{plate.id}}</option>
-                    </select>
-                </div>
                 <section>
-                    <label for="amount">
-                        <span class="input-label">Totale da pagare: @{{ totalPrice }}  € </span>
                         <div class="input-wrapper amount-wrapper amount">
                             <input id="total" name="total" type="tel" min="1" placeholder="Totale" :value="totalPrice">
+                        </div>
+                        <div class="row shadow mb-2">
+                            <input type="text" name="name" class="form-control" placeholder="Inserisci il tuo nome" value="" required>
                         </div>
                         <div class="row shadow mb-2">
                             <input type="text" name="surname" class="form-control" placeholder="Inserisci il tuo cognome" value="" required>
@@ -83,6 +62,11 @@
                         <div class="form-group">
                             <select style="display:none;"  class="form-control" name="plates[]" multiple>
                                     <option v-for="plate in cart" :value="plate.id" selected>@{{plate.id}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select style="display:none;"  class="form-control" name="quantities[]" multiple>
+                                    <option v-for="plate in cart" :value="plate.counter" selected>@{{plate.id}}</option>
                             </select>
                         </div>
                         <label for="amount">
