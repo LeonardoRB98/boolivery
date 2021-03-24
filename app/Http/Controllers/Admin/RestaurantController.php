@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use App\Restaurant;
 use App\Category;
 use App\Plate;
+use App\Order;
 
 class RestaurantController extends Controller
 {
@@ -120,6 +121,28 @@ class RestaurantController extends Controller
         ->join('plates', 'order_plate.plate_id' ,'=', 'plates.id')
         // recupero i piatti che hanno l'id del ristorante
         ->where('restaurant_id', $restaurant->id)->get();
+        // dd($orders);
+
+        //best option
+        // $graphicsOrder = [ '', '', '', '', '', '', '', '', '', '', '', '',];
+        $graphicsOrder = array_fill(0, 11, 0);
+
+        // $graphicsOrder[5] =   'mario';
+        // $graphicsOrder[] =   'giovbann';
+        // array_splice($graphicsOrder, 0, 0, '$inserted' );
+        // dd($graphicsOrder);
+
+        foreach($orders as $order) {
+            $orderWithDate = Order::where('id', $order->order_id)->first();
+            $currentDate = new \DateTime($orderWithDate->date);
+            $currentMonth = intval(date_format($currentDate, "m"));
+            // dd($currentMonth);
+            $graphicsOrder[$currentMonth - 1] += $order->price * $order->quantity;
+
+
+
+        }
+        dd($graphicsOrder);
         // dd($orders);
 
         return view('admin.restaurants.show', compact('restaurant', 'plates', 'orders'));

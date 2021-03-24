@@ -10,7 +10,8 @@ require('./bootstrap');
 // select 2
 window.select2 = require('select2');
 //chart js
-import Chart from 'chart.js';
+// import Chart from 'chart.js';
+window.chart = require('chart.js');
 
 import axios from 'axios';
 import { forEach, isEmpty } from 'lodash';

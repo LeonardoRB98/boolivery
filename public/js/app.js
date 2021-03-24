@@ -1962,15 +1962,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/Chart.js");
-/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(chart_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vue_scrollto__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-scrollto */ "./node_modules/vue-scrollto/vue-scrollto.js");
-/* harmony import */ var vue_scrollto__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_scrollto__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue_scrollto__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-scrollto */ "./node_modules/vue-scrollto/vue-scrollto.js");
+/* harmony import */ var vue_scrollto__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_scrollto__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -1980,13 +1978,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // select
 
 
 window.select2 = __webpack_require__(/*! select2 */ "./node_modules/select2/dist/js/select2.js"); //chart js
+// import Chart from 'chart.js';
+
+window.chart = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/Chart.js");
 
 
 
 
-
-
-vue__WEBPACK_IMPORTED_MODULE_4__.default.use((vue_scrollto__WEBPACK_IMPORTED_MODULE_3___default()));
+vue__WEBPACK_IMPORTED_MODULE_3__.default.use((vue_scrollto__WEBPACK_IMPORTED_MODULE_2___default()));
 jQuery(function () {
   $('.js-select_categories').select2();
 });
@@ -2025,14 +2024,14 @@ $(document).ready(function () {
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-vue__WEBPACK_IMPORTED_MODULE_4__.default.component('plate-component', __webpack_require__(/*! ./components/PlateComponent.vue */ "./resources/js/components/PlateComponent.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_3__.default.component('plate-component', __webpack_require__(/*! ./components/PlateComponent.vue */ "./resources/js/components/PlateComponent.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var app = new vue__WEBPACK_IMPORTED_MODULE_4__.default({
+var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
   el: '#app',
   data: {
     isLoading: true,
@@ -2054,18 +2053,18 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_4__.default({
     var _this = this;
 
     // load all restaurants
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
       _this.restaurants = response.data;
       _this.filteredRestaurants = response.data;
     }); // load all categories
 
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get('http://127.0.0.1:8000/api/categories').then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/categories').then(function (response) {
       _this.categories = response.data;
     }); // recupero id dalla schermata show tramite <script>var id = {!! json_encode($restaurant->id) !!};</script>
 
     this.currentRestaurantId = window.id; // caricamento piatti singolo ristorate show
 
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get('http://127.0.0.1:8000/api/plates/' + this.currentRestaurantId).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/plates/' + this.currentRestaurantId).then(function (response) {
       _this.restaurants = response.data;
 
       for (var i = 0; i < response.data.length; i++) {
@@ -2170,7 +2169,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_4__.default({
     searchInputRestaurants: function searchInputRestaurants() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default().get('http://127.0.0.1:8000/api/restaurants/').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants/').then(function (response) {
         // maybe add uppercase/lowercase inclusion
         _this2.filteredRestaurants = response.data.filter(function (restaurant) {
           _this2.categorySelect = '';
@@ -2181,7 +2180,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_4__.default({
     searchRestaurants: function searchRestaurants() {
       var _this3 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default().get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect).then(function (response) {
         // maybe add uppercase/lowercase inclusion
         _this3.filteredRestaurants = response.data;
       });
@@ -2196,7 +2195,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_4__.default({
 
       this.search = '';
       this.categorySelect = '';
-      axios__WEBPACK_IMPORTED_MODULE_1___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
         _this4.restaurants = response.data;
         _this4.filteredRestaurants = response.data;
       });

@@ -200,6 +200,7 @@
     <script type="application/javascript" src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js">
     </script>
     @yield('braintree')
+    @yield('chart')
 </body>
 
 </html>
