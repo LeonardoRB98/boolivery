@@ -51,7 +51,7 @@
                             <i v-on:click="add(plate.id, plate.counter, plate.price, plate.name)" class="fas fa-plus-square" id="plus"></i>
                             <i v-on:click="remove(plate.id, plate.counter, plate.price, plate.name)" class="fas fa-minus-square" id="minus"></i></li>
                         <li class="plateCounter">X @{{ plate.counter }} </li>
-                        <li class="platePrice">@{{ (plate.price*plate.counter).toFixed(2) }} €</li>
+                        <li class="platePrice">@{{ calculatePrice(plate.price, plate.counter) }} €</li>
                     </ul>
                 </div>
                 <span v-if="cart.length != 0">
@@ -59,7 +59,7 @@
                 </span>
                 <hr>
                 <span v-if="cart.length != 0">
-                    <h4>Totale: <br> @{{ totalPrice }}  €</h4>
+                    <h4>Totale: <br> @{{ formatFix(totalPrice) }}  €</h4>
                 </span>
                  <span v-if="cart.length != 0">
                     <a class="to_checkout" href="{{route('checkout')}}">
@@ -78,7 +78,7 @@
                             <i v-on:click="add(plate.id, plate.counter, plate.price, plate.name)" class="fas fa-plus-square" id="plus"></i>
                             <i v-on:click="remove(plate.id, plate.counter, plate.price, plate.name)" class="fas fa-minus-square" id="minus"></i></li>
                         <li class="plateCounter">X @{{ plate.counter }} </li>
-                        <li class="platePrice">@{{ (plate.price*plate.counter).toFixed(2) }} €</li>
+                        <li class="platePrice">@{{ calculatePrice(plate.price, plate.counter) }} €</li>
                     </ul>
                 </div>
                 <span v-if="cart.length != 0">
@@ -86,7 +86,7 @@
                 </span>
                 <hr>
                 <span v-if="cart.length != 0">
-                    <h4>Totale: <br> @{{ totalPrice }}  €</h4>
+                    <h4>Totale: <br> @{{ formatFix(totalPrice) }}  €</h4>
                 </span>
                 <span v-if="cart.length != 0">
                     <a class="to_checkout" href="{{route('checkout')}}">

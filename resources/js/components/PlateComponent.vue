@@ -6,7 +6,7 @@
         <div class="plate_utility">
             <div class="plate_info">
                 <h5 class="plate_name">{{ name }}</h5>
-                <h5 class="plate_price">€ {{ price }}</h5>
+                <h5 class="plate_price">€ {{ formatFix(price) }}</h5>
             </div>
 
             <div class="plate_description">
@@ -108,6 +108,10 @@
                 this.counter += 1;
                 this.$root.$emit('addToCart', this.plateId, this.counter,this.platePrice,this.plateName)
             },
+            // DECIMALI PREZZO SINGOLO PIATTO
+            formatFix(price) {
+                return price.toFixed(2);
+            }
 
         }
     }
