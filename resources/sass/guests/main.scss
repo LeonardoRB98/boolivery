@@ -143,36 +143,41 @@ transition: opacity 4s
 
             .wrap_card {
                 height: 100%;
-                width: 90%;
+                width: 55%;
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
-
                 align-items: center;
 
                 .button_category {
                     display: flex;
-                    justify-content: space-between;
-                    align-items: center;
+                    justify-content: center;
                     position: relative;
+                    flex-direction: column;
+                    align-items: center;
                     border: none;
+                    height: 100px;
+                    width: 100px;
                     background-color: white;
-                    border-radius: 30px;
+                    border-radius: 100%;
+                    border: 4px dashed $brandBlue;
                     margin: 2px;
-                    padding: 10px 10px 10px 30px;
 
                     img {
-                        position: absolute;
-                        top: 13px;
-                        left: 8px;
+                        width: 50%;
 
+                    }
+
+                    h6 {
+                        margin-top: 2px;
+                        font-size: 13px;
                     }
 
                     .fa-medal {
                         position:absolute;
                         top: 13px;
                         left: 8px;
-                                     }
+                    }
 
 
 
@@ -182,19 +187,20 @@ transition: opacity 4s
 
                 .button_selected {
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: center;
+                    flex-direction: column;
                     align-items: center;
                     position: relative;
-                    border: 3px solid $brandBlue;
-                    border-radius: 30px;
+                    border: none;
+                    height: 114px;
+                    width: 114px;
+                    background-color: white;
+                    border: 4px solid $brandBlue;
+                    border-radius: 100%;
                     margin: 2px;
-                    padding: 10px 10px 10px 30px;
 
-                  
                     img {
-                        position: absolute;
-                        top: 13px;
-                        left: 8px;
+                        width: 50%;
 
                     }
 
@@ -202,7 +208,8 @@ transition: opacity 4s
                         position:absolute;
                         top: 13px;
                         left: 8px;
-                    }
+                     }
+
 
 
 
@@ -213,22 +220,7 @@ transition: opacity 4s
 
             
 
-            input {
-                width: 50%;
-                height: 60px;
-                margin-bottom: 50px;
-                text-align: center;
-                font-size: 26px;
-                border-width: 5px;
-                border-color: #ffffff;
-                background-color: #ffffff;
-                color: #000000;
-                border-style: solid;
-                border-radius: 50px;
-                box-shadow: 0px 0px 30px rgba(237,69,34,.97);
-                text-shadow: 0px 0px 5px rgba(255,255,255,.99);
-                outline: none;
-            }
+            
 
 
 
@@ -254,19 +246,101 @@ transition: opacity 4s
         background-color: $superWhite;
 
         .container {
-
+            margin-top: 20px;
             .jumbo_title {
                 text-align: center;
-                margin-bottom: 100px;
+                margin-bottom: 20px;
             }
+
+            a {
+                color: $brandOrange;
+
+                &hover {
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+            }
+            
 
             section {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-
                     height: 100%;
                     margin-bottom: 40px;
+
+
+                    .wrap_card {
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        margin-bottom: 40px;
+        
+                        .button_category {
+                            display: flex;
+                            justify-content: center;
+                            position: relative;
+                            flex-direction: column;
+                            align-items: center;
+                            border: none;
+                            height: 100px;
+                            width: 100px;
+                            background-color: white;
+                            border-radius: 100%;
+                            margin: 2px;
+        
+                            img {
+                                width: 50%;
+        
+                            }
+        
+                            .fa-medal {
+                                position:absolute;
+                                top: 13px;
+                                left: 8px;
+                            }
+        
+        
+        
+                            
+                        }
+        
+        
+                        .button_selected {
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+                            align-items: center;
+                            position: relative;
+                            border: none;
+                            height: 100px;
+                            width: 100px;
+                            background-color: white;
+                            border: 4px solid $brandBlue;
+                            border-radius: 100%;
+                            margin: 2px;
+        
+                            img {
+                                width: 50%;
+        
+                            }
+        
+                            .fa-medal {
+                                position:absolute;
+                                top: 13px;
+                                left: 8px;
+                             }
+        
+        
+        
+        
+                            
+                        }
+        
+                    }
 
                    .wrapper_restaurant {
                        width: 100%;
@@ -281,7 +355,7 @@ transition: opacity 4s
                         margin: 0 15px;
                         align-items: center;
                         height: 240px;
-                        width: 260px;
+                        width: 300px;
                         background-color: $body-bg;
                         border-radius: 20px;
                         transition: 0.2s;
@@ -323,10 +397,11 @@ transition: opacity 4s
                         display: flex;
                         flex-direction: column;
                         justify-content: flex-start;
-                        height: 400px;
+                        height: 100%;
+                        margin-top: 50px;
 
                         img {
-                            height: 200px;
+                            height: 100px;
                         }
                     }
                    }
@@ -472,25 +547,45 @@ transition: opacity 4s
                 height: 100%;
                 text-align: center;
 
-                input {
-                    width: 50%;
-                    height: 60px;
-                    outline: none;
-                    border-radius: 30px;
-                    border: none;
-                    margin-bottom: 20px;
-                    font-size: 14px;
-                    text-align: center;
-                }
+                
 
-                ul {
-                    list-style: none;
+               .wrap_card {
+                   width: 100%;
+                   .button_category {
                     display: flex;
+                    justify-content: center;
+                    position: relative;
+                    flex-direction: column;
+                    align-items: center;
+                    border: none;
+                    height: 80px;
+                    width: 80px;
+                    background-color: white;
+                    border-radius: 100%;
+                    border: 4px dashed $brandBlue;
+                    margin: 2px;
 
-                    li {
-                        margin: 0 20px;
+                    img {
+                        width: 50%;
+
                     }
+
+                    h6 {
+                        margin-top: 2px;
+                        font-size: 10px;
+                    }
+
+                    .fa-medal {
+                        position:absolute;
+                        top: 13px;
+                        left: 8px;
+                    }
+
+
+
+                    
                 }
+               }
 
             }
 
@@ -578,9 +673,9 @@ transition: opacity 4s
                 align-items: center;
                 height: 100%;
                 width: 100%;
-                background-color: $brandBlue;
+                background-color: $superWhite;
                 padding: 100px 0;
-                color: white;
+                color: black;
                 font-size: 15px;
 
 
@@ -684,7 +779,7 @@ transition: opacity 4s
     
                 .wrap_card {
                     height: 100%;
-                    width: 90%;
+                    width: 51%;
                     display: flex;
                     justify-content: center;
                     flex-wrap: wrap;
@@ -854,13 +949,10 @@ transition: opacity 4s
                 align-items: center;
                 height: 100%;
                 width: 100%;
-                background-color: $brandBlue;
+                background-color: $superWhite;
                 padding: 100px 50px;
-                color: white;
+                color: black;
                 font-size: 15px;
-                background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
-                background-repeat:repeat-x;
-                background-size: cover;
     
     
                 h2 {

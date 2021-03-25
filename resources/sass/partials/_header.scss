@@ -18,9 +18,14 @@ body {
     }
 }
 #leonardo_header {
+    display: flex;
+    justify-content: space-between;
     nav {
         height: 90px;
         background-color: $brandBlue;
+      
+
+    
         .nav-link {
             color: white;
         }
@@ -39,6 +44,21 @@ body {
                     background-color: $brandOrange;
                 }
             }
+        }
+
+        input {
+            width: 50%;
+            height: 40px;
+            text-align: center;
+            margin-left: 80px;
+            margin-right: 10%;
+            font-size: 20px;
+            border-color: white;
+            background-color: white;
+            color: #000000;
+            border-style: solid;
+            border-radius: 50px;
+            outline: none;
         }
 
     }
