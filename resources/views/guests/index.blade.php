@@ -187,8 +187,8 @@
             <main>
                 {{-- container dove vengono visualizzati i ristoranti  --}}
                 <div class="container">
-                    <a v-if="categorySelect != '' " v-on:click="sponsoredRestaurants">Back to Home</a>
-                    <a v-if="search != '' " v-on:click="sponsoredRestaurants">Back to Home</a>
+                    <a class="blue-btn" v-if="categorySelect != '' " v-on:click="sponsoredRestaurants">Back to Home</a>
+                    <a class="blue-btn" v-if="search != '' " v-on:click="sponsoredRestaurants">Back to Home</a>
 
                    {{-- div che si crea in automatico al caricamento della pagina con i ristoranti sponsorrizati --}}
                     <section v-if="categorySelect == '' && search == '' ">

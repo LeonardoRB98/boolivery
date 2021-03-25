@@ -464,9 +464,6 @@ footer #bottom_footer {
   text-align: center;
   margin-bottom: 20px;
 }
-#fortunato main .container a {
-  color: #ED4521;
-}
 #fortunato main .container ahover {
   cursor: pointer;
   text-decoration: none;
