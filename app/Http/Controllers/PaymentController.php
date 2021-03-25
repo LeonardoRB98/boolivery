@@ -85,9 +85,8 @@ class PaymentController extends Controller
 
             $newOrder = new Order();
             $newOrder['status'] = false;
-            // $newOrder['plate_id'] = $data[''];
+            $newOrder['date'] = date("Y-m-d H:i:s");
             $newOrder->fill($data);
-            // dd($newOrder);
             $newOrder->save();
 
             return view('guests.checkoutconfirm')->withErrors('message', 'Pagamento Negato' . $result->message);
