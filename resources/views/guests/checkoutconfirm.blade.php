@@ -10,7 +10,7 @@
             <p>Il tuo ordine partirà a breve...</p>
         </div>
         
-        <img :class="classImage" src="https://cdn1.iconfinder.com/data/icons/restaurant-76/64/delivery-bike-scooter-rider-512.png" alt="">
+        <img id="rider" :class="classImage" src="https://cdn1.iconfinder.com/data/icons/restaurant-76/64/delivery-bike-scooter-rider-512.png" alt="">
 
     </div>
     <script type="application/javascript"> 
