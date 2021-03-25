@@ -125,26 +125,25 @@ footer ul {
 footer ul li {
   padding: 10px;
 }
-footer ul li:first-child {
-  font-size: 22px;
-  font-weight: 800;
-}
-footer ul li:first-child a {
-  color: #ED4521;
-}
 footer ul li a {
   color: #F3F4F5;
 }
 footer ul li i {
   font-size: 22px;
 }
+footer h5 {
+  color: #ED4521;
+}
+footer p {
+  color: #F6D9D3;
+}
+footer #bottom_footer {
+  background: #182667;
+}
 
 @media all and (max-width: 768px) {
   footer {
     font-size: 22px;
-  }
-  footer ul li:first-child {
-    font-size: 26px;
   }
 }
 .fade-enter-active,
