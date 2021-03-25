@@ -1073,6 +1073,7 @@ footer #bottom_footer {
   background-color: white;
   background-image: url("/image/delivery_boy.jpeg");
   background-position: top;
+  overflow-y: auto;
 }
 #emilio .checkout .checkout_left .cart_checkout, #emilio .checkout .checkout_right .cart_checkout {
   width: 90%;
@@ -1129,6 +1130,7 @@ footer #bottom_footer {
 }
 #emilio .pay {
   width: 100%;
+  margin-bottom: 40px;
 }
 #emilio .amount {
   display: none;

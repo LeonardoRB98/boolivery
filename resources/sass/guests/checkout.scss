@@ -16,6 +16,7 @@
                 background-color: white;
                 background-image: url('/image/delivery_boy.jpeg');
                 background-position: top;
+                overflow-y: auto;
             }
             .cart_checkout {
                 width: 90%;
@@ -80,6 +81,7 @@
     }
     .pay {
         width: 100%;
+        margin-bottom: 40px;
     }
     .amount {
         display: none;
