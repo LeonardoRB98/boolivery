@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #F3F4F5;
+  background-color: #F6D9D3;
 }
 
 .btn_darkBlue {
@@ -437,8 +437,7 @@ footer ul li i {
   height: 240px;
   width: 260px;
   background-color: #F3F4F5;
-  border-radius: 10px;
-  box-shadow: 0 0 3px #ccc;
+  border-radius: 20px;
   transition: 0.2s;
   margin-top: 30px;
 }
@@ -489,11 +488,10 @@ footer ul li i {
   align-items: center;
   height: 100%;
   width: 100%;
-  background-color: #131E52;
+  background-color: #F6D9D3;
   padding: 100px 50px;
-  color: white;
+  color: black;
   font-size: 15px;
-  background-image: url(https://freesvg.org/img/FoodAndDrinkDesign.png);
   background-repeat: repeat-x;
   background-size: cover;
 }
@@ -521,7 +519,8 @@ footer ul li i {
   justify-content: center;
   width: 280px;
   height: 300px;
-  background: #ED4521;
+  background: #131E52;
+  border: 5px solid #ED4521;
   border-radius: 60% 40% 40% 20%/70% 50% 30% 25%;
   margin: 0 50px;
 }
