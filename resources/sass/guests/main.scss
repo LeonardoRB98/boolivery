@@ -338,32 +338,20 @@ transition: opacity 4s
             background: $superWhite;
             height: 100%;
             position: relative;
+
+            .break-wave {
+                height: 5px;
+                width: 100%;
+                background-color: #D64127;
+                position: absolute;
+                top: 49.6%;
+                overflow: hidden;
+                z-index: 5;
+            }
+
+          
           }
-        //   .wave::before, .wave::after{
-        //     border-bottom: 5px solid $brandBlue;
-        //   }
-        //   .wave::before{
-        //     content: "";
-        //     position: absolute;
-        //     left: 0;
-        //     right: 0;
-        //     bottom: 0;
-        //     height: 10px;
-        //     background-size: 20px 40px;
-        //     background-image:
-        //       radial-gradient(circle at 10px -15px, transparent 20px, $brandBlue 21px);
-        //   }
-        //   .wave::after{
-        //     content: "";
-        //     position: absolute;
-        //     left: 0;
-        //     right: 0;
-        //     bottom: 0;
-        //     height: 15px;
-        //     background-size: 40px 40px;
-        //     background-image:
-        //       radial-gradient(circle at 10px 26px, $brandBlue 20px, transparent 21px);
-        //   }
+       
 
         .recruting {
             display: flex;

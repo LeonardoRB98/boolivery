@@ -482,6 +482,15 @@ footer ul li i {
   height: 100%;
   position: relative;
 }
+#fortunato main .wave .break-wave {
+  height: 5px;
+  width: 100%;
+  background-color: #D64127;
+  position: absolute;
+  top: 49.6%;
+  overflow: hidden;
+  z-index: 5;
+}
 #fortunato main .recruting {
   display: flex;
   justify-content: center;
