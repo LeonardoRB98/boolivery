@@ -489,6 +489,13 @@ footer #bottom_footer {
 }
 #fortunato main .container {
   margin-top: 20px;
+  min-height: 400px;
+}
+#fortunato main .container .not_found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 #fortunato main .container .jumbo_title {
   text-align: center;
@@ -497,6 +504,14 @@ footer #bottom_footer {
 #fortunato main .container ahover {
   cursor: pointer;
   text-decoration: none;
+}
+#fortunato main .container .fade-enter-active,
+#fortunato main .container .fade-leave {
+  transition: opacity 0.7s;
+}
+#fortunato main .container .fade-enter-to,
+#fortunato main .container .fade-leave-to {
+  opacity: 0;
 }
 #fortunato main .container section {
   display: flex;
