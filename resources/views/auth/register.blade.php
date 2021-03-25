@@ -56,8 +56,8 @@
                             required autocomplete="new-password" placeholder="Conferma password...">
                     </div>
                     <div class="text-center">
-                        <div class="form-group">
-                            <button type="submit" class="btn btn_darkBlue btn-lg">
+                        <div class="form-group" >
+                            <button type="submit" class="blue-button">
                                 Registrati
                             </button>
                         </div>

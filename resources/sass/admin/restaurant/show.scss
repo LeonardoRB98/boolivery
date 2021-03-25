@@ -1,75 +1,89 @@
 
-    
-    .curved-top {
-        background-color: trasparent;
+// jumbotrona restaurant admin show 
+.curved-top {
+    background-color: trasparent;
+    position: relative;
+    height: 300px;
+    .img-layer {
+        display: block;
+    }
+    .img-container {
+        width: 100%;
+        height: 100%;
         position: relative;
-        height: 300px;
-        .img-layer {
-            display: block;
-        }
-
-        .img-container {
+        img {
             width: 100%;
             height: 100%;
-            position: relative;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-            .img-layover {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.3);
-
-            }
-            
+            object-fit: cover;
+            opacity: 0.5;
         }
-        
-        .img-layer-bottom {
+        // opacità immagine
+        .img-layover {
             position: absolute;
             left: 0;
-            bottom: 0;
-            box-shadow: 0 5px 5px rgba(23, 19, 80, 0.75);
-        }
-
-        .title-layer {
-            color: white;
-            position: absolute;
-            left: 50%;
-            top: 50%; 
-            transform: translate(-50%, -50%);
-            white-space: nowrap;
-            font-size: 8vw;
-            border: 5px solid white;
-            padding: 10px 20px;
-            border-radius: 10px;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
         }
     }
+    // curve del jumbo
+    .img-layer-bottom {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        // box-shadow: 0 5px 5px rgba(23, 19, 80, 0.75);
+    }
+    // titolo su jumbotron
+    .title-layer {
+        color: white;
+        position: absolute;
+        left: 50%;
+        top: 50%; 
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+        font-size: 8vw;
+        border: 5px solid white;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+}
 
-
-    .main-content {
-        padding: 40px 0;
+.main-content {
+    padding: 40px 0;
+    position: relative;
+    .info-box__title {
+        padding-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        i {
+            padding-right: 5px;
+        }
+    }
+    .button-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .info-box {
+        // position: sticky;
+        // top: 100px;
         
-        .info-wrapper {
-            position: sticky;
-            top: 0;
-            .info {
-                background-color: white;
-                border-left: 4px solid $brandOrange;
-                border-radius: 0px 40px 40px 0px;
-                color: black;
-                padding: 20px;
-                margin-bottom: 5px;
-                transition: all 1s ease-in-out;
-                &:hover {
-                    margin-left: 15px;
-                }
+        .info {
+            background-color: white;
+            border-left: 4px solid $brandOrange;
+            border-radius: 0px 40px 40px 0px;
+            padding: 10px;
+            margin-bottom: 5px;
+            transition: margin 1s ease-in-out;
+            &:hover {
+                margin-left: 15px;
+                border-left: 4px solid $brandBlue;
             }
-    
+            i {
+                padding-right: 5px;
+            }
             .tag {
                 background-color: $brandOrange;
                 padding: 5px 10px;
@@ -78,16 +92,56 @@
                 margin-bottom: 5px;
                 display: inline-block;
             }
-
-            .icon {
-                font-size: 20px;
-            }
         }
         
-
-        
-        
     }
+    .plates-box {
+        background-color: whitesmoke;
+        padding: 0 20px;
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+        border-radius: 5px;
+        .card {
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+            box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+            .image-box {
+                height: 150px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .card-content {
+                padding: 10px;
+                .desc {
+                    height: 150px;
+                    overflow-y: scroll;
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+                .card-bottom {
+                    display: flex;
+                    font-size: 20px;
+                    a {
+                        margin-right: 10px;
+                        i {
+                            color: $brandBlue;
+                        }
+                    }
+                    button {
+                        border: none;
+                        color: red;
+                        background-color: white;
+                    }
+                }
+            }
+            
+        }
+    }
+}
 
 
 
@@ -95,5 +149,17 @@
     .curved-top {
         height: 600px;
     }
-
+    .main-content {
+        .plates-box {
+            max-height: 1000px;
+            overflow-y: hidden;
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
 }
+
+
+
