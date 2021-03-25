@@ -58,8 +58,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" value="Elimina"
-                                    onclick='return confirm("Sei sicuro di voler cancellare l&apos;elemento?")'><i
-                                        class="fas fa-trash"></i>
+                                    onclick='return confirm("Sei sicuro di voler cancellare l&apos;elemento?")'><i class="fas fa-trash-alt"></i>
                                 </button>
                             </form>
                         </div>
