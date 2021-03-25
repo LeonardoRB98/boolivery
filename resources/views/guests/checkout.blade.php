@@ -58,6 +58,11 @@
                                     <option v-for="plate in cart" :value="plate.id" selected>@{{plate.id}}</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <select style="display:none;"  class="form-control" name="quantities[]" multiple>
+                                    <option v-for="plate in cart" :value="plate.counter" selected>@{{plate.id}}</option>
+                            </select>
+                        </div>
                         <label for="amount">
                             <div class="input-wrapper amount-wrapper amount">
                                 <input id="total" name="total" type="tel" min="1" placeholder="Totale" :value="totalPrice">
