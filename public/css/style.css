@@ -954,6 +954,8 @@ footer ul li i {
   padding: 30px;
   border-radius: 20px;
   background-color: white;
+  background-image: url("/image/delivery_boy.jpeg");
+  background-position: top;
 }
 #emilio .checkout .checkout_left .cart_checkout, #emilio .checkout .checkout_right .cart_checkout {
   width: 90%;
@@ -999,6 +1001,7 @@ footer ul li i {
   text-transform: capitalize;
 }
 #emilio .checkout .checkout_left .cart_checkout .cart h4, #emilio .checkout .checkout_right .cart_checkout .cart h4 {
+  border-radius: 20px;
   margin-bottom: 20px;
   font-size: 40px;
 }
@@ -1277,6 +1280,7 @@ footer ul li i {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0.9;
 }
 #emilio .flip_card_back {
   -webkit-transform: rotateY(180deg);
@@ -1307,6 +1311,11 @@ footer ul li i {
 #emilio .display_none {
   display: none;
 }
+@media all and (max-width: 1400px) {
+  #emilio .plate {
+    margin-left: 20px !important;
+  }
+}
 @media all and (max-width: 1024px) and (min-width: 768px) {
   #emilio .main-menu .plate {
     padding: 20px;
@@ -1325,9 +1334,6 @@ footer ul li i {
     padding: 20px;
     border-radius: 20px;
     background-color: white;
-  }
-  #emilio section {
-    width: 100%;
   }
   #emilio .restaurant {
     left: 0%;
@@ -1359,10 +1365,9 @@ footer ul li i {
     font-size: 30px;
   }
   #emilio .main-menu .plate {
-    width: 80%;
-    height: 300px;
-    padding: 0px;
-    margin-left: 0px;
+    width: 100%;
+    height: 400px;
+    padding-left: 0px;
     position: relative;
   }
   #emilio .main-menu .plate:hover {
@@ -1378,7 +1383,6 @@ footer ul li i {
   }
   #emilio .main-menu .plate .plate_photo img {
     width: 100%;
-    height: 100%;
   }
   #emilio .main-menu .plate .plate_utility {
     width: 100%;
@@ -1431,6 +1435,11 @@ footer ul li i {
   }
   #emilio #mobileCartNoMobile {
     display: none;
+  }
+}
+@media all and (max-width: 425px) {
+  #emilio .plate {
+    margin-left: 0px !important;
   }
 }
 
