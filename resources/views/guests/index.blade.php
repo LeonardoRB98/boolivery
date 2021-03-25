@@ -38,8 +38,7 @@
                             </g>
                         </svg>
                     </a>
-                     <p class="input_wrapper"><input v-model='search' v-on:keyup='searchInputRestaurants' type="text"
-                        placeholder="Cerca ristoranti per nome"></p>
+                     <input v-model='search' v-on:keyup='searchInputRestaurants' type="text" placeholder="Cerca ristoranti per nome">
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -107,13 +106,11 @@
             <div class="jumbo_box">
                 <div v-if="categorySelect == '' && search == '' " class="search_bar">
                     <div  id="scroll" class="wrap_card">
-                        {{-- tasto per seleziona i ristoranti sponsorizzati --}}
                         <button 
                         v-for="category in categories"  
                         v-scroll-to="'#scroll'" 
                         v-on:click="buttonRestaurants(category.category), category.show = !category.show" 
-                        class="button_category"
-                        {{-- :class="category.show == true ? 'button_category' : 'button_selected' "> --}} >
+                        class="button_category">
                         <img :src="'{{ asset('/image/category')}}' + '/' + category.category + '.png'" :alt="category.category"> 
                         <h6>@{{category.category}}</h6>
                         </button>

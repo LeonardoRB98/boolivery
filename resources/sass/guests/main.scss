@@ -1,4 +1,12 @@
-
+ // transition al caricamento
+ .fade-enter-active,
+ .fade-leave-active {
+ transition: opacity 4s
+ }
+ .fade-enter,
+ .fade-leave-to {
+     opacity: 0
+ }
 
 #fortunato_loading {
     height: 100vh;

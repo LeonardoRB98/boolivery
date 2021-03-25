@@ -3,15 +3,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Blinker', sans-serif;
-    // transition al caricamento
-    .fade-enter-active,
-    .fade-leave-active {
-    transition: opacity 4s
-    }
-    .fade-enter,
-    .fade-leave-to {
-        opacity: 0
-    }
 }
 
 body {
