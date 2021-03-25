@@ -99,7 +99,7 @@
                         <h1>In evidenza nella tua città</h1>
                         <h5>Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio</h5>
                         <div class="wrapper_restaurant">
-                            <div class="card_restaurant" v-if="filteredRestaurants[index].sponsored == true"
+                            <div class="card_restaurant shadow" v-if="filteredRestaurants[index].sponsored == true"
                                 v-for="(restaurant, index) in filteredRestaurants">
                                 <div class="image_box">
                                     <i class="fas fa-medal"></i>
@@ -122,7 +122,7 @@
                         <h1  v-if="filteredRestaurants != 0 && search == '' ">I ristoranti della categoria
                             @{{ categorySelect }}</h1>
                         <div class="wrapper_restaurant">
-                            <div class="card_restaurant" v-for="(restaurant, index) in filteredRestaurants">
+                            <div class="card_restaurant shadow" v-for="(restaurant, index) in filteredRestaurants">
                                 <div class="image_box">
                                     <i v-if="filteredRestaurants[index].sponsored == true" class="fas fa-medal"></i>
                                     <img v-if="restaurant.photo == null" src="{{ asset('/image/download.png') }}" alt="">
@@ -143,7 +143,7 @@
                     <section v-if="search != '' ">
                         <h1 v-if="filteredRestaurants.length > 0">Risultati per la ricerca: @{{ search }}</h1>
                         <div class="wrapper_restaurant">
-                            <div class="card_restaurant" v-for="(restaurant, index) in filteredRestaurants">
+                            <div class="card_restaurant shadow" v-for="(restaurant, index) in filteredRestaurants">
 
                                 <div class="image_box">
                                     <i v-if="filteredRestaurants[index].sponsored == true" class="fas fa-medal"></i>
