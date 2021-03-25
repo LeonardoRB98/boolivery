@@ -57,7 +57,7 @@
                     </div>
                     <div class="text-center">
                         <div class="form-group" >
-                            <button type="submit" class="blue-button">
+                            <button type="submit" class="blue-btn">
                                 Registrati
                             </button>
                         </div>

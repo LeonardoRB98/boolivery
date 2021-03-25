@@ -39,9 +39,11 @@
                                 </label>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn_darkBlue btn-lg">
-                                    {{ __('Login') }}
-                                </button>
+
+                                    <button type="submit" class="blue-btn">
+                                        {{ __('Login') }}
+                                    </button>
+                                
                             </div>
                         </div>
                         <div class="form-group d-flex flex-column justify-content-between flex-md-row align-items-center">
