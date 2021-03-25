@@ -27,7 +27,11 @@
                 </div>
                 <div class="flip_card_back">
                     <div class="photo_description">
-                        <img src="{{ asset('storage/'. $restaurant->photo) }}" alt="{{ $restaurant->name }}">
+                        @if (!is_null($restaurant->photo_jumbo))
+                            <img src="{{ asset('storage/'. $restaurant->photo) }}" alt="{{ $restaurant->name }}">
+                        @else
+                            <img src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
+                        @endif
                     </div>
                     <div class="title_description">
                         <p>{{$restaurant->description}}</p>
