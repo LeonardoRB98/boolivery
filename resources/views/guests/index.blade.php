@@ -164,10 +164,10 @@
                 {{-- container dove vengono visualizzati i ristoranti  --}}
                 <transition name="fade">
                     <div class="container">
-                        <a class="blue-btn" v-if="categorySelect != '' " v-on:click="sponsoredRestaurants">Back to Home</a>
-                        <a class="blue-btn" v-if="search != '' " v-on:click="sponsoredRestaurants">Back to Home</a>
+                        <a class="blue-btn" v-if="categorySelect != '' || search != '' " v-on:click="sponsoredRestaurants">Back to Home</a>
 
                     {{-- div che si crea in automatico al caricamento della pagina con i ristoranti sponsorrizati --}}
+                    <transition name="fade">
                         <section v-if="categorySelect == '' && search == '' ">
                             <h1>In evidenza nella tua città</h1>
                             <h5>Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio</h5>
@@ -189,10 +189,9 @@
                             </div>
                         </section>
                         {{-- / div che si crea in automatico al caricamento della pagina con i ristoranti sponsorrizati --}}
-
+                    </transition>
                         {{-- div che si crea al momento del click sui tasti categoria con la categoria selezionata --}}
                         <section v-if="categorySelect != ''">
-                    
                             <h1  v-if="filteredRestaurants != 0 && search == '' ">I ristoranti della categoria
                                 @{{ categorySelect }}</h1>
                             <div class="wrapper_restaurant">
@@ -206,22 +205,14 @@
                                     <a class="slug"
                                         :href="'{{ url('Boolivery/restaurant') }}' + '/' + restaurant.slug">@{{ restaurant . name }}</a>
                                 </div>
-                                <div v-if="filteredRestaurants.length == 0" class="not_found">
-                                    <img src="{{ asset('/image/search-results-lupa.svg') }}" alt="not found">
-                                    {{-- div che si crea solo se non vengono trovati ristoranti  --}}
-                                    <div class="jumbo_title">
-                                        <h1>Siamo spiacenti</h1>
-                                        <h5>nella tua zona non sono presenti ristoranti con queste caratteristiche</h5>
-                                    </div>
-                                    {{-- / div che si crea solo se non vengono trovati ristoranti  --}}
-                                </div>
+                                
                             </div>
 
                             
                         </section>
                         {{-- / div che si crea al momento del click sui tasti categoria con la categoria selezionata --}}
-
                         {{-- div che si crea al momento della ricerca tramite input  --}}
+                    <transition name="fade">
                         <section v-if="search != '' ">
                             <h1 v-if="filteredRestaurants.length > 0">Risultati per la ricerca: @{{ search }}</h1>
                             <div class="wrapper_restaurant">
@@ -236,16 +227,27 @@
                                     <a class="slug"
                                         :href="'{{ url('Boolivery/restaurant') }}' + '/' + restaurant.slug">@{{ restaurant . name }}</a>
                                 </div>
-                                <div v-if="filteredRestaurants.length == 0" class="not_found">
-                                    <img src="{{ asset('/image/search-results-lupa.svg') }}" alt="not found">
-                                    <div class="jumbo_title">
-                                        <h1>Siamo spiacenti</h1>
-                                        <h5>nella tua zona non sono presenti ristoranti con queste caratteristiche</h5>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </section>
+                    </transition>
                         {{--  /div che si crea al momento della ricerca tramite input  --}}
+                        <div v-if="filteredRestaurants.length == 0 && search == '' " class="not_found">
+                            <img src="{{ asset('/image/search-results-lupa.svg') }}" alt="not found">
+                            {{-- div che si crea solo se non vengono trovati ristoranti  --}}
+                            <div v-if="search == '' " class="jumbo_title">
+                                <h1>Siamo spiacenti</h1>
+                                <h5>nella tua zona non sono presenti ristoranti con queste caratteristiche</h5>
+                            </div>
+                            {{-- / div che si crea solo se non vengono trovati ristoranti  --}}
+                        </div>
+                        <div v-if="filteredRestaurants.length == 0 && categorySelect == '' " class="not_found">
+                            <img src="{{ asset('/image/search-results-lupa.svg') }}" alt="not found">
+                            <div class="jumbo_title">
+                                <h1>Siamo spiacenti</h1>
+                                <h5>nella tua zona non sono presenti ristoranti con queste caratteristiche</h5>
+                            </div>
+                        </div>
                     </div>
                 </transition>
                 {{-- / container dove vengono visualizzati i ristoranti  --}}
