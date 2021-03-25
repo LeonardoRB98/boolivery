@@ -386,70 +386,83 @@
             </svg>
         </div>
     </div>
-    <footer>
-        {{-- bottom footer --}}
-        <div id="bottom_footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <ul class="col-lg-3 col-md-6">
-                        <li><a href="#">Titolo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                    </ul>
-                    <ul class="col-lg-3 col-md-6">
-                        <li><a href="#">Titolo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                    </ul>
-                    <ul class="col-lg-3 col-md-6">
-                        <li><a href="#">Social</a></li>
-                        <li class="">
-                            <a href="#">
+         <!-- Footer -->
+<footer class="text-center text-lg-start">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Creatori</h5>
 
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="https://www.linkedin.com/in/furlanstephanie/">Stephanie Furlan</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/andrea-serboli-525366208/">Andrea Serboli</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/fortunato-sambataro-101179208/">Fortunato Sambataro</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/emilio-furnari-developer/">Emilio Furnari</a>
+              </li>
+              <li>
+                  <a href="https://www.linkedin.com/in/leonardo-ranaldo-bettarini-3a8671189/">Leonardo Ranaldo</a>
+                </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Boolivery</h5>
 
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="col-lg-3 col-md-6">
-                        <li><a href="#">Titolo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                        <li><a href="#">prova testo</a></li>
-                    </ul>
-                </div>
-            </div>
+          <p>
+            Ordina cibo a domicilio da ristoranti e pizzerie vicino a te.<br> Scegli il tuo menù preferito ed approfitta ogni giorno di nuovi sconti e offerte.
+          </p>
         </div>
-        {{-- top footer --}}
-    </footer>
-</div>
-<script src="{{ asset('js/app.js') }}"></script>
-{{-- <script type="application/javascript" src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js">
-</script>
-@yield('braintree')
-@yield('chart') --}}
+        <!--Grid column-->
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-0">Teachers</h5>
+
+          <ul class="list-unstyled">
+            <li>
+                <a href="https://www.linkedin.com/in/chiara-passaro-90812b10/?locale=it_IT">Chiara Passaro</a>
+              </li>
+              <li>
+                  <a href="https://www.linkedin.com/in/margherita-ghidini-32227711b/">Margherita Ghidini</a>
+                </li>
+            <li>
+              <a href="https://www.linkedin.com/in/gianluca-pesce-387547149/">Gianluca Pesce</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/adriano-grimaldi-00403597/">Adriano Grimaldi</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/castenettoa/">Andrea Castenetto</a>
+            </li>
+
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div id="bottom_footer" class="text-center p-3 text-light">
+      © 2021 Copyright:
+      <a class="text-light" href="https://www.boolean.careers/">Boolean</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+    </div>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
