@@ -5,7 +5,7 @@
 <div class="container wrapper">
     <div class="d-flex justify-content-between align-items-center">
         <h1>Crea Ristorante</h1>
-        <a class="orange-link" href="{{ route('admin.restaurants.index') }}">
+        <a class="blue-button" href="{{ route('admin.restaurants.index') }}">
             <span>Elenco Ristoranti</span>
         </a>
     </div>

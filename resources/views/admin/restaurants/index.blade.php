@@ -23,8 +23,9 @@
         @else
         <div class="d-flex justify-content-between align-items-center">
             <h1>I tuoi Ristoranti</h1>
-            <a class="orange-link" href="{{ route('admin.restaurants.create') }}">
-                <span>Crea Ristorante<i class="fas fa-plus-square"></i></span>
+            <a class="blue-button" href="{{ route('admin.restaurants.create') }}">
+                <span>Crea Ristorante</span>
+                <i class="fas fa-plus-square"></i>
             </a>
         </div>
             

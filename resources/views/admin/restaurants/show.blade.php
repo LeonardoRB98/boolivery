@@ -21,40 +21,42 @@
             </path>
         </svg>
         <h2 class="title-layer">{{ $restaurant->name }}</h2>
-
     </div>
     <div class="main-content">
+
         <div class="container">
             @if (session('message'))
                 <div class="alert alert-success">
                     {{ session('message') }}
                 </div>
             @endif
-            <a class="orange-link" href="{{ route('admin.restaurants.index') }}">I tuoi Ristoranti</a>
-            <span> > {{ $restaurant->name }}</span>
+            <div class="button-box">
+                <h1>{{ $restaurant->name }}</h1>
+                <a class="blue-button" href="{{ route('admin.restaurants.index') }}">I tuoi Ristoranti</a>
+            </div>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="info-wrapper">
-                        <div class="d-flex justify-content-between align-items-center">
+                    <div class="info-box">
+                        <div class="info-box__title">
                             <h2>Le tue info</h2>
-                            <a class="orange-link" href="{{ route('admin.restaurants.edit', $restaurant) }}">
+                            <a class="icon-blue" href="{{ route('admin.restaurants.edit', $restaurant) }}">
                                 <i class="fas fa-edit"></i>
                             </a>
                         </div>
                         <div class="info">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-phone-alt icon-blue"></i>
                             <span>{{ $restaurant->phone }}</span>
                         </div>
                         <div class="info">
-                            <i class="fas fa-at"></i>
+                            <i class="fas fa-map-marked-alt icon-blue"></i>
                             <span>{{ $restaurant->address }}</span>
                         </div>
                         <div class="info">
-                            <i class="fas fa-map-marked-alt"></i>
+                            <i class="fas fa-at icon-blue"></i>
                             <span>{{ $restaurant->email }}</span>
                         </div>
                         <div class="info">
-                            <i class="fas fa-briefcase"></i>
+                            <i class="fas fa-briefcase icon-blue"></i>
                             <span>{{ $restaurant->p_iva }}</span>
                         </div>
                         <div class="info">
@@ -71,23 +73,22 @@
                                 <span class="tag">{{ $category->category }}</span>
                             @endforeach
                         </div>
+
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="d-flex justify-content-between align-items-center">
+                    <div class="info-box__title">
                         <h2>I tuoi piatti</h2>
-                        <a class="orange-link"
+                        <a class="icon-blue"
                             href="{{ route('admin.plates.createPlate', ['restaurant_id' => $restaurant->id]) }}">
-                            <span>Aggiungi piatto<i class="fas fa-plus-square"></i></span>
+                            <i class="fas fa-plus-square"></i>
                         </a>
                     </div>
-                    @if (!count($plates))
-                        <h1>Non hai piatti</h1>
-                    @else
-                        <div class="container_card">
+                    <div class="plates-box">
+                        <div class="row">
                             @foreach ($plates as $plate)
-                                <div class="card">
-                                    <a href="">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card">
                                         <div class="image-box">
                                             @if (!is_null($plate->photo))
                                                 <img class="img-fluid" src="{{ asset('storage/' . $plate->photo) }}"
@@ -96,83 +97,91 @@
                                                 <img src="{{ asset('image/download.png') }}" alt="{{ $plate->name }}">
                                             @endif
                                         </div>
-                                    </a>
-                                    <div class="info_card">
-                                        <div class="name">
-                                            <a href="">
-                                                <h3>{{ $plate->name }}</h3>
-                                            </a>
-                                            <p>{{ $plate->description }}</p>
-                                        </div>
-                                        <div class="route">
-                                            <a href="{{ route('admin.plates.edit', $plate) }}"><i
-                                                    class="fas fa-edit"></i></a>
-                                            <form action="{{ route('admin.plates.destroy', $plate) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" value="Elimina"
-                                                    onclick='return confirm("Sei sicuro di voler cancellare l&apos;elemento?")'><i
-                                                        class="fas fa-trash"></i>
-                                                </button>
-                                            </form>
+                                        <div class="card-content">
+                                            <div>
+                                                <h4>{{ $plate->name }}</h4>
+                                                <p class="desc">{{ $plate->description }}</p>
+                                            </div>
+                                            <div class="card-bottom">
+
+                                                <a href="{{ route('admin.plates.edit', $plate) }}"><i
+                                                        class="fas fa-edit"></i>
+                                                </a>
+                                                <form action="{{ route('admin.plates.destroy', $plate) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" value="Elimina"
+                                                        onclick='return confirm("Sei sicuro di voler cancellare l&apos;elemento?")'>
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </form>
+
+                                                {{-- <div class="stat">
+                                                    {{ number_format($plate->price, 2) }}€
+                                                </div> --}}
+
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
                             @endforeach
                         </div>
-                    @endif
+                    </div>
                 </div>
             </div>
             {{-- analythics --}}
+            <h2 class="mt-5">I tuoi ordini</h2>
             <div id="analythics">
-                <canvas id="myChart" width="90%" height="50%">
-
-                </canvas>
-
+                <canvas id="myChart" width="90%" height="50%"></canvas>
             </div>
-             {{-- /analythics --}}
+            {{-- /analythics --}}
         </div>
     </div>
+
 @endsection
 @section('chart')
-<script>
-    var orderArray = @json($graphicsOrder);
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno','Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
-        datasets: [{
-            label: 'Incasso',
-            data: orderArray,
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
+    <script>
+        var orderArray = @json($graphicsOrder);
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto',
+                    'Settembre', 'Ottobre', 'Novembre', 'Dicembre'
+                ],
+                datasets: [{
+                    label: 'Incasso',
+                    data: orderArray,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
                 }
-            }]
-        }
-    }
-});
-        </script>
+            }
+        });
+
+    </script>
 @endsection

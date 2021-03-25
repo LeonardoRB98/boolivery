@@ -4,7 +4,7 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
             <h1>Modifica Piatto</h1>
-            <a href="{{ route('admin.restaurants.show', [$plate->restaurant_id]) }}">Torna al ristorante</a>
+            <a class="blue-button" href="{{ route('admin.restaurants.show', [$plate->restaurant_id]) }}">Torna al ristorante</a>
         </div>
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -43,7 +43,7 @@
 
 
 
-                <input type="submit" value="Modifica Piatto" class="btn btn_darkBlue">
+                <input type="submit" value="Modifica Piatto" class="blue-button">
             </form>
 
         </div>
