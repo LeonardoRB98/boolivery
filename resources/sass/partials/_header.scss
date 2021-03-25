@@ -50,8 +50,7 @@ body {
             width: 50%;
             height: 40px;
             text-align: center;
-            margin-left: 80px;
-            margin-right: 10%;
+            margin-left: 10%;
             font-size: 20px;
             border-color: white;
             background-color: white;
@@ -68,6 +67,19 @@ body {
 
     @media (max-width: 768px) {
         nav {
+            input {
+                width: 50%;
+                height: 40px;
+                text-align: center;
+                font-size: 20px;
+                margin-left: 10px;
+                border-color: white;
+                background-color: white;
+                color: #000000;
+                border-style: solid;
+                border-radius: 50px;
+                outline: none;
+            }
             svg {
                 height: calc(100% - 16px);
             }
