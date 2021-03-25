@@ -1062,20 +1062,32 @@ footer ul li i {
   }
 }
 
-.central {
+body {
+  overflow-x: hidden;
+}
+body .central {
   min-height: 80vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
 }
-.central .message {
-  width: 40%;
+body .central .message {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
   height: 30%;
   border-radius: 20px;
   text-align: center;
-  background-color: white;
+}
+body img {
+  width: 150px;
+  transition: transform 5s 1s cubic-bezier(0.66, 0, 0, 1.29);
+  margin-bottom: 60px;
+}
+body .go {
+  transform: translateX(1700px);
 }
 
 #emilio .container {
