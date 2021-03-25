@@ -978,6 +978,8 @@ footer ul li i {
   text-align: center;
   background-color: white;
   overflow-y: auto;
+  background-position: center;
+  background-size: cover;
 }
 #emilio .checkout .checkout_left .cart_checkout .cart h2, #emilio .checkout .checkout_right .cart_checkout .cart h2 {
   font-size: 35px;
