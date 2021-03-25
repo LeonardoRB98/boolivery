@@ -941,6 +941,8 @@ footer ul li i {
   padding: 30px;
   border-radius: 20px;
   background-color: white;
+  background-image: url("/image/delivery_boy.jpeg");
+  background-position: top;
 }
 #emilio .checkout .checkout_left .cart_checkout, #emilio .checkout .checkout_right .cart_checkout {
   width: 90%;
@@ -986,6 +988,7 @@ footer ul li i {
   text-transform: capitalize;
 }
 #emilio .checkout .checkout_left .cart_checkout .cart h4, #emilio .checkout .checkout_right .cart_checkout .cart h4 {
+  border-radius: 20px;
   margin-bottom: 20px;
   font-size: 40px;
 }
@@ -1264,6 +1267,7 @@ footer ul li i {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0.9;
 }
 #emilio .flip_card_back {
   -webkit-transform: rotateY(180deg);

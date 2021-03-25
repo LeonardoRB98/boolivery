@@ -84,7 +84,7 @@ class PaymentController extends Controller
             // dd($newOrder);
             $newOrder->save();
 
-            return back()->withErrors('message', 'Transaction succsessfull. Id ' . $result->message);
+            return view('guests.checkoutconfirm')->withErrors('message', 'Pagamento Negato' . $result->message);
         }
     }
 }
