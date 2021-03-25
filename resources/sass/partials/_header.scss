@@ -20,6 +20,7 @@ body {
 #leonardo_header {
     display: flex;
     justify-content: space-between;
+    position: relative;
     nav {
         height: 90px;
         background-color: $brandBlue;
@@ -47,10 +48,13 @@ body {
         }
 
         input {
-            width: 50%;
+            position: absolute;
+            width: 25%;
             height: 40px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            margin-left: 10%;
             font-size: 20px;
             border-color: white;
             background-color: white;
@@ -65,13 +69,43 @@ body {
         background-color: $brandOrange;
     }
 
+    @media screen and (min-width: 769px) and (max-width: 1139px) {
+        nav {
+            input {
+                width: 30%;
+                height: 40px;
+                text-align: center;
+                font-size: 14px;
+                margin-left: 10px;
+                border-color: white;
+                background-color: white;
+                color: #000000;
+                border-style: solid;
+                border-radius: 50px;
+                outline: none;
+            }
+            svg {
+                height: calc(100% - 16px);
+            }
+            .navbar-nav {
+                background-color:$brandBlue;
+                text-align: center;
+                border-radius: 10px;
+            }
+            .navbar-light .navbar-nav .nav-link {
+                color: white!important;
+            }
+        }
+    }
+
+
     @media (max-width: 768px) {
         nav {
             input {
-                width: 50%;
+                width: 40%;
                 height: 40px;
                 text-align: center;
-                font-size: 20px;
+                font-size: 14px;
                 margin-left: 10px;
                 border-color: white;
                 background-color: white;

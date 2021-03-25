@@ -38,8 +38,7 @@
                             </g>
                         </svg>
                     </a>
-                    <input v-model='search' v-on:keyup='searchInputRestaurants' type="text"
-                    placeholder="Ricerca il ristorante per nome">
+                     <input v-model='search' v-on:keyup='searchInputRestaurants' type="text" placeholder="Cerca ristoranti per nome">
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -107,34 +106,11 @@
             <div class="jumbo_box">
                 <div v-if="categorySelect == '' && search == '' " class="search_bar">
                     <div  id="scroll" class="wrap_card">
-                        {{-- tasto per seleziona i ristoranti sponsorizzati --}}
-
-
-                        {{-- <button 
-                        :class="sponsoredRestaurant == true ? 'button_selected' : 'button_category' "
-                        v-scroll-to="'#scroll'" 
-                        v-on:click="sponsoredRestaurants" 
-                        >
-                            Sponsored
-                            <i class="fas fa-medal"></i>
-                        </button> --}}
-
-
-                        {{-- <button 
-                        v-if="categorySelect != '' && search == ''"
-                        v-scroll-to="'#scroll'" 
-                        v-on:click="sponsoredRestaurants" 
-                        class="button_category">
-                            Sponsored
-                            <i class="fas fa-medal"></i>
-                        </button> --}}
-                        {{-- genero tanti tasti quante sono le categorie in categories --}}
                         <button 
                         v-for="category in categories"  
                         v-scroll-to="'#scroll'" 
                         v-on:click="buttonRestaurants(category.category), category.show = !category.show" 
-                        class="button_category"
-                        {{-- :class="category.show == true ? 'button_category' : 'button_selected' "> --}} >
+                        class="button_category">
                         <img :src="'{{ asset('/image/category')}}' + '/' + category.category + '.png'" :alt="category.category"> 
                         <h6>@{{category.category}}</h6>
                         </button>
@@ -186,90 +162,92 @@
             </div>
             <main>
                 {{-- container dove vengono visualizzati i ristoranti  --}}
-                <div class="container">
-                    <a class="blue-btn" v-if="categorySelect != '' " v-on:click="sponsoredRestaurants">Back to Home</a>
-                    <a class="blue-btn" v-if="search != '' " v-on:click="sponsoredRestaurants">Back to Home</a>
+                <transition name="fade">
+                    <div class="container">
+                        <a class="blue-btn" v-if="categorySelect != '' " v-on:click="sponsoredRestaurants">Back to Home</a>
+                        <a class="blue-btn" v-if="search != '' " v-on:click="sponsoredRestaurants">Back to Home</a>
 
-                   {{-- div che si crea in automatico al caricamento della pagina con i ristoranti sponsorrizati --}}
-                    <section v-if="categorySelect == '' && search == '' ">
-                        <h1>In evidenza nella tua città</h1>
-                        <h5>Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio</h5>
-                        <div class="wrapper_restaurant">
-                            <div class="card_restaurant shadow" v-if="filteredRestaurants[index].sponsored == true"
-                                v-for="(restaurant, index) in filteredRestaurants">
-                                <div class="image_box">
-                                    <i class="fas fa-medal"></i>
-                                    <img v-if="restaurant.photo == null" src="{{ asset('/image/download.png') }}" alt="">
-                                    <img v-else :src="'{{ url('/storage') }}' + '/' + restaurant.photo"
-                                        :alt="restaurant.name">
+                    {{-- div che si crea in automatico al caricamento della pagina con i ristoranti sponsorrizati --}}
+                        <section v-if="categorySelect == '' && search == '' ">
+                            <h1>In evidenza nella tua città</h1>
+                            <h5>Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio</h5>
+                            <div class="wrapper_restaurant">
+                                <div class="card_restaurant shadow" v-if="filteredRestaurants[index].sponsored == true"
+                                    v-for="(restaurant, index) in filteredRestaurants">
+                                    <div class="image_box">
+                                        <i class="fas fa-medal"></i>
+                                        <img v-if="restaurant.photo == null" src="{{ asset('/image/download.png') }}" alt="">
+                                        <img v-else :src="'{{ url('/storage') }}' + '/' + restaurant.photo"
+                                            :alt="restaurant.name">
+                                    </div>
+                                    <a class="slug"
+                                        :href="'{{ url('Boolivery/restaurant') }}' + '/' + restaurant.slug">@{{ restaurant . name }}</a>
                                 </div>
-                                <a class="slug"
-                                    :href="'{{ url('Boolivery/restaurant') }}' + '/' + restaurant.slug">@{{ restaurant . name }}</a>
-                            </div>
-                            <div v-if="filteredRestaurants.length == 0" class="not_found">
-                                <img src="{{ asset('/image/search-results-lupa.svg') }}" alt="not found">
-                            </div>
-                        </div>
-                    </section>
-                    {{-- / div che si crea in automatico al caricamento della pagina con i ristoranti sponsorrizati --}}
-
-                    {{-- div che si crea al momento del click sui tasti categoria con la categoria selezionata --}}
-                    <section v-if="categorySelect != ''">
-                
-                        <h1  v-if="filteredRestaurants != 0 && search == '' ">I ristoranti della categoria
-                            @{{ categorySelect }}</h1>
-                        <div class="wrapper_restaurant">
-                            <div class="card_restaurant shadow" v-for="(restaurant, index) in filteredRestaurants">
-                                <div class="image_box">
-                                    <i v-if="filteredRestaurants[index].sponsored == true" class="fas fa-medal"></i>
-                                    <img v-if="restaurant.photo == null" src="{{ asset('/image/download.png') }}" alt="">
-                                    <img v-else :src="'{{ url('/storage') }}' + '/' + restaurant.photo"
-                                        :alt="restaurant.name">
-                                </div>
-                                <a class="slug"
-                                    :href="'{{ url('Boolivery/restaurant') }}' + '/' + restaurant.slug">@{{ restaurant . name }}</a>
-                            </div>
-                            <div v-if="filteredRestaurants.length == 0" class="not_found">
-                                <img src="{{ asset('/image/search-results-lupa.svg') }}" alt="not found">
-                                {{-- div che si crea solo se non vengono trovati ristoranti  --}}
-                                <div class="jumbo_title">
-                                    <h1>Siamo spiacenti</h1>
-                                    <h5>nella tua zona non sono presenti ristoranti con queste caratteristiche</h5>
-                                </div>
-                                  {{-- / div che si crea solo se non vengono trovati ristoranti  --}}
-                            </div>
-                        </div>
-
-                        
-                    </section>
-                    {{-- / div che si crea al momento del click sui tasti categoria con la categoria selezionata --}}
-
-                    {{-- div che si crea al momento della ricerca tramite input  --}}
-                    <section v-if="search != '' ">
-                        <h1 v-if="filteredRestaurants.length > 0">Risultati per la ricerca: @{{ search }}</h1>
-                        <div class="wrapper_restaurant">
-                            <div class="card_restaurant shadow" v-for="(restaurant, index) in filteredRestaurants">
-
-                                <div class="image_box">
-                                    <i v-if="filteredRestaurants[index].sponsored == true" class="fas fa-medal"></i>
-                                    <img v-if="restaurant.photo == null" src="{{ asset('/image/download.png') }}" alt="">
-                                    <img v-else :src="'{{ url('/storage') }}' + '/' + restaurant.photo"
-                                        :alt="restaurant.name">
-                                </div>
-                                <a class="slug"
-                                    :href="'{{ url('Boolivery/restaurant') }}' + '/' + restaurant.slug">@{{ restaurant . name }}</a>
-                            </div>
-                            <div v-if="filteredRestaurants.length == 0" class="not_found">
-                                <img src="{{ asset('/image/search-results-lupa.svg') }}" alt="not found">
-                                <div class="jumbo_title">
-                                    <h1>Siamo spiacenti</h1>
-                                    <h5>nella tua zona non sono presenti ristoranti con queste caratteristiche</h5>
+                                <div v-if="filteredRestaurants.length == 0" class="not_found">
+                                    <img src="{{ asset('/image/search-results-lupa.svg') }}" alt="not found">
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                    {{--  /div che si crea al momento della ricerca tramite input  --}}
-                </div>
+                        </section>
+                        {{-- / div che si crea in automatico al caricamento della pagina con i ristoranti sponsorrizati --}}
+
+                        {{-- div che si crea al momento del click sui tasti categoria con la categoria selezionata --}}
+                        <section v-if="categorySelect != ''">
+                    
+                            <h1  v-if="filteredRestaurants != 0 && search == '' ">I ristoranti della categoria
+                                @{{ categorySelect }}</h1>
+                            <div class="wrapper_restaurant">
+                                <div class="card_restaurant shadow" v-for="(restaurant, index) in filteredRestaurants">
+                                    <div class="image_box">
+                                        <i v-if="filteredRestaurants[index].sponsored == true" class="fas fa-medal"></i>
+                                        <img v-if="restaurant.photo == null" src="{{ asset('/image/download.png') }}" alt="">
+                                        <img v-else :src="'{{ url('/storage') }}' + '/' + restaurant.photo"
+                                            :alt="restaurant.name">
+                                    </div>
+                                    <a class="slug"
+                                        :href="'{{ url('Boolivery/restaurant') }}' + '/' + restaurant.slug">@{{ restaurant . name }}</a>
+                                </div>
+                                <div v-if="filteredRestaurants.length == 0" class="not_found">
+                                    <img src="{{ asset('/image/search-results-lupa.svg') }}" alt="not found">
+                                    {{-- div che si crea solo se non vengono trovati ristoranti  --}}
+                                    <div class="jumbo_title">
+                                        <h1>Siamo spiacenti</h1>
+                                        <h5>nella tua zona non sono presenti ristoranti con queste caratteristiche</h5>
+                                    </div>
+                                    {{-- / div che si crea solo se non vengono trovati ristoranti  --}}
+                                </div>
+                            </div>
+
+                            
+                        </section>
+                        {{-- / div che si crea al momento del click sui tasti categoria con la categoria selezionata --}}
+
+                        {{-- div che si crea al momento della ricerca tramite input  --}}
+                        <section v-if="search != '' ">
+                            <h1 v-if="filteredRestaurants.length > 0">Risultati per la ricerca: @{{ search }}</h1>
+                            <div class="wrapper_restaurant">
+                                <div class="card_restaurant shadow" v-for="(restaurant, index) in filteredRestaurants">
+
+                                    <div class="image_box">
+                                        <i v-if="filteredRestaurants[index].sponsored == true" class="fas fa-medal"></i>
+                                        <img v-if="restaurant.photo == null" src="{{ asset('/image/download.png') }}" alt="">
+                                        <img v-else :src="'{{ url('/storage') }}' + '/' + restaurant.photo"
+                                            :alt="restaurant.name">
+                                    </div>
+                                    <a class="slug"
+                                        :href="'{{ url('Boolivery/restaurant') }}' + '/' + restaurant.slug">@{{ restaurant . name }}</a>
+                                </div>
+                                <div v-if="filteredRestaurants.length == 0" class="not_found">
+                                    <img src="{{ asset('/image/search-results-lupa.svg') }}" alt="not found">
+                                    <div class="jumbo_title">
+                                        <h1>Siamo spiacenti</h1>
+                                        <h5>nella tua zona non sono presenti ristoranti con queste caratteristiche</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        {{--  /div che si crea al momento della ricerca tramite input  --}}
+                    </div>
+                </transition>
                 {{-- / container dove vengono visualizzati i ristoranti  --}}
                 {{-- div svg onda 2 --}}
                 <div v-if="categorySelect == '' && search == '' " class="wave">
@@ -315,47 +293,47 @@
                     <path style="transform:translate(0, 50px); opacity:0.9" fill="url(#sw-gradient-1)"
                         d="M0,0L60,23C120,46,240,92,360,103.5C480,115,600,92,720,76.7C840,61,960,54,1080,76.7C1200,100,1320,153,1440,176.3C1560,199,1680,192,1800,184C1920,176,2040,169,2160,141.8C2280,115,2400,69,2520,65.2C2640,61,2760,100,2880,126.5C3000,153,3120,169,3240,145.7C3360,123,3480,61,3600,65.2C3720,69,3840,138,3960,141.8C4080,146,4200,84,4320,57.5C4440,31,4560,38,4680,38.3C4800,38,4920,31,5040,34.5C5160,38,5280,54,5400,53.7C5520,54,5640,38,5760,53.7C5880,69,6000,115,6120,138C6240,161,6360,161,6480,157.2C6600,153,6720,146,6840,134.2C6960,123,7080,107,7200,103.5C7320,100,7440,107,7560,95.8C7680,84,7800,54,7920,61.3C8040,69,8160,115,8280,138C8400,161,8520,161,8580,161L8640,161L8640,230L8580,230C8520,230,8400,230,8280,230C8160,230,8040,230,7920,230C7800,230,7680,230,7560,230C7440,230,7320,230,7200,230C7080,230,6960,230,6840,230C6720,230,6600,230,6480,230C6360,230,6240,230,6120,230C6000,230,5880,230,5760,230C5640,230,5520,230,5400,230C5280,230,5160,230,5040,230C4920,230,4800,230,4680,230C4560,230,4440,230,4320,230C4200,230,4080,230,3960,230C3840,230,3720,230,3600,230C3480,230,3360,230,3240,230C3120,230,3000,230,2880,230C2760,230,2640,230,2520,230C2400,230,2280,230,2160,230C2040,230,1920,230,1800,230C1680,230,1560,230,1440,230C1320,230,1200,230,1080,230C960,230,840,230,720,230C600,230,480,230,360,230C240,230,120,230,60,230L0,230Z">
                     </path>
-                </svg>
-                </div>
+                    </svg>
+                    </div>
                 {{-- / div svg onda 2 --}}
                 {{-- sezione informazioni su boolivery  --}}
-                <div v-if="categorySelect == '' && search == '' " class="recruting">
-                    <h2>Uniamo le forze</h2>
-                    <div class="card_recruting">
-                        <div class="box">
-                            <div class="inside-box">
-                                <img src="{{ asset('/image/rider.png') }}" alt="">
+                    <div v-if="categorySelect == '' && search == '' " class="recruting">
+                        <h2>Uniamo le forze</h2>
+                        <div class="card_recruting">
+                            <div class="box">
+                                <div class="inside-box">
+                                    <img src="{{ asset('/image/rider.png') }}" alt="">
 
+                                </div>
                             </div>
+                            <h1>Diventa un rider</h1>
+                            <h5>Lavora per te stesso! Goditi flessibilità, libertà e guadagni competitivi effettuando consegne
+                                con Boolivery.</h5>
                         </div>
-                        <h1>Diventa un rider</h1>
-                        <h5>Lavora per te stesso! Goditi flessibilità, libertà e guadagni competitivi effettuando consegne
-                            con Boolivery.</h5>
-                    </div>
-                    <div class="card_recruting">
-                        <div class="box">
-                            <div class="inside-box">
-                                <img src="{{ asset('/image/partner.png') }}" alt="">
+                        <div class="card_recruting">
+                            <div class="box">
+                                <div class="inside-box">
+                                    <img src="{{ asset('/image/partner.png') }}" alt="">
 
+                                </div>
                             </div>
+                            <h1>Diventa partner</h1>
+                            <h5>Cresci con Boolivery! La nostra tecnologia e la nostra base di utenti possono aiutarti a
+                                incrementare le vendite e aprire nuove opportunità!</h5>
                         </div>
-                        <h1>Diventa partner</h1>
-                        <h5>Cresci con Boolivery! La nostra tecnologia e la nostra base di utenti possono aiutarti a
-                            incrementare le vendite e aprire nuove opportunità!</h5>
-                    </div>
-                    <div class="card_recruting">
-                        <div class="box">
-                            <div class="inside-box">
-                                <img src="{{ asset('/image/careers.png') }}" alt="">
+                        <div class="card_recruting">
+                            <div class="box">
+                                <div class="inside-box">
+                                    <img src="{{ asset('/image/careers.png') }}" alt="">
 
+                                </div>
                             </div>
+                            <h1>Lavora con noi</h1>
+                            <h5>Pronto per una nuova ed entusiasmante sfida? Se sei ambizioso, umile e ami lavorare con gli
+                                altri, mettiti in contatto con noi!</h5>
                         </div>
-                        <h1>Lavora con noi</h1>
-                        <h5>Pronto per una nuova ed entusiasmante sfida? Se sei ambizioso, umile e ami lavorare con gli
-                            altri, mettiti in contatto con noi!</h5>
-                    </div>
 
-                </div>
+                    </div>
                 {{--  / sezione informazioni su boolivery  --}}
             </main>
         </div>
