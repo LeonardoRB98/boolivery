@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
 use App\Plate;
+use App\Mail\SendNewMail;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -73,6 +75,9 @@ class PaymentController extends Controller
             }
 
 
+
+
+            Mail::to('mail@mail.it')->send(new SendNewMail($newOrder));
 
             return view('guests.checkoutconfirm', ['message' => 'Pagamento avvenuto con successo']);
 
