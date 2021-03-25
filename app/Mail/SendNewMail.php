@@ -12,7 +12,7 @@ class SendNewMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $newOrder;
+    public $order;
 
     /**
      * Create a new message instance.
@@ -21,7 +21,8 @@ class SendNewMail extends Mailable
      */
     public function __construct(Order $order)
     {
-        $this->newOrder = $order;
+        $this->order = $order;
+
     }
 
     /**
@@ -31,6 +32,6 @@ class SendNewMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.home');
+        return $this->view('mail.mail');
     }
 }

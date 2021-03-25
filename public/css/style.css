@@ -1877,3 +1877,14 @@ body .go {
   text-decoration: none;
   font-size: 12px;
 }
+
+.mail_container {
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mail_container #name {
+  text-transform: capitalize;
+}
