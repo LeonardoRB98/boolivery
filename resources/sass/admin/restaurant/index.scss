@@ -27,7 +27,7 @@
         height: 380px;
         min-width: 260px;
         max-width: 260px;
-        border-radius: 5px;
+        border-radius: 20px;
         box-shadow: 0 0 3px #ccc;
         transition: 0.5s;
         margin-top: 30px;
@@ -46,13 +46,13 @@
             right: 0;
             bottom: 0;
             height: 180px;
-            border-bottom: 180px solid $brandBlue;
-            border-left: 100px solid transparent;
+            border-bottom: 190px solid $brandBlue;
+            border-left: 70px solid transparent;border-bottom-right-radius: 20px;
         }
         .active {
             position: absolute;
-            bottom: -170px;
-            right: 10px;
+            bottom: -180px;
+            right: 20px;
             font-size: 30px;
             color: $brandOrange;
         }
@@ -65,8 +65,8 @@
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
-                    border-top-left-radius: 8px;
-                    border-top-right-radius: 8px;
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
                 }
             }
         }
@@ -84,8 +84,12 @@
             }
             .route {
                 display: flex;
+                font-size: 20px;
                 a {
                     margin-right: 10px;
+                    i {
+                        color: $brandBlue;
+                    }
                 }
                 button {
                     border: none;

@@ -1475,7 +1475,7 @@ footer ul li i {
   height: 380px;
   min-width: 260px;
   max-width: 260px;
-  border-radius: 5px;
+  border-radius: 20px;
   box-shadow: 0 0 3px #ccc;
   transition: 0.5s;
   margin-top: 30px;
@@ -1495,13 +1495,14 @@ footer ul li i {
   right: 0;
   bottom: 0;
   height: 180px;
-  border-bottom: 180px solid #131E52;
-  border-left: 100px solid transparent;
+  border-bottom: 190px solid #131E52;
+  border-left: 70px solid transparent;
+  border-bottom-right-radius: 20px;
 }
 .container_card .card .active {
   position: absolute;
-  bottom: -170px;
-  right: 10px;
+  bottom: -180px;
+  right: 20px;
   font-size: 30px;
   color: #ED4521;
 }
@@ -1517,8 +1518,8 @@ footer ul li i {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .container_card .card .info_card {
   display: flex;
@@ -1535,9 +1536,13 @@ footer ul li i {
 }
 .container_card .card .info_card .route {
   display: flex;
+  font-size: 20px;
 }
 .container_card .card .info_card .route a {
   margin-right: 10px;
+}
+.container_card .card .info_card .route a i {
+  color: #131E52;
 }
 .container_card .card .info_card .route button {
   border: none;
