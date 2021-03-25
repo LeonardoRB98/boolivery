@@ -13,7 +13,7 @@
                             <ul class="shadow">
                                 <li class="plateName">@{{ plate . name }}</li>
                                 <li class="plateCounter">X @{{plate.counter}}</li>
-                                <li class="platePrice">@{{ plate.price * plate.counter }} €</li>
+                                <li class="platePrice">@{{ calculatePrice(plate.price, plate.counter) }} €</li>
                                 <li class="plateAddRemove">
                                     {{-- <i class="fas fa-arrow-left left"></i> --}}
                                     <i v-on:click="add(plate.id, plate.counter, plate.price, plate.name)"
@@ -24,7 +24,7 @@
                             </ul>
                         </div>
                         <hr>
-                        <h4 class="shadow">Totale: <br> @{{ totalPrice }} €</h4>
+                        <h4 class="shadow">Totale: <br> @{{ formatFix(totalPrice) }} €</h4>
                     </div>
                 </div>
             </section>
