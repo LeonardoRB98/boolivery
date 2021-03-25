@@ -89,7 +89,7 @@ class PaymentController extends Controller
             $newOrder->fill($data);
             $newOrder->save();
 
-            return view('guests.checkoutconfirm')->withErrors('message', 'Pagamento Negato' . $result->message);
+            return view('guests.checkout')->withErrors('message', 'Pagamento Negato' . $result->message);
         }
     }
 }
