@@ -13,7 +13,7 @@
                             <ul class="shadow">
                                 <li class="plateName">@{{ plate . name }}</li>
                                 <li class="plateCounter">X @{{plate.counter}}</li>
-                                <li class="platePrice">@{{ calculatePrice(plate.price, plate.counter) }} €</li>
+                                <li class="platePrice">@{{ plate.price * plate.counter }} €</li>
                                 <li class="plateAddRemove">
                                     {{-- <i class="fas fa-arrow-left left"></i> --}}
                                     <i v-on:click="add(plate.id, plate.counter, plate.price, plate.name)"
@@ -25,7 +25,7 @@
                             </ul>
                         </div>
                         <hr>
-                        <h4 class="shadow">Totale: <br> @{{ formatFix(totalPrice) }} €</h4>
+                        <h4 class="shadow">Totale: <br> @{{ totalPrice }} €</h4>
                     </div>
                 </div>
             </section>
@@ -38,52 +38,41 @@
                         {{ $error }}
                     @endforeach
                 @endif
-               <section class="checkout_right">
-                    <form method="post" id="payment-form" action="{{ route('payment')}}">
+               <section class="checkout_braintree shadow">
+                     <form method="post" id="payment-form" action="{{ route('payment')}}">
                         @csrf
                         @method("post")
-
-                        <section>
+                        <div class="row shadow mb-2">
+                            <input type="text" name="name" class="form-control" placeholder="Inserisci il tuo nome" value="" required>
+                        </div>
+                        <div class="row shadow mb-2">
+                            <input type="text" name="surname" class="form-control" placeholder="Inserisci il tuo cognome" value="" required>
+                        </div>
+                        <div class="row shadow mb-2">
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci il tua mail" value="" required>
+                        </div>
+                        <div class="row shadow mb-2">
+                            <input type="address" name="address" class="form-control" id="address" value="" placeholder="Inserisci il tuo indirizzo" required>
+                        </div>
+                        <div class="form-group">
+                            <select style="display:none;"  class="form-control" name="plates[]" multiple>
+                                    <option v-for="plate in cart" :value="plate.id" selected>@{{plate.id}}</option>
+                            </select>
+                        </div>
+                        <label for="amount">
                             <div class="input-wrapper amount-wrapper amount">
                                 <input id="total" name="total" type="tel" min="1" placeholder="Totale" :value="totalPrice">
                             </div>
-                            <div class="row shadow mb-2">
-                                <input type="text" name="name" class="form-control" placeholder="Inserisci il tuo nome" value="" required>
+                        </label>
+                        <div class="bt-drop-in-wrapper">
+                            <div id="bt-dropin">
                             </div>
-                            <div class="row shadow mb-2">
-                                <input type="text" name="surname" class="form-control" placeholder="Inserisci il tuo cognome" value="" required>
-                            </div>
-                            <div class="row shadow mb-2">
-                                <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci il tua mail" value="" required>
-                            </div>
-                            <div class="row shadow mb-2">
-                                <input type="address" name="address" class="form-control" id="address" value="" placeholder="Inserisci il tuo indirizzo" required>
-                            </div>
-                            <div class="form-group">
-                                <select style="display:none;"  class="form-control" name="plates[]" multiple>
-                                        <option v-for="plate in cart" :value="plate.id" selected>@{{plate.id}}</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select style="display:none;"  class="form-control" name="quantities[]" multiple>
-                                        <option v-for="plate in cart" :value="plate.counter" selected>@{{plate.id}}</option>
-                                </select>
-                            </div>
-                            <label for="amount">
-                                <div class="input-wrapper amount-wrapper amount">
-                                    <input id="total" name="total" type="tel" min="1" placeholder="Totale" :value="totalPrice">
-                                </div>
-                            </label>
-                            <div class="bt-drop-in-wrapper">
-                                <div id="bt-dropin">
-                                </div>
-                            </div>
-                            <input id="nonce" name="payment_method_nonce" type="hidden"/>
-
-                            <button class="btn btn-success pay" type="submit"><span>Paga</span></button>
-                        </section>
+                        </div>
+                        <input id="nonce" name="payment_method_nonce" type="hidden"/>
+                        <button class="btn btn-success pay" type="submit"><span>Paga</span></button>
                     </form>
                 </section>
+            </section>
            @section('braintree')
                 <script src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js"></script>
                 <script>
