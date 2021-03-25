@@ -39,50 +39,51 @@
                     @endforeach
                 @endif
                <section class="checkout_right">
-            <form method="post" id="payment-form" action="{{ route('payment')}}">
-                @csrf
-                @method("post")
+                    <form method="post" id="payment-form" action="{{ route('payment')}}">
+                        @csrf
+                        @method("post")
 
-                <section>
-                        <div class="input-wrapper amount-wrapper amount">
-                            <input id="total" name="total" type="tel" min="1" placeholder="Totale" :value="totalPrice">
-                        </div>
-                        <div class="row shadow mb-2">
-                            <input type="text" name="name" class="form-control" placeholder="Inserisci il tuo nome" value="" required>
-                        </div>
-                        <div class="row shadow mb-2">
-                            <input type="text" name="surname" class="form-control" placeholder="Inserisci il tuo cognome" value="" required>
-                        </div>
-                        <div class="row shadow mb-2">
-                            <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci il tua mail" value="" required>
-                        </div>
-                        <div class="row shadow mb-2">
-                            <input type="address" name="address" class="form-control" id="address" value="" placeholder="Inserisci il tuo indirizzo" required>
-                        </div>
-                        <div class="form-group">
-                            <select style="display:none;"  class="form-control" name="plates[]" multiple>
-                                    <option v-for="plate in cart" :value="plate.id" selected>@{{plate.id}}</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <select style="display:none;"  class="form-control" name="quantities[]" multiple>
-                                    <option v-for="plate in cart" :value="plate.counter" selected>@{{plate.id}}</option>
-                            </select>
-                        </div>
-                        <label for="amount">
+                        <section>
                             <div class="input-wrapper amount-wrapper amount">
                                 <input id="total" name="total" type="tel" min="1" placeholder="Totale" :value="totalPrice">
                             </div>
-                        </label>
-                        <div class="bt-drop-in-wrapper">
-                            <div id="bt-dropin">
+                            <div class="row shadow mb-2">
+                                <input type="text" name="name" class="form-control" placeholder="Inserisci il tuo nome" value="" required>
                             </div>
-                        </div>
-                        <input id="nonce" name="payment_method_nonce" type="hidden"/>
-                        <button class="btn btn-success pay" type="submit"><span>Paga</span></button>
+                            <div class="row shadow mb-2">
+                                <input type="text" name="surname" class="form-control" placeholder="Inserisci il tuo cognome" value="" required>
+                            </div>
+                            <div class="row shadow mb-2">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci il tua mail" value="" required>
+                            </div>
+                            <div class="row shadow mb-2">
+                                <input type="address" name="address" class="form-control" id="address" value="" placeholder="Inserisci il tuo indirizzo" required>
+                            </div>
+                            <div class="form-group">
+                                <select style="display:none;"  class="form-control" name="plates[]" multiple>
+                                        <option v-for="plate in cart" :value="plate.id" selected>@{{plate.id}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select style="display:none;"  class="form-control" name="quantities[]" multiple>
+                                        <option v-for="plate in cart" :value="plate.counter" selected>@{{plate.id}}</option>
+                                </select>
+                            </div>
+                            <label for="amount">
+                                <div class="input-wrapper amount-wrapper amount">
+                                    <input id="total" name="total" type="tel" min="1" placeholder="Totale" :value="totalPrice">
+                                </div>
+                            </label>
+                            <div class="bt-drop-in-wrapper">
+                                <div id="bt-dropin">
+                                </div>
+                            </div>
+                            <input id="nonce" name="payment_method_nonce" type="hidden"/>
+
+                            <button class="btn btn-success pay" type="submit"><span>Paga</span></button>
+                        </section>
                     </form>
                 </section>
-            </section>
            @section('braintree')
                 <script src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js"></script>
                 <script>
