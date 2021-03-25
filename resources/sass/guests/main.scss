@@ -1,12 +1,4 @@
-// transition al caricamento
-.fade-enter-active,
-.fade-leave-active {
-transition: opacity 4s
-}
-.fade-enter,
-.fade-leave-to {
-    opacity: 0
- }
+
 
 #fortunato_loading {
     height: 100vh;
@@ -158,9 +150,9 @@ transition: opacity 4s
                     border: none;
                     height: 100px;
                     width: 100px;
-                    background-color: white;
+                    background-color: $body-bg;
                     border-radius: 100%;
-                    border: 4px dashed $brandBlue;
+                    border: 3px dashed $brandBlue;
                     margin: 2px;
 
                     img {
@@ -268,6 +260,7 @@ transition: opacity 4s
                     align-items: center;
                     height: 100%;
                     margin-bottom: 40px;
+                    transition: 0.6s;
 
 
                     .wrap_card {
@@ -307,38 +300,7 @@ transition: opacity 4s
         
                             
                         }
-        
-        
-                        .button_selected {
-                            display: flex;
-                            justify-content: center;
-                            flex-direction: column;
-                            align-items: center;
-                            position: relative;
-                            border: none;
-                            height: 100px;
-                            width: 100px;
-                            background-color: white;
-                            border: 4px solid $brandBlue;
-                            border-radius: 100%;
-                            margin: 2px;
-        
-                            img {
-                                width: 50%;
-        
-                            }
-        
-                            .fa-medal {
-                                position:absolute;
-                                top: 13px;
-                                left: 8px;
-                             }
-        
-        
-        
-        
                             
-                        }
         
                     }
 
@@ -435,7 +397,7 @@ transition: opacity 4s
             height: 100%;
             width: 100%;
             background-color: $superWhite;
-            padding: 100px 50px;
+            padding: 0 50px;
             color: black;
             font-size: 15px;
             background-repeat:repeat-x;
@@ -471,7 +433,7 @@ transition: opacity 4s
                     width: 280px;
                     height: 300px;
                     background: $brandBlue;
-                    border: 5px solid $brandOrange;
+                    border: 15px solid $brandOrange;
                     border-radius: 60% 40% 40% 20% / 70% 50% 30% 25%;
                     margin: 0 50px;
 
@@ -674,7 +636,7 @@ transition: opacity 4s
                 height: 100%;
                 width: 100%;
                 background-color: $superWhite;
-                padding: 100px 0;
+                padding: 0 40px  ;
                 color: black;
                 font-size: 15px;
 
@@ -705,7 +667,8 @@ transition: opacity 4s
                         position: relative;
                         width: 200px;
                         height: 220px;
-                        background: $brandOrange;
+                        background: $brandBlue;
+                        border: 15px solid $brandOrange;
                         border-radius: 60% 40% 40% 20% / 70% 50% 30% 25%;
                         margin: 0 50px;
 
@@ -916,31 +879,7 @@ transition: opacity 4s
                 height: 100%;
                 position: relative;
               }
-            //   .wave::before, .wave::after{
-            //     border-bottom: 5px solid $brandBlue;
-            //   }
-            //   .wave::before{
-            //     content: "";
-            //     position: absolute;
-            //     left: 0;
-            //     right: 0;
-            //     bottom: 0;
-            //     height: 10px;
-            //     background-size: 20px 40px;
-            //     background-image:
-            //       radial-gradient(circle at 10px -15px, transparent 20px, $brandBlue 21px);
-            //   }
-            //   .wave::after{
-            //     content: "";
-            //     position: absolute;
-            //     left: 0;
-            //     right: 0;
-            //     bottom: 0;
-            //     height: 15px;
-            //     background-size: 40px 40px;
-            //     background-image:
-            //       radial-gradient(circle at 10px 26px, $brandBlue 20px, transparent 21px);
-            //   }
+           
     
             .recruting {
                 display: flex;
@@ -950,7 +889,7 @@ transition: opacity 4s
                 height: 100%;
                 width: 100%;
                 background-color: $superWhite;
-                padding: 100px 50px;
+                padding: 0 50px;
                 color: black;
                 font-size: 15px;
     
@@ -984,7 +923,8 @@ transition: opacity 4s
                         justify-content: center;
                         width: 280px;
                         height: 300px;
-                        background: $brandOrange;
+                        background: $brandBlue;
+                        border: 15px solid $brandOrange;
                         border-radius: 60% 40% 40% 20% / 70% 50% 30% 25%;
                         margin: 0 50px;
     
