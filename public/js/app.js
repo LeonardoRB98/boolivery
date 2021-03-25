@@ -2051,7 +2051,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
     totalPrice: 0,
     // TRIGGER VIEW CART ON MOBILE
     hiddenCart: true,
-    hiddenPaymentCart: true
+    hiddenPaymentCart: true,
+    classImage: ""
   },
   created: function created() {
     var _this = this;
@@ -2149,6 +2150,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
     });
   },
   mounted: function mounted() {
+    this.changeClass();
+
     if (localStorage.cart) {
       this.cart = JSON.parse(localStorage.cart);
     } // totale nel local storage
@@ -2249,6 +2252,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
     },
     formatFix: function formatFix(price) {
       return price.toFixed(2);
+    },
+    changeClass: function changeClass() {
+      setInterval(function () {
+        app.classImage = "go";
+      }, 800);
     }
   }
 });

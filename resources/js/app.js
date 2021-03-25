@@ -89,8 +89,11 @@ const app = new Vue({
         // TRIGGER VIEW CART ON MOBILE
         hiddenCart: true,
         hiddenPaymentCart: true,
+        classImage: ""
     },
     created: function () {
+
+       
 
         // load all restaurants
         axios
@@ -198,6 +201,8 @@ const app = new Vue({
 
 
     mounted: function() {
+
+        this.changeClass();
 
         if(localStorage.cart) {
             this.cart = JSON.parse(localStorage.cart);
@@ -328,7 +333,13 @@ const app = new Vue({
 
         formatFix(price) {
             return price.toFixed(2);
+        },
+        changeClass() {
+            setInterval(function(){ 
+                app.classImage = "go"; 
+            }, 800);
         }
+
     }
 
 });
