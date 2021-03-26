@@ -14,7 +14,7 @@ class PlateController extends Controller
 {
 
     private $plateValidation = [
-        'name' => 'required',
+        'name' => 'required|max:30',
         'description' => 'required',
         'price' => 'required|numeric',
         'photo' => 'image|max:5000',
