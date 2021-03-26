@@ -43,7 +43,9 @@
         </div>
     <div class="container-fluid">
         <div class="main-menu">
-            <i v-on:click="hiddenCart = !hiddenCart" id="trigger_cart_mobile" class="fas fa-shopping-cart shadow"></i>
+            <i v-on:click="hiddenCart = !hiddenCart" id="trigger_cart_mobile" class="fas fa-shopping-cart shadow">
+                <span v-if="totalCartItems != 0" id="total_cart">@{{totalCartItems}}</span>
+            </i>
             <div v-if="!hiddenCart"  class="cart shadow animate__animated animate__jello" id="desktopCartNoDeskop">
                 <h2>Il Tuo Ordine</h2>
                 <i class="fas fa-cookie-bite"></i>
