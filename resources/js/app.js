@@ -41,6 +41,10 @@ $(document).ready(function(){
 			return false;
 		});
 });
+
+$(window).resize(function () {
+    $('#desktopCartNoDeskop').addClass('display_none');
+});
 // $('.plate_photo_trigger').click(function() {
 //     this.$('.plate_photo_trigger').toggle();
 // });
@@ -265,7 +269,7 @@ const app = new Vue({
             this.search = '';
             this.categorySelect = '';
             this.sponsoredRestaurant = true;
-            
+
             this.categories.forEach(element => {
                 element.show = true;
             });
@@ -301,7 +305,7 @@ const app = new Vue({
             localStorage.removeItem('totalPrice');
             this.$root.$emit('resetCounter');
         },
-        
+
         // CALCOLO TOTALE SINGOLO PIATTO
         calculatePrice(counter , price) {
             return this.formatFix(counter*price);
@@ -311,8 +315,8 @@ const app = new Vue({
             return price.toFixed(2);
         },
         changeClass() {
-            setInterval(function(){ 
-                app.classImage = "go"; 
+            setInterval(function(){
+                app.classImage = "go";
             }, 800);
         }
 
