@@ -1568,6 +1568,7 @@ body .go {
   }
   #emilio .main-menu .plate .plate_photo img {
     width: 100%;
+    height: 50%;
     border-radius: 20px;
   }
   #emilio .main-menu .plate .plate_photo:active {
@@ -1575,16 +1576,19 @@ body .go {
   }
   #emilio .main-menu .plate .plate_utility {
     width: 100%;
-    height: 100%;
+    height: 46%;
     position: absolute;
     left: 0%;
-    top: 0%;
+    top: 61%;
     text-align: center;
     z-index: 2;
     padding: 20px;
   }
   #emilio .main-menu .plate .plate_utility .plate_name {
     font-size: 20px !important;
+  }
+  #emilio .main-menu .plate .plate_utility .plate_info {
+    height: 28% !important;
   }
   #emilio .main-menu .plate .plate_description {
     display: flex;
@@ -1605,7 +1609,8 @@ body .go {
     font-size: 50px;
   }
   #emilio .main-menu .plate .plate_counter .plate_add, #emilio .main-menu .plate .plate_counter .plate_remove {
-    font-size: 90px;
+    font-size: 40px;
+    margin-top: 109px;
   }
   #emilio .main-menu .plate .plate_counter .plate_remove:hover, #emilio .main-menu .plate .plate_counter .plate_add:hover {
     cursor: pointer;
