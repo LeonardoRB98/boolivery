@@ -325,6 +325,7 @@
                     z-index: 10;
                     img {
                         width: 100%;
+                        height: 50%;
                         border-radius: 20px;
                     }&:active {
                         display: none;
@@ -332,15 +333,18 @@
                 }
                 .plate_utility {
                     width: 100%;
-                    height: 100%;
+                    height: 46%;
                     position: absolute;
                     left: 0%;
-                    top: 0%;
+                    top: 61%;
                     text-align: center;
                     z-index: 2;
                     padding: 20px;
                     .plate_name {
                         font-size: 20px!important;
+                    }
+                    .plate_info {
+                        height: 28%!important;
                     }
                 }
                 // &:active .plate_photo {
@@ -370,7 +374,8 @@
                     align-items: center;
                     font-size: 50px;
                     .plate_add, .plate_remove {
-                        font-size: 90px;
+                        font-size: 40px;
+                        margin-top: 109px;
                     }
                     .plate_remove:hover, .plate_add:hover {
                         cursor: pointer;
