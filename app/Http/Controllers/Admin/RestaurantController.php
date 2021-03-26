@@ -101,7 +101,7 @@ class RestaurantController extends Controller
 
         return redirect()
                ->route('admin.restaurants.index')
-               ->with('message' , 'Il ristorante ' . $newRestaurant->name . 'è stato creato con successo');
+               ->with('message' , 'Il ristorante ' . $newRestaurant->name . ' è stato creato con successo');
 
     }
 
