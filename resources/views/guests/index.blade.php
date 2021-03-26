@@ -178,7 +178,7 @@
                                     v-for="(restaurant, index) in filteredRestaurants">
                                     <div class="image_box">
                                         <i class="fas fa-medal"></i>
-                                        <img v-if="restaurant.photo == null" src="{{ asset('/image/download.png') }}" alt="">
+                                        <img v-if="restaurant.photo == null" src="{{ asset('/image/restaurant-placeholder.jpg') }}" alt="">
                                         <img v-else :src="'{{ url('/storage') }}' + '/' + restaurant.photo"
                                             :alt="restaurant.name">
                                     </div>
@@ -200,7 +200,7 @@
                                 <div class="card_restaurant shadow" v-for="(restaurant, index) in filteredRestaurants">
                                     <div class="image_box">
                                         <i v-if="filteredRestaurants[index].sponsored == true" class="fas fa-medal"></i>
-                                        <img v-if="restaurant.photo == null" src="{{ asset('/image/download.png') }}" alt="">
+                                        <img v-if="restaurant.photo == null" src="{{ asset('/image/restaurant-placeholder.jpg') }}" alt="">
                                         <img v-else :src="'{{ url('/storage') }}' + '/' + restaurant.photo"
                                             :alt="restaurant.name">
                                     </div>
@@ -222,7 +222,7 @@
 
                                     <div class="image_box">
                                         <i v-if="filteredRestaurants[index].sponsored == true" class="fas fa-medal"></i>
-                                        <img v-if="restaurant.photo == null" src="{{ asset('/image/download.png') }}" alt="">
+                                        <img v-if="restaurant.photo == null" src="{{ asset('/image/restaurant-placeholder.jpg') }}" alt="">
                                         <img v-else :src="'{{ url('/storage') }}' + '/' + restaurant.photo"
                                             :alt="restaurant.name">
                                     </div>

@@ -1873,6 +1873,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'plate-component',
   props: {
@@ -81610,9 +81612,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "plate shadow" }, [
     _c("div", { staticClass: "plate_photo plate_photo_trigger" }, [
-      _c("img", {
-        attrs: { src: "http://127.0.0.1:8000/storage/" + _vm.platePhoto }
-      })
+      _vm.platePhoto != null
+        ? _c("img", {
+            attrs: { src: "http://127.0.0.1:8000/storage/" + _vm.platePhoto }
+          })
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.platePhoto == null
+        ? _c("img", {
+            attrs: { src: "http://127.0.0.1:8000/image/plate-placeholder.jpeg" }
+          })
+        : _vm._e()
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "plate_utility" }, [

@@ -42,7 +42,7 @@
                                 <img class="img-fluid" src="{{ asset('storage/' . $restaurant->photo) }}"
                                     alt="{{ $restaurant->name }}">
                             @else
-                                <img src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
+                                <img src="{{ asset('image/restaurant-placeholder.jpg') }}" alt="{{ $restaurant->name }}">
                             @endif
                         </div>
                     </a>

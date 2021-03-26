@@ -6,7 +6,7 @@
             @if (!is_null($restaurant->photo_jumbo))
                 <img src="{{ asset('storage/' . $restaurant->photo_jumbo) }}" alt="{{ $restaurant->name }}">
             @else
-                <img src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
+                <img src="{{ asset('image/restaurant-placeholder.jpg') }}" alt="{{ $restaurant->name }}">
             @endif
             <div class="img-layover"></div>
         </div>
@@ -102,7 +102,7 @@
                                                     <img class="img-fluid" src="{{ asset('storage/' . $plate->photo) }}"
                                                         alt="{{ $plate->name }}">
                                                 @else
-                                                    <img src="{{ asset('image/download.png') }}" alt="{{ $plate->name }}">
+                                                    <img src="{{ asset('image/plate-placeholder.jpeg') }}" alt="{{ $plate->name }}">
                                                 @endif
                                             </div>
                                             <div class="card-content">
