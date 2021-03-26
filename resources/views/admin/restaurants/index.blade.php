@@ -17,7 +17,7 @@
         @if (!count($restaurants))
         <div class="fail">
             <h2>Non hai ancora inserito nessun ristorante</h2>
-            <a href="{{ route('admin.restaurants.create') }}" class="btn btn-primary">Crea Ristorante</a>
+            <a class="blue-btn" href="{{ route('admin.restaurants.create') }}" class="btn btn-primary">Crea Ristorante</a>
         </div>
         
         @else

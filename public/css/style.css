@@ -1615,6 +1615,7 @@ body .go {
 }
 
 .login-form {
+  margin-top: 30px;
   padding: 60px 40px 10px 40px;
   background: #ED4521;
   border-radius: 8px;

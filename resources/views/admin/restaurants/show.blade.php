@@ -77,57 +77,66 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="info-box__title">
-                        <h2>I tuoi piatti</h2>
-                        <a class="icon-blue"
-                            href="{{ route('admin.plates.createPlate', ['restaurant_id' => $restaurant->id]) }}">
-                            <i class="fas fa-plus-square"></i>
-                        </a>
-                    </div>
-                    <div class="plates-box">
-                        <div class="row">
-                            @foreach ($plates as $plate)
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="card">
-                                        <div class="image-box">
-                                            @if (!is_null($plate->photo))
-                                                <img class="img-fluid" src="{{ asset('storage/' . $plate->photo) }}"
-                                                    alt="{{ $plate->name }}">
-                                            @else
-                                                <img src="{{ asset('image/download.png') }}" alt="{{ $plate->name }}">
-                                            @endif
-                                        </div>
-                                        <div class="card-content">
-                                            <div>
-                                                <h4>{{ $plate->name }}</h4>
-                                                <p class="desc">{{ $plate->description }}</p>
-                                            </div>
-                                            <div class="card-bottom">
-
-                                                <a href="{{ route('admin.plates.edit', $plate) }}"><i
-                                                        class="fas fa-edit"></i>
-                                                </a>
-                                                <form action="{{ route('admin.plates.destroy', $plate) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" value="Elimina"
-                                                        onclick='return confirm("Sei sicuro di voler cancellare l&apos;elemento?")'>
-                                                        <i class="fas fa-trash-alt"></i>
-                                                    </button>
-                                                </form>
-
-                                                {{-- <div class="stat">
-                                                    {{ number_format($plate->price, 2) }}€
-                                                </div> --}}
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            @endforeach
+                    @if (!count($plates))
+                        <div class="info-box__title">
+                            <div class="fail">
+                                <h2>Non hai ancora inserito nessun piatto</h2>
+                                <a class="blue-btn" href="{{ route('admin.plates.createPlate', ['restaurant_id' => $restaurant->id]) }}" class="btn btn-primary">Aggiungi Piatto</a>
+                            </div>
                         </div>
-                    </div>
+                    @else
+                        <div class="info-box__title">
+                            <h2>I tuoi piatti</h2>
+                            <a class="icon-blue"
+                                href="{{ route('admin.plates.createPlate', ['restaurant_id' => $restaurant->id]) }}">
+                                <i class="fas fa-plus-square"></i>
+                            </a>
+                        </div>
+                        <div class="plates-box">
+                            <div class="row">
+                                @foreach ($plates as $plate)
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="card">
+                                            <div class="image-box">
+                                                @if (!is_null($plate->photo))
+                                                    <img class="img-fluid" src="{{ asset('storage/' . $plate->photo) }}"
+                                                        alt="{{ $plate->name }}">
+                                                @else
+                                                    <img src="{{ asset('image/download.png') }}" alt="{{ $plate->name }}">
+                                                @endif
+                                            </div>
+                                            <div class="card-content">
+                                                <div>
+                                                    <h4>{{ $plate->name }}</h4>
+                                                    <p class="desc">{{ $plate->description }}</p>
+                                                </div>
+                                                <div class="card-bottom">
+
+                                                    <a href="{{ route('admin.plates.edit', $plate) }}"><i
+                                                            class="fas fa-edit"></i>
+                                                    </a>
+                                                    <form action="{{ route('admin.plates.destroy', $plate) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" value="Elimina"
+                                                            onclick='return confirm("Sei sicuro di voler cancellare l&apos;elemento?")'>
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </button>
+                                                    </form>
+
+                                                    {{-- <div class="stat">
+                                                        {{ number_format($plate->price, 2) }}€
+                                                    </div> --}}
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
             {{-- analythics --}}
@@ -151,7 +160,7 @@
                     'Settembre', 'Ottobre', 'Novembre', 'Dicembre'
                 ],
                 datasets: [{
-                    label: 'Incasso',
+                    label: 'I tuoi incassi mensili',
                     data: orderArray,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',

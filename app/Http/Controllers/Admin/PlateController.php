@@ -91,7 +91,7 @@ class PlateController extends Controller
 
         return redirect()
             ->route('admin.restaurants.show', compact('restaurant'))
-            ->with('message', 'Il piatto ' . $newPlate->name . 'è stato creato con successo');
+            ->with('message', 'Il piatto ' . $newPlate->name . ' è stato creato con successo');
 
     }
 
@@ -141,7 +141,7 @@ class PlateController extends Controller
 
         return redirect()
             ->route('admin.restaurants.show', compact('restaurant'))
-            ->with('message', 'Il piatto ' . $plate->name . 'è stato modificato con successo');
+            ->with('message', 'Il piatto ' . $plate->name . ' è stato modificato con successo');
     }
 
     /**
@@ -156,6 +156,6 @@ class PlateController extends Controller
         $plate->delete();
         return redirect()
             ->route('admin.restaurants.show', compact('restaurant'))
-            ->with('message', 'Il piatto ' . $plate->name . 'è stato eliminato con successo');
+            ->with('message', 'Il piatto ' . $plate->name . ' è stato eliminato con successo');
     }
 }
