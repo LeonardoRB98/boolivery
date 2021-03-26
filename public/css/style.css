@@ -446,6 +446,9 @@ footer #bottom_footer {
   border: 3px dashed #131E52;
   margin: 2px;
 }
+#fortunato .jumbo_box .search_bar .wrap_card .button_category:hover {
+  border: 3px solid #131E52;
+}
 #fortunato .jumbo_box .search_bar .wrap_card .button_category img {
   width: 50%;
 }
@@ -457,35 +460,6 @@ footer #bottom_footer {
   position: absolute;
   top: 13px;
   left: 8px;
-}
-#fortunato .jumbo_box .search_bar .wrap_card .button_selected {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  border: none;
-  height: 114px;
-  width: 114px;
-  background-color: white;
-  border: 4px solid #131E52;
-  border-radius: 100%;
-  margin: 2px;
-}
-#fortunato .jumbo_box .search_bar .wrap_card .button_selected img {
-  width: 50%;
-}
-#fortunato .jumbo_box .search_bar .wrap_card .button_selected .fa-medal {
-  position: absolute;
-  top: 13px;
-  left: 8px;
-}
-#fortunato .jumbo_box .search_bar ul {
-  list-style: none;
-  display: flex;
-}
-#fortunato .jumbo_box .search_bar ul li {
-  margin: 0 20px;
 }
 #fortunato .jumbo_box .wave_one {
   width: 100%;
