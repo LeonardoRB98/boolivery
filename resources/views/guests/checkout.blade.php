@@ -54,7 +54,7 @@
                             <input type="address" name="address" class="form-control" id="address" value="" placeholder="Inserisci il tuo indirizzo" required>
                         </div>
                         <div class="row shadow mb-2">
-                            <input type="datetime-local" name="time" class="form-control" id="time" value="" placeholder="A che ora vuoi ordinare?" required>
+                            <input type="datetime-local" name="time" class="form-control" id="time"  min ='<?php echo date('Y-m-d');?>T00:00'max="2099-12-31T00:00" value="" placeholder="A che ora vuoi ordinare?" required>
                         </div>
                         <div class="form-group">
                             <select style="display:none;"  class="form-control" name="plates[]" multiple>
