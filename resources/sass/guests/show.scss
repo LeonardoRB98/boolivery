@@ -301,10 +301,10 @@
                     height: 20px;
                     text-align: center;
                     #plus{
-                        font-size: 30px;
+                        font-size: 50px;
                     }
                     #minus {
-                        font-size: 30px;
+                        font-size: 50px;
                     }
                 }
             }
@@ -325,6 +325,7 @@
                     z-index: 10;
                     img {
                         width: 100%;
+                        border-radius: 20px;
                     }&:active {
                         display: none;
                     }
@@ -369,8 +370,7 @@
                     align-items: center;
                     font-size: 50px;
                     .plate_add, .plate_remove {
-                        font-size: 60px;
-                        opacity: 0.8;
+                        font-size: 90px;
                     }
                     .plate_remove:hover, .plate_add:hover {
                         cursor: pointer;
