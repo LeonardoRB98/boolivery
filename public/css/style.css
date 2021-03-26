@@ -1164,8 +1164,8 @@ footer #bottom_footer {
 }
 #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateName, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateName {
   font-size: 20px;
-  width: 30%;
   text-transform: capitalize;
+  width: 50%;
 }
 #emilio .checkout .checkout_left .cart_checkout .cart h4, #emilio .checkout .checkout_right .cart_checkout .cart h4 {
   border-radius: 20px;
@@ -1194,15 +1194,6 @@ footer #bottom_footer {
   #emilio .checkout .checkout_right {
     margin-top: 100px;
   }
-  #emilio .checkout .checkout_left .plateCounter {
-    width: 20% !important;
-  }
-  #emilio .checkout .checkout_left .plateName {
-    width: 45% !important;
-  }
-  #emilio .checkout .checkout_left .platePrice {
-    width: 21% !important;
-  }
   #emilio .pay {
     margin-bottom: 100px;
   }
@@ -1212,12 +1203,23 @@ footer #bottom_footer {
     width: 100%;
   }
 }
-@media all and (max-width: 320px) {
+@media all and (max-width: 425px) {
   #emilio .plateAddRemove #minus_checkout, #emilio .plateAddRemove #plus_checkout {
     font-size: 20px !important;
   }
   #emilio .plateAddRemove:hover {
     cursor: pointer;
+  }
+  #emilio .checkout_left ul {
+    line-height: 20px !important;
+    height: 100px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center;
+  }
+  #emilio .checkout_left ul .plateName {
+    margin-top: 35px;
+    width: auto !important;
   }
 }
 

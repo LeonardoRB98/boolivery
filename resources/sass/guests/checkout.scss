@@ -73,8 +73,8 @@
                     }
                     .plateName {
                         font-size: 20px;
-                        width: 30%;
                         text-transform: capitalize;
+                        width: 50%;
                     }
                 }
                     h4 {
@@ -110,17 +110,6 @@
             .checkout_right {
                 margin-top: 100px;
             }
-            .checkout_left {
-                .plateCounter {
-                    width: 20%!important;
-                }
-                .plateName {
-                    width: 45%!important;
-                }
-                .platePrice {
-                    width: 21%!important;
-                }
-            }
         }
         .pay {
          margin-bottom: 100px;
@@ -137,7 +126,7 @@
         }
     }
 
-    @media all and (max-width: 320px) {
+    @media all and (max-width: 425px) {
         .plateAddRemove {
             #minus_checkout, #plus_checkout {
                 font-size: 20px!important;
@@ -146,6 +135,21 @@
                 cursor: pointer;
             }
         }
+        .checkout_left {
+            ul {
+                line-height: 20px!important;
+                height: 100px!important;
+                flex-direction: column!important;
+                align-items: center!important;
+                justify-content: center;
+                .plateName {
+                    margin-top: 35px;
+                    width: auto!important;
+                }
+            }
+        }
+
+
     }
 
 }
