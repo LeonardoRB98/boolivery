@@ -3,10 +3,14 @@
 
 @section('content')
     <span id="emilio">
-        <div class="checkout">
+        <div style="height: 400px" v-if="isLoading == true" class="checkout">
+            {{-- vuoto --}}
+        </div>
+        <transition name="fade">
+        <div v-if="isLoading != true" class="checkout">
             <section class="checkout_left">
                 <div class="cart_checkout">
-                    <div class="cart shadow">
+                    <div v-if="isLoading == false" class="cart shadow">
                         <h2>Controlla Il Tuo Ordine</h2>
                         <i class="fas fa-cart-arrow-down"></i>
                         <div class="order_plate" v-for='plate in cart'>
@@ -122,5 +126,6 @@
             </section>
             @endsection
         </div>
+        </transition>
     </span>
 @endsection
