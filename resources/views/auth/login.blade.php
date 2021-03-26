@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="form-group d-flex flex-column justify-content-between flex-md-row align-items-center">
-                            <a class="small-link" href="">Non sei ancora registrato?</a>
+                            <a href="{{ route('register') }}"  class="small-link" href="">Non sei ancora registrato?</a>
                             @if (Route::has('password.request'))
                                 <a class="small-link" href="{{ route('password.request') }}">Password dimenticata?</a>
                             @endif

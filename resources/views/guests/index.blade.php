@@ -109,7 +109,7 @@
                         <button 
                         v-for="category in categories"  
                         v-scroll-to="'#scroll'" 
-                        v-on:click="buttonRestaurants(category.category), category.show = !category.show" 
+                        v-on:click="buttonRestaurants(category.category), category.show = !category.show, trashCart()" 
                         class="button_category">
                         <img :src="'{{ asset('/image/category')}}' + '/' + category.category + '.png'" :alt="category.category"> 
                         <h6>@{{category.category}}</h6>
@@ -180,7 +180,7 @@
                                         <img v-else :src="'{{ url('/storage') }}' + '/' + restaurant.photo"
                                             :alt="restaurant.name">
                                     </div>
-                                    <a class="slug"
+                                    <a v-on:click="trashCart()" class="slug"
                                         :href="'{{ url('Boolivery/restaurant') }}' + '/' + restaurant.slug">@{{ restaurant . name }}</a>
                                 </div>
                                 <div v-if="filteredRestaurants.length == 0" class="not_found">
@@ -202,7 +202,7 @@
                                         <img v-else :src="'{{ url('/storage') }}' + '/' + restaurant.photo"
                                             :alt="restaurant.name">
                                     </div>
-                                    <a class="slug"
+                                    <a v-on:click="trashCart()" class="slug"
                                         :href="'{{ url('Boolivery/restaurant') }}' + '/' + restaurant.slug">@{{ restaurant . name }}</a>
                                 </div>
                                 
