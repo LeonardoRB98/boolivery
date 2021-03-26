@@ -210,11 +210,16 @@ const app = new Vue({
 
         if(localStorage.cart) {
             this.cart = JSON.parse(localStorage.cart);
+
         }
 
         // totale nel local storage
         if(localStorage.totalPrice) {
             this.totalPrice = parseFloat(localStorage.totalPrice);
+        }
+
+        if (localStorage.totalCartItems) {
+            this.totalCartItems = (localStorage.totalCartItems);
         }
 
         this.isLoading = false
@@ -232,6 +237,11 @@ const app = new Vue({
                 localStorage.totalPrice = newTotal;
             },
             deep: true
+        },
+        totalCartItems: {
+            handler(newTotalCartItems) {
+                localStorage.totalCartItems = newTotalCartItems;
+            },
         }
     },
 

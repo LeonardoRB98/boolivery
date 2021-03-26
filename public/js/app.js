@@ -2170,6 +2170,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
       this.totalPrice = parseFloat(localStorage.totalPrice);
     }
 
+    if (localStorage.totalCartItems) {
+      this.totalCartItems = localStorage.totalCartItems;
+    }
+
     this.isLoading = false;
   },
   watch: {
@@ -2185,6 +2189,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
         localStorage.totalPrice = newTotal;
       },
       deep: true
+    },
+    totalCartItems: {
+      handler: function handler(newTotalCartItems) {
+        localStorage.totalCartItems = newTotalCartItems;
+      }
     }
   },
   methods: {
