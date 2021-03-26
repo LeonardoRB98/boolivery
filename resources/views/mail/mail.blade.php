@@ -3,27 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Boolivery-Il tuo Ordine</title>
 </head>
 <style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        background-image: url('/image/bckg-pattern.svg');
+    }
+
+    #body_mail {
+        width: 80%;
+        height: 500px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+        background-color: #f8f9fa;
+        background-color: #F6D9D3;
+        border-radius: 25px;
+
+    }
     #top_mail {
         width: 100%;
         height: 90px;
+        padding: 10px;
         background-color: #131E52;
         text-align: center;
+        border-radius: 25px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
-    #top_mail svg {
+    svg {
         height: 100%;
         text-align: center;
-
     }
-
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: calc(100% - 90px);
+        width: 100%;
+        list-style: none;
+    }
+    ul li {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #ED4521;
+        font-weight: 700;
+    }
+    ul li span {
+        color: #131E52;
+    }
+    i {
+        font-size: 50px;
+        color: #131E52;
+    }
 </style>
 <body>
-
-    <div>
+    <div id="body_mail">
         <div id="top_mail">
             <svg viewBox="0 0 283.815492947314 205.04391488879443" class="css-1j8o68f">
                 <defs id="SvgjsDefs1085"></defs>
@@ -46,17 +93,15 @@
                     </path>
                 </g>
             </svg>
-            {{-- <h1>Grazie per l'ordine effettuato <span style="text-transform: capitalize;" >{{$order->name}}</span></h1>
-            <h2>Ordine numero: {{$order->id}}</h2>
-            <h3>Totale Pagato: {{$order->total}} €</h3>
-            <p>Data e orario consegna: {{ Carbon\Carbon::parse($order->time)->format('d/m/Y H:i')}}</p> --}}
         </div>
-        <div id="body_mail">
-            <div>
-                <p>grazie per il to ordine N 3454</p>
-            </div>
-        </div>
+            <ul>
+                <li>Complimenti {{$order->name}} ordine {{$order->id}} effettuato correttamente</li>
+                <li>totale pagato: <span>{{$order->total}} €<span></li>
+                <li>Data e orario consegna: <span>{{ Carbon\Carbon::parse($order->time)->format('d/m/Y H:i')}}<span></li>
+
+            </ul>
     </div>
+
 
 </body>
 </html>
