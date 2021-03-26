@@ -2010,6 +2010,9 @@ $(document).ready(function () {
     }, 400);
     return false;
   });
+});
+$(window).resize(function () {
+  $('#desktopCartNoDeskop').addClass('display_none');
 }); // $('.plate_photo_trigger').click(function() {
 //     this.$('.plate_photo_trigger').toggle();
 // });

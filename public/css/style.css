@@ -1090,6 +1090,7 @@ footer #bottom_footer {
 #emilio .checkout {
   width: 100%;
   display: flex;
+  padding: 20px;
   min-height: calc(100vh - 90px);
 }
 #emilio .checkout .checkout_left, #emilio .checkout .checkout_right {
@@ -1104,9 +1105,9 @@ footer #bottom_footer {
   padding: 30px;
   border-radius: 20px;
   background-color: white;
+  overflow-y: auto;
   background-image: url("/image/delivery_boy.jpeg");
   background-position: top;
-  overflow-y: auto;
 }
 #emilio .checkout .checkout_left .cart_checkout, #emilio .checkout .checkout_right .cart_checkout {
   width: 90%;
@@ -1120,8 +1121,6 @@ footer #bottom_footer {
   text-align: center;
   background-color: white;
   overflow-y: auto;
-  background-position: center;
-  background-size: cover;
 }
 #emilio .checkout .checkout_left .cart_checkout .cart h2, #emilio .checkout .checkout_right .cart_checkout .cart h2 {
   font-size: 35px;
@@ -1141,6 +1140,7 @@ footer #bottom_footer {
   width: 100%;
   height: 50px;
   border-radius: 20px;
+  z-index: 1;
 }
 #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateAddRemove #minus_checkout, #emilio .checkout .checkout_left .cart_checkout .cart .order_plate .plateAddRemove #plus_checkout, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateAddRemove #minus_checkout, #emilio .checkout .checkout_right .cart_checkout .cart .order_plate .plateAddRemove #plus_checkout {
   font-size: 25px;
