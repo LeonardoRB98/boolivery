@@ -35,6 +35,8 @@ Route::get('/Boolivery/restaurant/{slug}', 'GuestController@show')->name('restau
 
 
 
+
+
 // ROTTA INDEX HOME
 // ROTTA DETTAGLIO RISTORANTE
 // ROTTA CHECKOUT
