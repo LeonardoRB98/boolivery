@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->string('address', 50);
             $table->boolean('status');
             $table->dateTime('date');
+            $table->dateTime('time');
             $table->float('total', 6,2);
             $table->timestamps();
         });

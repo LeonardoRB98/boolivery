@@ -13,7 +13,8 @@ class Order extends Model
         'address',
         'status',
         'total',
-        'date'
+        'date',
+        'time'
     ];
 
     // DB relationships

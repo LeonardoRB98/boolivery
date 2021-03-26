@@ -53,6 +53,9 @@
                         <div class="row shadow mb-2">
                             <input type="address" name="address" class="form-control" id="address" value="" placeholder="Inserisci il tuo indirizzo" required>
                         </div>
+                        <div class="row shadow mb-2">
+                            <input type="datetime-local" name="time" class="form-control" id="time" value="" placeholder="A che ora vuoi ordinare?" required>
+                        </div>
                         <div class="form-group">
                             <select style="display:none;"  class="form-control" name="plates[]" multiple>
                                     <option v-for="plate in cart" :value="plate.id" selected>@{{plate.id}}</option>
