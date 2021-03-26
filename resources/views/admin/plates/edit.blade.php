@@ -39,6 +39,7 @@
             <div class="form-group">
                 <label for="photo">Immagine</label>
                 <input class="form-control @error('photo') is-invalid @enderror" accept="image/*" type="file" id="photo" name="photo" value="{{ $plate->photo }}">
+                <img class="image-fluid" style="width: 200px" src="{{ asset('storage/' . $plate->photo) }}" alt="" >
                 @error('photo')
                     <span class="error-form" role="alert">
                         <strong>{{ $message }}</strong>
