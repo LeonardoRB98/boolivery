@@ -1916,3 +1916,8 @@ body .go {
   text-decoration: none;
   font-size: 12px;
 }
+
+.custom-form-error {
+  font-size: 18px;
+  color: white;
+}
