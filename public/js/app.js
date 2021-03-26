@@ -2038,6 +2038,7 @@ vue__WEBPACK_IMPORTED_MODULE_3__.default.component('plate-component', __webpack_
 var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
   el: '#app',
   data: {
+    urlPath: 'http://127.0.0.1:8000',
     isLoading: true,
     restaurants: [],
     filteredRestaurants: [],
@@ -2058,12 +2059,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
     var _this = this;
 
     // load all restaurants
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get(this.urlPath + '/api/restaurants').then(function (response) {
       _this.restaurants = response.data;
       _this.filteredRestaurants = response.data;
     }); // load all categories
 
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/categories').then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get(this.urlPath + '/api/categories').then(function (response) {
       _this.categories = response.data;
 
       _this.categories.forEach(function (element) {
@@ -2075,7 +2076,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
 
     this.currentRestaurantId = window.id; // caricamento piatti singolo ristorate show
 
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/plates/' + this.currentRestaurantId).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get(this.urlPath + '/api/plates/' + this.currentRestaurantId).then(function (response) {
       _this.restaurants = response.data;
 
       for (var i = 0; i < response.data.length; i++) {
@@ -2182,7 +2183,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
     searchInputRestaurants: function searchInputRestaurants() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants/').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get(this.urlPath + '/api/restaurants/').then(function (response) {
         // maybe add uppercase/lowercase inclusion
         _this2.filteredRestaurants = response.data.filter(function (restaurant) {
           _this2.categorySelect = '';
@@ -2193,7 +2194,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
     searchRestaurants: function searchRestaurants() {
       var _this3 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get(this.urlPath + '/api/restaurants/' + app.categorySelect).then(function (response) {
         // maybe add uppercase/lowercase inclusion
         _this3.filteredRestaurants = response.data;
       });
@@ -2218,7 +2219,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
       this.categories.forEach(function (element) {
         element.show = true;
       });
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get(this.urlPath + '/api/restaurants').then(function (response) {
         _this4.restaurants = response.data;
         _this4.filteredRestaurants = response.data;
       });
