@@ -78,6 +78,18 @@ ul a {
   font-size: 12px;
 }
 
+.error-wrapper {
+  margin-top: 80px;
+  padding: 20px 40px;
+  background: #ED4521;
+  border-radius: 8px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+.error-wrapper h1 {
+  margin-bottom: 20px;
+}
+
 #navbarDropdown {
   color: #FF6E00;
 }
