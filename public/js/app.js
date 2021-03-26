@@ -2058,7 +2058,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
     // TRIGGER VIEW CART ON MOBILE
     hiddenCart: true,
     hiddenPaymentCart: true,
-    classImage: ""
+    classImage: "",
+    totalCartItems: 0
   },
   created: function created() {
     var _this = this;
@@ -2124,6 +2125,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
       }
 
       _this.totalPrice = Number((_this.totalPrice + price).toFixed(2));
+      _this.totalCartItems += 1;
     });
     this.$root.$on('removeFromCart', function (id, counter, price, name) {
       var object = {
@@ -2153,6 +2155,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
       }
 
       _this.totalPrice = Number((_this.totalPrice - price).toFixed(2));
+      _this.totalCartItems -= 1;
     });
   },
   mounted: function mounted() {
@@ -2251,6 +2254,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
       this.totalPrice = 0;
       localStorage.removeItem('totalPrice');
       this.$root.$emit('resetCounter');
+      this.totalCartItems = 0;
     },
     // CALCOLO TOTALE SINGOLO PIATTO
     calculatePrice: function calculatePrice(counter, price) {

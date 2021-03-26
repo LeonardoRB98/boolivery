@@ -94,7 +94,8 @@ const app = new Vue({
         // TRIGGER VIEW CART ON MOBILE
         hiddenCart: true,
         hiddenPaymentCart: true,
-        classImage: ""
+        classImage: "",
+        totalCartItems: 0,
     },
     created: function () {
         // load all restaurants
@@ -166,6 +167,8 @@ const app = new Vue({
             }
 
             this.totalPrice = Number((this.totalPrice + price).toFixed(2));
+
+            this.totalCartItems +=1;
         });
 
         this.$root.$on('removeFromCart', (id, counter, price, name) => {
@@ -196,7 +199,10 @@ const app = new Vue({
 
             this.totalPrice = Number((this.totalPrice - price).toFixed(2));
 
+            this.totalCartItems -= 1;
+
         });
+
     },
     mounted: function() {
 
@@ -304,6 +310,7 @@ const app = new Vue({
             this.totalPrice = 0;
             localStorage.removeItem('totalPrice');
             this.$root.$emit('resetCounter');
+            this.totalCartItems = 0;
         },
 
         // CALCOLO TOTALE SINGOLO PIATTO
