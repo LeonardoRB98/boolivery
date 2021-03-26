@@ -1544,10 +1544,10 @@ body .go {
     text-align: center;
   }
   #emilio .main-menu .cart .plateAddRemove #plus {
-    font-size: 30px;
+    font-size: 50px;
   }
   #emilio .main-menu .cart .plateAddRemove #minus {
-    font-size: 30px;
+    font-size: 50px;
   }
   #emilio .main-menu .plate {
     width: 100%;
@@ -1568,6 +1568,7 @@ body .go {
   }
   #emilio .main-menu .plate .plate_photo img {
     width: 100%;
+    border-radius: 20px;
   }
   #emilio .main-menu .plate .plate_photo:active {
     display: none;
@@ -1604,8 +1605,7 @@ body .go {
     font-size: 50px;
   }
   #emilio .main-menu .plate .plate_counter .plate_add, #emilio .main-menu .plate .plate_counter .plate_remove {
-    font-size: 60px;
-    opacity: 0.8;
+    font-size: 90px;
   }
   #emilio .main-menu .plate .plate_counter .plate_remove:hover, #emilio .main-menu .plate .plate_counter .plate_add:hover {
     cursor: pointer;
