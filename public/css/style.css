@@ -1838,6 +1838,9 @@ body .go {
 .main-content .plates-box .card .card-content {
   padding: 10px;
 }
+.main-content .plates-box .card .card-content .price {
+  font-size: 30px;
+}
 .main-content .plates-box .card .card-content h4 {
   height: 50px;
 }
