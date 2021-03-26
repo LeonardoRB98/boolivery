@@ -14,7 +14,7 @@
                                 placeholder="Inserisci il tuo Nome...">
 
                             @error('name')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="error-form" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
@@ -25,7 +25,7 @@
                                 placeholder="Inserisci il tuo cognome...">
 
                             @error('surname')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="error-form" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
@@ -36,7 +36,7 @@
                             name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email...">
 
                         @error('email')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="error-form" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -46,7 +46,7 @@
                             name="password" required autocomplete="new-password" placeholder="Password...">
 
                         @error('password')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="error-form" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror

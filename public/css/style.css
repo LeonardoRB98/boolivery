@@ -72,6 +72,12 @@ ul a {
   color: #ED4521;
 }
 
+.error-form {
+  color: #131E52;
+  font-family: "Blinker", sans-serif;
+  font-size: 12px;
+}
+
 #navbarDropdown {
   color: #FF6E00;
 }
