@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 // IMPORTO NAMESPACE
 use Illuminate\Support\Facades\Auth;
-
+use App\Order;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function() {
 	return redirect('/Boolivery');
 });
+
 
 Route::get('/Boolivery', 'GuestController@index')->name('home');
 // BRAINTREE

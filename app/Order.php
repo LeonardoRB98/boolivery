@@ -19,7 +19,7 @@ class Order extends Model
 
     // DB relationships
     public function plates() {
-        return $this->belongsToMany('App\Plate', 'order_plate');
+        return $this->belongsToMany('App\Plate', 'order_plate')->withPivot('quantity');// aggiunge la colonna quantity della tabella ponte
     }
 
 

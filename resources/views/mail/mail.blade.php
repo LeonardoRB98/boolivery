@@ -56,6 +56,8 @@
         list-style: none;
     }
     ul li {
+        padding: 0 30px;
+        width: 100%;
         font-size: 20px;
         margin-bottom: 10px;
         color: #ED4521;
@@ -64,10 +66,13 @@
     ul li span {
         color: #131E52;
     }
-    i {
-        font-size: 50px;
-        color: #131E52;
+     li hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
     }
+
 </style>
 <body>
     <div id="body_mail">
@@ -94,10 +99,20 @@
                 </g>
             </svg>
         </div>
+        {{-- order->plate; --}}
             <ul>
-                <li>Complimenti {{$order->name}} ordine {{$order->id}} effettuato correttamente</li>
+
+                <li class="h1">Complimenti {{$order->name}} ordine {{$order->id}} effettuato correttamente</li>
+                <li><hr></li>
+                @foreach ($order->plates as $plate)
+                   <li>
+                       X{{ $plate->pivot->quantity }} {{ $plate->name }}: <span>{{ $plate->price }}€</span>
+                    </li>
+                @endforeach
+                <li><hr></li>
                 <li>totale pagato: <span>{{$order->total}} €<span></li>
                 <li>Data e orario consegna: <span>{{ Carbon\Carbon::parse($order->time)->format('d/m/Y H:i')}}<span></li>
+
 
             </ul>
     </div>
