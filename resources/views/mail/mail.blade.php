@@ -18,5 +18,6 @@
         <h1>Grazie per l'ordine effettuato <span style="text-transform: capitalize;" >{{$order->name}}</span></h1>
         <h2>Ordine numero: {{$order->id}}</h2>
         <h3>Totale Pagato: {{$order->total}} €</h3>
+        <p>Data e orario consegna: {{ Carbon\Carbon::parse($order->time)->format('d/m/Y H:i')}}</p>
     </div>
 </div>
