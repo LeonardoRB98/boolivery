@@ -116,13 +116,21 @@
               <legend class="col-form-label col-sm-2 pt-0">Sponsorizzazione</legend>
               <div class="col-sm-10">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="sponsored" id="sponsored" value="true" checked>
+                    @if($restaurant->sponsored)
+                      <input class="form-check-input" type="radio" name="sponsored" id="sponsored" value="true" checked>
+                    @else 
+                      <input class="form-check-input" type="radio" name="sponsored" id="sponsored" value="true">
+                    @endif
                   <label class="form-check-label" for="sponsored">
                     Si
                   </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="sponsored" id="sponsored" value="false" checked>
+                    @if($restaurant->sponsored == "false")
+                      <input class="form-check-input" type="radio" name="sponsored" id="sponsored" value="false" checked>
+                    @else 
+                      <input class="form-check-input" type="radio" name="sponsored" id="sponsored" value="false">
+                    @endif 
                     <label class="form-check-label" for="sponsored">
                       No
                     </label>
