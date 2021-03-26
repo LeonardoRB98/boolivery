@@ -1,5 +1,5 @@
 
-// jumbotrona restaurant admin show 
+// jumbotrona restaurant admin show
 .curved-top {
     background-color: trasparent;
     position: relative;
@@ -39,7 +39,7 @@
         color: white;
         position: absolute;
         left: 50%;
-        top: 50%; 
+        top: 50%;
         transform: translate(-50%, -50%);
         white-space: nowrap;
         font-size: 8vw;
@@ -69,7 +69,7 @@
     .info-box {
         // position: sticky;
         // top: 100px;
-        
+
         .info {
             background-color: white;
             border-left: 4px solid $brandOrange;
@@ -93,7 +93,7 @@
                 display: inline-block;
             }
         }
-        
+
     }
     .plates-box {
         background-color: whitesmoke;
@@ -115,6 +115,9 @@
             }
             .card-content {
                 padding: 10px;
+                h4 {
+                    height: 50px;
+                }
                 .desc {
                     height: 150px;
                     overflow-y: scroll;
@@ -138,7 +141,7 @@
                     }
                 }
             }
-            
+
         }
     }
 }

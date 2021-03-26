@@ -1834,6 +1834,9 @@ body .go {
 .main-content .plates-box .card .card-content {
   padding: 10px;
 }
+.main-content .plates-box .card .card-content h4 {
+  height: 50px;
+}
 .main-content .plates-box .card .card-content .desc {
   height: 150px;
   overflow-y: scroll;
