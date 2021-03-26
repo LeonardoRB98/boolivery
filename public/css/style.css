@@ -1408,6 +1408,20 @@ body .go {
 }
 #emilio #trigger_cart_mobile {
   display: none;
+  position: relative;
+}
+#emilio #trigger_cart_mobile #total_cart {
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: tomato;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  right: -5%;
+  top: -5%;
 }
 #emilio #desktopCartNoDesktop {
   display: none;
@@ -1546,7 +1560,7 @@ body .go {
   }
   #emilio .main-menu .plate .plate_photo {
     width: 100%;
-    height: 100%;
+    height: 50%;
     position: absolute;
     left: 0%;
     top: 0%;

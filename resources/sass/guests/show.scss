@@ -182,6 +182,20 @@
     }
     #trigger_cart_mobile {
         display: none;
+        position: relative;
+        #total_cart {
+            font-size: 30px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: tomato;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            right: -5%;
+            top: -5%;
+        }
     }
     #desktopCartNoDesktop {
         display: none;
@@ -318,7 +332,7 @@
                 }
                 .plate_photo {
                     width: 100%;
-                    height: 100%;
+                    height: %;
                     position: absolute;
                     left: 0%;
                     top: 0%;
