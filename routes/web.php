@@ -27,6 +27,7 @@ Route::post('/Boolivery/restaurant/checkout', 'PaymentController@payment')->name
 Route::get('/Boolivery/restaurant/checkout', 'PaymentController@checkout')->name('checkout');
 
 
+
 Route::get('/Boolivery/restaurant/{slug}', 'GuestController@show')->name('restaurant');
 
 
