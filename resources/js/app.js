@@ -75,6 +75,7 @@ Vue.component('plate-component', require('./components/PlateComponent.vue').defa
 const app = new Vue({
     el: '#app',
     data: {
+        urlPath: 'http://127.0.0.1:8000',
         isLoading: true,
         restaurants: [],
         filteredRestaurants: [],
@@ -92,12 +93,9 @@ const app = new Vue({
         classImage: ""
     },
     created: function () {
-
-       
-
         // load all restaurants
         axios
-            .get('http://127.0.0.1:8000/api/restaurants')
+            .get(this.urlPath + '/api/restaurants')
             .then( response => {
                  this.restaurants = response.data;
                  this.filteredRestaurants = response.data;
@@ -105,7 +103,7 @@ const app = new Vue({
         );
         // load all categories
         axios
-            .get('http://127.0.0.1:8000/api/categories')
+            .get(this.urlPath + '/api/categories')
             .then( response => {
                 this.categories = response.data;
                 this.categories.forEach(element => {
@@ -114,8 +112,6 @@ const app = new Vue({
 
                 console.log(this.categories);
             }
-
-          
         );
 
         // recupero id dalla schermata show tramite <script>var id = {!! json_encode($restaurant->id) !!};</script>
@@ -123,7 +119,7 @@ const app = new Vue({
 
         // caricamento piatti singolo ristorate show
         axios
-        .get('http://127.0.0.1:8000/api/plates/'+ this.currentRestaurantId)
+        .get(this.urlPath + '/api/plates/'+ this.currentRestaurantId)
             .then(response => {
                 this.restaurants = response.data;
                 for (var i = 0; i < response.data.length; i++ ) {
@@ -198,8 +194,6 @@ const app = new Vue({
 
         });
     },
-
-
     mounted: function() {
 
         this.changeClass();
@@ -213,11 +207,7 @@ const app = new Vue({
             this.totalPrice = parseFloat(localStorage.totalPrice);
         }
 
-
         this.isLoading = false
-
-
-
     },
     watch: {
         // SOLUZIONE 1
@@ -238,7 +228,7 @@ const app = new Vue({
     methods: {
         searchInputRestaurants() {
             axios
-                .get('http://127.0.0.1:8000/api/restaurants/')
+                .get(this.urlPath + '/api/restaurants/')
                 .then(response => {
                     // maybe add uppercase/lowercase inclusion
                     this.filteredRestaurants = response.data.filter(restaurant => {
@@ -250,7 +240,7 @@ const app = new Vue({
 
         searchRestaurants() {
             axios
-                .get('http://127.0.0.1:8000/api/restaurants/' + app.categorySelect)
+                .get(this.urlPath + '/api/restaurants/' + app.categorySelect)
                 .then(response => {
                     // maybe add uppercase/lowercase inclusion
 
@@ -264,21 +254,14 @@ const app = new Vue({
             this.searchRestaurants();
             this.search = '';
             this.sponsoredRestaurant = false;
-
             this.categories.forEach(element => {
                 if (element.show != true) {
                     element.show = true;
                 }
             });
-
-            
-
         },
 
-
         sponsoredRestaurants() {
-
-
             this.search = '';
             this.categorySelect = '';
             this.sponsoredRestaurant = true;
@@ -288,19 +271,12 @@ const app = new Vue({
             });
 
             axios
-            .get('http://127.0.0.1:8000/api/restaurants')
+            .get(this.urlPath + '/api/restaurants')
             .then( response => {
                  this.restaurants = response.data;
                  this.filteredRestaurants = response.data;
-            }
-        );
-
-
-
+            });
         },
-
-
-
 
         // functions for cart and plates
         add(plateId, plateCounter, platePrice, plateName) {

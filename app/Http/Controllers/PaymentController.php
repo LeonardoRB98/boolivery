@@ -40,6 +40,7 @@ class PaymentController extends Controller
         $surname = $request->surname;
         $email = $request->email;
 
+
         // QUESTO ASSOCIA I DATI E LI INVIA
         $result = $gateway->transaction()->sale([
             'amount' => $total,
