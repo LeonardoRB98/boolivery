@@ -1093,6 +1093,14 @@ footer #bottom_footer {
   }
 }
 
+#emilio .fade-enter,
+#emilio .fade-leave-active {
+  transition: opacity 0.1s;
+}
+#emilio .fade-enter,
+#emilio .fade-leave-to {
+  opacity: 0;
+}
 #emilio .checkout {
   width: 100%;
   display: flex;
