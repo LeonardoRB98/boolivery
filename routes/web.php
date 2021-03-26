@@ -29,10 +29,6 @@ Route::get('/Boolivery/restaurant/checkout', 'PaymentController@checkout')->name
 
 Route::get('/Boolivery/restaurant/{slug}', 'GuestController@show')->name('restaurant');
 
-// MAIL TEMPLATE
-Route::get('/Boolivery/mail/mail', function () {
-    return view('mail.mail');
-});
 
 
 
