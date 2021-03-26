@@ -13,7 +13,7 @@
         @if (!is_null($restaurant->photo_jumbo))
             <img src="{{ asset('storage/'. $restaurant->photo_jumbo) }}" alt="{{ $restaurant->name }}">
         @else
-            <img src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
+            <img src="{{ asset('image/restaurant-placeholder.jpg') }}" alt="{{ $restaurant->name }}">
         @endif
         {{-- FLIP CARD --}}
         <div class="restaurant flip_card">
@@ -30,7 +30,7 @@
                         @if (!is_null($restaurant->photo_jumbo))
                             <img src="{{ asset('storage/'. $restaurant->photo) }}" alt="{{ $restaurant->name }}">
                         @else
-                            <img src="{{ asset('image/download.png') }}" alt="{{ $restaurant->name }}">
+                            <img src="{{ asset('image/restaurant-placeholder.jpg') }}" alt="{{ $restaurant->name }}">
                         @endif
                     </div>
                     <div class="title_description">
