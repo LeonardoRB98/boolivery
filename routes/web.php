@@ -20,9 +20,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function() {
 	return redirect('/Boolivery');
 });
-Route::get('/Boolivery/mail', function() {
-	return view('mail.mail');
-});
+
 Route::get('/Boolivery', 'GuestController@index')->name('home');
 // BRAINTREE
 Route::post('/Boolivery/restaurant/checkout', 'PaymentController@payment')->name('payment');
