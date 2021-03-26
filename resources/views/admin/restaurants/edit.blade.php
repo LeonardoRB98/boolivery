@@ -24,7 +24,7 @@
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input class="form-control @error('email') is-invalid @enderror" type="text" id="email" name="email" value="{{ $restaurant->email }}">
+            <input class="form-control @error('email') is-invalid @enderror" type="email" id="email" name="email" value="{{ $restaurant->email }}">
             @error('email')
                 <span class="error-form" role="alert">
                     <strong>{{ $message }}</strong>
