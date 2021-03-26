@@ -110,23 +110,23 @@
                                                     <h4>{{ $plate->name }}</h4>
                                                     <p class="desc">{{ $plate->description }}</p>
                                                 </div>
-                                                <div class="card-bottom">
-
-                                                    <a href="{{ route('admin.plates.edit', $plate) }}"><i
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="card-bottom">
+                                                        <a href="{{ route('admin.plates.edit', $plate) }}"><i
                                                             class="fas fa-edit"></i>
-                                                    </a>
-                                                    <form action="{{ route('admin.plates.destroy', $plate) }}" method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" value="Elimina"
-                                                            onclick='return confirm("Sei sicuro di voler cancellare l&apos;elemento?")'>
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                    </form>
-
-                                                    {{-- <div class="stat">
+                                                        </a>
+                                                        <form action="{{ route('admin.plates.destroy', $plate) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" value="Elimina"
+                                                                onclick='return confirm("Sei sicuro di voler cancellare l&apos;elemento?")'>
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="price">
                                                         {{ number_format($plate->price, 2) }}€
-                                                    </div> --}}
+                                                    </div>
 
                                                 </div>
                                             </div>

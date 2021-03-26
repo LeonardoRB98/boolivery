@@ -115,6 +115,9 @@
             }
             .card-content {
                 padding: 10px;
+                .price {
+                    font-size: 30px;
+                }
                 h4 {
                     height: 50px;
                 }
@@ -134,6 +137,7 @@
                             color: $brandBlue;
                         }
                     }
+                    
                     button {
                         border: none;
                         color: red;
