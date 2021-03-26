@@ -11,7 +11,7 @@
             @csrf
             <div class="form-group">
                 <label for="name">Nome Piatto</label>
-                <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" value={{ $plate->name }}>
+                <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" value="{{ $plate->name }}">
                 @error('name')
                     <span class="error-form" role="alert">
                         <strong>{{ $message }}</strong>
@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
                 <label for="price">Prezzo</label>
-                <input class="form-control @error('price') is-invalid @enderror" step="0.01" type="number" id="price" name="price" value= {{$plate->price}}>
+                <input class="form-control @error('price') is-invalid @enderror" step="0.01" type="number" id="price" name="price" value= "{{$plate->price}}">
                 @error('price')
                     <span class="error-form" role="alert">
                         <strong>{{ $message }}</strong>
@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label for="photo">Immagine</label>
-                <input class="form-control @error('photo') is-invalid @enderror" accept="image/*" type="file" id="photo" name="photo" value={{ $plate->photo }}>
+                <input class="form-control @error('photo') is-invalid @enderror" accept="image/*" type="file" id="photo" name="photo" value="{{ $plate->photo }}">
                 @error('photo')
                     <span class="error-form" role="alert">
                         <strong>{{ $message }}</strong>
