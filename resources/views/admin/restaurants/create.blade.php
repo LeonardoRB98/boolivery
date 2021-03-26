@@ -9,15 +9,6 @@
             <span>Elenco Ristoranti</span>
         </a>
     </div>
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
     <form action="{{ route('admin.restaurants.store') }}" method='POST' enctype="multipart/form-data" class="login-form">
         @method('POST')
@@ -25,42 +16,83 @@
 
         <div class="form-group">
             <label for="name">Nome Ristorante</label>
-            <input class='form-control' type="text" id="name" name="name" value={{ old('name') }}>
+            <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" value={{ old('name') }}>
+            @error('name')
+                <span class="error-form" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input class='form-control' type="text" id="email" name="email" value={{ old('email') }}>
+            <input class="form-control @error('email') is-invalid @enderror" type="text" id="email" name="email" value={{ old('email') }}>
+            @error('email')
+                <span class="error-form" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
 
         <div class="form-group">
             <label for="address">Indirizzo</label>
-            <input class='form-control' type="text" id="address" name="address" value={{ old('address') }}>
+            <input class="form-control @error('address') is-invalid @enderror" type="text" id="address" name="address" value={{ old('address') }}>
+            @error('address')
+                <span class="error-form" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+            
         </div>
 
         <div class="form-group">
             <label for="phone">Numero di telefono</label>
-            <input class='form-control' type="text" id="phone" name="phone" value={{ old('phone') }}>
+            <input class="form-control @error('phone') is-invalid @enderror" type="text" id="phone" name="phone" value={{ old('phone') }}>
+            @error('phone')
+                <span class="error-form" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
 
         <div class="form-group">
             <label for="p_iva">P. IVA</label>
-            <input class='form-control' type="text" id="p_iva" name="p_iva" value={{ old('p_iva') }}>
+            <input class="form-control @error('p_iva') is-invalid @enderror" type="text" id="p_iva" name="p_iva" value={{ old('p_iva') }}>
+            @error('p_iva')
+                <span class="error-form" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
 
         <div class="form-group">
             <label for="description">Descrizione</label>
-            <textarea class='form-control' type="text" id="description" name="description" rows="10"> {{ old('description') }} </textarea>
+            <textarea class="form-control @error('description') is-invalid @enderror" type="text" id="description" name="description" rows="10"> {{ old('description') }} </textarea>
+            @error('description')
+                <span class="error-form" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
 
         <div class="form-group">
             <label for="photo">Immagine</label>
-            <input class='form-control' accept="image/*" type="file" id="photo" name="photo" value={{ old('photo') }}>
+            <input class="form-control @error('photo') is-invalid @enderror" accept="image/*" type="file" id="photo" name="photo" value={{ old('photo') }}>
+            @error('photo')
+                <span class="error-form" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
 
         <div class="form-group">
             <label for="photo_jumbo">Immagine background</label>
-            <input class='form-control' accept="image/*" type="file" id="photo_jumbo" name="photo_jumbo" value={{ old('photo_jumbo') }}>
+            <input class="form-control @error('photo_jumbo') is-invalid @enderror" accept="image/*" type="file" id="photo_jumbo" name="photo_jumbo" value={{ old('photo_jumbo') }}>
+            @error('photo_jumbo')
+                <span class="error-form" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
 
         <div class="form-group">
