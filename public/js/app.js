@@ -2171,7 +2171,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
     }
 
     if (localStorage.totalCartItems) {
-      this.totalCartItems = localStorage.totalCartItems;
+      this.totalCartItems = parseInt(localStorage.totalCartItems);
     }
 
     this.isLoading = false;

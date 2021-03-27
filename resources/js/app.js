@@ -219,7 +219,7 @@ const app = new Vue({
         }
 
         if (localStorage.totalCartItems) {
-            this.totalCartItems = (localStorage.totalCartItems);
+            this.totalCartItems = parseInt(localStorage.totalCartItems);
         }
 
         this.isLoading = false
