@@ -9,15 +9,6 @@ body {
   background-color: #F6D9D3;
 }
 
-.btn_darkBlue {
-  background-color: #2045E3;
-  color: white;
-}
-.btn_darkBlue:hover {
-  background-color: #0F33CA;
-  color: white;
-}
-
 a:hover {
   cursor: pointer;
   text-decoration: none;

@@ -106,7 +106,7 @@
 
         <fieldset class="form-group">
             <div class="row">
-              <legend class="col-form-label col-sm-2 pt-0">Sponsorizzazione</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Sponsorizzazione</legend>
               <div class="col-sm-10">
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="sponsored" id="sponsored" value="true" checked>
@@ -119,13 +119,13 @@
                     <label class="form-check-label" for="sponsored">
                       No
                     </label>
-                  </div>
+                </div>
             </div>
         </div>
       </fieldset>
 
 
-        <input type="submit" value="Crea" class="btn btn_darkBlue">
+        <input type="submit" value="Crea" class="blue-btn">
      </form>
 
 </div>

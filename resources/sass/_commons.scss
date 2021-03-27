@@ -8,15 +8,6 @@
 body {
     background-color: $superWhite;
 }
-//btn
-.btn_darkBlue {
-        background-color: $blueShock;
-        color: white;
-    &:hover {
-        background-color: $blueDark;
-        color: white;
-    }
-}
 
 a:hover {
     cursor: pointer;
