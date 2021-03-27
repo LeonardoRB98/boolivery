@@ -110,7 +110,7 @@
       <!--Grid row-->
       <div class="row">
         <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
             <h5 class="text-uppercase">Creatori</h5>
 
             <ul class="list-unstyled mb-0">
@@ -142,7 +142,7 @@
         </div>
         <!--Grid column-->
         <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
           <h5 class="text-uppercase mb-0">Teachers</h5>
 
           <ul class="list-unstyled">
